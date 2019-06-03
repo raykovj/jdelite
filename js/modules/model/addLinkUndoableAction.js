@@ -1,1 +1,0 @@
-define("modules/model/addLinkUndoableAction",["modules/diagram/diagramUtils"],function(n){function e(e,o){var d=this,i=e,t=o;d.getName=function(){return n.getLinkObjectName(t)},d.execute=function(){i.addLinkToModel(t)},d.undo=function(){i.removeLinkFromModel(t)},d.redo=function(){i.addLinkToModel(t)}}return e});

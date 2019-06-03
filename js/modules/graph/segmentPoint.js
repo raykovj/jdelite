@@ -1,1 +1,0 @@
-define("modules/graph/segmentPoint",["modules/geometry/point","modules/graph/graphConstants","modules/graph/segment"],function(t,n,e){function o(t,e){var o=this;o.segment=t,o.point=e===n.segmentPointDef.START?t.getStartPoint():t.getEndPoint(),o.getSegment=function(){return o.segment},o.getPoint=function(){return o.point}}return o});

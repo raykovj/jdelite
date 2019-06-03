@@ -1,1 +1,0 @@
-define("modules/model/removeMultipleUndoableAction",["modules/common/map"],function(e){function o(o,n,t){var u=this,l=o,i=n,d=t,m=new e;u.getName=function(){return"["+d+"]"},u.execute=function(){l.removeMultipleFromModel(i,m)},u.undo=function(){l.addMultipleToModel(i,m)},u.redo=function(){l.removeMultipleFromModel(i,m)}}return o});

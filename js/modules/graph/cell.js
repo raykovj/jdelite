@@ -1,1 +1,0 @@
-define("modules/graph/cell",["modules/geometry/rectangle","modules/core/jsUtils"],function(e,n){function l(n,t){e.call(this,0,0,0,0),l.TYPE={UNDEF:0,GRID:1,NODE:2};var u=this;u.levelNum=n,u.laneNum=t,u.cellType=function(){return l.TYPE.UNDEF},u.print=function(){return u.constructor.name+": "+u.showBounds()+", level="+u.levelNum+", lane="+u.laneNum}}return n.inherit(l,e),l});

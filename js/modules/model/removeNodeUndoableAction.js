@@ -1,1 +1,0 @@
-define("modules/model/removeNodeUndoableAction",[],function(){function e(e,o){var n,d=this,r=e,t=o;d.getName=function(){return"["+t.name+"]"},d.execute=function(){n=r.removeNodeFromModel(t),t.order=n},d.undo=function(){r.addNodeToModel(t)},d.redo=function(){n=r.removeNodeFromModel(t),t.order=n}}return e});

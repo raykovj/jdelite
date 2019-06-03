@@ -1,1 +1,0 @@
-define("modules/model/renameNodeUndoableAction",["modules/common/map"],function(e){function n(e,n,o,d,t){var u=this,m=e,r=n,c=o,i=d,a=t;u.getName=function(){return"["+c+"]"},u.execute=function(){r=m.renameNodeInModel(r,i,a)},u.undo=function(){r=m.renameNodeInModel(r,a,i)},u.redo=function(){r=m.renameNodeInModel(r,i,a)}}return n});

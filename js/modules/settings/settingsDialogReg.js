@@ -1,1 +1,0 @@
-define(["knockout"],function(e){e.components.register("settings-dialog",{viewModel:{require:"modules/settings/settingsDialog"},template:{require:"text!modules/settings/settingsDialogContent.html"}})});

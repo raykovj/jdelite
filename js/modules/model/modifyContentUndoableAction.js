@@ -1,1 +1,0 @@
-define("modules/model/modifyContentUndoableAction",["modules/common/map"],function(n){function e(n,e,o){var t=this,d=n,i=e,m=e.contentText,u=o;t.getName=function(){return i.name},t.execute=function(){d.modifyNodeContentText(i,u)},t.undo=function(){d.modifyNodeContentText(i,m)},t.redo=function(){d.modifyNodeContentText(i,u)}}return e});
