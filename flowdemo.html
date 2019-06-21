@@ -9,7 +9,7 @@
 
     <script data-main="js/flowdemo" src="libs/require/require.js"></script>
 
-    <title>Flow Demo</title>
+    <title>JDElite Diagram Builder</title>
 </head>
  
 <body>
@@ -27,38 +27,50 @@
             <button id="deleteId" class="toolbar-button button-no-left button-delete" title="Remove Selections"></button>
             <button id="saveId" class="toolbar-button button-no-left button-save" title="Save"></button>
             <button id="saveAsId" class="toolbar-button button-no-left button-saveAs" title="Save As..."></button>
-            <button id="configId" class="toolbar-button button-no-left button-config" title="Settings"></button>
+            <button id="configId" class="toolbar-button button-no-left button-config" title="Settings..."></button>
             <button id="helpId" class="toolbar-button button-no-left button-help" title="Help..."></button>
         </div>
         <div>
             <span style="margin-left: 40px;"></span>
         </div>
         <div id="toolbar2Id" class="diagram-toolbar">
-            <button id="refreshId" class="toolbar-button button-refresh" title="Refresh Diagram"></button>
+            <button id="refreshId" class="toolbar-button button-refresh" title="Reset to Defaults"></button>
+            <button id="clearId" class="toolbar-button button-no-left button-clear" title="Clear Diagram"></button>
             <button id="leftId" class="toolbar-button button-no-left button-left" title="Previous Diagram"></button>
             <button id="rightId" class="toolbar-button button-no-left button-right" title="Next Diagram"></button>
         </div>
         <div>
             <span style="margin-left: 10px;"></span>
         </div>
-        <div class="diagram-title group-box">
-            <span class="selectionFont" style="padding: 4px 2px 0 8px; ">Diagram:</span>
-        </div>
-        <div class="diagram-name">
-            <span class="selectionFont" style="padding: 4px 2px 0 6px; "
-                          data-bind="text: getDiagramName()"></span>
+        <div id="diagramNameId">
+            <div class="diagram-title group-box">
+                <span class="selectionFont" style="padding: 4px 2px 0 8px; ">Diagram:</span>
+            </div>
+            <div class="diagram-name">
+                <span class="selectionFont" style="padding: 4px 2px 0 6px; "
+                    data-bind="text: getDiagramName()"></span>
+            </div>
         </div>
         <span style="margin-left: 2px;"></span>
     </div>
 
     <div id="topContainerId" class="top-container">
         <div id="containerId" class="main-container"  >
-            <canvas id="canvasId" tabindex="0" draggable="true" class="flex-canvas" ></canvas>
+            <canvas id="canvasId" tabindex="0" draggable="true" class="flex-canvas"
+                data-bind="visible: isCanvasVisible()"></canvas>
         </div>
         
         <div id="paletteCtrId" style="margin: 0 0 8px 0; padding: 10px 0 10px 0; display: none">
             <div class="group-box current-settings">
-                <div class="diagram-text galleryFont">
+                <div data-bind="visible: isCanvasVisible()" >
+                    <input type="range" min="65" max="200" value="100" id="scaleId" class="scaleSlider">
+                </div>
+                <div class="diagram-text galleryFont" style="margin-top: 6px;">
+                    <span style="font-weight: bold;">Canvas Scale:</span>
+                    <span class="selectionFont" style="padding: 4px 2px 0 6px; "
+                          data-bind="text: scaleValue()"></span>
+                </div>
+                <div class="diagram-text galleryFont" style="margin-top: 4px;">
                     <span style="font-weight: bold;">Data Flow:</span>
                     <button id="btnFlowHId" class="flow-button button-h" style="vertical-align: middle; "
                             data-bind="visible : isHorizontal()" title="Double-click for vertical"></button>
@@ -67,11 +79,11 @@
                 </div>
             </div>
             <div style="margin-top: 6px;"></div>
-            <!--- ACCORDION -->
+
             <div id="paletteAccordionId" class="accordion-props">
-                <h3>Flow Demo</h3>
+                <h3 id="accHdrDemoId" data-bind="text: accHdrDemoTitle"></h3>
                 <div>
-                    <table class="demo-items galleryFont" >
+                    <table id="accHdrDemoTableId" class="demo-items galleryFont" >
                         <tbody data-bind="foreach: galleryNodes">
                         <tr>
                             <td data-bind="attr: {id}"
@@ -84,6 +96,10 @@
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                <h3 id="accHdrBpelId"  data-bind="text: accHdrBpelTitle"></h3>
+                <div>
+                    <span class="diagram-text galleryFont" style="font-weight: bold; vertical-align: middle">In Progress...</span>
                 </div>
             </div>
         </div>
@@ -133,16 +149,35 @@
                     <label for="chkStartEnd" style="vertical-align:baseline; margin-right: 12px;" >Start/End Layers **</label>
                     <input type="checkbox" id="chkLeftRight" name="df" style="margin: 4px 4px 0 4px;">
                     <label for="chkLeftRight" style="vertical-align:baseline; margin-right: 12px;" >Side Swim Lanes **</label>
+                    <!--<input type="checkbox" id="chkGrid" name="df" style="margin: 4px 4px 0 4px;">-->
+                    <!--<label for="chkGrid" style="vertical-align:baseline;" >Show Grid</label>-->
                 </div>
             </div>
 
             <div class="settings-entry">Editing Options:</div>
             <div class="settings-controls">
+                <!--<div>-->
+                    <!--<input type="checkbox" id="chkShowRefs" name="edRefs" style="margin: 4px 4px 0 4px;">-->
+                    <!--<label for="chkShowRefs" style="vertical-align:baseline; margin-right: 20px;" >Enable new reference links</label>-->
+                <!--</div>-->
                 <div>
                     <input type="checkbox" id="chkAutoGen" name="edopt" style="margin: 4px 4px 0 4px;">
                     <label for="chkAutoGen" style="vertical-align:baseline; margin-right: 20px;" >Auto generate names for new nodes</label>
                 </div>
             </div>
+
+            <!--<div class="settings-entry">Connection style:</div>-->
+            <!--<div class="settings-controls">-->
+                <!--<div >-->
+                    <!--<input type="radio" id="styleDoubleId" name="radio3" style="margin: 4px 4px 0 4px;">-->
+                    <!--<button id="styleDoubleBtn" class="lineStyle-button lineStyleDouble" style="vertical-align: top;" ></button>-->
+                <!--</div>-->
+                <!--<div style="margin-bottom: 4px;"></div>-->
+                <!--<div >-->
+                    <!--<input type="radio" id="styleSingleId" name="radio3" style="margin: 4px 4px 0 4px;">-->
+                    <!--<button id="styleSingleBtn" class="lineStyle-button lineStyleSingle" style="vertical-align: top;" ></button>-->
+                <!--</div>-->
+            <!--</div>-->
 
             <div class="footer">
                 <span class="vertical" style="padding-left: 4px;">*  Select the initial main canvas size for new diagrams</span>
@@ -187,6 +222,11 @@
 
     <div id="openFlowDialogId" class="settingsFont" style="display: none; ">
         <form>
+            <!--<div style="font-weight: bold; margin: 4px 0 8px; ">-->
+                <!--<span >Location:</span>-->
+                <!--<span style="font-weight: bold; padding-left: 4px; "-->
+                      <!--data-bind="text: getWorkDir()"></span>-->
+            <!--</div>-->
             <div style="font-weight: bold; margin: 4px 0 4px; ">Select file:</div>
             <div>
                 <select id="selectFile" style="width: 100%; height: 28px; margin: 4px 0 10px; "
@@ -234,6 +274,7 @@
         </form>
     </div>
 
+    <!-- NEW NODE DIALOG -->
     <div id="newNodeDialogId" class="settingsFont" style="display: none; ">
         <div data-bind="visible: showNewFileName()">
             <div>
@@ -241,6 +282,7 @@
                      data-bind="attr: {src: getDecisionIcon()}" />
                 <span style=" margin: 4px 0 4px 8px; ">Enter node name:&nbsp;</span>
             </div>
+            <!--<div style="font-weight: bold; margin: 4px 0 4px; ">Enter node name:</div>-->
             <div>
                 <input id="newNodeNameId" type="text" autocomplete="off" spellcheck="false" tabindex="0"
                        onkeyup="validateNodeName(event)"
@@ -263,6 +305,18 @@
         </div>
 
         <div id="decision-layout" data-bind="visible: showDecisionInfo()" style="margin: 14px 0 8px 0; ">
+            <!--<h4>Select decision input location:</h4>-->
+            <!--<div data-bind="visible: showDecisionInfo()" class="decision-top" >-->
+                <!--<div class="decision-item">-->
+                    <!--<button id="inputPrevId" style="width: 32px;" class="flow-button button-decisionPrev"></button>-->
+                <!--</div>-->
+                <!--<div class="decision-item" >-->
+                    <!--<img role="presentation" data-bind="attr: {src: decisionInputPicture}" />-->
+                <!--</div>-->
+                <!--<div class="decision-item">-->
+                    <!--<button id="inputNextId" style="width: 32px;" class="flow-button button-decisionNext"></button>-->
+                <!--</div>-->
+            <!--</div>-->
             <h4>Select decision ends locations:</h4>
             <div data-bind="visible: showDecisionInfo()" class="decision-top" >
                 <div class="decision-item">
