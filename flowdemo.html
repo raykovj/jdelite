@@ -34,7 +34,7 @@
             <span style="margin-left: 40px;"></span>
         </div>
         <div id="toolbar2Id" class="diagram-toolbar">
-            <button id="refreshId" class="toolbar-button button-refresh" title="Reset to Defaults"></button>
+            <button id="refreshId" class="toolbar-button button-refresh" title="Reset to Defaults & Refresh Diagram"></button>
             <button id="clearId" class="toolbar-button button-no-left button-clear" title="Clear Diagram"></button>
             <button id="leftId" class="toolbar-button button-no-left button-left" title="Previous Diagram"></button>
             <button id="rightId" class="toolbar-button button-no-left button-right" title="Next Diagram"></button>
@@ -229,7 +229,8 @@
             <!--</div>-->
             <div style="font-weight: bold; margin: 4px 0 4px; ">Select file:</div>
             <div>
-                <select id="selectFile" style="width: 100%; height: 28px; margin: 4px 0 10px; "
+                <!--<select id="selectFileId" style="width: 100%; height: 28px; margin: 4px 0 10px; "-->
+                <select id="selectFileId"
                         class="selectionFont" data-bind="options: filesList, value: selectedFile ">
                 </select>
             </div>
