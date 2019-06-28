@@ -14,7 +14,7 @@
  
 <body>
 
-    <div style="padding-bottom: 8px;"></div>
+    <div style="padding-bottom: 4px;"></div>
 
     <div class="top-toolbar">
         <div id="toolbarId" class="actions-toolbar">
@@ -42,9 +42,9 @@
         <div>
             <span style="margin-left: 10px;"></span>
         </div>
-        <div id="diagramNameId">
+        <div id="diagramNameId" style=" margin: 0 0 2px 0;">
             <div class="diagram-title group-box">
-                <span class="selectionFont" style="padding: 4px 2px 0 8px; ">Diagram:</span>
+                <span class="selectionFont" style="padding: 4px 2px 0 8px;">Diagram:</span>
             </div>
             <div class="diagram-name">
                 <span class="selectionFont" style="padding: 4px 2px 0 6px; "
@@ -98,8 +98,9 @@
                     </table>
                 </div>
                 <h3 id="accHdrBpelId"  data-bind="text: accHdrBpelTitle"></h3>
-                <div>
-                    <span class="diagram-text galleryFont" style="font-weight: bold; vertical-align: middle">In Progress...</span>
+                <div id="emptyGalleryId">
+                    <span style="margin-left: 40px;"></span>
+                    <span class="diagram-text galleryFont" style="font-weight: bold;">In Progress...</span>
                 </div>
             </div>
         </div>

@@ -39,13 +39,14 @@ body {
 	align-items: center;
 	margin: 2px 0 0 8px;
 }
+#emptyGalleryId {
+	display: flex;
+	align-items: center;
+}
 .diagram-name {
 	flex: 1 0 auto;
 	 height: 26px;
 }
-	
-	
-	
 .top-container {
 	display: -webkit-box;
 	
@@ -635,4 +636,10 @@ table#accHdrDemoTableId td {
 	border-radius: 50%;
 	background: #82AAFA;
 	cursor: pointer;
+}
+.draggable-cursor * {
+	cursor: move !important; 
+	cursor: -webkit-grabbing !important; 
+	cursor:    -moz-grabbing !important; 
+	cursor:         grabbing !important; 
 }
