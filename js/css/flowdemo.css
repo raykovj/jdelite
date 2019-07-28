@@ -39,7 +39,7 @@ body {
 	align-items: center;
 	margin: 2px 0 0 8px;
 }
-#emptyGalleryId {
+.emptyGalleryContent {
 	display: flex;
 	align-items: center;
 }
@@ -467,15 +467,13 @@ body {
 	width: 204px;
 	height: 16px;
 	display: none;
-	background-color: #fff;
-	border: 1px solid #AAA;
 	
-	
-	
+	background-color: #F4FCFF;
+	border: 2px solid #82AAFA;
 }
 .contentTextSave:hover {
 	cursor: pointer;
-	background-color: #ECFCFF;
+	background-color: #E0FCFF;
 }
 .invalidInput {
 	text-decoration: underline;
