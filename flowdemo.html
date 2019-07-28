@@ -98,9 +98,9 @@
                     </table>
                 </div>
                 <h3 id="accHdrBpelId"  data-bind="text: accHdrBpelTitle"></h3>
-                <div id="emptyGalleryId">
-                    <span style="margin-left: 40px;"></span>
-                    <span class="diagram-text galleryFont" style="font-weight: bold;">In Progress...</span>
+                <div class="emptyGalleryContent">
+                    <span style="margin-left: 30px;"></span>
+                    <span class="diagram-text galleryFont" style="font-weight: bold;">Work In Progress...</span>
                 </div>
             </div>
         </div>
@@ -114,13 +114,13 @@
     </div>
 
     <div>
-        <textarea id="editContentId" autofocus rows="5" cols="60" wrap="hard" style="display: none; "
+        <textarea id="editContentId" placeholder="[Enter content...]" autofocus rows="5" cols="60" wrap="hard" style="display: none; "
                spellcheck="false"
                   onkeyup="validateNewContent(event)"
                   data-bind="textInput: contentValue"></textarea>
     </div>
 
-    <div  id="contentSaveId" class="contentTextSave galleryFont" onmousedown="validateContent(event)">
+    <div id="contentSaveId" class="contentTextSave galleryFont" onmousedown="validateContent(event)">
         <span style="padding-left: 2px;">Click to save</span>
         <span style="float: right; padding-right: 2px;">[Ctrl + Enter]</span>
     </div>
