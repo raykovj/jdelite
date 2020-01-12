@@ -3,11 +3,13 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="js/css/flowdemo.css" type="text/css">
-    <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.theme.css" type="text/css">
-    <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.css" type="text/css">
+    <link rel="stylesheet" href="js/css/flowdemo.css" type="text/css" />
+    <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.theme.css" type="text/css" />
+    <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.css" type="text/css" />
 
     <script data-main="js/flowdemo" src="libs/require/require.js"></script>
+
+    <link rel="stylesheet" href="libs/spectrum/spectrum.css"  type="text/css"/>
 
     <title>JDElite Diagram Builder</title>
 </head>
@@ -34,7 +36,7 @@
             <span style="margin-left: 40px;"></span>
         </div>
         <div id="toolbar2Id" class="diagram-toolbar">
-            <button id="refreshId" class="toolbar-button button-refresh" title="Reset to Defaults & Refresh Diagram"></button>
+            <button id="refreshId" class="toolbar-button button-refresh" title="Refresh Diagram & Reset Scaling"></button>
             <button id="clearId" class="toolbar-button button-no-left button-clear" title="Clear Diagram"></button>
             <button id="leftId" class="toolbar-button button-no-left button-left" title="Previous Diagram"></button>
             <button id="rightId" class="toolbar-button button-no-left button-right" title="Next Diagram"></button>
@@ -103,89 +105,157 @@
                     <span class="diagram-text galleryFont" style="font-weight: bold;">Work In Progress...</span>
                 </div>
             </div>
+            
         </div>
     </div>
 
-    <div>
-        <input id="editNameId" autofocus type="text" class="nameText"
-               autocomplete="off" spellcheck="false"
-               onkeyup="validateEditName(event)"
-               data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
-    </div>
-
-    <div>
-        <textarea id="editContentId" placeholder="[Enter content...]" autofocus rows="5" cols="60" wrap="hard" style="display: none; "
-               spellcheck="false"
-                  onkeyup="validateNewContent(event)"
-                  data-bind="textInput: contentValue"></textarea>
-    </div>
-
-    <div id="contentSaveId" class="contentTextSave galleryFont" onmousedown="validateContent(event)">
-        <span style="padding-left: 2px;">Click to save</span>
-        <span style="float: right; padding-right: 2px;">[Ctrl + Enter]</span>
-    </div>
-
     <div id="settingsDialogId" class="settingsFont" style="display: none; ">
-        <form>
-            <div class="settings-entry">Data Flow Direction:</div>
-            <div class="settings-controls">
-                <input type="radio" id="btnHorizontal" name="radio1" style="margin: 4px 4px 0 4px;">
-                <label for="btnHorizontal" style="vertical-align:baseline; margin: 0 20px 0 0;" >Horizontal</label>
-                <input type="radio" id="btnVertical" name="radio1" style="margin: 4px 4px 0 4px;">
-                <label for="btnVertical" style="vertical-align:baseline;  margin: 0 20px 0 0;">Vertical</label>
-            </div>
+        <div id="settingsTabId">
+            <ul>
+                <li><a href="#settingsTabId-1">General</a></li>
+                <li><a href="#settingsTabId-2">Node Size</a></li>
+                <li><a href="#settingsTabId-3">Node Color</a></li>
+            </ul>
 
-            <div class="settings-entry">Main canvas initial size:</div>
-            <div class="settings-controls">
-                <input type="text" id="spinnerLevels" name="spinner1" class="spinnerStyle">
-                <label for="spinnerLevels" style="vertical-align:baseline; margin-right: 20px;" >Layers *</label>
-                <input type="text" id="spinnerLanes" name="spinner2" class="spinnerStyle">
-                <label for="spinnerLanes" style="vertical-align:baseline;">Lanes *</label>
-            </div>
+            <div id="settingsTabId-1">
+                <div class="settings-entry">Data flow direction:</div>
+                <div class="settings-controls">
+                    <input type="radio" id="btnHorizontal" name="flowDir" style="margin: 4px 4px 0 4px;">
+                    <label for="btnHorizontal" style="vertical-align:baseline; margin: 0 20px 0 0;" >Horizontal</label>
+                    <input type="radio" id="btnVertical" name="flowDir" style="margin: 4px 4px 0 4px;">
+                    <label for="btnVertical" style="vertical-align:baseline;  margin: 0 20px 0 0;">Vertical</label>
+                </div>
 
-            <div class="settings-entry">Diagram Features:</div>
-            <div class="settings-controls">
-                <div>
-                    <input type="checkbox" id="chkStartEnd" name="df" style="margin: 4px 4px 0 4px;">
-                    <label for="chkStartEnd" style="vertical-align:baseline; margin-right: 12px;" >Start/End Layers **</label>
-                    <input type="checkbox" id="chkLeftRight" name="df" style="margin: 4px 4px 0 4px;">
-                    <label for="chkLeftRight" style="vertical-align:baseline; margin-right: 12px;" >Side Swim Lanes **</label>
-                    <!--<input type="checkbox" id="chkGrid" name="df" style="margin: 4px 4px 0 4px;">-->
-                    <!--<label for="chkGrid" style="vertical-align:baseline;" >Show Grid</label>-->
+                <div class="settings-entry">Main canvas initial layout:</div>
+                <div class="settings-controls">
+                    <input type="text" id="spinnerLevelsId" class="spinnerStyle">
+                    <label for="spinnerLevelsId" class="spinner-label" style="margin-right: 20px;" >Layers *</label>
+                    <input type="text" id="spinnerLanesId" class="spinnerStyle">
+                    <label for="spinnerLanesId" class="spinner-label">Lanes *</label>
+                </div>
+
+                <div class="settings-entry">Diagram features:</div>
+                <div class="settings-controls">
+                    <div>
+                        <input type="checkbox" id="chkStartEnd" name="df" style="margin: 4px 4px 0 0;">
+                        <label for="chkStartEnd" style="vertical-align:baseline; margin-right: 8px;" >Start/End layers **</label>
+                        <input type="checkbox" id="chkLeftRight" name="df" style="margin: 4px 4px 0 0;">
+                        <label for="chkLeftRight" style="vertical-align:baseline; margin-right: 8px;" >Side swim lanes **</label>
+                        <!--<input type="checkbox" id="chkGrid" name="df" style="margin: 4px 4px 0 0;">-->
+                        <!--<label for="chkGrid" style="vertical-align:baseline;" >Show Grid</label>-->
+                    </div>
+                </div>
+
+                <div class="settings-entry">Editing options:</div>
+                <div class="settings-controls">
+                    <div>
+                        <input type="checkbox" id="chkShowRefs" name="edRefs" style="margin: 4px 4px 0 0;">
+                        <label for="chkShowRefs" style="vertical-align:baseline; margin-right: 20px;" >Enable association links</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="chkAutoGen" name="edopt" style="margin: 4px 4px 0 0;">
+                        <label for="chkAutoGen" style="vertical-align:baseline; margin-right: 20px;" >Auto generate names for new nodes</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="chkHideNamesId" name="hideNames" style="margin: 4px 4px 0 0;">
+                        <label for="chkHideNamesId" style="vertical-align:baseline; margin-right: 20px;" >Hide node names</label>
+                    </div>
+                </div>
+
+                <div class="settings-footer-1">
+                    <span class="vertical" style="padding-left: 4px;">* &nbsp;Select the initial main canvas layout when creating a diagram</span>
+                    <span class="vertical" style="padding-left: 4px;">** Changes resulting from checking/unchecking these boxes may not be undone</span>
                 </div>
             </div>
 
-            <div class="settings-entry">Editing Options:</div>
-            <div class="settings-controls">
-                <div>
-                    <input type="checkbox" id="chkShowRefs" name="edRefs" style="margin: 4px 4px 0 4px;">
-                    <label for="chkShowRefs" style="vertical-align:baseline; margin-right: 20px;" >Enable side reference links</label>
+            <div id="settingsTabId-2">
+                <div class="settings-entry">Flow nodes:</div>
+                <div class="settings-controls">
+                    <input type="text" id="spinnerNodeWidthId" class="spinnerStyle">
+                    <label for="spinnerNodeWidthId" class="spinner-label" style="margin-right: 10px;" >Width (px)</label>
+                    <input type="text" id="spinnerNodeHeightId" class="spinnerStyle">
+                    <label for="spinnerNodeHeightId" class="spinner-label">Height (px)</label>
+                    <button id="dmsFlowDefId" class="prefs-button prefs-dms-button-def ">Use Defaults</button>
                 </div>
-                <div>
-                    <input type="checkbox" id="chkAutoGen" name="edopt" style="margin: 4px 4px 0 4px;">
-                    <label for="chkAutoGen" style="vertical-align:baseline; margin-right: 20px;" >Auto generate names for new nodes</label>
+
+                <div class="settings-entry">Start/end nodes:</div>
+                <div class="settings-controls">
+                    <input type="text" id="spinnerSEWidthId" class="spinnerStyle">
+                    <label for="spinnerSEWidthId" class="spinner-label" style="margin-right: 10px;" >Width (px)</label>
+                    <input type="text" id="spinnerSEHeightId" class="spinnerStyle">
+                    <label for="spinnerSEHeightId" class="spinner-label">Height (px)</label>
+                    <button id="dmsSEDefId" class="prefs-button prefs-dms-button-def">Use Defaults</button>
                 </div>
+
+                <div class="settings-entry">Decision nodes:</div>
+                <div class="settings-controls">
+                    <input type="text" id="spinnerDecisionWidthId" class="spinnerStyle">
+                    <label for="spinnerDecisionWidthId" class="spinner-label" style="margin-right: 10px;" >Width (px)</label>
+                    <input type="text" id="spinnerDecisionHeightId" class="spinnerStyle">
+                    <label for="spinnerDecisionHeightId" class="spinner-label">Height (px)</label>
+                    <button id="dmsDecisionDefId" class="prefs-button prefs-dms-button-def">Use Defaults</button>
+                </div>
+
+                <div class="diagram-toolbar">
+                    <button id="allDmsToDefId" class="prefs-button prefs-all_button">Use All Defaults</button>
+                </div>
+                <div class="settings-footer-2"></div>
             </div>
 
-            <!--<div class="settings-entry">Connection style:</div>-->
-            <!--<div class="settings-controls">-->
-                <!--<div >-->
-                    <!--<input type="radio" id="styleDoubleId" name="radio3" style="margin: 4px 4px 0 4px;">-->
-                    <!--<button id="styleDoubleBtn" class="lineStyle-button lineStyleDouble" style="vertical-align: top;" ></button>-->
-                <!--</div>-->
-                <!--<div style="margin-bottom: 4px;"></div>-->
-                <!--<div >-->
-                    <!--<input type="radio" id="styleSingleId" name="radio3" style="margin: 4px 4px 0 4px;">-->
-                    <!--<button id="styleSingleBtn" class="lineStyle-button lineStyleSingle" style="vertical-align: top;" ></button>-->
-                <!--</div>-->
-            <!--</div>-->
+            <div id="settingsTabId-3">
+                <div class="settings-entry" style="margin: 0 0 4px 0;">Process background / foreground colors:</div>
+                <div class="settings-controls">
+                    <input id='procNodePickId' type="text" class="node-color-picker"/>
+                    <input type="radio" id="btnProcDarkId" name="procFgn" style="margin: 4px 0 0 58px;">
+                    <label for="btnProcDarkId" style="vertical-align:baseline; margin: 0 4px 0 0;" >Dark</label>
+                    <input type="radio" id="btnProcLightId" name="procFgn" style="margin: 4px 0 0 2px;">
+                    <label for="btnProcLightId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Light</label>
+                    <button id="procNodeDefId" class="prefs-button prefs-button-def">Use Defaults</button>
+                </div>
+                <div class="settings-entry" style="margin: 4px 0 4px 0;">Decision background / foreground colors:</div>
+                <div class="settings-controls">
+                    <input id='decisionNodePickId' type="text" class="node-color-picker"/>
+                    <input type="radio" id="btnDecDarkId" name="decFgn" style="margin: 4px 0 0 58px;">
+                    <label for="btnDecDarkId" style="vertical-align:baseline; margin: 0 4px 0 0;" >Dark</label>
+                    <input type="radio" id="btnDecLightId" name="decFgn" style="margin: 4px 0 0 2px;">
+                    <label for="btnDecLightId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Light</label>
+                    <button id="decisionNodeDefId" class="prefs-button prefs-button-def">Use Defaults</button>
+                </div>
+                <div class="settings-entry" style="margin: 4px 0 4px 0;">Input/Output background / foreground colors:</div>
+                <div class="settings-controls">
+                    <input id='ioNodePickId' type="text" class="node-color-picker"/>
+                    <input type="radio" id="btnIODarkId" name="ioFgn" style="margin: 4px 0 0 58px;">
+                    <label for="btnIODarkId" style="vertical-align:baseline; margin: 0 4px 0 0;" >Dark</label>
+                    <input type="radio" id="btnIOLightId" name="ioFgn" style="margin: 4px 0 0 2px;">
+                    <label for="btnIOLightId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Light</label>
+                    <button id="ioNodeDefId" class="prefs-button prefs-button-def">Use Defaults</button>
+                </div>
+                <div class="settings-entry" style="margin: 4px 0 4px 0;">Start/End background / foreground colors:</div>
+                <div class="settings-controls">
+                    <input id='seNodePickId' type="text" class="node-color-picker"/>
+                    <input type="radio" id="btnSEDarkId" name="seFgn" style="margin: 4px 0 0 58px;">
+                    <label for="btnSEDarkId" style="vertical-align:baseline; margin: 0 4px 0 0;" >Dark</label>
+                    <input type="radio" id="btnSELightId" name="seFgn" style="margin: 4px 0 0 2px;">
+                    <label for="btnSELightId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Light</label>
+                    <button id="seNodeDefId" class="prefs-button prefs-button-def">Use Defaults</button>
+                </div>
+                <div class="settings-entry" style="margin: 4px 0 4px 0;">Side background / foreground colors:</div>
+                <div class="settings-controls">
+                    <input id='sideNodePickId' type="text" class="node-color-picker"/>
+                    <input type="radio" id="btnSideDarkId" name="sideFgn" style="margin: 4px 0 0 58px;">
+                    <label for="btnSideDarkId" style="vertical-align:baseline; margin: 0 4px 0 0;" >Dark</label>
+                    <input type="radio" id="btnSideLightId" name="sideFgn" style="margin: 4px 0 0 2px;">
+                    <label for="btnSideLightId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Light</label>
+                    <button id="sideNodeDefId" class="prefs-button prefs-button-def">Use Defaults</button>
+                </div>
+                <div class="diagram-toolbar">
+                    <button id="allColorsToDefId" class="prefs-button prefs-all_button">Use All Defaults</button>
+                </div>
 
-            <div class="footer">
-                <span class="vertical" style="padding-left: 4px;">*  Select the initial main canvas size for new diagrams</span>
-                <span class="vertical" style="padding-left: 4px;">** Changes resulting from unchecking these boxes may not be undone</span>
+                <div class="settings-footer-3"></div>
             </div>
 
-        </form>
+        </div>
     </div>
 
     <div id="aboutDialogId" class="about-dlg" style="display: none; ">
@@ -275,6 +345,50 @@
             </div>
         </form>
     </div>
+
+    <div id="nodePropsDialogId" class="settingsFont" style="display: none; ">
+        <div class="settings-entry" style="margin: 4px 0 2px 0;">Node name:</div>
+        <div class="settings-controls">
+            <input id="editNodeNameId" autofocus type="text" class="nameText"
+                   autocomplete="off" spellcheck="false"
+                   onkeyup="validateEditName(event)"
+                   data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
+        </div>
+
+        <div class="settings-entry" style="margin: 4px 0 2px 0;">Background / Foreground colors:</div>
+        <div class="settings-controls">
+            <input id='nodeBckGndPickId' type="text"/>
+            <input type="radio" id="btnPropsDarkId" name="nodeFgn" style="margin: 4px 0 0 36px;">
+            <label for="btnPropsDarkId" style="vertical-align:baseline; margin: 0 4px 0 0;" >Dark</label>
+            <input type="radio" id="btnPropsLightId" name="nodeFgn" style="margin: 4px 0 0 2px;">
+            <label for="btnPropsLightId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Light</label>
+            <button id="nodeColorDefId" class="prefs-button prefs-colorNode-button-def">Use Defaults</button>
+        </div>
+
+        <div class="settings-entry" style="margin: 4px 0 2px 0;">Node size:</div>
+        <div class="settings-controls">
+            <input type="text" id="spNodeWidthId" class="spinnerStyleNode" >
+            <label for="spNodeWidthId" class="spinner-label-node">Width (px)</label>
+            <input type="text" id="spNodeHeightId" class="spinnerStyleNode" >
+            <label for="spNodeHeightId" class="spinner-label-node">Height (px)</label>
+            <button id="nodeSizeDefId" class="prefs-button prefs-dmsNode-button-def">Use Defaults</button>
+        </div>
+
+        <div class="settings-entry" style="margin: 4px 0 2px 0;">Text content:</div>
+        <div class="settings-controls">
+            <textarea id="editNodeContentId" placeholder="[Enter content...]" autofocus rows="3" cols="47" wrap="hard"
+              spellcheck="false"></textarea>
+        </div>
+
+        <div class="settings-entry" style="margin: 4px 0 2px 0;">Image URL:</div>
+        <div class="settings-controls">
+            <input id="nodePictureURLId" autofocus type="text" class="urlText"
+                   autocomplete="off" spellcheck="false"
+                   onkeyup="validatePictureURL(event)"
+                   data-bind="textInput: pictureURLValue, css: {invalidInput: isPictureURLInvalid() }"/>
+            <div></div>
+            <button id="pictureSelectURLId" class="prefs-button prefs-dmsNode-button-def">Select URL</button>
+        </div>
 
     <!-- NEW NODE DIALOG -->
     <div id="newNodeDialogId" class="settingsFont" style="display: none; ">

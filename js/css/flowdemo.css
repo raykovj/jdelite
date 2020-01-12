@@ -2,6 +2,9 @@ html,
 body {
   height: 100%;
 }
+body.waiting * {
+	cursor: progress !important;
+}
 .top-toolbar {
 	display: flex;
 	flex-flow: row wrap;
@@ -176,13 +179,70 @@ body {
 	font-weight: bold;
 }
 .settings-controls {
-	background-color: rgb(225,245,255);
+	background-color: #EAF5FF;
 	margin: 4px 0 4px 0;
-	padding:  4px 0 4px 0;
+	padding:  4px 0 4px 4px;
 }
-.footer {
-	position: absolute;
-	bottom: 0;
+.settings-footer-1 {
+	margin: 62px 0 0 0;
+}
+.settings-footer-2 {
+	margin: 118px 0 0 0;
+}
+.settings-footer-3 {
+	margin: 0 0 0 0;
+}
+.nameText {
+	width: 300px;
+	height: 18px;
+}
+.urlText {
+	width: 300px;
+	height: 18px;
+	margin: 0 0 4px 0
+}
+.prefs-button {
+	border: 1px solid #bbb;
+	border-radius: 3px;
+	background-color: #fafafa;
+	text-align: center;
+	font-size: 12px;
+	cursor: pointer;
+}
+.prefs-button-def {
+	margin-left: 52px;
+	width: 86px;
+	height: 28px
+}
+.prefs-button:hover {
+	background-color: #eee;
+}
+.prefs-button:active {
+	color: white;
+	background-color: #408DEE;
+	border: 1px solid #408DEE;
+}
+.prefs-all_button {
+	margin: 8px 0 0 0;
+	width: 110px;
+	height: 28px
+}
+.prefs-dms-button-def {
+	margin: 6px 0 0 18px;
+	width: 86px;
+	height: 28px
+}
+.prefs-dmsNode-button-def {
+	margin-left: 218px;
+	width: 86px;
+	height: 28px;
+	
+}
+.prefs-colorNode-button-def {
+	width: 85px;
+	height: 28px;
+	margin-left: 28px;
+	display: inline-block;
 }
 .vertical {
 	display: block;
@@ -449,19 +509,25 @@ body {
 	
 }
 .spinnerStyle {
-	width: 18px;
+	width: 24px;
 	margin: 4px 4px 4px 4px;
 }
-.nameText {
-	width: 120px;
-	height: 18px;
-	display: none;
+.spinnerStyleNode {
+	width: 24px;
+	margin: 4px 2px 4px 4px;
+}
+.spinner-label {
+	vertical-align: baseline;
 	
+}
+.spinner-label-node {
+	vertical-align: baseline;
+	margin:4px 4px 0 2px;
 }
 .contentText {
 	width: 200px;
 	height: 80px;
-	display: none;
+	
 }
 .contentTextSave {
 	width: 204px;
@@ -505,7 +571,7 @@ body {
 	vertical-align: 90%;
 }
 .ui-dialog-title{
-	font-size: 70% !important;
+	font-size: 85% !important;
 	
 }
 .ui-dialog-titlebar {
@@ -604,6 +670,16 @@ table#accHdrDemoTableId td {
 	width:90%;
 	margin: 0 60px;
 }
+#comparisonWrapperId {
+	border: 2px solid #82AAFA;
+	border-radius: 4px;
+	width:90%;
+	margin: 0 60px 10px;
+}
+table#comparisonId th {
+	color: white;
+	background-color: #82AAFA;
+}
 .scaleSlider {
 	-webkit-appearance: none;
 	appearance: none;
@@ -634,10 +710,4 @@ table#accHdrDemoTableId td {
 	border-radius: 50%;
 	background: #82AAFA;
 	cursor: pointer;
-}
-.draggable-cursor * {
-	cursor: move !important; 
-	cursor: -webkit-grabbing !important; 
-	cursor:    -moz-grabbing !important; 
-	cursor:         grabbing !important; 
 }
