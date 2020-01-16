@@ -593,11 +593,11 @@ body.waiting * {
 .ctx-menu {
 	display: none;
 	z-index: 1000;
-	width: 150px;
+	width: 200px;
 	
 	border: 1px solid #CCC;
 	
-	font-size: 12px  !important;
+	
 	
 	
 	
@@ -611,8 +611,8 @@ body.waiting * {
 	margin: 2px;
 	padding: 4px;
 	cursor: pointer;
-	
-	
+	font-family: sans-serif  !important;
+	font-size: 13px  !important;
 }
 	
 	
@@ -626,8 +626,10 @@ body.waiting * {
 }
 .ui-menu kbd {
 	float: right;
-	height: 8px;
-	
+	height: 16px;
+	font-family: sans-serif  !important;
+	font-size: 13px  !important;
+	vertical-align: top;
 	user-select: none;
 }
 	
