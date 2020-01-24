@@ -58,31 +58,24 @@ body.waiting * {
 }
 .main-container {
 	-webkit-box-flex: 1;
-	
 	display: flex;
-	
-	
-	flex-flow: row nowrap;
-	justify-content: flex-start;
 	align-items: center;
-	
-	
 	background: #f5f5f5;
-	
 	margin: 10px 0 10px 8px;
-	overflow-x:auto;
-	overflow-y:auto;
+	
+	overflow-x: auto;
+	overflow-y: auto;
 	height: 100%;
 }
 .flex-canvas {
-	flex: 0 0 auto;
+	
 	align-self: center;
 	background: #FFFFFF;
 	margin:auto;
 	border: none;
 	
 	outline: none;
-	overflow:scroll;
+	
 }
 .overlayMessage {
 	position: fixed;
