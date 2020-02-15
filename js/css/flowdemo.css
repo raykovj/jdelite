@@ -99,13 +99,13 @@ body.waiting * {
 }
 .group-box {
 	background-color: #E1F5FF;
-	border: 2px solid #82AAFA;
-	border-radius: 4px;
+	border: 2px solid #5F69C5;
+	
 }
 .current-settings {
 	margin: 0 10px 0 10px;
 	padding: 5px 10px 5px 10px;
-	width: 156px;
+	width: 184px;
 }
 .palette-props {
 	margin: 0 10px 0 10px;
@@ -118,12 +118,12 @@ body.waiting * {
 	padding: 2px 10px 2px 8px;
 	margin: 0;
 	
-	width: 176px;
+	width: 204px;
 	
 }
 .accordion-props {
-	width: 200px;
-	height: 400px;
+	width: 228px;
+	height: 306px;
 	margin: 0 10px 20px 20px;
 	padding: 5px 10px 5px 10px;
 	
@@ -133,7 +133,7 @@ body.waiting * {
 #paletteAccordionId .ui-accordion-content {
 	margin: 0 10px 0 10px;
 	padding: 0;
-	border: 2px solid #82AAFA;
+	border: 2px solid #5F69C5;
 }
 #paletteAccordionId .ui-accordion-header{
 	margin: 0 10px 0 10px;
@@ -141,6 +141,69 @@ body.waiting * {
 	font-size: 10pt;
 	font-weight: bold;
 	text-indent: 0;
+}
+.thumbnailContainer {
+	margin: 0 10px 0 10px;
+	padding: 5px 10px 5px 10px;
+	width: 184px;
+	background-color: #E1F5FF;
+	border: 2px solid #5F69C5;
+}
+.thumbnailShow {
+	position: fixed;
+	width: 200px;
+	height:222px;
+	bottom: 10px;
+	right: 8px;
+	padding: 2px 4px 2px 0;
+	color: white;
+	background-color: #408DEE;
+	
+	z-index: 20;
+}
+.thumbnailView {
+	width: 100%;
+	height: 200px;
+	background-color: #fff;
+	-webkit-box-flex: 1;
+	display: flex;
+	
+	justify-content: center;
+	
+	
+	margin: 20px 0 0 2px;
+}
+.thumbCanvas {
+	align-self: center;
+	flex: 0 0 auto;
+	background: #FFF;
+	
+	outline: none;
+}
+.thumbnailButtons {
+	border: none;
+	
+	outline: none;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	
+	width: 48px;
+	
+	color: #00f;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	font-family: Arial;
+	font-size: 12px;
+	padding: 0 2px 5px 0;
+	
+	float: right;
+	margin: 0 8px 0 0;
+}
+.thumbnailHide {
+	color: white;
+	padding: 2px 0 4px 0;
+	margin: 0;
 }
 .tipPopup {
 	width: 160px;
@@ -188,6 +251,25 @@ body.waiting * {
 .nameText {
 	width: 300px;
 	height: 18px;
+}
+.selectDirGroup {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	font-weight: bold;
+	margin: 4px 0 10px;
+}
+.folderText {
+	width: 100% ;
+	height: 24px;
+	padding-left: 4px;
+	margin-right: 6px;
+	border: 1px solid gray;
+	background-color: #fafafa;
+	font-weight: bold;
+}
+#searchDirId {
+	margin: 0px 0 0 0;
 }
 .urlText {
 	width: 300px;
@@ -308,14 +390,12 @@ body.waiting * {
 	bottom: 0;
 	float: left;
 }
+.dirnav-button {
+	width: 28px;
+}
 .toolbar-button {
-	
-	
 	border: 1px solid #aaa;
 	outline: none;
-	
-	
-	
 	transition-duration: 0.2s;
 	cursor: pointer;
 	height: 28px;
@@ -326,14 +406,9 @@ body.waiting * {
 }
 .toolbar-button:hover {
 	background-color: #ddd;
-	
-	
 }
 .toolbar-button:disabled {
-	
-	
 	background-color: #fff;
-	
 	cursor: default;
 	opacity: 0.5;
 }
@@ -392,25 +467,6 @@ body.waiting * {
 }
 .flow-button:active {
 	background-color: #82AAFA;
-}
-.flow-button-hints {
-	border: none;
-	
-	outline: none;
-	transition-duration: 0.2s;
-	cursor: pointer;
-	
-	width: 48px;
-	color: dodgerblue;
-	background-color: transparent;
-	background-repeat: no-repeat;
-	background-position: center;
-	font-family: Arial;
-	font-size: 12px;
-	padding: 0px 2px 5px 00px;
-	
-	float: right;
-	margin: 0 20px 0 0;
 }
 .hints-text {
 	display: inline-block;
@@ -480,6 +536,15 @@ body.waiting * {
 }
 .button-right {
 	background-image: url(../../images/toolbar/navigate_right24.png);
+}
+.button-leftDir {
+	width: 30px;
+	margin-right: 6px;
+	background-image: url(../../images/toolbar/arrow_left24.png);
+}
+.button-rightDir {
+	width: 30px;
+	background-image: url(../../images/toolbar/arrow_right24.png);
 }
 .flowHorizontal {
 	content: url(../../images/toolbar/arrow_right16.png);
@@ -675,6 +740,31 @@ table#comparisonId th {
 	color: white;
 	background-color: #82AAFA;
 }
+#dirsTableContainer {
+	display:block;
+	overflow:auto;
+	height:184px;
+	width:98%;
+}
+table#dirsTableId {
+	border: 1px solid #408DEE;
+	border-collapse: collapse;
+	
+	text-align: left;
+	
+	width: 100%;
+}
+table#dirsTableId td {
+	
+	text-align: left;
+	border-collapse: collapse;
+	padding: 2px 10px 2px 15px;
+	font-weight: bold;
+}
+.selectedTableRow {
+	color: white;
+	background-color: #408DEE;
+}
 .scaleSlider {
 	-webkit-appearance: none;
 	appearance: none;
@@ -683,6 +773,7 @@ table#comparisonId th {
 	border-radius: 5px;
 	background: #d3d3d3;
 	outline: none;
+	margin-top: 6px;
 	opacity: 0.7;
 	-webkit-transition: .2s; 
 	transition: opacity .2s;

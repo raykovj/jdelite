@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.css" type="text/css" />
 
     <script data-main="js/flowdemo" src="libs/require/require.js"></script>
-
     <link rel="stylesheet" href="libs/spectrum/spectrum.css"  type="text/css"/>
 
     <title>JDElite Diagram Builder</title>
@@ -57,7 +56,7 @@
     </div>
 
     <div id="topContainerId" class="top-container">
-        <div id="containerId" class="main-container"  >
+        <div id="containerId" class="main-container" onscroll="repaintDiagram()">
             <canvas id="canvasId" tabindex="0" draggable="true" class="flex-canvas"
                 data-bind="visible: isCanvasVisible()"></canvas>
         </div>
@@ -105,7 +104,23 @@
                     <span class="diagram-text galleryFont" style="font-weight: bold;">Work In Progress...</span>
                 </div>
             </div>
-            
+
+            <div style="margin-top: 10px;"></div>
+            <div id="thumbnailId" class="thumbnailContainer">
+                <div class="diagram-text galleryFont" style="margin-top: 2px;">
+                    <span style="font-weight: bold;" data-bind="visible: !isShowThumbnail()" >Thumbnail view</span>
+                    <button id="btnHintsShowId" class="thumbnailButtons"
+                            data-bind="visible : !isShowThumbnail()" title="Show Thumbnail">[Show]</button>
+                    <button id="btnHintsHideId" class="thumbnailButtons thumbnailHide"
+                            data-bind="visible : isShowThumbnail()" title="Hide Thumbnail">[Hide]</button>
+                </div>
+                <div id="thumbnailViewId" class="thumbnailView" data-bind="visible: isShowThumbnail()">
+                    <canvas id="canvasThId" tabindex="0" draggable="true" class="thumbCanvas"
+                        data-bind="visible : isShowThumbnail()"></canvas>
+                </div>
+            </div>
+
+
         </div>
     </div>
 
@@ -292,58 +307,85 @@
     </div>
 
     <div id="openFlowDialogId" class="settingsFont" style="display: none; ">
-        <form>
-            <!--<div style="font-weight: bold; margin: 4px 0 8px; ">-->
-                <!--<span >Location:</span>-->
-                <!--<span style="font-weight: bold; padding-left: 4px; "-->
-                      <!--data-bind="text: getWorkDir()"></span>-->
-            <!--</div>-->
-            <div style="font-weight: bold; margin: 4px 0 4px; ">Select file:</div>
-            <div>
-                <!--<select id="selectFileId" style="width: 100%; height: 28px; margin: 4px 0 10px; "-->
-                <select id="selectFileId"
-                        class="selectionFont" data-bind="options: filesList, value: selectedFile ">
-                </select>
-            </div>
-        </form>
+        <div style="font-weight: bold; margin: 4px 0 8px; ">
+            <span >Location:</span>
+        </div>
+        <div class="selectDirGroup">
+            <button id="dirsBtnUpId" class="toolbar-button button-leftDir" title="Go back"></button>
+            <input id="selectedDirId" type="text" class="folderText" readonly spellcheck="false"
+                   data-bind="textInput: selectedPath" />
+            <button id="dirsBtnDownId" class="toolbar-button button-rightDir" title="Choose a location..."></button>
+        </div>
+        <div style="font-weight: bold; margin: 6px 0 0; ">Select file (*.json):</div>
+        <div>
+            <select id="selectFileId"
+                    class="selectionFont" data-bind="options: filesList, value: selectedFile ">
+            </select>
+        </div>
+    </div>
+
+    <div id="selectDirsDialogId" class="settingsFont" style="display: none; ">
+        <div class="selectDirGroup">
+            <button id="selectedNewDirBtnUpId" class="toolbar-button button-leftDir" title="Go back"></button>
+            <input id="selectedNewDirId" class="folderText" type="text" readonly spellcheck="false"
+                   data-bind="textInput: currentPath"/>
+        </div>
+        <div id="dirsTableContainer" >
+            <table id="dirsTableId" class="galleryFont">
+                <tbody data-bind="foreach: directoriesList">
+                <tr>
+                    <td data-bind="attr: {id}" onclick="onDirTableClick(event)" ondblclick="onDirTableDblClick(event)">
+                        <span data-bind="text: label"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div id="newFlowDialogId" class="settingsFont" style="display: none; ">
-        <form>
-            <div style="font-weight: bold; margin: 4px 0 4px; ">Enter file name:</div>
-            <div>
-                <input id="newFileNameId" type="text" autocomplete="off" spellcheck="false"
-                       onkeyup="validateFileName(event)"
-                       style="height: 20px; width: 280px; margin: 4px 0 8px;"
-                       data-bind="textInput: newFileNameValue, css: {invalidInput: isInputInvalid() }"/>
-                <span style="margin: 4px 4px 8px 4px; font-weight: bold;">.json</span>
-            </div>
-            <div>
-                <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
-                        data-bind="visible: isInputInvalid()" disabled></button>
-                <span class="invalid-message"
-                        data-bind="visible: isInputInvalid(), text: validateMessage()"></span>
-            </div>
-        </form>
+        <div style="font-weight: bold; margin: 4px 0 4px; ">Enter file name:</div>
+        <div>
+            <input id="newFileNameId" type="text" autocomplete="off" spellcheck="false"
+                   onkeyup="validateFileName(event)"
+                   style="height: 20px; width: 280px; margin: 4px 0 8px;"
+                   data-bind="textInput: newFileNameValue, css: {invalidInput: isInputInvalid() }"/>
+            <span style="margin: 4px 4px 8px 4px; font-weight: bold;">.json</span>
+        </div>
+        <div>
+            <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
+                    data-bind="visible: isInputInvalid()" disabled></button>
+            <span class="invalid-message"
+                    data-bind="visible: isInputInvalid(), text: validateMessage()"></span>
+        </div>
     </div>
 
     <div id="saveAsDialogId" class="settingsFont" style="display: none; ">
-        <form>
-            <div style="font-weight: bold; margin: 4px 0 4px; ">Enter file name:</div>
-            <div>
-                <input id="saveAsFileNameId" type="text" autocomplete="off" spellcheck="false"
-                       onkeyup="validateSaveAsFileName(event)"
-                       style="height: 20px; width: 280px; margin: 4px 0 8px;"
-                       data-bind="textInput: saveAsFileNameValue, css: {invalidInput: saveAsInputInvalid() }"/>
-                <span style="margin: 4px 4px 8px 4px; font-weight: bold;">.json</span>
-            </div>
-            <div>
-                <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
-                        data-bind="visible: saveAsInputInvalid()" disabled></button>
-                <span class="invalid-message"
-                        data-bind="visible: saveAsInputInvalid(), text: saveAsMessage()"></span>
-            </div>
-        </form>
+        <div style="font-weight: bold; margin: 4px 0 8px; ">
+            <span >Location:</span>
+        </div>
+        <div class="selectDirGroup">
+            <button id="saveAsBtnUpId" class="toolbar-button button-leftDir" title="Go back"></button>
+            <input id="saveAsDirId" type="text" class="folderText" readonly spellcheck="false"
+                   data-bind="textInput: selectedPath" />
+            <button id="saveAsBtnDownId" class="toolbar-button button-rightDir" title="Choose a location..."></button>
+        </div>
+        <!--<div style="font-weight: bold; margin: 6px 0 0; ">Select file (*.json):</div>-->
+
+        <div style="font-weight: bold; margin: 6px 0 0; ">Enter file name:</div>
+        <div>
+            <input id="saveAsFileNameId" type="text" autocomplete="off" spellcheck="false"
+                   onkeyup="validateSaveAsFileName(event)"
+                   style="height: 20px; width: 280px; margin: 4px 0 8px;"
+                   data-bind="textInput: saveAsFileNameValue, css: {invalidInput: saveAsInputInvalid() }"/>
+            <span style="margin: 4px 4px 8px 4px; font-weight: bold;">.json</span>
+        </div>
+        <div>
+            <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
+                    data-bind="visible: saveAsInputInvalid()" disabled></button>
+            <span class="invalid-message"
+                    data-bind="visible: saveAsInputInvalid(), text: saveAsMessage()"></span>
+        </div>
     </div>
 
     <div id="nodePropsDialogId" class="settingsFont" style="display: none; ">
@@ -389,6 +431,7 @@
             <div></div>
             <button id="pictureSelectURLId" class="prefs-button prefs-dmsNode-button-def">Select URL</button>
         </div>
+    </div>
 
     <!-- NEW NODE DIALOG -->
     <div id="newNodeDialogId" class="settingsFont" style="display: none; ">
