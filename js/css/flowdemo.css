@@ -100,12 +100,33 @@ body.waiting * {
 .group-box {
 	background-color: #E1F5FF;
 	border: 2px solid #5F69C5;
-	
 }
 .current-settings {
 	margin: 0 10px 0 10px;
 	padding: 5px 10px 5px 10px;
-	width: 184px;
+	width: 176px;
+}
+.progressBar-settings {
+	border: 2px solid #5F69C5;
+	width: 196px;
+	height: 16px;
+	margin: 0 10px 6px 10px;
+}
+.progressBar-settings-in {
+	width: 194px;
+}
+#progressBarId .ui-progressbar-value {
+	background-color: #E1F5FF;
+}
+.progressBarShow {
+	position: absolute;
+	
+	
+	
+	bottom: 4px;
+	right: 240px;
+	visibility: hidden;
+	z-index: 20;
 }
 .palette-props {
 	margin: 0 10px 0 10px;
@@ -114,18 +135,31 @@ body.waiting * {
 	height: 160px;
 }
 .demo-items {
-	
-	padding: 2px 10px 2px 8px;
-	margin: 0;
-	
-	width: 204px;
-	
+	width: 196px;
+}
+.main-props {
+	display: table;
+	table-layout: fixed;
+	border-collapse: collapse;
+	margin-top: 8px;
+}
+.main-props-row {
+	display: table-row;
+	height: 24px;
+}
+.main-props-cell1 {
+	display: table-cell;
+	width: 60%;
+}
+.main-props-cell2 {
+	display: table-cell;
+	width: 40%;
 }
 .accordion-props {
-	width: 228px;
-	height: 306px;
-	margin: 0 10px 20px 20px;
-	padding: 5px 10px 5px 10px;
+	width: 220px;
+	height: 336px;
+	
+	
 	
 	
 	
@@ -141,28 +175,39 @@ body.waiting * {
 	font-size: 10pt;
 	font-weight: bold;
 	text-indent: 0;
-}
-.thumbnailContainer {
-	margin: 0 10px 0 10px;
-	padding: 5px 10px 5px 10px;
-	width: 184px;
-	background-color: #E1F5FF;
 	border: 2px solid #5F69C5;
 }
+#thumbnailDialogId .ui-dialog-content {
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	width: 198px;
+	height: 220px;
+}
+.ui-dialog-titlebar-close {
+	visibility: hidden;
+}
+.showCloseButton .ui-dialog-titlebar-close {
+	visibility: visible;
+}
+	
+	
+	
+	
+	
 .thumbnailShow {
-	position: fixed;
-	width: 200px;
-	height:222px;
+	position: absolute;
+	
+	
+	
 	bottom: 10px;
 	right: 8px;
-	padding: 2px 4px 2px 0;
-	color: white;
-	background-color: #408DEE;
-	
+	visibility: hidden;
 	z-index: 20;
 }
 .thumbnailView {
 	width: 100%;
+	
 	height: 200px;
 	background-color: #fff;
 	-webkit-box-flex: 1;
@@ -171,13 +216,13 @@ body.waiting * {
 	justify-content: center;
 	
 	
-	margin: 20px 0 0 2px;
+	
 }
 .thumbCanvas {
 	align-self: center;
 	flex: 0 0 auto;
 	background: #FFF;
-	
+	border: 1px solid green;
 	outline: none;
 }
 .thumbnailButtons {
@@ -187,7 +232,7 @@ body.waiting * {
 	transition-duration: 0.2s;
 	cursor: pointer;
 	
-	width: 48px;
+	width: 34px;
 	
 	color: #00f;
 	background-color: transparent;
@@ -198,10 +243,11 @@ body.waiting * {
 	padding: 0 2px 5px 0;
 	
 	float: right;
-	margin: 0 8px 0 0;
+	
 }
 .thumbnailHide {
 	color: white;
+	background-color: #408DEE;
 	padding: 2px 0 4px 0;
 	margin: 0;
 }
@@ -231,16 +277,19 @@ body.waiting * {
 	font-size: 12px;
 	font-weight: bold;
 }
+label {
+	white-space: pre-wrap;
+}
 .settings-entry {
 	font-weight: bold;
 }
 .settings-controls {
 	background-color: #EAF5FF;
-	margin: 4px 0 4px 0;
+	margin: 4px 0 2px 0;
 	padding:  4px 0 4px 4px;
 }
 .settings-footer-1 {
-	margin: 62px 0 0 0;
+	margin: 12px 0 0 0;
 }
 .settings-footer-2 {
 	margin: 118px 0 0 0;
@@ -251,6 +300,18 @@ body.waiting * {
 .nameText {
 	width: 300px;
 	height: 18px;
+	outline: none;
+}
+#editNodeNameId {
+	width: 234px;
+	margin-right: 8px;
+}
+#editNodeContentId {
+	outline: none;
+	width: 298px;
+}
+#newFileNameId {
+	outline: none;
 }
 .selectDirGroup {
 	display: flex;
@@ -259,23 +320,59 @@ body.waiting * {
 	font-weight: bold;
 	margin: 4px 0 10px;
 }
+.selectDirView {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	
+	font-weight: bold;
+	margin: 8px 0 12px;
+}
+.selectGroup {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	font-weight: bold;
+}
+.containerGroup {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	position: absolute;
+}
 .folderText {
 	width: 100% ;
 	height: 24px;
 	padding-left: 4px;
-	margin-right: 6px;
+	margin-right: 4px;
 	border: 1px solid gray;
 	background-color: #fafafa;
 	font-weight: bold;
+	outline: none;
 }
 #searchDirId {
 	margin: 0px 0 0 0;
 }
 .urlText {
-	width: 300px;
+	width: 296px;
 	height: 18px;
-	margin: 0 0 4px 0
+	margin: 0 4px 4px 0
 }
+.newFolderText {
+	width: 97%;
+	margin-bottom: 8px;
+}
+.saveAsText {
+	width: 236px;
+	margin: 8px 0 4px;
+	height: 24px;
+	padding-left: 4px;
+	
+	border: 1px solid gray;
+	
+	font-weight: bold;
+}
+	
 .prefs-button {
 	border: 1px solid #bbb;
 	border-radius: 3px;
@@ -308,15 +405,36 @@ body.waiting * {
 	height: 28px
 }
 .prefs-dmsNode-button-def {
-	margin-left: 218px;
-	width: 86px;
-	height: 28px;
 	
+	width: 85px;
+	height: 26px;
+	margin-left: 22px;
+	display: inline-block;
+}
+.prefs-textNode-button-apply {
+	
+	width: 52px;
+	height: 26px;
+	margin-left: 10px;
+	display: inline-block;
+}
+.prefs-textNode-button-clear {
+	
+	width: 52px;
+	height: 26px;
+	margin-left: 2px;
+	display: inline-block;
 }
 .prefs-colorNode-button-def {
 	width: 85px;
-	height: 28px;
-	margin-left: 28px;
+	height: 26px;
+	margin-left: 26px;
+	display: inline-block;
+}
+.prefs-imgUrl-button-def {
+	width: 85px;
+	height: 26px;
+	margin-left: 219px;
 	display: inline-block;
 }
 .vertical {
@@ -390,16 +508,13 @@ body.waiting * {
 	bottom: 0;
 	float: left;
 }
-.dirnav-button {
-	width: 28px;
-}
 .toolbar-button {
 	border: 1px solid #aaa;
 	outline: none;
 	transition-duration: 0.2s;
 	cursor: pointer;
 	height: 28px;
-	width: 36px;
+	width: 30px;
 	background-color: #efefef;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -417,6 +532,11 @@ body.waiting * {
 }
 .toolbar-menu {
 	background-color: #bbb;
+}
+.container-button {
+	width: 22px;
+	height: 22px;
+	border: 1px solid #00f;
 }
 .button-no-left  {
 	border-left: 0;
@@ -452,7 +572,6 @@ body.waiting * {
 }
 .flow-button {
 	border: none;
-	
 	outline: none;
 	transition-duration: 0.2s;
 	cursor: pointer;
@@ -494,13 +613,19 @@ body.waiting * {
 	background-image: url(../../images/toolbar/refresh24.png);
 }
 .button-new {
-	background-image: url(../../images/toolbar/new24.png);
+	background-image: url(../../images/toolbar/addFile24.png);
 }
 .button-open {
 	background-image: url(../../images/toolbar/open24.png);
 }
 .button-delete {
 	background-image: url(../../images/toolbar/delete18x24.png);
+}
+.button-copy {
+	background-image: url(../../images/toolbar/copyNew24.png);
+}
+.button-paste {
+	background-image: url(../../images/toolbar/pasteNew24.png);
 }
 .button-undo {
 	background-image: url(../../images/toolbar/undo24.png);
@@ -525,6 +650,9 @@ body.waiting * {
 .button-zoom {
 	background-image: url(../../images/toolbar/zoom24.png);
 }
+.button-thumbnail {
+	background-image: url(../../images/toolbar/thumbnail24.png);
+}
 .button-h {
 	background-image: url(../../images/toolbar/arrow_right24.png);
 }
@@ -538,19 +666,43 @@ body.waiting * {
 	background-image: url(../../images/toolbar/navigate_right24.png);
 }
 .button-leftDir {
-	width: 30px;
-	margin-right: 6px;
 	background-image: url(../../images/toolbar/arrow_left24.png);
 }
 .button-rightDir {
-	width: 30px;
 	background-image: url(../../images/toolbar/arrow_right24.png);
+}
+.button-newDir {
+	background-image: url(../../images/toolbar/addFolder24.png);
+}
+.button-newSaveDir {
+	background-image: url(../../images/toolbar/addFolder24.png);
+}
+.button-deleteFS {
+	background-image: url(../../images/toolbar/delete18x24.png);
+}
+.button-expand11 {
+	background-image: url(../../images/dataflow/expand11.png);
+}
+.button-collapse11 {
+	background-image: url(../../images/dataflow/collapse11.png);
 }
 .flowHorizontal {
 	content: url(../../images/toolbar/arrow_right16.png);
 }
 .flowVertical {
 	content: url(../../images/toolbar/arrow_down16.png);
+}
+.block-extendH {
+	background-image: url(../../images/toolbar/extendH20.png);
+}
+.block-extendV {
+	background-image: url(../../images/toolbar/extendV20.png);
+}
+.block-shrinkH {
+	background-image: url(../../images/toolbar/shrinkH20.png);
+}
+.block-shrinkV {
+	background-image: url(../../images/toolbar/shrinkV20.png);
 }
 	
 	
@@ -580,7 +732,7 @@ body.waiting * {
 }
 .spinner-label-node {
 	vertical-align: baseline;
-	margin:4px 4px 0 2px;
+	margin:4px 2px 0 2px;
 }
 .contentText {
 	width: 200px;
@@ -636,6 +788,7 @@ body.waiting * {
 	
 	background: #72AAFA !important;
 }
+.ui-dialog-buttonset .ui-button:last-child {float:right !important; margin-right: 0px;}
 .ui-widget-content.ui-dialog {
 	border: 2px solid #82AAFA !important;
 }
@@ -643,10 +796,38 @@ body.waiting * {
 	font-size: 12px;
 	font-family: Arial;
 }
+#infoTextId {
+	margin: 2px 2px 0 2px;
+	border-style: none;
+	outline: none;
+	marker: none;
+	resize: none;
+}
+#confirmTextId {
+	margin: 5px;
+	border-style: none;
+	outline: none;
+	marker: none;
+	resize: none;
+}
+#selectFileTypeId {
+	width: 304px;
+	height: 28px;
+	margin: 8px 0 6px 8px;
+	font-family: Arial;
+	font-size: 13px;
+	outline: none;
+}
 #selectFileId {
-	width: 100%;
+	width: 300px;
 	height: 28px;
 	margin: 8px 0 10px;
+	background-color: #72AAFA !important;
+}
+.ui-selectmenu-button {
+	background-color: #FFF !important;
+	border: 2px solid #82AAFA !important;
+	outline: none;
 }
 .ctx-menu {
 	display: none;
@@ -722,7 +903,8 @@ table#openSourcesId th {
 table#accHdrDemoTableId td {
 	
 	
-	padding: 4px 15px 4px 15px;
+	padding: 2px 0 2px 12px;
+	
 }
 #sourcesWrapperId {
 	border: 2px solid #82AAFA;
@@ -741,13 +923,14 @@ table#comparisonId th {
 	background-color: #82AAFA;
 }
 #dirsTableContainer {
+	border: 1px solid #408DEE;
 	display:block;
 	overflow:auto;
-	height:184px;
-	width:98%;
+	height:200px;
+	width:99%;
 }
 table#dirsTableId {
-	border: 1px solid #408DEE;
+	
 	border-collapse: collapse;
 	
 	text-align: left;

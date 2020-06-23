@@ -21,18 +21,25 @@
         <div id="toolbarId" class="actions-toolbar">
             <button id="menuId" class="toolbar-button button-menu " title="Main Menu..."></button>
             <span style="margin-left: 10px;"></span>
-            <button id="newId" class="toolbar-button  button-new" title="New Diagram..."></button>
+            <button id="newId" class="toolbar-button button-new" title="Create Diagram..."></button>
             <button id="openId" class="toolbar-button button-no-left button-open" title="Open Diagram..."></button>
-            <button id="undoId" class="toolbar-button button-no-left button-undo" title="Undo"></button>
+            <span style="margin-left: 10px;"></span>
+            <button id="undoId" class="toolbar-button button-undo" title="Undo"></button>
             <button id="redoId" class="toolbar-button button-no-left button-redo" title="Redo"></button>
-            <button id="deleteId" class="toolbar-button button-no-left button-delete" title="Remove Selections"></button>
-            <button id="saveId" class="toolbar-button button-no-left button-save" title="Save"></button>
+            <span style="margin-left: 10px;"></span>
+            <button id="deleteId" class="toolbar-button button-delete" title="Remove Selections"></button>
+            <button id="copyId" class="toolbar-button button-no-left button-copy" title="Copy Selections"></button>
+            <button id="pasteId" class="toolbar-button button-no-left button-paste" title="Paste Selections"></button>
+            <span style="margin-left: 10px;"></span>
+            <button id="saveId" class="toolbar-button button-save" title="Save"></button>
             <button id="saveAsId" class="toolbar-button button-no-left button-saveAs" title="Save As..."></button>
-            <button id="configId" class="toolbar-button button-no-left button-config" title="Settings..."></button>
+            <span style="margin-left: 10px;"></span>
+            <button id="configId" class="toolbar-button button-config" title="Settings..."></button>
             <button id="helpId" class="toolbar-button button-no-left button-help" title="Help..."></button>
         </div>
         <div>
-            <span style="margin-left: 40px;"></span>
+            <span style="margin-left: 10px;"></span>
+            <!--<span style="margin-left: 40px;"></span>-->
         </div>
         <div id="toolbar2Id" class="diagram-toolbar">
             <button id="refreshId" class="toolbar-button button-refresh" title="Refresh Diagram & Reset Scaling"></button>
@@ -49,7 +56,7 @@
             </div>
             <div class="diagram-name">
                 <span class="selectionFont" style="padding: 4px 2px 0 6px; "
-                    data-bind="text: getDiagramName()"></span>
+                    data-bind="text: diagramDisplayName()"></span>
             </div>
         </div>
         <span style="margin-left: 2px;"></span>
@@ -59,24 +66,66 @@
         <div id="containerId" class="main-container" onscroll="repaintDiagram()">
             <canvas id="canvasId" tabindex="0" draggable="true" class="flex-canvas"
                 data-bind="visible: isCanvasVisible()"></canvas>
+
+            <div id="topProgressId" class="progressBar-settings progressBarShow" data-bind="visible: isProgressBarVisible()" >
+                <div id="progressBarId" class="progressBar-settings-in" data-bind="visible: isProgressBarVisible()" ></div>
+            </div>
+
         </div>
-        
+
+        <div id="blockResizeId" class="containerGroup" style="visibility: hidden">
+            <div class="actions-toolbar">
+                <button id="extendAcrossId" class="toolbar-button container-button block-extendH" title="Extend Across"></button>
+                <button id="extendAlongId" class="toolbar-button container-button button-no-left block-extendV" title="Extend Along"></button>
+                <button id="shrinkAcrossId" class="toolbar-button container-button button-no-left block-shrinkH" title="Shrink Across"></button>
+                <button id="shrinkAlongId" class="toolbar-button container-button button-no-left block-shrinkV" title="Shrink Along"></button>
+            </div>
+        </div>
+
         <div id="paletteCtrId" style="margin: 0 0 8px 0; padding: 10px 0 10px 0; display: none">
             <div class="group-box current-settings">
                 <div data-bind="visible: isCanvasVisible()" >
                     <input type="range" min="65" max="200" value="100" id="scaleId" class="scaleSlider">
                 </div>
-                <div class="diagram-text galleryFont" style="margin-top: 6px;">
-                    <span style="font-weight: bold;">Canvas Scale:</span>
-                    <span class="selectionFont" style="padding: 4px 2px 0 6px; "
-                          data-bind="text: scaleValue()"></span>
-                </div>
-                <div class="diagram-text galleryFont" style="margin-top: 4px;">
-                    <span style="font-weight: bold;">Data Flow:</span>
-                    <button id="btnFlowHId" class="flow-button button-h" style="vertical-align: middle; "
-                            data-bind="visible : isHorizontal()" title="Double-click for vertical"></button>
-                    <button id="btnFlowVId" class="flow-button button-v" style="vertical-align: middle; "
-                            data-bind="visible: !isHorizontal()" title="Double-click for horizontal"></button>
+                <div class="main-props diagram-text galleryFont">
+                    <div class="main-props-row">
+                        <div class="main-props-cell1">
+                            <span style="font-weight: bold;">Canvas Scale:</span>
+                        </div>
+                        <div class="main-props-cell2">
+                            <span class="selectionFont" style="padding: 4px 2px 0 6px; "
+                                data-bind="text: scaleValue()"></span>
+                        </div>
+                    </div>
+                    <div class="main-props-row" data-bind="visible: isCanvasVisible()">
+                        <div class="main-props-cell1">
+                            <span style="font-weight: bold;">Edit Mode:</span>
+                        </div>
+                        <div class="main-props-cell2">
+                            <span style="font-weight: bold; margin: 4px 0 0 6px;"
+                                  data-bind="text: editModeText()"></span>
+                        </div>
+                    </div>
+                    <div class="main-props-row">
+                        <div class="main-props-cell1">
+                            <span style="font-weight: bold;">Data Flow:</span>
+                        </div>
+                        <div class="main-props-cell2">
+                            <button id="btnFlowHId" class="flow-button button-h" style="vertical-align: middle; "
+                                    data-bind="visible : isHorizontal()" title="Double-click for vertical"></button>
+                            <button id="btnFlowVId" class="flow-button button-v" style="vertical-align: middle; "
+                                    data-bind="visible: !isHorizontal()" title="Double-click for horizontal"></button>
+                        </div>
+                    </div>
+                    <div class="main-props-row" data-bind="visible: isCanvasVisible()">
+                        <div class="main-props-cell1">
+                            <span style="font-weight: bold;">Thumbnail View:</span>
+                        </div>
+                        <div class="main-props-cell2">
+                            <button id="btnThumbnailId" class="flow-button button-thumbnail" style="vertical-align: middle; "
+                                    title="Open thumbnail view"></button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div style="margin-top: 6px;"></div>
@@ -98,29 +147,24 @@
                         </tbody>
                     </table>
                 </div>
-                <h3 id="accHdrBpelId"  data-bind="text: accHdrBpelTitle"></h3>
-                <div class="emptyGalleryContent">
-                    <span style="margin-left: 30px;"></span>
-                    <span class="diagram-text galleryFont" style="font-weight: bold;">Work In Progress...</span>
-                </div>
+                <!--<h3 id="accHdrBpelId"  data-bind="text: accHdrBpelTitle"></h3>-->
+                <!--<div class="emptyGalleryContent">-->
+                    <!--<span style="margin-left: 30px;"></span>-->
+                    <!--<span class="diagram-text galleryFont" style="font-weight: bold;">Work In Progress...</span>-->
+                <!--</div>-->
+
             </div>
 
-            <div style="margin-top: 10px;"></div>
-            <div id="thumbnailId" class="thumbnailContainer">
-                <div class="diagram-text galleryFont" style="margin-top: 2px;">
-                    <span style="font-weight: bold;" data-bind="visible: !isShowThumbnail()" >Thumbnail view</span>
-                    <button id="btnHintsShowId" class="thumbnailButtons"
-                            data-bind="visible : !isShowThumbnail()" title="Show Thumbnail">[Show]</button>
-                    <button id="btnHintsHideId" class="thumbnailButtons thumbnailHide"
-                            data-bind="visible : isShowThumbnail()" title="Hide Thumbnail">[Hide]</button>
-                </div>
-                <div id="thumbnailViewId" class="thumbnailView" data-bind="visible: isShowThumbnail()">
-                    <canvas id="canvasThId" tabindex="0" draggable="true" class="thumbCanvas"
-                        data-bind="visible : isShowThumbnail()"></canvas>
-                </div>
-            </div>
+        </div>
 
+    </div>
 
+    <div id="thumbnailDialogId" class="settingsFont" style="display: none; ">
+        <div class="diagram-text galleryFont " style="margin-top: 2px;">
+            <span style="width: 100%;" ></span>
+        </div>
+        <div id="thumbnailViewId" class="thumbnailView" >
+            <canvas id="canvasThId" tabindex="0" draggable="true" class="thumbCanvas"></canvas>
         </div>
     </div>
 
@@ -133,6 +177,14 @@
             </ul>
 
             <div id="settingsTabId-1">
+                <div class="settings-entry">Edit/View Mode:</div>
+                <div class="settings-controls">
+                    <input type="radio" id="btnEditAllId" name="editMode" style="margin: 4px 4px 0 4px;">
+                    <label for="btnHorizontal" style="vertical-align:baseline; margin: 0 20px 0 0;" >Edit</label>
+                    <input type="radio" id="btnViewOnlyId" name="editMode" style="margin: 4px 4px 0 4px;">
+                    <label for="btnVertical" style="vertical-align:baseline;  margin: 0 20px 0 0;">View Only</label>
+                </div>
+
                 <div class="settings-entry">Data flow direction:</div>
                 <div class="settings-controls">
                     <input type="radio" id="btnHorizontal" name="flowDir" style="margin: 4px 4px 0 4px;">
@@ -291,7 +343,6 @@
     <div id="infoDialogId" class="settingsFont" style="display: none; ">
         <div style="font-weight: bold; margin: 4px; ">
             <textarea id="infoTextId" rows="5" cols="50" wrap="hard" class="selectionFont"
-                      style="margin: 5px; border-style: none; outline: none; marker: none; resize: none; "
                        spellcheck="false" readonly
                        data-bind="visible: infoMessageVisible, text: infoMessage"></textarea>
         </div>
@@ -300,56 +351,88 @@
     <div id="confirmDialogId" class="settingsFont" style="display: none; ">
         <div style="font-weight: bold; margin: 4px; ">
             <textarea id="confirmTextId" rows="3" cols="50" wrap="hard" class="selectionFont"
-                      style="margin: 5px; border-style: none; outline: none; marker: none; resize: none; "
                        spellcheck="false" readonly
                        data-bind="text: confirmMessage"></textarea>
         </div>
     </div>
 
     <div id="openFlowDialogId" class="settingsFont" style="display: none; ">
-        <div style="font-weight: bold; margin: 4px 0 8px; ">
+        <div class="selectDirView" data-bind="visible: isConnectionOK()">
+            <button id="dirsBtnUpId" class="toolbar-button button-leftDir" title="Go back"></button>
+            <button id="dirsBtnDownId" class="toolbar-button button-no-left button-rightDir" title="Choose a location..."></button>
+            <span style="margin-left: 10px;"></span>
+            <button id="createFolderId" class="toolbar-button button-newDir" title="Create folder..."></button>
+            <button id="deleteFSId" class="toolbar-button button-no-left button-deleteFS" title="Delete selected"></button>
+        </div>
+
+        <div style="font-weight: bold; margin: 4px 0 8px; " data-bind="visible: isConnectionOK()">
             <span >Location:</span>
         </div>
-        <div class="selectDirGroup">
-            <button id="dirsBtnUpId" class="toolbar-button button-leftDir" title="Go back"></button>
+        <div class="selectDirGroup" data-bind="visible: isConnectionOK()">
             <input id="selectedDirId" type="text" class="folderText" readonly spellcheck="false"
-                   data-bind="textInput: selectedPath" />
-            <button id="dirsBtnDownId" class="toolbar-button button-rightDir" title="Choose a location..."></button>
+                   data-bind="textInput: currentPath" />
         </div>
-        <div style="font-weight: bold; margin: 6px 0 0; ">Select file (*.json):</div>
-        <div>
-            <select id="selectFileId"
-                    class="selectionFont" data-bind="options: filesList, value: selectedFile ">
-            </select>
-        </div>
-    </div>
 
-    <div id="selectDirsDialogId" class="settingsFont" style="display: none; ">
-        <div class="selectDirGroup">
-            <button id="selectedNewDirBtnUpId" class="toolbar-button button-leftDir" title="Go back"></button>
-            <input id="selectedNewDirId" class="folderText" type="text" readonly spellcheck="false"
-                   data-bind="textInput: currentPath"/>
-        </div>
-        <div id="dirsTableContainer" >
+        <div id="dirsTableContainer" data-bind="visible: isConnectionOK()">
             <table id="dirsTableId" class="galleryFont">
-                <tbody data-bind="foreach: directoriesList">
+                <tbody data-bind="foreach: fsContentList">
                 <tr>
-                    <td data-bind="attr: {id}" onclick="onDirTableClick(event)" ondblclick="onDirTableDblClick(event)">
+                    <td data-bind="attr: {id, fstype}"
+                        onclick="onDirTableClick(event)"
+                        ondblclick="onDirTableDblClick(event)">
+                        <img role="presentation" class="componentItem"
+                             data-bind="attr: {id: id, src: url, title: title}" />
                         <span data-bind="text: label"></span>
                     </td>
                 </tr>
                 </tbody>
             </table>
         </div>
+
+        <div class="selectGroup" data-bind="visible: isConnectionOK() && isOpenMode()">
+            <span style="margin: 16px 0 6px 0 ; ">Files Type:</span>
+            <select id="selectFileTypeId" onchange="onFileTypeChange()"
+                    data-bind="options: filesTypes, value: selectedFileType ">
+            </select>
+        </div>
+
+        <div data-bind="visible: !isConnectionOK()">
+            <div style="font-weight: bold; margin: 4px 0 4px; ">Select file:</div>
+            <div>
+                <select id="selectFileId" name="files"
+                        class="selectionFont">
+                    <option>FlowDemo</option>
+                    <option>NestedBlocks</option>
+                    <option>BankTransaction</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="selectGroup" data-bind="visible: isConnectionOK() && isSaveMode()"
+             style="margin: 6px 0 0 0;">
+            <!--<div style="font-weight: bold; margin: 6px 0 0; ">Enter file name:</div>-->
+            <span style="margin: 16px 6px 0 0 ; ">Enter file name:</span>
+            <div>
+                <input id="saveAsFileNameId" type="text" autocomplete="off" spellcheck="false"
+                       onkeyup="validateSaveAsFileName(event)" class="saveAsText"
+                       data-bind="textInput: saveAsFileNameValue, css: {invalidInput: saveAsInputInvalid() }"/>
+                <span style="margin: 4px 0px 4px 2px; font-weight: bold;">.json</span>
+            </div>
+        </div>
+        <div style="margin: 6px 0 0 0;" data-bind="visible: saveAsInputInvalid()">
+            <button class="icon-textInvalid invalidText" style="vertical-align: middle; " disabled></button>
+            <span class="invalid-message" data-bind="text: saveAsMessage()"></span>
+        </div>
+
     </div>
 
     <div id="newFlowDialogId" class="settingsFont" style="display: none; ">
         <div style="font-weight: bold; margin: 4px 0 4px; ">Enter file name:</div>
         <div>
             <input id="newFileNameId" type="text" autocomplete="off" spellcheck="false"
-                   onkeyup="validateFileName(event)"
-                   style="height: 20px; width: 280px; margin: 4px 0 8px;"
-                   data-bind="textInput: newFileNameValue, css: {invalidInput: isInputInvalid() }"/>
+                   onkeyup="validateFSName(event)"
+                   style="height: 20px; width: 320px; margin: 4px 0 8px;"
+                   data-bind="textInput: newFSNameValue, css: {invalidInput: isInputInvalid() }"/>
             <span style="margin: 4px 4px 8px 4px; font-weight: bold;">.json</span>
         </div>
         <div>
@@ -360,31 +443,25 @@
         </div>
     </div>
 
-    <div id="saveAsDialogId" class="settingsFont" style="display: none; ">
+    <div id="newFolderDialogId" class="settingsFont" style="display: none; ">
         <div style="font-weight: bold; margin: 4px 0 8px; ">
             <span >Location:</span>
         </div>
         <div class="selectDirGroup">
-            <button id="saveAsBtnUpId" class="toolbar-button button-leftDir" title="Go back"></button>
-            <input id="saveAsDirId" type="text" class="folderText" readonly spellcheck="false"
-                   data-bind="textInput: selectedPath" />
-            <button id="saveAsBtnDownId" class="toolbar-button button-rightDir" title="Choose a location..."></button>
+            <input id="locationForNewDirId" type="text" class="folderText" readonly spellcheck="false"
+                   data-bind="textInput: currentPath" />
         </div>
-        <!--<div style="font-weight: bold; margin: 6px 0 0; ">Select file (*.json):</div>-->
-
-        <div style="font-weight: bold; margin: 6px 0 0; ">Enter file name:</div>
+        <div style="font-weight: bold; margin: 4px 0 4px; ">Enter folder name:</div>
         <div>
-            <input id="saveAsFileNameId" type="text" autocomplete="off" spellcheck="false"
-                   onkeyup="validateSaveAsFileName(event)"
-                   style="height: 20px; width: 280px; margin: 4px 0 8px;"
-                   data-bind="textInput: saveAsFileNameValue, css: {invalidInput: saveAsInputInvalid() }"/>
-            <span style="margin: 4px 4px 8px 4px; font-weight: bold;">.json</span>
+            <input id="newFolderNameId" type="text" autocomplete="off" spellcheck="false"
+                   onkeyup="validateFSName(event, true)" class="folderText newFolderText"
+                   data-bind="textInput: newFSNameValue, css: {invalidInput: isInputInvalid() }"/>
         </div>
         <div>
             <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
-                    data-bind="visible: saveAsInputInvalid()" disabled></button>
+                    data-bind="visible: isInputInvalid()" disabled></button>
             <span class="invalid-message"
-                    data-bind="visible: saveAsInputInvalid(), text: saveAsMessage()"></span>
+                    data-bind="visible: isInputInvalid(), text: validateMessage()"></span>
         </div>
     </div>
 
@@ -395,6 +472,8 @@
                    autocomplete="off" spellcheck="false"
                    onkeyup="validateEditName(event)"
                    data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
+            <input type="checkbox" id="chkHideNodeNameId" name="nodeNameHide" style="margin: 6px 2px 0 0; ">
+            <label for="chkHideNodeNameId" style="vertical-align: text-top; " >Hide</label>
         </div>
 
         <div class="settings-entry" style="margin: 4px 0 2px 0;">Background / Foreground colors:</div>
@@ -407,13 +486,25 @@
             <button id="nodeColorDefId" class="prefs-button prefs-colorNode-button-def">Use Defaults</button>
         </div>
 
-        <div class="settings-entry" style="margin: 4px 0 2px 0;">Node size:</div>
+        <div class="settings-entry" style="margin: 4px 0 2px 0;">Node size (px):</div>
         <div class="settings-controls">
             <input type="text" id="spNodeWidthId" class="spinnerStyleNode" >
-            <label for="spNodeWidthId" class="spinner-label-node">Width (px)</label>
+            <label for="spNodeWidthId" class="spinner-label-node">Width</label>
             <input type="text" id="spNodeHeightId" class="spinnerStyleNode" >
-            <label for="spNodeHeightId" class="spinner-label-node">Height (px)</label>
+            <label for="spNodeHeightId" class="spinner-label-node">Height</label>
             <button id="nodeSizeDefId" class="prefs-button prefs-dmsNode-button-def">Use Defaults</button>
+        </div>
+
+        <div class="settings-entry" style="margin: 4px 0 2px 0;">Text Location:</div>
+        <div class="settings-controls">
+            <input type="radio" id="btnInsideId" name="nodeText" style="margin: 4px 0 0 4px;">
+            <label for="btnInsideId" style="vertical-align:baseline; margin: 0 4px 0 0;" >Inside</label>
+            <input type="radio" id="btnAboveId" name="nodeText" style="margin: 4px 0 0 6px;">
+            <label for="btnAboveId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Above</label>
+            <input type="radio" id="btnBelowId" name="nodeText" style="margin: 4px 0 0 6px;">
+            <label for="btnBelowId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Below</label>
+            <button id="btnTextApplyId" class="prefs-button prefs-textNode-button-apply">Apply</button>
+            <button id="btnTextClearId" class="prefs-button prefs-textNode-button-clear">Clear</button>
         </div>
 
         <div class="settings-entry" style="margin: 4px 0 2px 0;">Text content:</div>
@@ -428,8 +519,7 @@
                    autocomplete="off" spellcheck="false"
                    onkeyup="validatePictureURL(event)"
                    data-bind="textInput: pictureURLValue, css: {invalidInput: isPictureURLInvalid() }"/>
-            <div></div>
-            <button id="pictureSelectURLId" class="prefs-button prefs-dmsNode-button-def">Select URL</button>
+            <button id="pictureSelectURLId" class="prefs-button prefs-imgUrl-button-def">Select URL</button>
         </div>
     </div>
 
@@ -492,8 +582,9 @@
     </div>
 
     <div id="saveOverlayId" class="overlayMessage">
-        <div id="saveMessageId" class="overlaySaveText">Diagram Saved</div>
+        <div id="saveMessageId" class="overlaySaveText" data-bind="text: overlayText()"></div>
     </div>
+
 
 </body>
 </html>
