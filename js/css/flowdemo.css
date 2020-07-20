@@ -157,12 +157,8 @@ body.waiting * {
 }
 .accordion-props {
 	width: 220px;
-	height: 336px;
 	
-	
-	
-	
-	
+	height: 366px;
 }
 #paletteAccordionId .ui-accordion-content {
 	margin: 0 10px 0 10px;
@@ -658,6 +654,12 @@ label {
 }
 .button-v {
 	background-image: url(../../images/toolbar/arrow_down24.png);
+}
+.button-right16 {
+	background-image: url(../../images/toolbar/arrow_right16.png);
+}
+.button-left16 {
+	background-image: url(../../images/toolbar/arrow_left16.png);
 }
 .button-left {
 	background-image: url(../../images/toolbar/navigate_left24.png);
