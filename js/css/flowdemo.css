@@ -25,7 +25,8 @@ body.waiting * {
 }
 .diagram-title {
 	flex: 0 1 0;
-	border: 2px solid #82AAFA;
+	
+	border: 2px solid #3a72c1;
 	
 	width: 100px;
 	height: 26px;
@@ -74,6 +75,7 @@ body.waiting * {
 	margin:auto;
 	border: none;
 	
+	
 	outline: none;
 	
 }
@@ -81,7 +83,7 @@ body.waiting * {
 	position: fixed;
 	display: none;
 	width: 100%;
-	height: 56px;
+	height: 52px;
 	top: 0;
 	left: 0;
 	background-color: rgba(140,180,255,0.6);
@@ -98,8 +100,12 @@ body.waiting * {
 	-ms-transform: translate(-50%,-50%);
 }
 .group-box {
-	background-color: #E1F5FF;
-	border: 2px solid #5F69C5;
+	
+	
+	
+	background-color: #f0f4fc;
+	
+	border: 2px solid #3a72c1;
 }
 .current-settings {
 	margin: 0 10px 0 10px;
@@ -163,7 +169,8 @@ body.waiting * {
 #paletteAccordionId .ui-accordion-content {
 	margin: 0 10px 0 10px;
 	padding: 0;
-	border: 2px solid #5F69C5;
+	
+	border: 2px solid #3a72c1;
 }
 #paletteAccordionId .ui-accordion-header{
 	margin: 0 10px 0 10px;
@@ -171,7 +178,9 @@ body.waiting * {
 	font-size: 10pt;
 	font-weight: bold;
 	text-indent: 0;
-	border: 2px solid #5F69C5;
+	
+	border: 2px solid #3a72c1;
+	background-color: #3a72c1;
 }
 #thumbnailDialogId .ui-dialog-content {
 	overflow: hidden;
@@ -280,7 +289,11 @@ label {
 	font-weight: bold;
 }
 .settings-controls {
-	background-color: #EAF5FF;
+	
+	
+	
+	
+	background-color: #f0f4fc;
 	margin: 4px 0 2px 0;
 	padding:  4px 0 4px 4px;
 }
@@ -747,7 +760,8 @@ label {
 	display: none;
 	
 	background-color: #F4FCFF;
-	border: 2px solid #82AAFA;
+	
+	border: 2px solid #3a72c1;
 }
 .contentTextSave:hover {
 	cursor: pointer;
@@ -783,16 +797,19 @@ label {
 	vertical-align: 90%;
 }
 .ui-dialog-title{
-	font-size: 85% !important;
 	
+	font-size: 10pt !important;
+	color: #fff !important;
 }
 .ui-dialog-titlebar {
 	
-	background: #72AAFA !important;
+	
+	background: #3a72c1 !important;
 }
 .ui-dialog-buttonset .ui-button:last-child {float:right !important; margin-right: 0px;}
 .ui-widget-content.ui-dialog {
-	border: 2px solid #82AAFA !important;
+	
+	border: 2px solid #3a72c1 !important;
 }
 #dialog-message .ui-dialog-content {
 	font-size: 12px;
@@ -828,7 +845,8 @@ label {
 }
 .ui-selectmenu-button {
 	background-color: #FFF !important;
-	border: 2px solid #82AAFA !important;
+	
+	border: 2px solid #3a72c1 !important;
 	outline: none;
 }
 .ctx-menu {
@@ -846,7 +864,8 @@ label {
 	
 }
 .ui-menu {
-	border: 2px solid #82AAFA !important;
+	
+	border: 2px solid #3a72c1 !important;
 }
 .ui-menu .ui-menu-item {
 	margin: 2px;
@@ -873,16 +892,6 @@ label {
 	vertical-align: top;
 	user-select: none;
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 .ctx-menu li:hover {
 	background-color: #D3EEFE;
 }
@@ -892,6 +901,7 @@ label {
 table, th, td {
 	background-color: #EAF5FF;
 	
+	
 	border: 2px solid #FFF;
 	border-radius: 4px;
 	border-collapse: collapse;
@@ -900,7 +910,8 @@ table, th, td {
 }
 table#openSourcesId th {
 	color: white;
-	background-color: #82AAFA;
+	
+	background-color: #3a72c1;
 }
 table#accHdrDemoTableId td {
 	
@@ -909,20 +920,23 @@ table#accHdrDemoTableId td {
 	
 }
 #sourcesWrapperId {
-	border: 2px solid #82AAFA;
+	
+	border: 2px solid #3a72c1;
 	border-radius: 4px;
 	width:90%;
 	margin: 0 60px;
 }
 #comparisonWrapperId {
-	border: 2px solid #82AAFA;
+	
+	border: 2px solid #3a72c1;
 	border-radius: 4px;
 	width:90%;
 	margin: 0 60px 10px;
 }
 table#comparisonId th {
 	color: white;
-	background-color: #82AAFA;
+	
+	background-color: #3a72c1;
 }
 #dirsTableContainer {
 	border: 1px solid #408DEE;
@@ -972,7 +986,7 @@ table#dirsTableId td {
 	width: 25px;
 	height: 25px;
 	border-radius: 50%;
-	background: #82AAFA; 
+	background: #82AAFA;
 	cursor: pointer;
 }
 .scaleSlider::-moz-range-thumb {
