@@ -599,11 +599,10 @@
         <div data-bind="visible: !isConnectionOK()">
             <div style="font-weight: bold; margin: 4px 0 4px; ">Select file:</div>
             <div>
-                <select id="selectFileId" name="files"
-                        class="selectionFont">
-                    <option>FlowDemo</option>
-                    <option>NestedBlocks</option>
-                    <option>BankTransaction</option>
+                <select id="selectFileId" class="demoFilesMenu"
+                        data-bind="options: demoFilesItems,
+                                    optionsText: 'label',
+                                    optionsValue: 'value'">
                 </select>
             </div>
         </div>
