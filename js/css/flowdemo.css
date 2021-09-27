@@ -157,7 +157,8 @@ body.waiting * {
 .accordion-props-pages {
 	width: 214px;
 	
-	height: 404px;
+	
+	height: 408px;
 }
 #paletteAccordionId .ui-accordion-content {
 	margin: 0 10px 0 10px;
@@ -186,6 +187,10 @@ table#accSETableId td {
 	line-height: 14px;
 }
 table#accFlowTableId td {
+	padding: 0 0 0 12px;
+	line-height: 14px;
+}
+table#accSwimTableId td {
 	padding: 0 0 0 12px;
 	line-height: 14px;
 }
@@ -317,6 +322,7 @@ label {
 	text-align:left;
 	margin: 2px 0 0px 12px;
 	font-weight: bold;
+	height: 16px;
 }
 .settings-controls {
 	background-color: #eaf0fa;

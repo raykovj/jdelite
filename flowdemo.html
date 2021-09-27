@@ -123,7 +123,7 @@
             <div id="paletteAccordionId" class="accordion-props-pages">
                 <h3 id="accHdrDemoId" data-bind="text: accHdrDemoTitle"></h3>
                 <div>
-                    <table id="accSETableId" class="accordion-items galleryFont" >
+                    <table id="accSETableId" class="accordion-items galleryFont">
                         <caption  class="settings-caption">Start / End</caption>
                         <tbody data-bind="foreach: gallerySENodes">
                         <tr>
@@ -151,9 +151,23 @@
                         </tr>
                         </tbody>
                     </table>
-                    <table id="accQuizTableId" class="accordion-items galleryFont" >
-                        <caption  class="settings-caption">Decision</caption>
-                        <tbody data-bind="foreach: galleryQuizNodes">
+                    <!--<table id="accQuizTableId" class="accordion-items galleryFont" >-->
+                        <!--<caption  class="settings-caption">Decision</caption>-->
+                        <!--<tbody data-bind="foreach: galleryQuizNodes">-->
+                        <!--<tr>-->
+                            <!--<td data-bind="attr: {id}"-->
+                                <!--ondragstart="onPaletteDragStart(event)"-->
+                                <!--ondragend="onPaletteDragEnd(event)">-->
+                                <!--<img role="presentation" draggable="true" class="componentItem"-->
+                                     <!--data-bind="attr: {id: id, src: url, title: title}" />-->
+                                <!--<span style="user-select: none;" data-bind="text: label"></span>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--</tbody>-->
+                    <!--</table>-->
+                    <table id="accSwimTableId" class="accordion-items galleryFont" >
+                        <caption  class="settings-caption">Side Swim</caption>
+                        <tbody data-bind="foreach: gallerySwimNodes">
                         <tr>
                             <td data-bind="attr: {id}"
                                 ondragstart="onPaletteDragStart(event)"
