@@ -1,6 +1,6 @@
 html,
 body {
-  height: 100%;
+  	height: 100%;
 }
 body.waiting * {
 	cursor: progress !important;
@@ -14,7 +14,11 @@ body.waiting * {
 	justify-content: flex-start;
 	align-items: center;
 	margin: 0 0 0 8px;
-	width: 98%;
+	width: 100%;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background-color: white;
 }
 .actions-toolbar {
 	display: flex;
@@ -57,13 +61,12 @@ body.waiting * {
 .top-container {
 	display: -webkit-box;
 	
-	
-	
 }
 .main-container {
 	-webkit-box-flex: 1;
-	display: flex;
-	align-items: center;
+	display: grid;
+	grid-template-columns: 8px auto 8px;
+	grid-template-rows: 8px auto 8px;
 	background: #f5f5f5;
 	margin: 10px 0 10px 8px;
 	overflow-x: auto;
@@ -72,9 +75,11 @@ body.waiting * {
 	
 }
 .flex-canvas {
-	align-self: center;
+	grid-column-start: 2;
+	grid-row-start: 2;
+	align-self: start;
+	justify-self: center;
 	background: #FFFFFF;
-	margin:auto;
 	border: none;
 	outline: none;
 }
@@ -418,6 +423,72 @@ label {
 	border: 2px solid #bbbbbb;
 	margin: 2px 0 2px 10px;
 	float: right;
+}
+	
+.findLocation {
+	position: fixed;
+	top: 4px;
+	right: 4px;
+	
+}
+.findNameText {
+	
+	height: 20px;
+	outline: none;
+	margin: 2px 0 0 0;
+	border: 1px solid #aaaaaa;
+	border-right: 0;
+	font-weight: bold;
+}
+#select2findId {
+	margin: 2px 0 0 0;
+}
+.findText {
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 240px 24px;
+}
+.findButton {
+	border: 1px solid #aaaaaa;
+	
+	outline: none;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	height: 24px;
+	width: 24px;
+	background-color: #efefef;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.findBlockBgnd {
+	background-color: #eaf0fa;
+	height: 30px;
+}
+#findBtnNextId {
+	float: left;
+}
+#findBtnPrevId {
+	float: left;
+}
+#findBtnAllId {
+	float: left;
+}#findBtnClearId {
+	float: left;
+}
+#foundMatchId {
+	float: right;
+	margin: 4px 8px 0 0;
+}
+.foundMatchesText {
+	width: 80px ;
+	height: 20px;
+	text-align: right;
+	padding-right: 4px;
+	background-color: #eaf0fa;
+	border: none;
+	
+	font-weight: bold;
+	outline: none;
 }
 #editNodeNameId {
 	width: 234px;
@@ -836,8 +907,17 @@ label {
 .button-clear {
 	background-image: url(../../images/toolbar/brush24.png);
 }
-.button-zoom {
-	background-image: url(../../images/toolbar/zoom24.png);
+.button-empty {
+	background-image: url(../../images/toolbar/brushSmall24.png);
+}
+.button-find {
+	background-image: url(../../images/toolbar/find24.png);
+}
+.button-findArrow {
+	background-image: url(../../images/dataflow/findArrow24.png);
+}
+.button-findAll {
+	background-image: url(../../images/dataflow/findAll24.png);
 }
 .button-thumbnail {
 	background-image: url(../../images/toolbar/thumbnail24.png);
@@ -859,6 +939,12 @@ label {
 }
 .button-right {
 	background-image: url(../../images/toolbar/navigate_right24.png);
+}
+.button-up {
+	background-image: url(../../images/toolbar/navigate_up24.png);
+}
+.button-down {
+	background-image: url(../../images/toolbar/navigate_down24.png);
 }
 .button-leftDir {
 	background-image: url(../../images/toolbar/arrow_left24.png);
@@ -1217,6 +1303,29 @@ table#dirsTableId td {
 	font-weight: bold;
 }
 .selectedTableRow {
+	color: #ffffff;
+	background-color: #408DEE;
+}
+#findTableContainer {
+	border: 1px solid #aaaaaa;
+	display:block;
+	overflow:auto;
+	height:200px;
+	width:98%;
+}
+table#findTableId {
+	border-collapse: collapse;
+	text-align: left;
+	width: 100%;
+}
+table#findTableId td {
+	background-color: #FFF;
+	text-align: left;
+	border-collapse: collapse;
+	padding: 2px 10px 2px 15px;
+	font-weight: bold;
+}
+table#findTableId td:hover {
 	color: #ffffff;
 	background-color: #408DEE;
 }

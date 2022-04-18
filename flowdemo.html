@@ -3,6 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="js/css/flowdemo.css" type="text/css" />
     <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.theme.css" type="text/css" />
     <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.css" type="text/css" />
@@ -15,8 +16,7 @@
  
 <body>
 
-    <div style="padding-bottom: 4px;"></div>
-
+    <div style="padding-bottom: 2px; ">
     <div class="top-toolbar">
         <div id="toolbarId" class="actions-toolbar">
             <button id="menuId" class="toolbar-button button-menu" data-toggle="tooltip" title="Main Menu..."></button>
@@ -39,10 +39,11 @@
         </div>
         <div>
             <span style="margin-left: 10px;"></span>
-            <!--<span style="margin-left: 40px;"></span>-->
         </div>
         <div id="toolbar2Id" class="diagram-toolbar">
             <button id="refreshId" class="toolbar-button button-refresh" data-toggle="tooltip" title="Refresh Diagram & Reset Scaling"></button>
+            <button id="findId" class="toolbar-button button-no-left button-find" data-toggle="tooltip"
+                    title="Search... &nbsp;&nbsp;Ctrl+Shift+F"></button>
             <button id="clearId" class="toolbar-button button-no-left button-clear" data-toggle="tooltip" title="Clear Diagram"></button>
             <button id="leftId" class="toolbar-button button-no-left button-left" data-toggle="tooltip" title="Previous Diagram"></button>
             <button id="rightId" class="toolbar-button button-no-left button-right" data-toggle="tooltip" title="Next Diagram"></button>
@@ -61,15 +62,20 @@
         </div>
         <span style="margin-left: 2px;"></span>
     </div>
+<!--</div>-->
 
     <div id="topContainerId" class="top-container">
         <div id="containerId" class="main-container" onscroll="repaintDiagram()">
             <canvas id="canvasId" tabindex="0" draggable="true" class="flex-canvas"
                 data-bind="visible: isCanvasVisible()"></canvas>
 
-            <div id="topProgressId" class="progressBar-settings progressBarShow" data-bind="visible: isProgressBarVisible()" >
-                <div id="progressBarId" class="progressBar-settings-in" data-bind="visible: isProgressBarVisible()" ></div>
-            </div>
+            <!--<div id="topProgressId" class="progressBar-settings progressBarShow" data-bind="visible: isProgressBarVisible()" >-->
+                <!--<div id="progressBarId" class="progressBar-settings-in" data-bind="visible: isProgressBarVisible()" ></div>-->
+            <!--</div>-->
+        </div>
+
+        <div id="topProgressId" class="progressBar-settings progressBarShow" data-bind="visible: isProgressBarVisible()" >
+            <div id="progressBarId" class="progressBar-settings-in" data-bind="visible: isProgressBarVisible()" ></div>
         </div>
 
         <div id="paletteCtrId" style="margin: 0 0 8px 0; padding: 10px 0 10px 0; display: none;">
@@ -87,6 +93,16 @@
                                 data-bind="text: scaleValue()"></span>
                         </div>
                     </div>
+                    <!-- TEMP -->
+                    <!--<div class="main-props-row" data-bind="visible: isAutoLayoutAllowed()">-->
+                        <!--<div class="main-props-cell1">-->
+                            <!--<span style="font-weight: bold;">Select Auto:</span>-->
+                        <!--</div>-->
+                        <!--<div class="main-props-cell2">-->
+                            <!--<input type="checkbox" id="chkSelectAutoId" style="margin: 4px 4px 0 6px;">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!-- TEMP END -->
                     <div class="main-props-row" data-bind="visible: isCanvasVisible()">
                         <div class="main-props-cell1">
                             <span style="font-weight: bold;">Edit Mode:</span>
@@ -583,7 +599,7 @@
             <span style="margin-left: 10px;"></span>
             <button id="createFolderId" class="toolbar-button button-newDir" data-toggle="tooltip" title="Create folder..."></button>
             <button id="deleteFSId" class="toolbar-button button-no-left button-deleteFS" data-toggle="tooltip" title="Delete selected"></button>
-
+            <!-- TEST -->
             <button id="findDisksId" class="toolbar-button button-findDisks" data-toggle="tooltip" title="Find disks"></button>
         </div>
 
@@ -753,8 +769,79 @@
         </div>
     </div>
 
-    <div id="nodePropsDialogId" class="settingsFont" style="display: none; overflow: hidden; ">
+    <div id="findDialogId" class="settingsFont" style="display: none; ">
+        <div id="textTitleId" class="settings-entry" style="margin: 2px 0 4px 0;">Text to find:</div>
+        <div class="findText">
+            <input id="findNameId" autofocus type="text" class="findNameText"
+                   autocomplete="off" spellcheck="false"
+                   onpaste = "onPasteSearchText()"
+                   data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
+            <button id="select2findId" class="findButton button-findArrow"></button>
+        </div>
+        <div id="findTableContainer" data-bind="visible: showSearchList">
+            <table id="findTableId" class="galleryFont">
+                <tbody data-bind="foreach: searchContentList">
+                <tr>
+                    <td data-bind="text: $data"
+                        onclick="onFindTableClick(event)">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 
+        <div id="findOptionsId"  data-bind="visible: showFindOptions">
+            <div style="margin-top: 10px;"></div>
+            <div>
+                <div class="findBlockBgnd">
+                    <button id="findBtnPrevId" class="toolbar-button button-leftDir" data-toggle="tooltip"
+                            title="Previous"></button>
+                    <button id="findBtnNextId" class="toolbar-button button-rightDir button-no-left"
+                            data-toggle="tooltip" title="Next"></button>
+                    <button id="findBtnAllId" class="toolbar-button button-findAll button-no-left"
+                            data-toggle="tooltip" title="Show All"></button>
+                    <button id="findBtnClearId" class="toolbar-button button-empty button-no-left"
+                            data-toggle="tooltip" title="Clear List"></button>
+                    <button id="findBtnResizeId" class="toolbar-button button-up button-no-left"
+                            data-toggle="tooltip" title="Collapse view"></button>
+                    <input id="foundMatchId" type="text" class="foundMatchesText" readonly spellcheck="false"
+                           data-bind="textInput: foundMatches" />
+                </div>
+            </div>
+
+            <!--<div style="margin-top: 20px;"></div>-->
+            <div id="optionsTitleId" class="settings-entry" style="margin-top: 20px;">Options:</div>
+            <div id="matchCtrId" class="settings-controls">
+                <div>
+                    <input type="checkbox" id="chkMatchCaseId" name="df" style="margin: 4px 4px 0 0;">
+                    <label for="chkMatchCaseId" style="vertical-align:baseline; margin-right: 8px;" >Match Case</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="chkMatchRegExpId" name="df" style="margin: 4px 4px 0 0;">
+                    <label for="chkMatchRegExpId" style="vertical-align:baseline; margin-right: 8px;" >Regular Expression</label>
+                </div>
+            </div>
+
+            <!--<div style="margin-top: 10px;"></div>-->
+            <div id="whichCtrId" class="settings-controls" style="margin-top: 10px;">
+                <input type="radio" id="btnFindNamesId" name="findName" style="margin: 4px 4px 0 4px;">
+                <label for="btnFindNamesId" style="vertical-align:baseline; margin: 0 14px 0 0;" >Node Names</label>
+                <input type="radio" id="btnFindContentId" name="findName" style="margin: 4px 4px 0 4px;">
+                <label for="btnFindContentId" style="vertical-align:baseline;  margin: 0 0 0 0;">Node Text Content</label>
+            </div>
+
+            <!--<div style="margin-top: 10px;"></div>-->
+            <div id="whereCtrId" class="settings-controls" style="margin-top: 10px;">
+                <input type="radio" id="btnFindStartId" name="findWhere" style="margin: 4px 4px 0 4px;">
+                <label for="btnFindStartId" style="vertical-align:baseline; margin: 0 6px 0 0;" >Beginning with</label>
+                <input type="radio" id="btnFindAnywhereId" name="findWhere" style="margin: 4px 4px 0 4px;">
+                <label for="btnFindAnywhereId" style="vertical-align:baseline;  margin: 0 0 0 0;">Anywhere Inside</label>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="nodePropsDialogId" class="settingsFont" style="display: none; overflow: hidden; ">
         <div id="nodePropsTabId" class="nodePropsContainer">
             <ul>
                 <li><a href="#nodePropsTabId-1">General</a></li>
