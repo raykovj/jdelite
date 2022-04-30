@@ -83,6 +83,11 @@ body.waiting * {
 	border: none;
 	outline: none;
 }
+.palette-content {
+	margin: 0 0 8px 0;
+	padding: 10px 0 10px 0;
+	display: none;
+}
 .overlayMessage {
 	position: fixed;
 	display: none;
