@@ -1,0 +1,100 @@
+   25  git status
+   26  git log
+   27  git clone https://github.com/raykovj/jdelite
+   28  ls
+   29  cd jdelite/
+   30  ls
+   31  cd ..
+   32  cd jdelite/
+   33  git remote -v
+   34  git remote show origin
+   35  git remote show [remote]
+   36  git remote show
+   37  git status
+   38  git push origin master
+   39  ls
+   40  git status
+   41  git checkout master
+   42  git checkout origin
+   43  git checkout master
+   44  git remote show
+   45  git remote show origin
+   46  ls
+   47  cd ..
+   48  git status
+   49  ls
+   50  git remote show 
+   51  git remote show origin
+   52  git branch
+   53  cd jdelite/
+   54  git status
+   55  git branch
+   56  git remote show
+   57  git push -h
+   58  git status
+   59  git checkout origin
+   60  git checkout master
+   61  git push -u origin master
+   62  ls ./..
+   63  ls
+   64  ls
+   65  git status
+   66  git commit -a -m "commit to remote branch"
+   67  git add .
+   68  git status
+   69  git commit -m "commit to remote branch"
+   70  git status
+   71  git push -u origin master
+   72  git status
+   73  git remote add origin https://github.com/raykovj/raykovj.github.io.git
+   74  git remote add demo https://github.com/raykovj/raykovj.github.io.git
+   75  git push -u demo master
+   76  ls
+   77  ls ..
+   78  git remote show
+   79  git checkout demo
+   80  cd ..
+   81  ls
+   82  mkdir demo
+   83  ls
+   84  cd demo
+   85  git clone https://github.com/raykovj/raykovj.github.io
+   86  git status
+   87  ls
+   88  cd raykovj.github.io/
+   89  ls
+   90  git add --all
+   91  git status
+   92  git push -u demo master
+   93  git push -u origin master
+   94  git status
+   95  echo "Hello World" > index.html
+   96  ls
+   97  git add --all
+   98  git commit -m "Initial commit"
+   99  git push -u origin master
+  100  ls
+  101  rm index.html 
+  102  git status
+  103  git rm index.html 
+  104  git status
+  105  git commit -m "removed index.html"
+  106  git push -u origin master
+  107  git branch
+  108  ls
+  109  status
+  110  git status
+  111  git status
+  112  git commit -a -m "edited readme"
+  113  git push -u origin master
+  114  cd ../..
+  115  git status
+  116  cd jdelite/
+  117  git status
+  118  git commit -a -m "edited readme"
+  119  git push -u origin master
+  120  git log -s
+  121  histoty
+  122  history
+  123  cd ../
+  124  history 100 > myhistory.txt

@@ -161,6 +161,10 @@ body.waiting * {
 	display: table-cell;
 	width: 40%;
 }
+.testAutoId {
+	width: 24px;
+	height: 18px;
+}
 .accordion-items {
 	width: 192px;
 }
@@ -216,12 +220,14 @@ table#accHdrPagesTableId td {
 	padding: 2px 0 2px 12px;
 	line-height: 18px;
 }
+#thumbnailDialogId {
+	overflow: hidden !important;
+}
 #thumbnailDialogId .ui-dialog-content {
-	overflow: hidden;
 	padding: 0;
 	margin: 0;
-	width: 198px;
-	height: 220px;
+	
+	
 }
 .ui-dialog-titlebar-close {
 	visibility: hidden;
@@ -236,32 +242,14 @@ table#accHdrPagesTableId td {
 .ui-tabs-anchor:active, .ui-tabs-anchor:focus{
 	outline: none;
 }
-	
-	
-	
-	
-	
-.thumbnailShow {
-	position: absolute;
-	
-	
-	
-	bottom: 10px;
-	right: 8px;
-	visibility: hidden;
-	z-index: 20;
-}
 .thumbnailView {
 	width: 100%;
 	
-	height: 200px;
+	height: 184px;
 	background-color: #ffffff;
 	-webkit-box-flex: 1;
 	display: flex;
-	
 	justify-content: center;
-	
-	
 }
 .thumbCanvas {
 	align-self: center;
@@ -269,26 +257,6 @@ table#accHdrPagesTableId td {
 	background: #ffffff;
 	border: 1px solid #008000;
 	outline: none;
-}
-.thumbnailButtons {
-	border: none;
-	
-	outline: none;
-	transition-duration: 0.2s;
-	cursor: pointer;
-	
-	width: 34px;
-	
-	color: #0000ff;
-	background-color: transparent;
-	background-repeat: no-repeat;
-	background-position: center;
-	font-family: Arial;
-	font-size: 12px;
-	padding: 0 2px 5px 0;
-	
-	float: right;
-	
 }
 .thumbnailHide {
 	color: #ffffff;
@@ -316,6 +284,15 @@ table#accHdrPagesTableId td {
 .settingsFont {
 	font-size: 12px;
 	
+}
+.settingsNotesTitle {
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+}
+.settingsNotesFont {
+	font-family: Arial;
+	font-size: 12px;
 }
 .selectionFont {
 	font-family: Arial;
@@ -384,19 +361,23 @@ label {
 	row-gap: 8px;
 }
 .settings-footer-1 {
-	margin: 12px 0 0 0;
+	margin: 15px 0 0 0;
 }
 .settings-footer-2 {
-	margin: 158px 0 0 0;
+	margin: 159px 0 0 0;
 }
 .settings-footer-3 {
-	margin: 76px 0 0 0;
+	margin: 77px 0 0 0;
 }
 .settings-footer-4 {
-	margin: 160px 0 0 0;
+	
+	margin: 190px 0 0 0;
 }
 .settings-footer-5 {
-	margin: 226px 0 0 0;
+	margin: 227px 0 0 0;
+}
+.settings-footer-6a {
+	margin: 126px 0 0 0;
 }
 .nodeProps-controls {
 	background-color: #eaf0fa;
@@ -495,6 +476,14 @@ label {
 	font-weight: bold;
 	outline: none;
 }
+.settingsDiskMenu {
+	height: 16px;
+	width: 80px;
+	margin: 4px 0 4px 0;
+	font-size: 16pt !important;
+	font-weight: bold !important;
+	outline: none;
+}
 #editNodeNameId {
 	width: 234px;
 	margin-right: 8px;
@@ -560,7 +549,7 @@ label {
 	justify-content: flex-start;
 	
 	font-weight: bold;
-	margin: 8px 0 12px;
+	margin: 4px 0 8px;
 }
 .selectGroup {
 	display: flex;
@@ -573,6 +562,16 @@ label {
 	flex-flow: row nowrap;
 	justify-content: flex-start;
 	position: absolute;
+}
+.partitionText {
+	width: 150px ;
+	height: 24px;
+	padding-left: 8px;
+	margin-right: 4px;
+	border: 1px solid #808080;
+	background-color: #fafafa;
+	font-weight: bold;
+	outline: none;
 }
 .folderText {
 	width: 100% ;
@@ -601,7 +600,6 @@ label {
 	
 	font-weight: bold;
 }
-	
 .prefs-button {
 	border: 1px solid #bbbbbb;
 	border-radius: 2px;
@@ -669,6 +667,12 @@ label {
 	background-color: #fafafa;
 	font-weight: bold;
 	outline: none;
+}
+.buttonTextViewDef {
+	margin: 2px 0 2px 4px;
+	width: 85px;
+	height: 26px;
+	
 }
 .prefs-dms-button-def {
 	margin: 6px 0 2px 58px;
@@ -1124,10 +1128,10 @@ label {
 }
 #selectFileTypeId {
 	width: 304px;
-	height: 28px;
+	height: 20px;
 	margin: 8px 0 6px 8px;
 	font-family: Arial;
-	font-size: 13px;
+	font-size: 16px;
 	outline: none;
 }
 #selectFileId {

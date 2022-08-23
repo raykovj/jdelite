@@ -11,58 +11,58 @@
     <script data-main="js/flowdemo" src="libs/require/require.js"></script>
     <link rel="stylesheet" href="libs/spectrum/spectrum.css"  type="text/css"/>
 
-    <title>JDElite Diagram Builder</title>
+    <title>JDElite Flowchart Builder</title>
 </head>
  
 <body>
 
     <div style="padding-bottom: 2px; ">
-    <div class="top-toolbar">
-        <div id="toolbarId" class="actions-toolbar">
-            <button id="menuId" class="toolbar-button button-menu" data-toggle="tooltip" title="Main Menu..."></button>
-            <span style="margin-left: 10px;"></span>
-            <button id="newId" class="toolbar-button button-new" data-toggle="tooltip" title="Create Diagram..."></button>
-            <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open Diagram..."></button>
-            <span style="margin-left: 10px;"></span>
-            <button id="undoId" class="toolbar-button button-undo" data-toggle="tooltip" title="Undo"></button>
-            <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
-            <span style="margin-left: 10px;"></span>
-            <button id="deleteId" class="toolbar-button button-delete" data-toggle="tooltip" title="Remove Selections"></button>
-            <button id="copyId" class="toolbar-button button-no-left button-copy" data-toggle="tooltip" title="Copy Selections"></button>
-            <button id="pasteId" class="toolbar-button button-no-left button-paste" data-toggle="tooltip" title="Paste Selections"></button>
-            <span style="margin-left: 10px;"></span>
-            <button id="saveId" class="toolbar-button button-save" data-toggle="tooltip" title="Save"></button>
-            <button id="saveAsId" class="toolbar-button button-no-left button-saveAs" data-toggle="tooltip" title="Save As..."></button>
-            <span style="margin-left: 10px;"></span>
-            <button id="configId" class="toolbar-button button-config" data-toggle="tooltip" title="Settings..."></button>
-            <button id="helpId" class="toolbar-button button-no-left button-help" data-toggle="tooltip" title="Help..."></button>
-        </div>
-        <div>
-            <span style="margin-left: 10px;"></span>
-        </div>
-        <div id="toolbar2Id" class="diagram-toolbar">
-            <button id="refreshId" class="toolbar-button button-refresh" data-toggle="tooltip" title="Refresh Diagram & Reset Scaling"></button>
-            <button id="findId" class="toolbar-button button-no-left button-find" data-toggle="tooltip"
-                    title="Search... &nbsp;&nbsp;Ctrl+Shift+F"></button>
-            <button id="clearId" class="toolbar-button button-no-left button-clear" data-toggle="tooltip" title="Clear Diagram"></button>
-            <button id="leftId" class="toolbar-button button-no-left button-left" data-toggle="tooltip" title="Previous Diagram"></button>
-            <button id="rightId" class="toolbar-button button-no-left button-right" data-toggle="tooltip" title="Next Diagram"></button>
-        </div>
-        <div>
-            <span style="margin-left: 10px;"></span>
-        </div>
-        <div id="diagramNameId" style=" margin: 0 0 2px 0;">
-            <div class="diagram-title">
-                <span class="selectionFont" style="padding: 4px 2px 0 8px;">Diagram:</span>
+        <div class="top-toolbar">
+            <div id="toolbarId" class="actions-toolbar">
+                <button id="menuId" class="toolbar-button button-menu" data-toggle="tooltip" title="Main Menu..."></button>
+                <span style="margin-left: 10px;"></span>
+                <button id="newId" class="toolbar-button button-new" data-toggle="tooltip" title="Create Flowchart..."></button>
+                <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open Flowchart..."></button>
+                <span style="margin-left: 10px;"></span>
+                <button id="undoId" class="toolbar-button button-undo" data-toggle="tooltip" title="Undo"></button>
+                <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
+                <span style="margin-left: 10px;"></span>
+                <button id="deleteId" class="toolbar-button button-delete" data-toggle="tooltip" title="Remove Selections"></button>
+                <button id="copyId" class="toolbar-button button-no-left button-copy" data-toggle="tooltip" title="Copy Selections"></button>
+                <button id="pasteId" class="toolbar-button button-no-left button-paste" data-toggle="tooltip" title="Paste Selections"></button>
+                <span style="margin-left: 10px;"></span>
+                <button id="saveId" class="toolbar-button button-save" data-toggle="tooltip" title="Save"></button>
+                <button id="saveAsId" class="toolbar-button button-no-left button-saveAs" data-toggle="tooltip" title="Save As..."></button>
+                <span style="margin-left: 10px;"></span>
+                <button id="configId" class="toolbar-button button-config" data-toggle="tooltip" title="Settings..."></button>
+                <button id="helpId" class="toolbar-button button-no-left button-help" data-toggle="tooltip" title="Help..."></button>
             </div>
-            <div class="diagram-name">
-                <span class="selectionFont" style="padding: 4px 2px 0 6px; "
-                    data-bind="text: diagramDisplayName()"></span>
+            <div>
+                <span style="margin-left: 10px;"></span>
             </div>
+            <div id="toolbar2Id" class="diagram-toolbar">
+                <button id="refreshId" class="toolbar-button button-refresh" data-toggle="tooltip" title="Refresh Flowchart & Reset Scaling"></button>
+                <button id="findId" class="toolbar-button button-no-left button-find" data-toggle="tooltip"
+                        title="Search... &nbsp;&nbsp;Ctrl+Shift+F"></button>
+                <button id="clearId" class="toolbar-button button-no-left button-clear" data-toggle="tooltip" title="Clear Flowchart"></button>
+                <button id="leftId" class="toolbar-button button-no-left button-left" data-toggle="tooltip" title="Previous Flowchart"></button>
+                <button id="rightId" class="toolbar-button button-no-left button-right" data-toggle="tooltip" title="Next Flowchart"></button>
+            </div>
+            <div>
+                <span style="margin-left: 10px;"></span>
+            </div>
+            <div id="diagramNameId" style=" margin: 0 0 2px 0;">
+                <div class="diagram-title">
+                    <span class="selectionFont" style="padding: 4px 2px 0 8px;">Flowchart:</span>
+                </div>
+                <div class="diagram-name">
+                    <span class="selectionFont" style="padding: 4px 2px 0 6px; "
+                        data-bind="text: diagramDisplayName()"></span>
+                </div>
+            </div>
+            <span style="margin-left: 2px;"></span>
         </div>
-        <span style="margin-left: 2px;"></span>
     </div>
-<!--</div>-->
 
     <div id="topContainerId" class="top-container">
         <div id="containerId" class="main-container" onscroll="repaintDiagram()">
@@ -93,16 +93,18 @@
                                 data-bind="text: scaleValue()"></span>
                         </div>
                     </div>
-                    <!-- TEMP -->
+                    <!-- ALLOW AUTO LAYOUT -->
                     <!--<div class="main-props-row" data-bind="visible: isAutoLayoutAllowed()">-->
                         <!--<div class="main-props-cell1">-->
-                            <!--<span style="font-weight: bold;">Select Auto:</span>-->
+                            <!--<span style="font-weight: bold;">Test Auto:</span>-->
                         <!--</div>-->
                         <!--<div class="main-props-cell2">-->
-                            <!--<input type="checkbox" id="chkSelectAutoId" style="margin: 4px 4px 0 6px;">-->
+                            <!--&lt;!&ndash;<input type="checkbox" id="chkSelectAutoId" style="margin: 4px 4px 0 6px;">&ndash;&gt;-->
+                            <!--<button id="testAutoId" class="testAutoId" data-bind="click: forceTestAutoMode">A</button>-->
+                            <!--<button id="resetAutoId" class="testAutoId" data-bind="click: resetTestAutoMode">X</button>-->
                         <!--</div>-->
                     <!--</div>-->
-                    <!-- TEMP END -->
+                    <!-- ALLOW END -->
                     <div class="main-props-row" data-bind="visible: isCanvasVisible()">
                         <div class="main-props-cell1">
                             <span style="font-weight: bold;">Edit Mode:</span>
@@ -282,34 +284,35 @@
                 <li><a href="#settingsTabId-3">Node Color</a></li>
                 <li><a href="#settingsTabId-4">Node Icons</a></li>
                 <li><a href="#settingsTabId-5">Schemes</a></li>
+                <li><a href="#settingsTabId-6">Integration</a></li>
             </ul>
 
             <div id="settingsTabId-1">
                 <!--<div class="settings-entry">View Content:</div>-->
                 <!--<div class="settings-controls">-->
                     <!--<input type="radio" id="btnDiagramId" name="editMode" style="margin: 4px 4px 0 4px;">-->
-                    <!--<label for="btnDiagramId" style="vertical-align:baseline; margin: 0 20px 0 0;" >Diagram</label>-->
+                    <!--<label for="btnDiagramId" style="vertical-align:baseline; margin: 0 20px 0 0;" >Flowchart</label>-->
                     <!--<input type="radio" id="btnPagesId" name="editMode" style="margin: 4px 4px 0 4px;">-->
                     <!--<label for="btnPagesId" style="vertical-align:baseline;  margin: 0 20px 0 0;">Pages</label>-->
                 <!--</div>-->
 
-                <div class="settings-entry">Edit / View Mode:</div>
+                <div class="settings-entry" style="margin-top: 4px; ">Edit / View Mode:</div>
                 <div class="settings-controls">
                     <input type="radio" id="btnEditAllId" name="editMode" style="margin: 4px 4px 0 4px;">
-                    <label for="btnHorizontal" style="vertical-align:baseline; margin: 0 20px 0 0;" >Edit</label>
+                    <label for="btnEditAllId" style="vertical-align:baseline; margin: 0 20px 0 0;" >Edit</label>
                     <input type="radio" id="btnViewOnlyId" name="editMode" style="margin: 4px 4px 0 4px;">
-                    <label for="btnVertical" style="vertical-align:baseline;  margin: 0 20px 0 0;">View Only</label>
+                    <label for="btnViewOnlyId" style="vertical-align:baseline;  margin: 0 20px 4px 0;">View Only</label>
                 </div>
 
-                <div class="settings-entry">Data flow direction:</div>
+                <div class="settings-entry" style="margin-top: 4px;">Data flow direction:</div>
                 <div class="settings-controls">
                     <input type="radio" id="btnHorizontal" name="flowDir" style="margin: 4px 4px 0 4px;">
                     <label for="btnHorizontal" style="vertical-align:baseline; margin: 0 20px 0 0;" >Horizontal</label>
                     <input type="radio" id="btnVertical" name="flowDir" style="margin: 4px 4px 0 4px;">
-                    <label for="btnVertical" style="vertical-align:baseline;  margin: 0 20px 0 0;">Vertical</label>
+                    <label for="btnVertical" style="vertical-align:baseline;  margin: 0 20px 4px 0;">Vertical</label>
                 </div>
 
-                <div class="settings-entry">Main canvas initial layout:</div>
+                <div class="settings-entry" style="margin-top: 4px;">Main canvas initial layout:</div>
                 <div class="settings-controls">
                     <input type="text" id="spinnerLevelsId" class="spinnerStyle">
                     <label for="spinnerLevelsId" class="spinner-label" style="margin-right: 20px;" >Layers *</label>
@@ -317,7 +320,7 @@
                     <label for="spinnerLanesId" class="spinner-label">Lanes *</label>
                 </div>
 
-                <div class="settings-entry">Diagram features:</div>
+                <div class="settings-entry" style="margin-top: 4px;">Flowchart features:</div>
                 <div class="settings-controls">
                     <div>
                         <input type="checkbox" id="chkStartEnd" name="df" style="margin: 4px 4px 0 0;">
@@ -327,15 +330,13 @@
                         <!--<input type="checkbox" id="chkGrid" name="df" style="margin: 4px 4px 0 0;">-->
                         <!--<label for="chkGrid" style="vertical-align:baseline;" >Show Grid</label>-->
                     </div>
-                </div>
-                <div class="settings-controls">
                     <div>
                         <input type="checkbox" id="chkShowRefs" name="edRefs" style="margin: 4px 4px 0 0;">
                         <label for="chkShowRefs" style="vertical-align:baseline; margin-right: 20px;" >Enable association links</label>
                     </div>
                     <div>
                         <input type="checkbox" id="chkAutoGen" name="edopt" style="margin: 4px 4px 0 0;">
-                        <label for="chkAutoGen" style="vertical-align:baseline; margin-right: 20px;" >Auto generate names for new nodes</label>
+                        <label for="chkAutoGen" style="vertical-align:baseline; margin-right: 20px;" >Auto generate new node names</label>
                     </div>
                     <div>
                         <input type="checkbox" id="chkHideNamesId" name="hideNames" style="margin: 4px 4px 0 0;">
@@ -343,7 +344,7 @@
                     </div>
                     <div>
                         <input type="checkbox" id="chkShowIconsId" name="showIcons" style="margin: 4px 4px 0 0;">
-                        <label for="chkShowIconsId" style="vertical-align:baseline; margin-right: 20px;" >Show nodes icons</label>
+                        <label for="chkShowIconsId" style="vertical-align:baseline; margin-right: 20px;" >Show node icons</label>
                     </div>
                     <div>
                         <input type="checkbox" id="chkShowLinkLabelsId" name="showLinkLabels" style="margin: 4px 4px 0 0;">
@@ -352,7 +353,7 @@
                 </div>
 
                 <div class="settings-footer-1">
-                    <span class="vertical" style="padding-left: 4px;">* &nbsp;Select initial canvas grid when creating a diagram or pages view</span>
+                    <span class="vertical" style="padding-left: 4px;">* &nbsp;Select initial canvas grid when creating a diagram</span>
                     <span class="vertical" style="padding-left: 4px;">** Changes from checking/unchecking these boxes cannot be undone</span>
                 </div>
             </div>
@@ -505,13 +506,13 @@
                         <label for="chkFlowIconUpdId" style="vertical-align: top;" >Update</label>
                     </div>
 
-                    <input type="radio" id="btnQuizCtgId" name="typeIcons" style="margin: 4px 0 0 10px;">
-                    <label for="btnQuizCtgId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Decision</label>
-                    <img id="quizIconDisplayId" class="iconKeyShape"/>
-                    <div>
-                        <input type="checkbox" id="chkQuizIconUpdId" style="margin:  0 6px 4px 0;">
-                        <label for="chkQuizIconUpdId" style="vertical-align:top;" >Update</label>
-                    </div>
+                    <!--<input type="radio" id="btnQuizCtgId" name="typeIcons" style="margin: 4px 0 0 10px;">-->
+                    <!--<label for="btnQuizCtgId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Decision</label>-->
+                    <!--<img id="quizIconDisplayId" class="iconKeyShape"/>-->
+                    <!--<div>-->
+                        <!--<input type="checkbox" id="chkQuizIconUpdId" style="margin:  0 6px 4px 0;">-->
+                        <!--<label for="chkQuizIconUpdId" style="vertical-align:top;" >Update</label>-->
+                    <!--</div>-->
 
                     <input type="radio" id="btnSideCtgId" name="typeIcons" style="margin: 4px 0 0 10px;">
                     <label for="btnSideCtgId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Side</label>
@@ -551,6 +552,46 @@
                 <div class="settings-footer-5"></div>
             </div>
 
+            <div id="settingsTabId-6" >
+                <div class="settingsNotesTitle" data-bind="text: integrationTitle()"></div>
+                <div style="margin-top: 4px; "></div>
+                <div class="settingsNotesFont"  data-bind="text: integrationTopNotes()"></div>
+                <div style="margin-top: 6px; "></div>
+
+                <div id="integrationTabId" style="overflow: hidden">
+                    <ul>
+                        <li><a href="#integrationTabId-1">React</a></li>
+                        <li><a href="#integrationTabId-2">Angular</a></li>
+                    </ul>
+
+                    <div id="integrationTabId-1">
+                        <div class="settingsNotesTitle" data-bind="text: integrationReactTitle()"></div>
+                        <div style="margin-top: 4px; "></div>
+                        <div class="settingsNotesFont"  data-bind="text: integrationReactNotesTop()"></div>
+                        <div style="margin-top: 8px; "></div>
+
+                        <div class="nodeProps-controls">
+                            <button id="btnShowInputId" class="prefs-button buttonTextViewDef ">Show Input</button>
+                            <button id="btnShowOutputId" class="prefs-button buttonTextViewDef ">Show Output</button>
+
+                        </div>
+                        <div style="margin-top: 8px; "></div>
+                        <div class="settingsNotesFont"  data-bind="text: integrationReactNotesBottom()"></div>
+                    </div>
+
+                    <div id="integrationTabId-2">
+                        <div style="margin: 16px 20px; "></div>
+                        <div class="settingsNotesTitle" data-bind="text: integrationAngularTitle()"></div>
+                        <div style="margin: 20px 20px; "></div>
+                        <div class="settingsNotesFont"  data-bind="text: integrationAngularNotesTop()"></div>
+
+                        <div class="settings-footer-6a"></div>
+
+                    </div>
+                </div>
+                <!--<div class="settings-footer-5"></div>-->
+            </div>
+
         </div>
     </div>
 
@@ -577,6 +618,33 @@
         </div>
     </div>
 
+    <div id="text1ViewDialogId" class="settingsFont" style="display: none; ">
+        <div style="font-weight: bold;">
+            <textarea id="text1ViewId" rows="400" cols="60" wrap="hard" class="selectionFont"
+                      style="border: 1px solid blue; outline: none; " spellcheck="false" readonly
+                       data-bind="visible: viewMessage1Visible, text: viewMessage1"></textarea>
+        </div>
+    </div>
+
+    <div id="text2ViewDialogId" class="settingsFont" style="display: none; ">
+        <div style="font-weight: bold;">
+            <textarea id="text2ViewId" rows="400" cols="60" wrap="hard" class="selectionFont"
+                      style="border: 1px solid blue; outline: none; " spellcheck="false" readonly
+                       data-bind="visible: viewMessage2Visible, text: viewMessage2"></textarea>
+        </div>
+    </div>
+
+    <!--<div id="textViewDialogId" class="settingsFont" style="display: none; ">-->
+        <!--<div class="selectDirView" style="font-weight: bold; margin: 4px; display: inline; ">-->
+            <!--<textarea id="text1ViewId" rows="400" cols="80" wrap="hard" class="selectionFont"-->
+                      <!--style="border: 1px solid blue;  " spellcheck="false" readonly-->
+                       <!--data-bind="visible: viewMessageVisible, text: viewMessage1"></textarea>-->
+            <!--<textarea id="text2ViewId" rows="400" cols="80" wrap="hard" class="selectionFont"-->
+                      <!--style="border: 1px solid blue; margin-left: 2px; " spellcheck="false" readonly-->
+                       <!--data-bind="visible: viewMessageVisible, text: viewMessage2"></textarea>-->
+        <!--</div>-->
+    <!--</div>-->
+
     <div id="confirmDialogId" class="settingsFont" style="display: none; ">
         <div style="font-weight: bold; margin: 4px; ">
             <textarea id="confirmTextId" rows="3" cols="50" wrap="hard" class="selectionFont"
@@ -592,24 +660,35 @@
                <!--data-bind="textInput: linkLabelValue, css: {invalidInput: isLinkLabelInvalid() }"/>-->
     <!--</div>-->
 
-    <div id="openFlowDialogId" class="settingsFont" style="display: none; ">
+    <div id="openFlowDialogId" class="settingsFont" style="display: none; overflow-y: hidden">
         <div class="selectDirView" data-bind="visible: isConnectionOK()">
+            <!--<span style="margin: 8px 6px 0 0;">Partition:</span>-->
+            <!--<select id="selectPartitionId" class="settingsDiskMenu"-->
+                    <!--data-bind="options: partitionsList, value: selectedPartition ">-->
+            <!--</select>-->
             <button id="dirsBtnUpId" class="toolbar-button button-leftDir" data-toggle="tooltip" title="Go back"></button>
-            <button id="dirsBtnDownId" class="toolbar-button button-no-left button-rightDir" data-toggle="tooltip" title="Choose a location..."></button>
+            <button id="dirsBtnDownId" class="toolbar-button button-no-left button-rightDir" data-toggle="tooltip" title="Choose new location..."></button>
             <span style="margin-left: 10px;"></span>
             <button id="createFolderId" class="toolbar-button button-newDir" data-toggle="tooltip" title="Create folder..."></button>
             <button id="deleteFSId" class="toolbar-button button-no-left button-deleteFS" data-toggle="tooltip" title="Delete selected"></button>
-            <!-- TEST -->
-            <button id="findDisksId" class="toolbar-button button-findDisks" data-toggle="tooltip" title="Find disks"></button>
+            <span style="font-weight: bold; margin: 8px 6px 2px 70px;">Partition:</span>
+            <input id="partitionId"  type="text" class="partitionText" readonly spellcheck="false"
+                   data-bind="textInput: selectedPartition" />
         </div>
 
-        <div style="font-weight: bold; margin: 4px 0 8px; " data-bind="visible: isConnectionOK()">
+        <div style="font-weight: bold; margin: 4px 0 4px; " data-bind="visible: isConnectionOK()">
             <span >Location:</span>
         </div>
         <div class="selectDirGroup" data-bind="visible: isConnectionOK()">
             <input id="selectedDirId" type="text" class="folderText" readonly spellcheck="false"
                    data-bind="textInput: currentPath" />
         </div>
+        <!--<div data-bind="visible: isConnectionOK()">-->
+            <!--<span style="font-weight: bold; margin: 6px 6px 8px 0; ">Location:</span>-->
+            <!--<input id="selectedDirId" type="text" class="folderText" readonly spellcheck="false"-->
+                   <!--data-bind="textInput: currentPath" />-->
+            <!--<span style="margin-top: 4px;"></span>-->
+        <!--</div>-->
 
         <div id="dirsTableContainer" data-bind="visible: isConnectionOK()">
             <table id="dirsTableId" class="galleryFont">
@@ -627,9 +706,9 @@
             </table>
         </div>
 
-        <div class="selectGroup" data-bind="visible: isConnectionOK() && isOpenMode()">
+        <div style="margin: 8px 0 0 0; font-weight: bold;" data-bind="visible: isConnectionOK() && isOpenMode()">
             <span style="margin: 16px 0 6px 0 ; ">Files Type:</span>
-            <select id="selectFileTypeId" onchange="onFileTypeChange()"
+            <select id="selectFileTypeId" onchange="onFileTypeChange(event)"
                     data-bind="options: filesTypes, value: selectedFileType ">
             </select>
         </div>
@@ -646,7 +725,7 @@
         </div>
 
         <div class="selectGroup" data-bind="visible: isConnectionOK() && isSaveMode()"
-             style="margin: 6px 0 0 0;">
+             style="margin: 2px 0 0 0;">
             <!--<div style="font-weight: bold; margin: 6px 0 0; ">Enter file name:</div>-->
             <span style="margin: 16px 6px 0 0 ; ">Enter file name:</span>
             <div>
@@ -660,7 +739,7 @@
             <button class="icon-textInvalid invalidText" style="vertical-align: middle; " disabled></button>
             <span class="invalid-message" data-bind="text: saveAsMessage()"></span>
         </div>
-
+        <input type="hidden" autofocus="true" />
     </div>
 
     <div id="newFlowDialogId" class="settingsFont" style="display: none; ">
@@ -683,7 +762,7 @@
             <div class="settings-entry">Content Type:</div>
             <div class="settings-controls">
             <input type="radio" id="btnDiagramId" name="editMode" style="margin: 4px 4px 0 4px;">
-            <label for="btnDiagramId" style="vertical-align:baseline; margin: 0 20px 0 0;" >Diagram</label>
+            <label for="btnDiagramId" style="vertical-align:baseline; margin: 0 20px 0 0;" >Flowchart</label>
             <input type="radio" id="btnPagesId" name="editMode" style="margin: 4px 4px 0 4px;">
             <label for="btnPagesId" style="vertical-align:baseline;  margin: 0 20px 0 0;">Pages</label>
             </div>
@@ -907,7 +986,13 @@
                     <button id="nodeSizeDefId" class="prefs-button prefs-dmsNode-button-def">Use Defaults</button>
                 </div>
 
-                <div class="settings-entry" style="margin: 8px 0 2px 0;">Text Location:</div>
+                <div class="settings-entry" style="margin:8px 0 2px 0;">Text content:</div>
+                <div class="nodeProps-controls">
+                    <textarea id="editNodeContentId" placeholder="[Enter content...]" autofocus rows="4" cols="37" wrap="hard"
+                              spellcheck="false"></textarea>
+                </div>
+
+                <div class="settings-entry" style="margin: 4px 0 2px 0;">Text Location:</div>
                 <div class="nodeProps-controls">
                     <input type="radio" id="btnInsideId" name="nodeText" style="margin: 4px 0 0 4px;">
                     <label for="btnInsideId" style="vertical-align:baseline; margin: 0 4px 0 0;" >Inside</label>
@@ -919,11 +1004,6 @@
                     <button id="btnTextClearId" class="prefs-button prefs-textNode-button-clear">Clear</button>
                 </div>
 
-                <div class="settings-entry" style="margin: 4px 0 2px 0;">Text content:</div>
-                <div class="nodeProps-controls">
-                    <textarea id="editNodeContentId" placeholder="[Enter content...]" autofocus rows="4" cols="37" wrap="hard"
-                      spellcheck="false"></textarea>
-                </div>
             </div>
 
             <div id="nodePropsTabId-2" >
