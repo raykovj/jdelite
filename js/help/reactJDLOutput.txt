@@ -35,7 +35,7 @@
             },
             "width": 122,
             "height": 56,
-            "bgnColor": "#e2f7b4",
+            "bgnColor": "#acc17e",
             "fgnColor": "#111561",
             "contentText": " This is a default node"
         },
@@ -74,7 +74,7 @@
             },
             "width": 116,
             "height": 56,
-            "bgnColor": "#f8e7dd",
+            "bgnColor": "#c9a7d3",
             "fgnColor": "#111561",
             "contentText": "Decision node",
             "decisionEnds": "FALSE_EMPTY_TRUE"
@@ -94,7 +94,7 @@
             },
             "width": 122,
             "height": 44,
-            "bgnColor": "#e2f7b4",
+            "bgnColor": "#acc17e",
             "fgnColor": "#111561",
             "contentText": "This is a dead end"
         },
@@ -113,7 +113,7 @@
             },
             "width": 122,
             "height": 56,
-            "bgnColor": "#e2f7b4",
+            "bgnColor": "#acc17e",
             "fgnColor": "#111561",
             "contentText": "Continue on the main flow"
         },
