@@ -189,7 +189,17 @@ body.waiting * {
 	text-indent: 0;
 	border: 1px solid #3a72c1;
 	background-color: #72AAFA;
+	width: 176px;
 }
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 table#accHdrDemoTableId td {
@@ -324,7 +334,7 @@ label {
 }
 .typeColorShape {
 	width: 28px;
-	height: 18px;
+	height: 16px;
 	background: #fff;
 	border: 2px solid #bbbbbb;
 	margin: 0px 0 0px 4px;
@@ -361,20 +371,22 @@ label {
 	row-gap: 8px;
 }
 .settings-footer-1 {
-	margin: 15px 0 0 0;
+	margin: 20px 0 0 0;
 }
 .settings-footer-2 {
-	margin: 159px 0 0 0;
+	margin: 164px 0 0 0;
 }
 .settings-footer-3 {
-	margin: 77px 0 0 0;
+	margin: 0 0 0 0;
 }
 .settings-footer-4 {
-	
-	margin: 190px 0 0 0;
+	margin: 195px 0 0 0;
 }
 .settings-footer-5 {
-	margin: 227px 0 0 0;
+	margin: 232px 0 0 0;
+}
+.settings-footer-6 {
+	margin: 1px 0 0 0;
 }
 .settings-footer-6a {
 	margin: 126px 0 0 0;
@@ -404,7 +416,7 @@ label {
 }
 .rectColorShape {
 	width: 28px;
-	height: 18px;
+	height: 16px;
 	background: #fff;
 	border: 2px solid #bbbbbb;
 	margin: 2px 0 2px 10px;
@@ -647,10 +659,9 @@ label {
 	float: right;
 }
 .buttonColorDef {
-	margin: 22px 0 2px 82px;
+	margin: 10px 0 12px 66px;
 	width: 85px;
 	height: 26px;
-	
 }
 .buttonSettingsScheme {
 	margin: 2px 0 2px 2px;
@@ -659,7 +670,7 @@ label {
 	float: right;
 }
 .schemeName {
-	width: 184px;
+	width: 232px;
 	height: 24px;
 	padding-left: 4px;
 	margin-right: 4px;
@@ -942,6 +953,18 @@ label {
 }
 .button-left16 {
 	background-image: url(../../images/toolbar/arrow_left16.png);
+}
+.btn-left-16 {
+	background-image: url(../../images/toolbar/navigate_left16.png);
+}
+.btn-right-16 {
+	background-image: url(../../images/toolbar/navigate_right16.png);
+}
+.btn-up-16 {
+	background-image: url(../../images/toolbar/navigate_up16.png);
+}
+.btn-down-16 {
+	background-image: url(../../images/toolbar/navigate_down16.png);
 }
 .button-left {
 	background-image: url(../../images/toolbar/navigate_left24.png);
@@ -1259,6 +1282,17 @@ table#linkPropsTableId td {
 }
 .nodePropsLabelSize {
 	width: 190px;
+}
+.nodeOpsMenu {
+	height: 16px;
+	
+	margin: 4px 0 4px 0;
+}
+.btnNodeOps {
+	margin: 20px 0 2px 2px;
+	width: 100px;
+	height: 26px;
+	float: right;
 }
 .ui-tooltip {
 	

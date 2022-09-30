@@ -281,7 +281,7 @@
             <ul>
                 <li><a href="#settingsTabId-1">General</a></li>
                 <li><a href="#settingsTabId-2">Node Size</a></li>
-                <li><a href="#settingsTabId-3">Node Color</a></li>
+                <li><a href="#settingsTabId-3">Colors</a></li>
                 <li><a href="#settingsTabId-4">Node Icons</a></li>
                 <li><a href="#settingsTabId-5">Schemes</a></li>
                 <li><a href="#settingsTabId-6">Integration</a></li>
@@ -394,75 +394,77 @@
 
             <div id="settingsTabId-3" style="height: 100%; ">
 
-                <div class="settings-entry" style="margin: 4px 0 4px 0;">Node type / background / foreground colors:</div>
-
+                <div class="settings-entry" style="margin: -4px 0 4px 0;">Node type / background / foreground colors:</div>
                 <div class="typeColorsGrid">
-                    <input type="radio" id="btnSETypeId" name="typeColors" style="margin: 4px 0 0 10px;">
+                    <input type="radio" id="btnSETypeId" name="typeColors" style="margin:4px 0 0 10px;">
                     <label for="btnSETypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Start / End</label>
                     <div id="seBgnDisplayId" class="typeColorShape"></div>
                     <div id="seFgnDisplayId" class="typeColorShape"></div>
                     <div>
-                        <input type="checkbox" id="chkSEUpdId" style="margin: 0 6px 4px 0;">
-                        <label for="chkSEUpdId" style="vertical-align: top;" >Update</label>
+                        <!--<input type="checkbox" id="chkSEUpdId" style="margin: 0 6px 4px 0;">-->
+                        <!--<label for="chkSEUpdId" style="vertical-align: top;" >Update</label>-->
                     </div>
 
                     <input type="radio" id="btnProcTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
                     <label for="btnProcTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Process</label>
                     <div id="procBgnDisplayId" class="typeColorShape"></div>
                     <div id="procFgnDisplayId" class="typeColorShape"></div>
-                    <div>
-                        <input type="checkbox" id="chkProcUpdId" style="margin: 0 6px 4px 0;">
-                        <label for="chkProcUpdId" style="vertical-align: top;" >Update</label>
-                    </div>
+                    <div></div>
 
                     <input type="radio" id="btnIOTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
                     <label for="btnIOTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Input / Output</label>
                     <div id="ioBgnDisplayId" class="typeColorShape"></div>
                     <div id="ioFgnDisplayId" class="typeColorShape"></div>
-                    <div>
-                        <input type="checkbox" id="chkIOUpdId" style="margin: 0 6px 4px 0;">
-                        <label for="chkIOUpdId" style="vertical-align: top;" >Update</label>
-                    </div>
+                    <div></div>
 
                     <input type="radio" id="btnSideTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
                     <label for="btnSideTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Side Lanes</label>
                     <div id="sideBgnDisplayId" class="typeColorShape"></div>
                     <div id="sideFgnDisplayId" class="typeColorShape"></div>
-                    <div>
-                        <input type="checkbox" id="chkSideUpdId" style="margin: 0 6px 4px 0;">
-                        <label for="chkSideUpdId" style="vertical-align: top;" >Update</label>
-                    </div>
+                    <div></div>
 
                     <input type="radio" id="btnDecTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
                     <label for="btnDecTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Decision</label>
                     <div id="decBgnDisplayId" class="typeColorShape"></div>
                     <div id="decFgnDisplayId" class="typeColorShape"></div>
-                    <div>
-                        <input type="checkbox" id="chkDecUpdId" style="margin: 0 6px 4px 0;">
-                        <label for="chkDecUpdId" style="vertical-align: top;" >Update</label>
-                    </div>
+                    <div></div>
 
-                    <input type="radio" id="btnTermTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
-                    <label for="btnTermTypeId" style="vertical-align:baseline; margin:4px 4px 0 8px;" >Endpoint</label>
+                    <input type="radio" id="btnTermTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">
+                    <label for="btnTermTypeId" style="vertical-align:baseline; margin:4px 4px 4px 8px;" >Endpoint</label>
                     <div id="termBgnDisplayId" class="typeColorShape"></div>
                     <div id="termFgnDisplayId" class="typeColorShape"></div>
-                    <div>
-                        <input type="checkbox" id="chkTermUpdId" style="margin: 0 6px 4px 0;">
-                        <label for="chkTermUpdId" style="vertical-align: top;" >Update</label>
-                    </div>
+                    <div></div>
                 </div>
 
-                <div class="settings-entry" style="margin: 8px 0 4px 0;">Select Type Colors:</div>
+                <div class="settings-entry" style="margin: 4px 0 4px 0;">Line colors:</div>
+                <div class="typeColorsGrid">
+                    <input type="radio" id="btnLinkTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">
+                    <label for="btnLinkTypeId" style="vertical-align:baseline; margin: 4px 4px 4px 8px;" >Link</label>
+                    <div id="linkDisplayId" class="typeColorShape"></div>
+                    <div></div>
+                    <div></div>
+
+                    <input type="radio" id="btnBorderTypeId" name="typeColors" style="margin:4px 0 0 10px;">
+                    <label for="btnBorderTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Border</label>
+                    <div id="borderDisplayId" class="typeColorShape"></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+
+                <div class="settings-entry" style="margin: 4px 0 4px 0;">Select Colors:</div>
                 <div class="nodeProps-controls nodeColorSelect">
                     <input id="typeColorPickId" type="text"  class="nodeColorItem"/>
                     <div class="nodeColorItem">
                         <ul style="list-style-type: none; margin: 0 0 0 18px; padding: 0;">
                             <li >
-                                <div class="rectColorRadio">
-                                    <input type="radio" id="btnBgnColorId" name="typeClrs" >
-                                    <label for="btnBgnColorId" style="vertical-align:baseline; " >Background</label>
+                                <div data-bind="visible: showBackgroundSelection">
+                                    <div class="rectColorRadio">
+                                        <input type="radio" id="btnBgnColorId" name="typeClrs" >
+                                        <label for="btnBgnColorId" style="vertical-align:baseline; " >Background</label>
+                                    </div>
+                                    <div id="bgnColorDisplayId" class="rectColorShape"></div>
                                 </div>
-                                <div id="bgnColorDisplayId" class="rectColorShape"></div>
                             </li>
                             <li >
                                 <div class="rectColorRadio">
@@ -475,16 +477,16 @@
                     </div>
                     <button id="btnColorDefId" class="prefs-button buttonColorDef ">Use Defaults</button>
                 </div>
-                <div style="margin: 40px 0 0 0;"></div>
+
+                <div style="margin: 4px 0 0 0;"></div>
                 <div >
-                    <button id="resetAllColorsId" class="prefs-button resetColorsToDef">Reset All Colors</button>
-                    <button id="rollbackColorsId" class="prefs-button setAllColorsToDef">Rollback All</button>
-                </div>
-                <div>
-                    <!--<button id="resetAllColorsId" class="prefs-button resetColorsToDef">Reset All Colors</button>-->
+                    <button id="resetAllColorsId" class="prefs-button resetColorsToDef"
+                            title="Reset to default colors">Reset All Colors</button>
+                    <button id="rollbackColorsId" class="prefs-button setAllColorsToDef"
+                            title="Reset to old colors">Rollback All</button>
                 </div>
 
-                <div class="settings-footer-3"></div>
+                <!--<div class="settings-footer-3"></div>-->
             </div>
 
             <div id="settingsTabId-4" >
@@ -494,16 +496,16 @@
                     <label for="btnFlagCtgId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Start / End</label>
                     <img id="flagIconDisplayId" class="iconKeyShape"/>
                     <div>
-                        <input type="checkbox" id="chkFlagIconUpdId" style="margin:  0 6px 4px 0;">
-                        <label for="chkFlagIconUpdId" style="vertical-align:top;" >Update</label>
+                        <!--<input type="checkbox" id="chkFlagIconUpdId" style="margin:  0 6px 4px 0;">-->
+                        <!--<label for="chkFlagIconUpdId" style="vertical-align:top;" >Update</label>-->
                     </div>
 
                     <input type="radio" id="btnFlowCtgId" name="typeIcons" style="margin: 4px 0 0 10px;">
                     <label for="btnFlowCtgId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Flow</label>
                     <img id="flowIconDisplayId" class="iconKeyShape"/>
                     <div>
-                        <input type="checkbox" id="chkFlowIconUpdId" style="margin: 0 6px 4px 0;">
-                        <label for="chkFlowIconUpdId" style="vertical-align: top;" >Update</label>
+                        <!--<input type="checkbox" id="chkFlowIconUpdId" style="margin: 0 6px 4px 0;">-->
+                        <!--<label for="chkFlowIconUpdId" style="vertical-align: top;" >Update</label>-->
                     </div>
 
                     <!--<input type="radio" id="btnQuizCtgId" name="typeIcons" style="margin: 4px 0 0 10px;">-->
@@ -518,8 +520,8 @@
                     <label for="btnSideCtgId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Side</label>
                     <img id="sideIconDisplayId" class="iconKeyShape"/>
                     <div>
-                        <input type="checkbox" id="chkSideIconUpdId" style="margin: 0 6px 4px 0;">
-                        <label for="chkSideIconUpdId" style="vertical-align: top;" >Update</label>
+                        <!--<input type="checkbox" id="chkSideIconUpdId" style="margin: 0 6px 4px 0;">-->
+                        <!--<label for="chkSideIconUpdId" style="vertical-align: top;" >Update</label>-->
                     </div>
 
                 </div>
@@ -556,7 +558,7 @@
                 <div class="settingsNotesTitle" data-bind="text: integrationTitle()"></div>
                 <div style="margin-top: 4px; "></div>
                 <div class="settingsNotesFont"  data-bind="text: integrationTopNotes()"></div>
-                <div style="margin-top: 6px; "></div>
+                <div style="margin-top: 10px; "></div>
 
                 <div id="integrationTabId" style="overflow: hidden">
                     <ul>
@@ -589,7 +591,7 @@
 
                     </div>
                 </div>
-                <!--<div class="settings-footer-5"></div>-->
+                <div class="settings-footer-6"></div>
             </div>
 
         </div>
@@ -925,6 +927,7 @@
             <ul>
                 <li><a href="#nodePropsTabId-1">General</a></li>
                 <li><a href="#nodePropsTabId-2">Connectivity</a></li>
+                <li><a href="#nodePropsTabId-3">Tasks</a></li>
             </ul>
 
             <div id="nodePropsTabId-1" >
@@ -955,7 +958,7 @@
                     <label for="chkShowNodeIconId" style="vertical-align: text-top;">Show Icon</label>
                 </div>
 
-                <div class="settings-entry" style="margin: 8px 0 2px 0;">Node Colors:</div>
+                <div class="settings-entry" style="margin: 6px 0 2px 0;">Node Colors:</div>
                 <div class="nodeProps-controls prefsNodeDisplay">
                     <input id='nodeBckGndPickId' type="text"/>
                     <ul style="list-style-type: none; margin: 0 0 0 16px; padding: 0;">
@@ -973,26 +976,35 @@
                             </div>
                             <div id="nodeFgnDisplayId" class="rectColorShape"></div>
                         </li>
+                        <li >
+                            <div class="rectColorRadio">
+                                <input type="radio" id="btnNodeBorderId" name="nodeFgn" >
+                                <label for="btnNodeBorderId" style="vertical-align:baseline; ">Border</label>
+                            </div>
+                            <div id="nodeBorderDisplayId" class="rectColorShape"></div>
+                        </li>
                     </ul>
                     <button id="nodeColorDefId" class="prefs-button">Use Defaults</button>
                 </div>
 
-                <div class="settings-entry" style="margin: 8px 0 2px 0;">Node size (px):</div>
+                <div class="settings-entry" style="margin: 6px 0 2px 0;">Node size (px):</div>
                 <div class="nodeProps-controls">
                     <input type="text" id="spNodeWidthId" class="spinnerStyleNode" >
                     <label for="spNodeWidthId" class="spinner-label-node">Width</label>
+                    <span style="margin: 0 0 0 10px;"></span>
                     <input type="text" id="spNodeHeightId" class="spinnerStyleNode" >
                     <label for="spNodeHeightId" class="spinner-label-node">Height</label>
+                    <span style="margin: 0 0 0 12px;"></span>
                     <button id="nodeSizeDefId" class="prefs-button prefs-dmsNode-button-def">Use Defaults</button>
                 </div>
 
-                <div class="settings-entry" style="margin:8px 0 2px 0;">Text content:</div>
+                <div class="settings-entry" style="margin:6px 0 2px 0;">Text content:</div>
                 <div class="nodeProps-controls">
                     <textarea id="editNodeContentId" placeholder="[Enter content...]" autofocus rows="4" cols="37" wrap="hard"
                               spellcheck="false"></textarea>
                 </div>
 
-                <div class="settings-entry" style="margin: 4px 0 2px 0;">Text Location:</div>
+                <!--<div class="settings-entry" style="margin: 4px 0 2px 0;">Text Location:</div>-->
                 <div class="nodeProps-controls">
                     <input type="radio" id="btnInsideId" name="nodeText" style="margin: 4px 0 0 4px;">
                     <label for="btnInsideId" style="vertical-align:baseline; margin: 0 4px 0 0;" >Inside</label>
@@ -1070,6 +1082,58 @@
                     </table>
                 </div>
             </div>
+
+            <div id="nodePropsTabId-3">
+
+                <div class="settings-entry" style="margin: 0 0 4px 0;">Actions:</div>
+                <div class="nodeProps-controls" style="display: flex; ">
+                    <input type="checkbox" id="chkSelectActionsId" style="margin: 0 20px 0 4px;">
+                    <select id="nodeActionsId" class="nodeOpsMenu"
+                            data-bind="options: nodeActionsList,
+                                optionsText: 'label',
+                                optionsValue: 'value'">
+                    </select>
+                    <button id="nodeActionDetailsId" disabled class="toolbar-button button-find" data-toggle="tooltip" style="margin-left: 6px;"
+                            title="Action Details"></button>
+                </div>
+
+                <div class="settings-entry" style="margin: 8px 0 4px 0;">Services:</div>
+                <div class="nodeProps-controls" style="display: flex; ">
+                    <input type="checkbox" id="chkSelectServicesId" name="nodetasks" style="margin: 0 20px 0 4px;">
+                    <select id="nodeServicesId" class="nodeOpsMenu"
+                            data-bind="options: nodeServicesList,
+                                optionsText: 'label',
+                                optionsValue: 'value'">
+                    </select>
+                    <button id="nodeServiceDetailsId" class="toolbar-button button-find" data-toggle="tooltip" style="margin-left: 6px;"
+                            title="Service Details"></button>
+                </div>
+
+                <div class="settings-entry" style="margin: 8px 0 4px 0;">Operations:</div>
+                <div class="nodeProps-controls" style="display: flex; ">
+                    <input type="checkbox" id="chkSelectOperationsId" name="nodetasks" style="margin: 0 20px 0 4px;">
+                    <select id="nodeOperationsId" class="nodeOpsMenu"
+                            data-bind="options: nodeOperationsList,
+                                optionsText: 'label',
+                                optionsValue: 'value'">
+                    </select>
+                    <button id="nodeOperationDetailsId" class="toolbar-button button-find" data-toggle="tooltip" style="margin-left: 6px;"
+                            title="Operation Details"></button>
+                </div>
+
+                <div class="settings-entry" style="margin:8px 0 2px 0;">Expressions:</div>
+                <div class="nodeProps-controls"  style="display: flex; ">
+                    <input type="checkbox" id="chkSelectExpressionsId" name="nodetasks" style="margin: 0px 20px 0 4px;">
+                    <textarea id="nodeExpressionsId" placeholder="[Enter content...]" autofocus rows="3" cols="42" wrap="hard"
+                              spellcheck="false"></textarea>
+                </div>
+
+                <br><br><br>
+                <div>
+                    <span>NOTE: Select checkboxes to enable tasks</span>
+                </div>
+            </div>
+
         </div>
     </div>
 
