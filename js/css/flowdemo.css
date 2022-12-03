@@ -312,6 +312,12 @@ table#accHdrPagesTableId td {
 label {
 	white-space: pre-wrap;
 }
+.settingsFeaturesGrid {
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 20px 230px 20px 220px;
+	row-gap: 2px;
+}
 .settings-entry {
 	font-weight: bold;
 }
@@ -371,7 +377,7 @@ label {
 	row-gap: 8px;
 }
 .settings-footer-1 {
-	margin: 20px 0 0 0;
+	margin: 0px 0 0 0;
 }
 .settings-footer-2 {
 	margin: 164px 0 0 0;
@@ -522,6 +528,21 @@ label {
 	height: 16px;
 	margin: 4px 0 4px 0;
 	
+}
+.settingsPortIconMenu {
+	height: 14px;
+	
+}
+#selectPortIconsId::selection {background: #a8d1eb}
+.ui-selectmenu-menu .ui-menu.cardinalityicons .ui-menu-item-wrapper {
+	padding: 0 10px 0 30px;
+	
+}
+	
+	
+.ui-selectmenu-menu .ui-menu.porticons .ui-menu-item-wrapper {
+	padding: 0 10px 0 30px;
+	width: 120px;
 }
 .ui-selectmenu-menu .ui-menu.schememenu .ui-menu-item-wrapper {
 	padding: 0 10px 0 10px;
@@ -704,6 +725,27 @@ label {
 	height: 26px;
 	margin-left: 10px;
 	display: inline-block;
+}
+.nodeTable-button-clear {
+	width: 52px;
+	height: 26px;
+	margin-left: 6px;
+	display: inline-block;
+	float: right;
+}
+.nodeTable-button-confirm {
+	width: 52px;
+	height: 26px;
+	margin-left: 6px;
+	display: inline-block;
+	float: right;
+}
+.nodeTable-button-reset {
+	width: 52px;
+	height: 26px;
+	
+	display: inline-block;
+	float: right;
 }
 .prefs-textNode-button-clear {
 	
@@ -890,6 +932,9 @@ label {
 }
 .button-refresh {
 	background-image: url(../../images/toolbar/refresh24.png);
+}
+.button-add {
+	background-image: url(../../images/toolbar/add24.png);
 }
 .button-new {
 	background-image: url(../../images/toolbar/addFile24.png);
@@ -1227,22 +1272,27 @@ table, th, td {
 	padding: 8px 15px 8px 15px;
 	text-align: left;
 }
+table#nodeTableContentId th {
+	padding:4px 2px 4px 2px;
+	color: #ffffff;
+	background-color: #72AAFA !important;
+}
 table#nodeHeadId th {
 	padding:4px 0px 4px 8px;
 	color: #ffffff;
 	background-color: #72AAFA !important;
 }
 table#nodeInputsTableId td {
-	padding:4px;
+	padding:0;
 }
 table#nodeOutputsTableId td {
-	padding:4px;
+	padding:0;
 }
 table#nodeRefInputsTableId td {
-	padding:4px;
+	padding:0;
 }
 table#nodeRefOutputsTableId td {
-	padding:4px;
+	padding:0;
 }
 table#linkHeadId th {
 	padding:4px 0 4px 8px;
@@ -1272,16 +1322,22 @@ table#linkPropsTableId td {
 	height:410px;
 }
 .nodePropsThNameSize {
-	width: 80px;
+	width: 64px;
 }
 .nodePropsThLabelSize {
-	width: 200px;
+	width: 214px;
+}
+	
+.nodePropsTopCnxSize {
+	width: 300px;
 }
 .nodePropsNameSize {
 	width: 90px;
 }
 .nodePropsLabelSize {
-	width: 190px;
+	width: 184px;
+	
+	margin: 0;
 }
 .nodeOpsMenu {
 	height: 16px;
@@ -1348,6 +1404,65 @@ table#dirsTableId td {
 .selectedTableRow {
 	color: #ffffff;
 	background-color: #408DEE;
+}
+.nodeContentBkgnd {
+	background-color: #eaf0fa;
+	height: 30px;
+}
+#nodeCnxContainer {
+	display:block;
+	
+	height:312px;
+	width:98%;
+}
+#nodeTableContainer {
+	display: block;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height: 250px;
+	width: 100%;
+	border: 1px solid #aaaaaa;
+}
+table#nodeTableContentId td {
+	text-align: left;
+	border-collapse: collapse;
+	padding: 1px;
+	font-weight: bold;
+}
+	
+	
+.nodeTableKey {
+	
+	width: 24px;
+	border: 1px solid #97c9ee;
+	outline: none;
+	pointer-events: auto;
+}
+.nodeTableField {
+	
+	width: 130px;
+	border: 1px solid #97c9ee;
+	outline: none;
+	pointer-events: auto;
+}
+.nodeTableType {
+	
+	width: 56px;
+	border: 1px solid #97c9ee;
+	outline: none;
+	pointer-events: auto;
+}
+.nodeTableLength {
+	
+	width: 36px;
+	border: 1px solid #97c9ee;
+	outline: none;
+	pointer-events: auto;
+}
+.nodeTableRowSelected {
+	color: #ffffff;
+	background-color: #408DEE;
+	border: 1px solid #408DEE;
 }
 #findTableContainer {
 	border: 1px solid #aaaaaa;

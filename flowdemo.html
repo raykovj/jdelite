@@ -296,7 +296,7 @@
                     <!--<label for="btnPagesId" style="vertical-align:baseline;  margin: 0 20px 0 0;">Pages</label>-->
                 <!--</div>-->
 
-                <div class="settings-entry" style="margin-top: 4px; ">Edit / View Mode:</div>
+                <div class="settings-entry" style="margin: 0 0 0 4px; ">Edit / View Mode:</div>
                 <div class="settings-controls">
                     <input type="radio" id="btnEditAllId" name="editMode" style="margin: 4px 4px 0 4px;">
                     <label for="btnEditAllId" style="vertical-align:baseline; margin: 0 20px 0 0;" >Edit</label>
@@ -304,7 +304,7 @@
                     <label for="btnViewOnlyId" style="vertical-align:baseline;  margin: 0 20px 4px 0;">View Only</label>
                 </div>
 
-                <div class="settings-entry" style="margin-top: 4px;">Data flow direction:</div>
+                <div class="settings-entry" style="margin: 4px 0 0 4px;">Flow direction:</div>
                 <div class="settings-controls">
                     <input type="radio" id="btnHorizontal" name="flowDir" style="margin: 4px 4px 0 4px;">
                     <label for="btnHorizontal" style="vertical-align:baseline; margin: 0 20px 0 0;" >Horizontal</label>
@@ -312,7 +312,7 @@
                     <label for="btnVertical" style="vertical-align:baseline;  margin: 0 20px 4px 0;">Vertical</label>
                 </div>
 
-                <div class="settings-entry" style="margin-top: 4px;">Main canvas initial layout:</div>
+                <div class="settings-entry" style="margin: 4px 0 0 4px;">Main canvas initial grid:</div>
                 <div class="settings-controls">
                     <input type="text" id="spinnerLevelsId" class="spinnerStyle">
                     <label for="spinnerLevelsId" class="spinner-label" style="margin-right: 20px;" >Layers *</label>
@@ -320,41 +320,82 @@
                     <label for="spinnerLanesId" class="spinner-label">Lanes *</label>
                 </div>
 
-                <div class="settings-entry" style="margin-top: 4px;">Flowchart features:</div>
+                <div class="settings-entry" style="margin: 4px 0 0 4px;">Flowchart features:</div>
+
+                <div class="settings-controls settingsFeaturesGrid">
+                    <input type="checkbox" id="chkStartEnd" style="margin: 4px 4px 0 0;">
+                    <label for="chkStartEnd" style="padding-top: 4px ; " >Add Start/End layers</label>
+                    <input type="checkbox" id="chkShowRefs" name="edRefs" style="margin: 4px 4px 0 0;">
+                    <label for="chkShowRefs" style="padding-top: 4px ; " >Enable association links</label>
+                    <!--<input type="checkbox" id="chkGrid" name="df" style="margin: 4px 4px 0 0;">-->
+                    <!--<label for="chkGrid" style="vertical-align:baseline;" >Show Grid</label>-->
+
+                    <input type="checkbox" id="chkLeftRight" name="df" style="margin: 4px 4px 0 0;">
+                    <label for="chkLeftRight" style="padding-top: 4px ;" >Add Side swim lanes</label>
+                    <input type="checkbox" id="chkShowLinkLabelsId" name="showLinkLabels" style="margin: 4px 4px 0 0;">
+                    <label for="chkShowLinkLabelsId" style="padding-top: 4px ; " >Show link labels on selection</label>
+
+                    <input type="checkbox" id="chkShowDBRecords" name="portCrd" style="margin: 4px 4px 0 0;">
+                    <label for="chkShowDBRecords" style="padding-top: 4px ; " >Enable database records assignment</label>
+                    <input type="checkbox" id="chkShowIconsId" name="showIcons" style="margin: 4px 4px 0 0;">
+                    <label for="chkShowIconsId" style="padding-top: 4px ;" >Show node icons</label>
+
+                    <input type="checkbox" id="chkShowCardinality" name="portCrd" style="margin: 4px 4px 0 0;">
+                    <label for="chkShowCardinality" style="padding-top: 4px ;" >Enable ports cardinality assignment</label>
+                    <input type="checkbox" id="chkAutoGen" name="edopt" style="margin: 4px 4px 0 0;">
+                    <label for="chkAutoGen" style="padding-top: 4px ;" >Auto generate new node names</label>
+
+                    <input type="checkbox" id="chkShowNodeTasks" name="portCrd" style="margin: 4px 4px 0 0;">
+                    <label for="chkShowNodeTasks" style="padding-top: 4px ; " >Enable node tasks assignment</label>
+                    <input type="checkbox" id="chkHideNamesId" name="hideNames" style="margin: 4px 4px 0 0;">
+                    <label for="chkHideNamesId" style="padding-top: 4px ; " >Hide node names</label>
+                </div>
+
+                <!--<div class="settings-controls">-->
+                    <!--<div>-->
+                        <!--<input type="checkbox" id="chkStartEnd" name="df" style="margin: 2px 4px 0 0;">-->
+                        <!--<label for="chkStartEnd" style="vertical-align:baseline; margin-right: 101px;" >Add Start/End layers</label>-->
+                        <!--<input type="checkbox" id="chkShowRefs" name="edRefs" style="margin: 2px 4px 0 0;">-->
+                        <!--<label for="chkShowRefs" style="vertical-align:baseline; margin-right: 82px;" >Enable association links</label>-->
+                        <!--&lt;!&ndash;<input type="checkbox" id="chkGrid" name="df" style="margin: 4px 4px 0 0;">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<label for="chkGrid" style="vertical-align:baseline;" >Show Grid</label>&ndash;&gt;-->
+                    <!--</div>-->
+                    <!--<div>-->
+                        <!--<input type="checkbox" id="chkLeftRight" name="df" style="margin: 4px 4px 0 0;">-->
+                        <!--<label for="chkLeftRight" style="vertical-align:baseline; margin-right: 99px;" >Add Side swim lanes</label>-->
+                        <!--<input type="checkbox" id="chkShowLinkLabelsId" name="showLinkLabels" style="margin: 4px 4px 0 0;">-->
+                        <!--<label for="chkShowLinkLabelsId" style="vertical-align:baseline; margin-right: 20px;" >Show link labels on selection</label>-->
+                    <!--</div>-->
+                    <!--<div>-->
+                        <!--<input type="checkbox" id="chkShowDBRecords" name="portCrd" style="margin: 4px 4px 0 0;">-->
+                        <!--<label for="chkShowDBRecords" style="vertical-align:baseline; margin-right: 12px;" >Enable database records assignment</label>-->
+                        <!--<input type="checkbox" id="chkShowIconsId" name="showIcons" style="margin: 4px 4px 0 0;">-->
+                        <!--<label for="chkShowIconsId" style="vertical-align:baseline; margin-right: 20px;" >Show node icons</label>-->
+                    <!--</div>-->
+                    <!--<div>-->
+                        <!--<input type="checkbox" id="chkShowCardinality" name="portCrd" style="margin: 4px 4px 0 0;">-->
+                        <!--<label for="chkShowCardinality" style="vertical-align:baseline; margin-right: 20px;" >Enable ports cardinality assignment</label>-->
+                        <!--<input type="checkbox" id="chkAutoGen" name="edopt" style="margin: 4px 4px 0 0;">-->
+                        <!--<label for="chkAutoGen" style="vertical-align:baseline; margin-right: 2px;" >Auto generate new node names</label>-->
+                    <!--</div>-->
+                    <!--<div>-->
+                        <!--<input type="checkbox" id="chkShowNodeTasks" name="portCrd" style="margin: 4px 4px 0 0;">-->
+                        <!--<label for="chkShowNodeTasks" style="vertical-align:baseline; margin-right: 46px;" >Enable node tasks assignment</label>-->
+                        <!--<input type="checkbox" id="chkHideNamesId" name="hideNames" style="margin: 4px 4px 0 0;">-->
+                        <!--<label for="chkHideNamesId" style="vertical-align:baseline; margin-right: 20px;" >Hide node names</label>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <div class="settings-entry" style="margin: 4px 0 0 4px;">Link ports presentation:</div>
                 <div class="settings-controls">
-                    <div>
-                        <input type="checkbox" id="chkStartEnd" name="df" style="margin: 4px 4px 0 0;">
-                        <label for="chkStartEnd" style="vertical-align:baseline; margin-right: 8px;" >Start/End layers **</label>
-                        <input type="checkbox" id="chkLeftRight" name="df" style="margin: 4px 4px 0 0;">
-                        <label for="chkLeftRight" style="vertical-align:baseline; margin-right: 8px;" >Side swim lanes **</label>
-                        <!--<input type="checkbox" id="chkGrid" name="df" style="margin: 4px 4px 0 0;">-->
-                        <!--<label for="chkGrid" style="vertical-align:baseline;" >Show Grid</label>-->
-                    </div>
-                    <div>
-                        <input type="checkbox" id="chkShowRefs" name="edRefs" style="margin: 4px 4px 0 0;">
-                        <label for="chkShowRefs" style="vertical-align:baseline; margin-right: 20px;" >Enable association links</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="chkAutoGen" name="edopt" style="margin: 4px 4px 0 0;">
-                        <label for="chkAutoGen" style="vertical-align:baseline; margin-right: 20px;" >Auto generate new node names</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="chkHideNamesId" name="hideNames" style="margin: 4px 4px 0 0;">
-                        <label for="chkHideNamesId" style="vertical-align:baseline; margin-right: 20px;" >Hide node names</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="chkShowIconsId" name="showIcons" style="margin: 4px 4px 0 0;">
-                        <label for="chkShowIconsId" style="vertical-align:baseline; margin-right: 20px;" >Show node icons</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="chkShowLinkLabelsId" name="showLinkLabels" style="margin: 4px 4px 0 0;">
-                        <label for="chkShowLinkLabelsId" style="vertical-align:baseline; margin-right: 20px;" >Show link labels on selection</label>
-                    </div>
+                    <select id="selectPortIconsId" class="settingsPortIconMenu"
+                            data-bind="options: portIcons, optionsValue: 'value' ">
+                    </select>
                 </div>
 
                 <div class="settings-footer-1">
-                    <span class="vertical" style="padding-left: 4px;">* &nbsp;Select initial canvas grid when creating a diagram</span>
-                    <span class="vertical" style="padding-left: 4px;">** Changes from checking/unchecking these boxes cannot be undone</span>
+                    <span class="vertical" style="padding: 0 0 0 4px; ">
+                        * &nbsp;Choose the initial grid when creating a diagram, modify it later from canvas menus</span>
                 </div>
             </div>
 
@@ -368,7 +409,7 @@
                     <button id="dmsSEDefId" class="prefs-button prefs-dms-button-def">Use Defaults</button>
                 </div>
 
-                <div class="settings-entry">Flow</div>
+                <div class="settings-entry">Flow / Side</div>
                 <div class="settings-controls">
                     <input type="text" id="spinnerNodeWidthId" class="spinnerStyle">
                     <label for="spinnerNodeWidthId" class="spinner-label" style="margin-right: 10px;" >Width (px)</label>
@@ -614,7 +655,7 @@
 
     <div id="infoDialogId" class="settingsFont" style="display: none; ">
         <div style="font-weight: bold; margin: 4px; ">
-            <textarea id="infoTextId" rows="5" cols="50" wrap="hard" class="selectionFont"
+            <textarea id="infoTextId" rows="4" cols="30" wrap="hard" class="selectionFont"
                        spellcheck="false" readonly
                        data-bind="visible: infoMessageVisible, text: infoMessage"></textarea>
         </div>
@@ -654,13 +695,6 @@
                        data-bind="text: confirmMessage"></textarea>
         </div>
     </div>
-
-    <!--<div>-->
-        <!--<input id="linkLabelId" type="text" class="linkLabelCls"-->
-               <!--autocomplete="off" spellcheck="false"-->
-               <!--onkeyup="validateLinkLabel(event)"-->
-               <!--data-bind="textInput: linkLabelValue, css: {invalidInput: isLinkLabelInvalid() }"/>-->
-    <!--</div>-->
 
     <div id="openFlowDialogId" class="settingsFont" style="display: none; overflow-y: hidden">
         <div class="selectDirView" data-bind="visible: isConnectionOK()">
@@ -926,12 +960,13 @@
         <div id="nodePropsTabId" class="nodePropsContainer">
             <ul>
                 <li><a href="#nodePropsTabId-1">General</a></li>
-                <li><a href="#nodePropsTabId-2">Connectivity</a></li>
-                <li><a href="#nodePropsTabId-3">Tasks</a></li>
+                <li><a href="#nodePropsTabId-2">Table Data</a></li>
+                <li><a href="#nodePropsTabId-3">Connectivity</a></li>
+                <li><a href="#nodePropsTabId-4">Tasks</a></li>
             </ul>
 
             <div id="nodePropsTabId-1" >
-                <div class="settings-entry" style="margin: -2px 0 2px 0;">Node name:</div>
+                <div class="settings-entry" style="margin: 0 0 2px 0;">Node name:</div>
                 <div class="nodeProps-controls">
                     <input id="editNodeNameId" autofocus type="text" class="nameText"
                            autocomplete="off" spellcheck="false"
@@ -949,7 +984,7 @@
                             data-bind="visible: isEditNameInvalid(), text: validateNameMessage2()"></span>
                 </div>
 
-                <div class="settings-entry" style="margin: 4px 0 2px 0;">Node Icon:</div>
+                <div class="settings-entry" style="margin: 6px 0 2px 0;">Node Icon:</div>
                 <div class="nodeProps-controls">
                     <select id="nodeIconItemsId" class="nodeIconMenu"
                             data-bind="options: nodeEmojiItems, optionsValue: 'value'">
@@ -998,7 +1033,7 @@
                     <button id="nodeSizeDefId" class="prefs-button prefs-dmsNode-button-def">Use Defaults</button>
                 </div>
 
-                <div class="settings-entry" style="margin:6px 0 2px 0;">Text content:</div>
+                <div class="settings-entry" style="margin: 6px 0 2px 0;">Text Content:</div>
                 <div class="nodeProps-controls">
                     <textarea id="editNodeContentId" placeholder="[Enter content...]" autofocus rows="4" cols="37" wrap="hard"
                               spellcheck="false"></textarea>
@@ -1012,70 +1047,180 @@
                     <label for="btnAboveId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Above</label>
                     <input type="radio" id="btnBelowId" name="nodeText" style="margin: 4px 0 0 6px;">
                     <label for="btnBelowId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Below</label>
-                    <button id="btnTextApplyId" class="prefs-button prefs-textNode-button-apply">Apply</button>
+                    <button id="btnTextApplyId" class="prefs-button prefs-textNode-button-apply">Confirm</button>
                     <button id="btnTextClearId" class="prefs-button prefs-textNode-button-clear">Clear</button>
                 </div>
 
             </div>
 
             <div id="nodePropsTabId-2" >
-                <div id="nodePropsListId" style="overflow: auto;">
+                <span>NOTE: To enable this feature, go to <b>Settings->General</b> and select <b>Enable database records assignment</b>.</span>
+
+                <div style="margin-top: 14px;"></div>
+                <div>
+                    <span  class="settings-entry">DB Table Content:</span>
+                    <button id="btnMoveRowDownId" class="toolbar-button button-down button-no-left" style="float:right; "
+                            data-toggle="tooltip" title="Move Row Down"></button>
+                    <button id="btnMoveRowUpId" class="toolbar-button button-up button-no-left" style="float:right; "
+                            data-toggle="tooltip" title="Move Row Up"></button>
+                    <button id="btnRemoveRowId" class="toolbar-button button-delete button-no-left" style="float:right; "
+                            data-toggle="tooltip" title="Remove Row"></button>
+                    <button id="btnAddRowId" class="toolbar-button button-add" data-toggle="tooltip" style="float:right; "
+                                title="Add Row"></button>
+                </div>
+
+                <div id="nodeTableContainer" style="margin-top: 20px;">
+                    <table id="nodeTableContentId" style="width: 100%;">
+                        <thead>
+                            <tr>
+                                <th style="width: 10%;">Key</th>
+                                <th style="width: 55%;">Field</th>
+                                <th style="width: 20%;">Type</th>
+                                <th style="width: 15%;">Length</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: dbNodeRecords()">
+                            <tr>
+                                <td data-bind="attr: {key, title: key}">
+                                    <input data-bind="textInput: key, disable: !enableShowDB()" class="nodeTableKey"
+                                           autocomplete="off" spellcheck="false" tabindex="-1"
+                                           onclick="editNodeTableKey(event)" />
+                                </td>
+                                <td data-bind="attr: {field, title: field}">
+                                    <input data-bind="textInput: field, disable: !enableShowDB()" class="nodeTableField"
+                                           autocomplete="off" spellcheck="false" tabindex="-1"
+                                           onclick="editNodeTableField(event)" />
+                                </td>
+                                <td data-bind="attr: {type, title: type}">
+                                    <input data-bind="textInput: type, disable: !enableShowDB()" class="nodeTableType"
+                                           autocomplete="off" spellcheck="false" tabindex="-1"
+                                           onclick="editNodeTableType(event)" />
+                                </td>
+                                <td data-bind="attr: {length, title: length}">
+                                    <input data-bind="textInput: length, disable: !enableShowDB()" class="nodeTableLength"
+                                           autocomplete="off" spellcheck="false" tabindex="-1"
+                                           onclick="editNodeTableLength(event)" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="nodeProps-controls" style="margin-top: 6px;">
+                    <button id="btnTableClearId" class="prefs-button nodeTable-button-clear" title="Clear the table">Clear</button>
+                    <button id="btnTableConfirmId" class="prefs-button nodeTable-button-confirm" title="Confirm all edits">Confirm</button>
+                    <button id="btnTableResetId" class="prefs-button nodeTable-button-reset" title="Reset all edits">Reset</button>
+                </div>
+
+            </div>
+
+            <div id="nodePropsTabId-3" >
+                <div class="nodeProps-controls nodePropsTopCnxSize">
+                    <span>NOTE: Select a checkbox to choose the port cardinality.</span>
+                    <span>To enable this feature, go to <b>Settings->General</b> and select <b>Enable ports cardinality assignment</b>.</span>
+                </div>
+
+                <div id="nodeCnxContainer" style="margin-top: 8px; ">
+                    <!--<div style="margin-top: 8px; "></div>-->
                     <table id="nodeHeadId">
                         <thead>
                         <tr>
-                            <th class="nodePropsThNameSize">Port ID</th>
-                            <th class="nodePropsThLabelSize">Port Label</th>
+                            <th style="width:25%" class="nodePropsThNameSize">Port ID</th>
+                            <th class="nodePropsThLabelSize">Port Label / Cardinality</th>
                         </tr>
                         </thead>
                     </table>
                     <table id="nodeInputsTableId" data-bind="visible: propsNodeInputs().length > 0">
+                        <col style="width: 32%;"/>
+                        <col style="width: 8%;"/>
+                        <col style="width: 60%;"/>
+
                         <caption  class="settings-entry" style="text-align:left">Input Links</caption>
                         <tbody data-bind="foreach: propsNodeInputs()">
-                            <tr>
+                            <tr style="height:16px">
                                 <td class="nodePropsNameSize" title="" data-bind="text: name"></td>
+                                <td>
+                                    <input type="checkbox" data-bind="enable: enableShowCardinality()"
+                                           onchange="checkPortInputCardinality(event)"/>
+                                </td>
                                 <td data-bind="attr: {name, label}">
                                     <input class="nodePropsLabelSize"
                                            autocomplete="off" spellcheck="false"
                                            onkeyup="editPropsNodeInputLabel(event)" data-bind="textInput: label"/>
                                 </td>
+                                <td>
+                                    <select style="display: none; padding: 0; margin: 0; "
+                                            data-bind="options: cardinalityItems, optionsValue: 'value'">
+                                    </select>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                     <table id="nodeOutputsTableId" data-bind="visible: propsNodeOutputs().length > 0">
+                        <col style="width: 32%;"/>
+                        <col style="width: 8%;"/>
+                        <col style="width: 60%;"/>
                         <caption  class="settings-entry" style="text-align:left">Output Links</caption>
                         <tbody data-bind="foreach: propsNodeOutputs()">
-                            <tr>
+                            <tr style="height:16px">
                                 <td class="nodePropsNameSize" title="" data-bind="text: name"></td>
+                                <td>
+                                    <input type="checkbox"  data-bind="enable: enableShowCardinality()"
+                                           onchange="checkPortOutputCardinality(event)"/>
+                                </td>
                                 <td data-bind="attr: {name, label}">
                                     <input class="nodePropsLabelSize"
                                            autocomplete="off" spellcheck="false"
                                            onkeyup="editPropsNodeOutputLabel(event)" data-bind="textInput: label"/>
                                 </td>
+                                <td>
+                                    <select style="display: none; padding: 0; "
+                                            data-bind="options: cardinalityItems, optionsValue: 'value'">
+                                    </select>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                     <table id="nodeRefInputsTableId" data-bind="visible: propsNodeRefInputs().length > 0">
+                        <col style="width: 32%;"/>
+                        <col style="width: 8%;"/>
+                        <col style="width: 60%;"/>
                         <caption  class="settings-entry" style="text-align:left">Input Associations</caption>
                         <tbody data-bind="foreach: propsNodeRefInputs()">
-                            <tr>
+                            <tr style="height:16px">
                                 <td class="nodePropsNameSize" title="" data-bind="text: name"></td>
+                                <td></td>
                                 <td data-bind="attr: {name, label}">
                                     <input class="nodePropsLabelSize"
                                            autocomplete="off" spellcheck="false"
                                            onkeyup="editPropsNodeRefInputLabel(event)" data-bind="textInput: label"/>
                                 </td>
+                                <td>
+                                    <select style="display: none; padding: 0; "
+                                            data-bind="options: cardinalityItems, optionsValue: 'value'">
+                                    </select>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                     <table id="nodeRefOutputsTableId" data-bind="visible: propsNodeRefOutputs().length > 0">
+                        <col style="width: 32%;"/>
+                        <col style="width: 8%;"/>
+                        <col style="width: 60%;"/>
                         <caption colspan="2" class="settings-entry" style="text-align:left">Output Associations</caption>
                         <tbody data-bind="foreach: propsNodeRefOutputs()">
-                            <tr>
+                            <tr style="height:16px">
                                 <td class="nodePropsNameSize" title="" data-bind="text: name"></td>
+                                <td></td>
                                 <td data-bind="attr: {name, label}">
                                     <input class="nodePropsLabelSize"
                                            autocomplete="off" spellcheck="false"
                                            onkeyup="editPropsNodeRefOutputLabel(event)" data-bind="textInput: label"/>
+                                </td>
+                                <td>
+                                    <select style="display: none; padding: 0; "
+                                            data-bind="options: cardinalityItems, optionsValue: 'value'">
+                                    </select>
                                 </td>
                             </tr>
                         </tbody>
@@ -1083,9 +1228,12 @@
                 </div>
             </div>
 
-            <div id="nodePropsTabId-3">
+            <div id="nodePropsTabId-4">
 
-                <div class="settings-entry" style="margin: 0 0 4px 0;">Actions:</div>
+                <span>NOTE: Select checkboxes to choose the node tasks.</span><br>
+                <span>To enable this feature, go to <b>Settings->General</b> and select <b>Enable node tasks assignment</b>.</span>
+
+                <div class="settings-entry" style="margin: 12px 0 4px 0;">Actions:</div>
                 <div class="nodeProps-controls" style="display: flex; ">
                     <input type="checkbox" id="chkSelectActionsId" style="margin: 0 20px 0 4px;">
                     <select id="nodeActionsId" class="nodeOpsMenu"
@@ -1129,9 +1277,6 @@
                 </div>
 
                 <br><br><br>
-                <div>
-                    <span>NOTE: Select checkboxes to enable tasks</span>
-                </div>
             </div>
 
         </div>

@@ -1316,7 +1316,7 @@ word-wrap:break-word'>
 
 <div class=WordSection1>
 
-<h1>Overview<span style='mso-tab-count:1'> </span></h1>
+<h1><b>Overview</b><span style='mso-tab-count:1'> </span></h1>
 
 <p class=MsoNormal>This overview describes the features of JDElite flowchart
 editor. This free demo version has all of the built-in features, the only
@@ -1329,7 +1329,7 @@ and edited but cannot be saved. </p>
 l2 level1 lfo4'><![if !supportLists]><span style='font-size:16.0pt;line-height:
 107%;mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>1.<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-style='font-size:16.0pt;line-height:107%'>Learn by Example<o:p></o:p></span></h1>
+style='font-size:16.0pt;line-height:107%'><b>Learn by Example</b><o:p></o:p></span></h1>
 
 <p class=MsoNormal>You can build a flowchart by simply drag-and-drop nodes from
 the palette and by dragging connection links between them using the mouse over
@@ -1366,7 +1366,7 @@ right and can be switched back and forth at any time during the design process:<
  <p class=MsoNormal>Nodes are assigned names at node creation time that have to
 be unique across the flowchart. The names are either automatically generated or
 you can choose to enter the node name. Duplicate names are rejected. Later you
-can change the nodes background/foreground colors, either by groups of nodes from
+can change the nodes background/foreground/border colors, either by groups of nodes from
 the global <i>Settings</i> dialog or individually for any particular node from
 its <i>Properties</i> dialog: </p>
 
@@ -1612,10 +1612,9 @@ full/partial name, or by matching text/pattern in the node content text:</p>
         }
     </script>
 
-    <p class=MsoNormal>One important aspect of JDElite are the task hooks. Currently four types of task hooks are implemented to
-      demonstrate this expandable feature: actions, services, operations and expressions. These hooks can be easily adapted to
-      integrate JDElite editor to specific processing environments, like flowchart diagramming tools for BPEL or BPMN
-      editors:</p>
+    <p class=MsoNormal><b>BPEL</b>: one of the important features of JDElite are the <b>task hooks</b>. Currently four types of task hooks are shown to
+      demonstrate this customizable feature: actions, services, operations and expressions. These hooks can be further attached to
+      a business processing environment, in areas like design of flowchart diagrams for BPEL editors:</p>
 
     <div style="display: inline-flex">
         <div id="playDemo11">
@@ -1628,7 +1627,7 @@ full/partial name, or by matching text/pattern in the node content text:</p>
     <script>
         function fnDemo111() {
             document.getElementById("playDemo11").innerHTML =
-                    '<iframe id="ifrDemo11" src="demo11.mp4" width="640" height="420" frameborder="0" allowtransparency="true" allowfullscreen>';
+                    '<iframe id="ifrDemo11" src="demoBPEL.mp4" width="640" height="420" frameborder="0" allowtransparency="true" allowfullscreen>';
             document.getElementById("btnDemo11").style.visibility = 'visible';
         }
         function fnDemo112() {
@@ -1638,13 +1637,64 @@ full/partial name, or by matching text/pattern in the node content text:</p>
         }
     </script>
 
-    <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+    <p class=MsoNormal><b>ERD</b>: another important features of JDElite is that it can be used for design of flowcharts to represent
+     relational database models and structures - <b>entity relationship diagrams</b>:</p>
+    <p class=MsoNormal>&ensp;- adding a table: </p>
+
+    <div style="display: inline-flex">
+        <div id="playDemo12">
+            <input type="image" src="videoOn.png" onclick="fnDemo121()" />
+        </div>
+        <div id="btnDemo12" style="visibility: hidden;">
+            <input type="image" src="videoOff.png" onclick="fnDemo122()" />
+        </div>
+    </div>
+    <script>
+        function fnDemo121() {
+            document.getElementById("playDemo12").innerHTML =
+                    '<iframe id="ifrDemo12" src="demoERD1.mp4" width="640" height="420" frameborder="0" allowtransparency="true" allowfullscreen>';
+            document.getElementById("btnDemo12").style.visibility = 'visible';
+        }
+        function fnDemo122() {
+            document.getElementById("ifrDemo12").remove();
+            document.getElementById("playDemo12").innerHTML = '<input type="image" src="videoOn.png" onclick="fnDemo121()" />';
+            document.getElementById("btnDemo12").style.visibility = 'hidden';
+        }
+    </script>
+
+ <p class=MsoNormal>&ensp;- adding relationships: </p>
+
+ <div style="display: inline-flex">
+    <div id="playDemo13">
+        <input type="image" src="videoOn.png" onclick="fnDemo131()" />
+    </div>
+    <div id="btnDemo13" style="visibility: hidden;">
+        <input type="image" src="videoOff.png" onclick="fnDemo132()" />
+    </div>
+ </div>
+ <script>
+    function fnDemo131() {
+        document.getElementById("playDemo13").innerHTML =
+           '<iframe id="ifrDemo13" src="demoERD2.mp4" width="640" height="420" frameborder="0" allowtransparency="true" allowfullscreen>';
+        document.getElementById("btnDemo13").style.visibility = 'visible';
+    }
+    function fnDemo132() {
+        document.getElementById("ifrDemo13").remove();
+        document.getElementById("playDemo13").innerHTML = '<input type="image" src="videoOn.png" onclick="fnDemo131()" />';
+        document.getElementById("btnDemo13").style.visibility = 'hidden';
+    }
+ </script>
+
+ <p class=MsoNormal><b>INTEGRATION</b>: There is a ongoing work to integrate JDElite to other
+  flowchart/diagramming frameworks. To learn about this work, click <a href="integration.htm" target="_blank">here</a>.</p>
+
+ <p class=MsoNormal><o:p>&nbsp;</o:p></p>
 
 <h1 style='margin-left:.5in;text-align:justify;text-indent:-.25in;mso-list:
 l2 level1 lfo4'><![if !supportLists]><span style='font-size:16.0pt;line-height:
 107%;mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>2.<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-style='font-size:16.0pt;line-height:107%'>Brief List of Features<o:p></o:p></span></h1>
+style='font-size:16.0pt;line-height:107%'><b>Brief List of Features</b><o:p></o:p></span></h1>
 
 <p class=MsoNormal>Following is a brief list of the wide range of features,
 accessible from the toolbar, from the context menus, or by using the mouse.</p>
@@ -1656,7 +1706,25 @@ Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman
 </span></span></span><![endif]>Most of the actions on the toolbar buttons are
 also available from the drop-down menu in the upper left corner. </p>
 
-<p class=MsoListParagraphCxSpLast style='margin-top:12.0pt;mso-add-space:auto;
+ <p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;mso-add-space:
+auto;text-indent:-.25in;mso-list:l3 level1 lfo2'><![if !supportLists]><span
+         style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>All described editor actions are undoable with
+  unlimited number of <b>undo/redo</b> steps (except node resizing and node color
+  selections). </p>
+
+ <p class=MsoListParagraphCxSpLast style='margin-top:12.0pt;mso-add-space:auto;
+text-indent:-.25in;mso-list:l3 level1 lfo2'><![if !supportLists]><span
+         style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>The editor has a proprietary <b>file system browser</b>
+  that is invokable when a server connection is available. It has full access to
+  the file system for easy navigation. The created flowcharts, in JSON format,
+  can be saved in existing folders or new folders can be created. Files and
+  folders can be renamed or removed as well. The default server connection uses <i>node.js</i>.</p>
+
+ <p class=MsoListParagraphCxSpLast style='margin-top:12.0pt;mso-add-space:auto;
 text-indent:-.25in;mso-list:l3 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
 Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1670,22 +1738,22 @@ only nodes that are accepted at this location:</p>
  id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
  path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
  <v:stroke joinstyle="miter"/>
- <v:formulas>
-  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
-  <v:f eqn="sum @0 1 0"/>
-  <v:f eqn="sum 0 0 @1"/>
-  <v:f eqn="prod @2 1 2"/>
-  <v:f eqn="prod @3 21600 pixelWidth"/>
-  <v:f eqn="prod @3 21600 pixelHeight"/>
-  <v:f eqn="sum @0 0 1"/>
-  <v:f eqn="prod @6 1 2"/>
-  <v:f eqn="prod @7 21600 pixelWidth"/>
-  <v:f eqn="sum @8 21600 0"/>
-  <v:f eqn="prod @7 21600 pixelHeight"/>
-  <v:f eqn="sum @10 21600 0"/>
- </v:formulas>
- <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
- <o:lock v:ext="edit" aspectratio="t"/>
+ <!--<v:formulas>-->
+  <!--<v:f eqn="if lineDrawn pixelLineWidth 0"/>-->
+  <!--<v:f eqn="sum @0 1 0"/>-->
+  <!--<v:f eqn="sum 0 0 @1"/>-->
+  <!--<v:f eqn="prod @2 1 2"/>-->
+  <!--<v:f eqn="prod @3 21600 pixelWidth"/>-->
+  <!--<v:f eqn="prod @3 21600 pixelHeight"/>-->
+  <!--<v:f eqn="sum @0 0 1"/>-->
+  <!--<v:f eqn="prod @6 1 2"/>-->
+  <!--<v:f eqn="prod @7 21600 pixelWidth"/>-->
+  <!--<v:f eqn="sum @8 21600 0"/>-->
+  <!--<v:f eqn="prod @7 21600 pixelHeight"/>-->
+  <!--<v:f eqn="sum @10 21600 0"/>-->
+ <!--</v:formulas>-->
+ <!--<v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>-->
+ <!--<o:lock v:ext="edit" aspectratio="t"/>-->
 </v:shapetype><v:shape id="Picture_x0020_1" o:spid="_x0000_i1026" type="#_x0000_t75"
  style='width:331.5pt;height:195pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="overview_files/image001.png" o:title=""/>
@@ -1829,8 +1897,22 @@ auto;text-indent:-.25in;mso-list:l3 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
 Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]>The node <i>Properties</i> dialog <i>Tasks</i> tab
-allows the option to choose any of the four task hooks to attach to a node.
-The selections make sense for certain configurations only.</p>
+allows to choose any of the four task hooks to attach to the selected node.
+The selections allow further integration to a business processing environment.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;mso-add-space:
+auto;text-indent:-.25in;mso-list:l3 level1 lfo2'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>The node <i>Properties</i> dialog <i>Table Data</i> tab
+allows to model the node as a database table.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;mso-add-space:
+auto;text-indent:-.25in;mso-list:l3 level1 lfo2'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>The node <i>Properties</i> dialog <i>Connectivity</i> tab
+allows to provide the relationships between previously created database table presentations.</p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;mso-add-space:
 auto;text-indent:-.25in;mso-list:l3 level1 lfo2'><![if !supportLists]><span
@@ -1840,24 +1922,6 @@ Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman
 by the <i>Thumbnail View</i> or by the node search tool.<span
 style='mso-spacerun:yes'>           </span><span
 style='mso-spacerun:yes'> </span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;mso-add-space:
-auto;text-indent:-.25in;mso-list:l3 level1 lfo2'><![if !supportLists]><span
-style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>All described editor actions are undoable with
-unlimited number of <b>undo/redo</b> steps (except node resizing and node color
-selections). </p>
-
-<p class=MsoListParagraphCxSpLast style='margin-top:12.0pt;mso-add-space:auto;
-text-indent:-.25in;mso-list:l3 level1 lfo2'><![if !supportLists]><span
-style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>The editor has a proprietary <b>file system browser</b>
-that is invokable when a server connection is available. It has full access to
-the file system for easy navigation. The created flowcharts, in JSON format,
-can be saved in existing folders or new folders can be created. Files and
-folders can be renamed or removed as well. The default server connection uses <i>node.js</i>.</p>
 
 <p class=MsoNormal><o:p>&nbsp;</o:p></p>
 
