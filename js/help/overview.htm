@@ -1316,16 +1316,40 @@ word-wrap:break-word'>
 
 <div class=WordSection1>
 
-<h1><b>Overview</b><span style='mso-tab-count:1'> </span></h1>
+<h1><b>JDElite Overview</b><span style='mso-tab-count:1'> </span></h1>
 
 <p class=MsoNormal>This overview describes the features of JDElite flowchart
 editor. This free demo version has all of the built-in features, the only
-difference from the full version is the access to the file system. You can
-create your own flowcharts but in order to save them you need the additional
+difference from the full version is that there is no access to the file system. You can
+create your own flowcharts but in order to save/reopen them you need the additional
 server module. There are four built-in sample flowcharts. They can be opened
-and edited but cannot be saved. </p>
+and edited but modifications cannot be saved. </p>
 
-<h1 style='margin-left:.5in;text-align:justify;text-indent:-.25in;mso-list:
+ <p class=MsoNormal>QUICK GLANCE:</p>
+
+ <div style="display: inline-flex">
+  <div id="playDemo">
+   <input type="image" src="videoOn.png" onclick="fnDemo1()" />
+  </div>
+  <div id="btnDemo" style="visibility: hidden;">
+   <input type="image" src="videoOff.png" onclick="fnDemo2()" />
+  </div>
+ </div>
+ <script>
+  function fnDemo1() {
+   document.getElementById("playDemo").innerHTML =
+           '<iframe id="ifrDemo" src="startDemo.mp4" width="640" height="400" frameborder="0" allowtransparency="true" allowfullscreen/>';
+   document.getElementById("btnDemo").style.visibility = 'visible';
+  }
+  function fnDemo2() {
+   document.getElementById("ifrDemo").remove();
+   document.getElementById("playDemo").innerHTML = '<input type="image" src="videoOn.png" onclick="fnDemo1()" />';
+   document.getElementById("btnDemo").style.visibility = 'hidden';
+  }
+ </script>
+
+
+ <h1 style='margin-left:.5in;text-align:justify;text-indent:-.25in;mso-list:
 l2 level1 lfo4'><![if !supportLists]><span style='font-size:16.0pt;line-height:
 107%;mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>1.<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
@@ -1606,7 +1630,7 @@ full/partial name, or by matching text/pattern in the node content text:</p>
         }
     </script>
 
-    <p class=MsoNormal>SUPPORT FOR <b>BPEL</b>: one of the important features of JDElite are the <b>task hooks</b>. Currently four types of task hooks are shown to
+    <p class=MsoNormal>SUPPORT FOR <b>BPEL</b>: One of the important features of JDElite are the <b>task hooks</b>. Currently four types of task hooks are shown to
       demonstrate this customizable feature: actions, services, operations and expressions. These hooks can be further attached to
       a business processing environment, in areas like design of flowchart diagrams for BPEL editors:</p>
 
@@ -1631,7 +1655,7 @@ full/partial name, or by matching text/pattern in the node content text:</p>
         }
     </script>
 
-    <p class=MsoNormal>SUPPORT FOR <b>ERD</b>: another important features of JDElite is that it can be used for design of flowcharts to represent
+    <p class=MsoNormal>SUPPORT FOR <b>ERD</b>: Another important feature of JDElite is that it can be used for design of flowcharts to represent
      relational database models and structures - <b>entity relationship diagrams</b>:</p>
     <p class=MsoNormal>&ensp;- adding a table: </p>
 
@@ -1680,7 +1704,7 @@ full/partial name, or by matching text/pattern in the node content text:</p>
  </script>
 
  <p class=MsoNormal><b>INTEGRATION</b>: There is an ongoing work to integrate JDElite with other
-  flowchart/diagramming frameworks. To learn about this work, click <a href="integration.htm" target="_blank">here</a>.</p>
+  flowchart/diagramming frameworks. To get an impression of this work, click <a href="integration.htm" target="_blank">here</a>.</p>
 
  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
 
