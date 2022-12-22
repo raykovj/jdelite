@@ -97,30 +97,26 @@ ul
 
 <div class=WordSection1>
 
-<h1>JDElite Integration with Web Frameworks     </h1>
+<h1>JDElite Integration with Web Frameworks</h1>
 
-<p class=MsoNormal>JDElite offers JDLCore flowchart generator, a JavaScript
-standalone library, along with plugins for certain Web frameworks. The plugins
-translate the users’ format into the JDLCore input format. JDLCore automatically
-generates the nodes layout and the edge routing to a JSON file in JDElite
-output format. This file has the full layout information with coordinates and
-can also be passed to the JDElite flowchart editor for visual inspection and
-further editing.</p>
+<p class=MsoNormal>JDElite consists of a flowchart generator - JDLCore, along with plugins for support
+	of different Web diagramming frameworks. The plugins translate the users’ format into the JDLCore
+	internal input format. JDLCore generates the nodes layout and the edge routing to a JSON file in
+	JDElite output format. This file has the full layout information with coordinates and can also be
+	opened in the JDElite flowchart editor for visual inspection and further editing.</p>
 
 <p class=MsoListParagraph style='text-indent:-.25in'><span style='font-size:
 16.0pt;line-height:107%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-size:16.0pt;line-height:107%;font-weight: bold;'>React</span></p>
+</span></span><span style='font-size:16.0pt;line-height:107%;font-weight: bold;'>Collaborating with React Flow - an example</span></p>
 
-<p class=MsoNormal>A simple example of a flowchart internal format is found on
-the Web site of React Flow (<a href="https://reactflow.dev/docs">https://reactflow.dev/docs</a>).
-It is first stripped from ‘position’ data and it is translated through the React Flow plugin, then it is
-run through JDLCore. The resulting JSON file is in JDLCore output
-format. It contains the generated layout of the nodes and the routed links with
-coordinates, along with references to the original elements in the input. The
-output can further help developers in their work with React Flow framework to
-extract the provided graphical information from it. That would be tremendously useful
-for larger and more complex flowcharts. You can look at the React Flow input
-and JDLCore output here:</p>
+<p class=MsoNormal>The React Flow plugin uses the flowchart internal format of React Flow
+	(https://reactflow.dev/docs). In this particular case the input 'position' data is ignored
+	and all the remaining input data is translated and internally supplied to JDLCore. The result
+	is a JSON file in JDElite output format. It contains the generated layout of the nodes and
+	the routed links with all coordinates, along with references to the original elements in the
+	input. The graphical informationin this output can further help the developers in their work
+	with React Flow framework. That would be considerably useful for larger and more complex
+	flowcharts. You can look at the React Flow input and JDElite output here:</p>
 
 	<p class=MsoNormal>React Flow Input:</p>
 	<div style="display: inline-flex">
@@ -142,7 +138,7 @@ and JDLCore output here:</p>
 			document.getElementById("playDemo1").innerHTML = '<input type="image" src="docOn.png" onclick="fnDemo11()" />';
 			document.getElementById("btnDemo1").style.visibility = 'hidden';
 		}
-	</script><p/>
+	</script>
 
 	<p class=MsoNormal>JDLCore Output:</p>
 	<div style="display: inline-flex">
