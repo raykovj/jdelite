@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<title>Title</title>-->
+</head>
+<body>
+
+    <pre id="reactFlowIn"></pre>
+
+    <script>
+        var data = [
+            {
+                id: '1',
+                type: 'input',
+                data: { label: "Demo start" }
+            },
+            {
+                id: '2',
+                data: { label: " This is a default node"}
+            },
+            {
+                id: '3',
+                data: { label: "This node is on the main flow and has its own style"},
+                style: {
+                    background: '#D6D5E6',
+                    color: '#333',
+                    border: '1px solid #222138',
+                    width: 180
+                }
+            },
+            {
+                id: '4',
+                type: 'diamond',
+                decisionEnds: '2',
+                data: { label: 'Decision node'}
+            },
+            {
+                id: '5',
+                data: { label: 'This is a dead end'}
+            },
+            {
+                id: '6',
+                data: { label: 'Continue on the main flow' }
+            },
+            {
+                id: '7',
+                type: 'output',
+                data: {
+                    label: "This is the end node"}
+            },
+            {
+                id: '8',
+                type: 'output',
+                data: { label: 'This is another end node' }
+            },
+            {
+                id: 'e1-2',
+                source: '1',
+                target: '2',
+                label: 'this is an edge label'
+            },
+            {
+                id: 'e1-3',
+                source: '1',
+                target: '3'
+            },
+            {
+                id: 'e3-4',
+                source: '3',
+                target: '4',
+                label: 'decision input'
+            },
+            {
+                id: 'e4-5',
+                source: '4',
+                target: '5',
+                sourceType: '2',
+                label: 'decision out NO'
+            },
+            {
+                id: 'e4-6',
+                source: '4',
+                target: '6',
+                sourceType: '1',
+                label: 'decision out YES'
+            },
+            {
+                id: 'e5-7',
+                source: '6',
+                target: '7',
+                type: 'smoothstep',
+                label: 'smooth step edge'
+            },
+            {
+                id: 'e6-8',
+                source: '6',
+                target: '8',
+                type: 'step',
+                style: { stroke: '#f6ab6c' },
+                label: 'a step edge',
+                animated: true,
+                labelStyle: { fill: '#f6ab6c', fontWeight: 700 }
+            }
+        ];
+
+        document.getElementById("reactFlowIn").innerHTML = JSON.stringify(data, null, 4);
+
+    </script>
+
+</body>
+</html>
