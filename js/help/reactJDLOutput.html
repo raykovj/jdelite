@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<title>Title</title>-->
+</head>
+<body>
+
+    <pre id="reactFlowOut"></pre>
+
+    <script>
+        var data = [
+            {
+                "id": 1,
+                "name": "N1",
+                "userObject": {
+                    "id": "1"
+                },
+                "type": 1,
+                "levelNum": 0,
+                "laneNum": 1,
+                "location": {
+                    "x": 173,
+                    "y": 25
+                },
+                "width": 122,
+                "height": 40,
+                "bgnColor": "#8cf3d2",
+                "fgnColor": "#111561",
+                "contentText": "Demo start"
+            },
+            {
+                "id": 1,
+                "name": "N2",
+                "userObject": {
+                    "id": "2"
+                },
+                "type": 3,
+                "levelNum": 1,
+                "laneNum": 0,
+                "location": {
+                    "x": 21,
+                    "y": 109
+                },
+                "width": 122,
+                "height": 56,
+                "bgnColor": "#acc17e",
+                "fgnColor": "#111561",
+                "contentText": " This is a default node"
+            },
+            {
+                "id": 1,
+                "name": "N3",
+                "userObject": {
+                    "id": "3"
+                },
+                "type": 3,
+                "levelNum": 1,
+                "laneNum": 1,
+                "location": {
+                    "x": 173,
+                    "y": 109
+                },
+                "width": 180,
+                "height": 56,
+                "resizeW": 29,
+                "bgnColor": "#D6D5E6",
+                "fgnColor": "#333",
+                "contentText": "This node is on the main flow and has its own style"
+            },
+            {
+                "id": 1,
+                "name": "D4",
+                "userObject": {
+                    "id": "4"
+                },
+                "type": 6,
+                "levelNum": 2,
+                "laneNum": 1,
+                "location": {
+                    "x": 176,
+                    "y": 195
+                },
+                "width": 116,
+                "height": 56,
+                "bgnColor": "#c9a7d3",
+                "fgnColor": "#111561",
+                "contentText": "Decision node",
+                "decisionEnds": "FALSE_EMPTY_TRUE"
+            },
+            {
+                "id": 1,
+                "name": "N5",
+                "userObject": {
+                    "id": "5"
+                },
+                "type": 3,
+                "levelNum": 3,
+                "laneNum": 0,
+                "location": {
+                    "x": 21,
+                    "y": 287
+                },
+                "width": 122,
+                "height": 44,
+                "bgnColor": "#acc17e",
+                "fgnColor": "#111561",
+                "contentText": "This is a dead end"
+            },
+            {
+                "id": 1,
+                "name": "N6",
+                "userObject": {
+                    "id": "6"
+                },
+                "type": 3,
+                "levelNum": 3,
+                "laneNum": 2,
+                "location": {
+                    "x": 325,
+                    "y": 281
+                },
+                "width": 122,
+                "height": 56,
+                "bgnColor": "#acc17e",
+                "fgnColor": "#111561",
+                "contentText": "Continue on the main flow"
+            },
+            {
+                "id": 1,
+                "name": "N7",
+                "userObject": {
+                    "id": "7"
+                },
+                "type": 2,
+                "levelNum": 4,
+                "laneNum": 1,
+                "location": {
+                    "x": 173,
+                    "y": 377
+                },
+                "width": 122,
+                "height": 56,
+                "bgnColor": "#8cf3d2",
+                "fgnColor": "#111561",
+                "contentText": "This is the end node"
+            },
+            {
+                "id": 1,
+                "name": "N8",
+                "userObject": {
+                    "id": "8"
+                },
+                "type": 2,
+                "levelNum": 4,
+                "laneNum": 2,
+                "location": {
+                    "x": 325,
+                    "y": 377
+                },
+                "width": 122,
+                "height": 56,
+                "bgnColor": "#8cf3d2",
+                "fgnColor": "#111561",
+                "contentText": "This is another end node"
+            },
+            {
+                "id": 2,
+                "source": "N1/OUT-0",
+                "target": "N2/IN-0",
+                "name": "[N1/OUT-0]-[N2/IN-0]",
+                "userObject": {
+                    "id": "e1-2"
+                },
+                "srcSide": 1,
+                "trgSide": 2,
+                "type": 1,
+                "drawColor": "#82AAFA",
+                "label": "this is an edge label",
+                "segments": [
+                    {
+                        "start": {
+                            "x": 73,
+                            "y": 65
+                        },
+                        "end": {
+                            "x": 73,
+                            "y": 89
+                        }
+                    },
+                    {
+                        "start": {
+                            "x": 73,
+                            "y": 89
+                        },
+                        "end": {
+                            "x": 73,
+                            "y": 101
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "source": "N1/OUT-1",
+                "target": "N3/IN-0",
+                "name": "[N1/OUT-1]-[N3/IN-0]",
+                "userObject": {
+                    "id": "e1-3"
+                },
+                "srcSide": 1,
+                "trgSide": 2,
+                "type": 1,
+                "drawColor": "#82AAFA",
+                "segments": [
+                    {
+                        "start": {
+                            "x": 91,
+                            "y": 65
+                        },
+                        "end": {
+                            "x": 91,
+                            "y": 89
+                        }
+                    },
+                    {
+                        "start": {
+                            "x": 91,
+                            "y": 89
+                        },
+                        "end": {
+                            "x": 234,
+                            "y": 89
+                        }
+                    },
+                    {
+                        "start": {
+                            "x": 234,
+                            "y": 89
+                        },
+                        "end": {
+                            "x": 234,
+                            "y": 101
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "source": "N3/OUT-0",
+                "target": "D4/IN-0",
+                "name": "[N3/OUT-0]-[D4/IN-0]",
+                "userObject": {
+                    "id": "e3-4"
+                },
+                "srcSide": 1,
+                "trgSide": 2,
+                "type": 1,
+                "drawColor": "#82AAFA",
+                "label": "decision input",
+                "segments": [
+                    {
+                        "start": {
+                            "x": 234,
+                            "y": 165
+                        },
+                        "end": {
+                            "x": 234,
+                            "y": 180
+                        }
+                    },
+                    {
+                        "start": {
+                            "x": 234,
+                            "y": 180
+                        },
+                        "end": {
+                            "x": 234,
+                            "y": 187
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "source": "D4/OUT-NO",
+                "target": "N5/IN-0",
+                "name": "[D4/OUT-NO]-[N5/IN-0]",
+                "userObject": {
+                    "id": "e4-5"
+                },
+                "srcSide": 4,
+                "trgSide": 2,
+                "type": 1,
+                "drawColor": "#82AAFA",
+                "label": "decision out NO",
+                "segments": [
+                    {
+                        "start": {
+                            "x": 176,
+                            "y": 223
+                        },
+                        "end": {
+                            "x": 82,
+                            "y": 223
+                        }
+                    },
+                    {
+                        "start": {
+                            "x": 82,
+                            "y": 223
+                        },
+                        "end": {
+                            "x": 82,
+                            "y": 279
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "source": "D4/OUT-YES",
+                "target": "N6/IN-0",
+                "name": "[D4/OUT-YES]-[N6/IN-0]",
+                "userObject": {
+                    "id": "e4-6"
+                },
+                "srcSide": 8,
+                "trgSide": 2,
+                "type": 1,
+                "drawColor": "#82AAFA",
+                "label": "decision out YES",
+                "segments": [
+                    {
+                        "start": {
+                            "x": 292,
+                            "y": 223
+                        },
+                        "end": {
+                            "x": 386,
+                            "y": 223
+                        }
+                    },
+                    {
+                        "start": {
+                            "x": 386,
+                            "y": 223
+                        },
+                        "end": {
+                            "x": 386,
+                            "y": 273
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "source": "N6/OUT-0",
+                "target": "N7/IN-0",
+                "name": "[N6/OUT-0]-[N7/IN-0]",
+                "userObject": {
+                    "id": "e5-7"
+                },
+                "srcSide": 1,
+                "trgSide": 2,
+                "type": 1,
+                "drawColor": "#82AAFA",
+                "label": "smooth step edge",
+                "segments": [
+                    {
+                        "start": {
+                            "x": 377,
+                            "y": 337
+                        },
+                        "end": {
+                            "x": 377,
+                            "y": 357
+                        }
+                    },
+                    {
+                        "start": {
+                            "x": 377,
+                            "y": 357
+                        },
+                        "end": {
+                            "x": 234,
+                            "y": 357
+                        }
+                    },
+                    {
+                        "start": {
+                            "x": 234,
+                            "y": 357
+                        },
+                        "end": {
+                            "x": 234,
+                            "y": 369
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "source": "N6/OUT-1",
+                "target": "N8/IN-0",
+                "name": "[N6/OUT-1]-[N8/IN-0]",
+                "userObject": {
+                    "id": "e6-8"
+                },
+                "srcSide": 1,
+                "trgSide": 2,
+                "type": 1,
+                "drawColor": "#f6ab6c",
+                "label": "a step edge",
+                "segments": [
+                    {
+                        "start": {
+                            "x": 395,
+                            "y": 337
+                        },
+                        "end": {
+                            "x": 395,
+                            "y": 357
+                        }
+                    },
+                    {
+                        "start": {
+                            "x": 395,
+                            "y": 357
+                        },
+                        "end": {
+                            "x": 395,
+                            "y": 369
+                        }
+                    }
+                ]
+            }
+        ];
+
+        document.getElementById("reactFlowOut").innerHTML = JSON.stringify(data, null, 4);
+
+    </script>
+
+</body>
+</html>
