@@ -99,26 +99,29 @@ ul
 
 <h1>JDElite Integration with Web Frameworks</h1>
 
-<p class=MsoNormal>JDElite consists of a flowchart generator - JDLCore, along with plugins for support
-	of different Web diagramming frameworks. The plugins translate the users’ format into the JDLCore
-	internal input format. JDLCore generates the nodes layout and the edge routing to a JSON file in
-	JDElite output format. This file has the full layout information with coordinates and can also be
-	opened in the JDElite flowchart editor for visual inspection and further editing.</p>
+<p class=MsoNormal>JDElite Flowchart Builder consists of a flowchart generator - JDLCore,
+	as well as a graphics engine and plugins, supporting different Web diagramming frameworks.
+	The plugins convert the users’ flowchart description formats into the JDElite internal
+	input format. Next the JDLCore generates the nodes layout and the edge routing, creating
+	a JSON file in a JDElite output format. This file has the complete layout information,
+	including coordinates, and can also be opened in the JDElite Flowchart editor for visual
+	examination and further editing.</p>
 
 <p class=MsoListParagraph style='text-indent:-.25in'><span style='font-size:
 16.0pt;line-height:107%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-size:16.0pt;line-height:107%;font-weight: bold;'>Collaborating with React Flow - an example</span></p>
+</span></span><span style='font-size:16.0pt;line-height:107%;font-weight: bold;'>Collaboration with React Flow - an example</span></p>
 
-<p class=MsoNormal>The React Flow plugin uses the flowchart internal format of React Flow
-	(https://reactflow.dev/docs). In this particular case the input 'position' data is ignored
-	and all the remaining input data is translated and internally supplied to JDLCore. The result
-	is a JSON file in JDElite output format. It contains the generated layout of the nodes and
-	the routed links with all coordinates, along with references to the original elements in the
-	input. The graphical informationin this output can further help the developers in their work
-	with React Flow framework. That would be considerably useful for larger and more complex
-	flowcharts. You can look at the React Flow input and JDElite output here:</p>
+<p class=MsoNormal>The React Flow plugin uses the flowchart descriptive internal JSON format
+	of React Flow (https://reactflow.dev/docs). In this particular case the input 'position'
+	data is ignored and the plugin converts the remaining input data into the JDElite internal
+	input format and feeds it to JDLCore. The final result is a JSON file in the JDElite specific
+	output format. It contains the generated layout of the nodes and the routed links with all
+	coordinates, along with references to the original elements in the input. The graphical
+	information in this output can further help the developers in their work with the React Flow
+	framework. That would be especially useful for larger and more complex flowcharts. You can
+	take a look at a simple React Flow input and the corresponding JDElite output below.</p>
 
-	<p class=MsoNormal>React Flow Input:</p>
+	<p class=MsoNormal>React Flow input:</p>
 	<div style="display: inline-flex">
 		<div id="playDemo1">
 			<input type="image" src="docOn.png" onclick="fnDemo11()" />
@@ -140,7 +143,7 @@ ul
 		}
 	</script>
 
-	<p class=MsoNormal>JDLCore Output:</p>
+	<p class=MsoNormal>JDElite output:</p>
 	<div style="display: inline-flex">
 		<div id="playDemo2">
 			<input type="image" src="docOn.png" onclick="fnDemo21()" />
@@ -162,15 +165,15 @@ ul
 		}
 	</script><p/><p/>
 
-	<p class=MsoNormal>Flowchart in JDElite:</p>
+	<p class=MsoNormal>The JDElite output flowchart:</p>
 	<img src="reactFlowchart.png" alt="React Flowchart" width="460" height="345"><p/>
 
 	<p class=MsoListParagraph style='text-indent:-.25in'><span style='font-size:
 16.0pt;line-height:107%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-</span></span><span style='font-size:16.0pt;line-height:107%;font-weight: bold;'>Angular</span></p>
+</span></span><span style='font-size:16.0pt;line-height:107%;font-weight: bold;'>Our next project - an Angular component</span></p>
 
-<p class=MsoNormal>Work in progress: currently working to build an Angular custom
-component, wrapping JDLCore for creating flowcharts and invoking JDElite editor for visualization and editing. </p>
+<p class=MsoNormal>Work in progress:  Building an Angular custom component with JDLCore, packaged
+	with plugins, to create flowcharts, using the JDElite editor for visualization and editing. </p>
 
 	<p class=MsoNormal>&nbsp;</p>
 	<p class=MsoNormal>&nbsp;</p>
