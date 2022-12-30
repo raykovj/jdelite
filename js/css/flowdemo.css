@@ -312,6 +312,12 @@ table#accHdrPagesTableId td {
 label {
 	white-space: pre-wrap;
 }
+.settingsMainGrid {
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 20px 70px 20px 140px 20px 70px 20px 130px;
+	row-gap: 2px;
+}
 .settingsFeaturesGrid {
 	display: grid;
 	justify-content: start;
@@ -941,6 +947,12 @@ label {
 }
 .button-open {
 	background-image: url(../../images/toolbar/open24.png);
+}
+.button-import {
+	background-image: url(../../images/toolbar/import24.png);
+}
+.button-export {
+	background-image: url(../../images/toolbar/export24.png);
 }
 .button-delete {
 	background-image: url(../../images/toolbar/delete18x24.png);
