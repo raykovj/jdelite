@@ -1,0 +1,24 @@
+	<div style="display: inline-flex">
+		<div id="playDemo1">
+			<input type="image" src="http://raykovj.github.io/js/help/docOn.png" onclick="fnDemo11()" />
+		</div>
+		<div id="btnDemo1" style="visibility: hidden;">
+			<input type="image" src="http://raykovj.github.io/js/help/docOff.png" onclick="fnDemo12()" />
+		</div>
+	</div>
+	<script>
+		function fnDemo11() {
+			document.getElementById("playDemo1").innerHTML =
+					'<iframe id="ifrDemo1" src="https://raykovj.github.io/js/help/reactJDLOutput.html" width="640" height="400" allowtransparency="true" allowfullscreen>';
+			document.getElementById("btnDemo1").style.visibility = 'visible';
+		}
+		function fnDemo12() {
+			document.getElementById("ifrDemo1").remove();
+			document.getElementById("playDemo1").innerHTML = '<input type="image" src="http://raykovj.github.io/js/help/docOn.png" onclick="fnDemo11()" />';
+			document.getElementById("btnDemo1").style.visibility = 'hidden';
+		}
+	</script>
+
+    <div id="playDemo1">
+        <iframe id="ifrDemo1" src="https://raykovj.github.io/js/help/reactFlowExample.html" width="640" height="400" allowtransparency="true" allowfullscreen>
+    </div>

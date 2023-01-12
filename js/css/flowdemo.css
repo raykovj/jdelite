@@ -324,6 +324,12 @@ label {
 	grid-template-columns: 20px 230px 20px 220px;
 	row-gap: 2px;
 }
+.settingsSpaceGrid {
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 54px 66px 54px 74px 54px 186px;
+	row-gap: 2px;
+}
 .settings-entry {
 	font-weight: bold;
 }
@@ -383,7 +389,7 @@ label {
 	row-gap: 8px;
 }
 .settings-footer-1 {
-	margin: 0px 0 0 0;
+	margin: 6px 0 0 0;
 }
 .settings-footer-2 {
 	margin: 164px 0 0 0;
@@ -1448,7 +1454,7 @@ table#nodeTableContentId td {
 	width: 24px;
 	border: 1px solid #97c9ee;
 	outline: none;
-	pointer-events: auto;
+	
 }
 .nodeTableField {
 	

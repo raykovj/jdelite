@@ -23,6 +23,7 @@
                 <span style="margin-left: 10px;"></span>
                 <button id="newId" class="toolbar-button button-new" data-toggle="tooltip" title="Create Flowchart..."></button>
                 <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open Flowchart..."></button>
+                <!--<button id="importId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Import Flowchart..."></button>-->
                 <span style="margin-left: 10px;"></span>
                 <button id="undoId" class="toolbar-button button-undo" data-toggle="tooltip" title="Undo"></button>
                 <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
@@ -288,40 +289,54 @@
             </ul>
 
             <div id="settingsTabId-1">
-                <!--<div class="settings-entry">View Content:</div>-->
+
+                <!--<div class="settings-entry" style="margin: 0 0 0 4px; ">Edit / View Mode:</div>-->
                 <!--<div class="settings-controls">-->
-                    <!--<input type="radio" id="btnDiagramId" name="editMode" style="margin: 4px 4px 0 4px;">-->
-                    <!--<label for="btnDiagramId" style="vertical-align:baseline; margin: 0 20px 0 0;" >Flowchart</label>-->
-                    <!--<input type="radio" id="btnPagesId" name="editMode" style="margin: 4px 4px 0 4px;">-->
-                    <!--<label for="btnPagesId" style="vertical-align:baseline;  margin: 0 20px 0 0;">Pages</label>-->
+                    <!--<input type="radio" id="btnEditAllId" name="editMode" style="margin: 4px 4px 0 4px;">-->
+                    <!--<label for="btnEditAllId" style="vertical-align:baseline; margin: 0 20px 0 0;" >Edit</label>-->
+                    <!--<input type="radio" id="btnViewOnlyId" name="editMode" style="margin: 4px 4px 0 4px;">-->
+                    <!--<label for="btnViewOnlyId" style="vertical-align:baseline;  margin: 0 20px 4px 0;">View Only</label>-->
                 <!--</div>-->
 
-                <div class="settings-entry" style="margin: 0 0 0 4px; ">Edit / View Mode:</div>
-                <div class="settings-controls">
-                    <input type="radio" id="btnEditAllId" name="editMode" style="margin: 4px 4px 0 4px;">
-                    <label for="btnEditAllId" style="vertical-align:baseline; margin: 0 20px 0 0;" >Edit</label>
-                    <input type="radio" id="btnViewOnlyId" name="editMode" style="margin: 4px 4px 0 4px;">
-                    <label for="btnViewOnlyId" style="vertical-align:baseline;  margin: 0 20px 4px 0;">View Only</label>
+                <!--<div class="settings-entry" style="margin: 4px 0 0 4px;">Flow direction:</div>-->
+                <!--<div class="settings-controls">-->
+                    <!--<input type="radio" id="btnHorizontal" name="flowDir" style="margin: 4px 4px 0 4px;">-->
+                    <!--<label for="btnHorizontal" style="vertical-align:baseline; margin: 0 20px 0 0;" >Horizontal</label>-->
+                    <!--<input type="radio" id="btnVertical" name="flowDir" style="margin: 4px 4px 0 4px;">-->
+                    <!--<label for="btnVertical" style="vertical-align:baseline;  margin: 0 20px 4px 0;">Vertical</label>-->
+                <!--</div>-->
+
+                <div class="settingsMainGrid">
+                    <div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 1/span 4;">Edit / View Mode:</div>
+                    <div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 5/span 4;">Paging Style:</div>
+                </div>
+                <div class="settings-controls settingsMainGrid">
+                    <input type="radio" id="btnEditAllId" name="editMode" style="margin: 0 4px 0 0;">
+                    <label for="btnEditAllId" style="vertical-align:baseline; margin: 0 0 0 4px;" >Edit</label>
+                    <input type="radio" id="btnViewOnlyId" name="editMode" style="margin: 0 4px 0 0;">
+                    <label for="btnViewOnlyId" style="vertical-align:baseline;  margin: 0 0 0 4px;">View Only</label>
+                    <input type="radio" id="btnFlowchartId" name="pagingStyle" style="margin: 0 4px 0 0;">
+                    <label for="btnFlowchartId" style="vertical-align:baseline; margin: 0 0 0 4px;" >Single</label>
+                    <input type="radio" id="btnFlowPagesId" name="pagingStyle" style="margin: 0 4px 0 0;">
+                    <label for="btnFlowPagesId" style="vertical-align:baseline;  margin: 0 0 0 4px;" >Multipage</label>
                 </div>
 
-                <div class="settings-entry" style="margin: 4px 0 0 4px;">Flow direction:</div>
-                <div class="settings-controls">
-                    <input type="radio" id="btnHorizontal" name="flowDir" style="margin: 4px 4px 0 4px;">
-                    <label for="btnHorizontal" style="vertical-align:baseline; margin: 0 20px 0 0;" >Horizontal</label>
-                    <input type="radio" id="btnVertical" name="flowDir" style="margin: 4px 4px 0 4px;">
-                    <label for="btnVertical" style="vertical-align:baseline;  margin: 0 20px 4px 0;">Vertical</label>
+                <div class="settingsMainGrid">
+                    <div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 1/span 4;">Flow Direction:</div>
+                    <div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 5/span 4;">Layout Mode:</div>
                 </div>
-
-                <div class="settings-entry" style="margin: 4px 0 0 4px;">Main canvas initial grid:</div>
-                <div class="settings-controls">
-                    <input type="text" id="spinnerLevelsId" class="spinnerStyle">
-                    <label for="spinnerLevelsId" class="spinner-label" style="margin-right: 20px;" >Layers *</label>
-                    <input type="text" id="spinnerLanesId" class="spinnerStyle">
-                    <label for="spinnerLanesId" class="spinner-label">Lanes *</label>
+                <div class="settings-controls settingsMainGrid">
+                    <input type="radio" id="btnVertical" name="flowDir" style="margin: 0 4px 0 0;">
+                    <label for="btnVertical" style="vertical-align:baseline; margin: 0 0 0 4px;" >Vertical</label>
+                    <input type="radio" id="btnHorizontal" name="flowDir" style="margin: 0 4px 0 0;">
+                    <label for="btnHorizontal" style="vertical-align:baseline;  margin: 0 0 0 4px;">Horizontal</label>
+                    <input type="radio" id="btnManualId" name="layoutMode" style="margin: 0 4px 0 0;">
+                    <label for="btnManualId" style="vertical-align:baseline; margin: 0 0 0 4px;" >Manual</label>
+                    <input type="radio" id="btnAutoId" name="layoutMode" style="margin: 0 4px 0 0;">
+                    <label for="btnAutoId" style="vertical-align:baseline;  margin: 0 0 0 4px;">Auto</label>
                 </div>
 
                 <div class="settings-entry" style="margin: 4px 0 0 4px;">Flowchart features:</div>
-
                 <div class="settings-controls settingsFeaturesGrid">
                     <input type="checkbox" id="chkStartEnd" style="margin: 4px 4px 0 0;">
                     <label for="chkStartEnd" style="padding-top: 4px ; " >Add Start/End layers</label>
@@ -351,40 +366,19 @@
                     <label for="chkHideNamesId" style="padding-top: 4px ; " >Hide node names</label>
                 </div>
 
-                <!--<div class="settings-controls">-->
-                    <!--<div>-->
-                        <!--<input type="checkbox" id="chkStartEnd" name="df" style="margin: 2px 4px 0 0;">-->
-                        <!--<label for="chkStartEnd" style="vertical-align:baseline; margin-right: 101px;" >Add Start/End layers</label>-->
-                        <!--<input type="checkbox" id="chkShowRefs" name="edRefs" style="margin: 2px 4px 0 0;">-->
-                        <!--<label for="chkShowRefs" style="vertical-align:baseline; margin-right: 82px;" >Enable association links</label>-->
-                        <!--&lt;!&ndash;<input type="checkbox" id="chkGrid" name="df" style="margin: 4px 4px 0 0;">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<label for="chkGrid" style="vertical-align:baseline;" >Show Grid</label>&ndash;&gt;-->
-                    <!--</div>-->
-                    <!--<div>-->
-                        <!--<input type="checkbox" id="chkLeftRight" name="df" style="margin: 4px 4px 0 0;">-->
-                        <!--<label for="chkLeftRight" style="vertical-align:baseline; margin-right: 99px;" >Add Side swim lanes</label>-->
-                        <!--<input type="checkbox" id="chkShowLinkLabelsId" name="showLinkLabels" style="margin: 4px 4px 0 0;">-->
-                        <!--<label for="chkShowLinkLabelsId" style="vertical-align:baseline; margin-right: 20px;" >Show link labels on selection</label>-->
-                    <!--</div>-->
-                    <!--<div>-->
-                        <!--<input type="checkbox" id="chkShowDBRecords" name="portCrd" style="margin: 4px 4px 0 0;">-->
-                        <!--<label for="chkShowDBRecords" style="vertical-align:baseline; margin-right: 12px;" >Enable database records assignment</label>-->
-                        <!--<input type="checkbox" id="chkShowIconsId" name="showIcons" style="margin: 4px 4px 0 0;">-->
-                        <!--<label for="chkShowIconsId" style="vertical-align:baseline; margin-right: 20px;" >Show node icons</label>-->
-                    <!--</div>-->
-                    <!--<div>-->
-                        <!--<input type="checkbox" id="chkShowCardinality" name="portCrd" style="margin: 4px 4px 0 0;">-->
-                        <!--<label for="chkShowCardinality" style="vertical-align:baseline; margin-right: 20px;" >Enable ports cardinality assignment</label>-->
-                        <!--<input type="checkbox" id="chkAutoGen" name="edopt" style="margin: 4px 4px 0 0;">-->
-                        <!--<label for="chkAutoGen" style="vertical-align:baseline; margin-right: 2px;" >Auto generate new node names</label>-->
-                    <!--</div>-->
-                    <!--<div>-->
-                        <!--<input type="checkbox" id="chkShowNodeTasks" name="portCrd" style="margin: 4px 4px 0 0;">-->
-                        <!--<label for="chkShowNodeTasks" style="vertical-align:baseline; margin-right: 46px;" >Enable node tasks assignment</label>-->
-                        <!--<input type="checkbox" id="chkHideNamesId" name="hideNames" style="margin: 4px 4px 0 0;">-->
-                        <!--<label for="chkHideNamesId" style="vertical-align:baseline; margin-right: 20px;" >Hide node names</label>-->
-                    <!--</div>-->
-                <!--</div>-->
+                <div class="settingsMainGrid">
+                    <div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 1/span 4;">Main canvas initial grid:</div>
+                    <!--<div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 5/span 2;">Grid Spacing:</div>-->
+                </div>
+                <div class="settings-controls settingsSpaceGrid">
+                    <input type="text" id="spinnerLevelsId" class="spinnerStyle">
+                    <label for="spinnerLevelsId" class="spinner-label" style="padding-top: 6px; " >Layers <b>*</b></label>
+                    <input type="text" id="spinnerLanesId" class="spinnerStyle">
+                    <label for="spinnerLanesId" class="spinner-label" style="padding-top: 6px ; ">Lanes <b>*</b></label>
+
+                    <!--<input type="text" id="spinnerSpaceId" class="spinnerStyle">-->
+                    <!--<label for="spinnerSpaceId" class="spinner-label" style="padding-top: 6px; " >pixels</label>-->
+                </div>
 
                 <div class="settings-entry" style="margin: 4px 0 0 4px;">Link ports presentation:</div>
                 <div class="settings-controls">
@@ -393,9 +387,10 @@
                     </select>
                 </div>
 
-                <div class="settings-footer-1">
+                <div class="settings-footer-1"></div>
+                <div>
                     <span class="vertical" style="padding: 0 0 0 4px; ">
-                        * &nbsp;Choose the initial grid when creating a diagram, modify it later from canvas menus</span>
+                        <b>*</b> &nbsp;Choose the initial grid only, later you can modify the grid from the canvas menus</span>
                 </div>
             </div>
 
@@ -1083,22 +1078,22 @@
                             <tr>
                                 <td data-bind="attr: {key, title: key}">
                                     <input data-bind="textInput: key, disable: !enableShowDB()" class="nodeTableKey"
-                                           autocomplete="off" spellcheck="false" tabindex="-1"
+                                           autocomplete="on" spellcheck="false" tabindex="-1"
                                            onclick="editNodeTableKey(event)" />
                                 </td>
                                 <td data-bind="attr: {field, title: field}">
                                     <input data-bind="textInput: field, disable: !enableShowDB()" class="nodeTableField"
-                                           autocomplete="off" spellcheck="false" tabindex="-1"
+                                           autocomplete="on" spellcheck="false" tabindex="-1"
                                            onclick="editNodeTableField(event)" />
                                 </td>
                                 <td data-bind="attr: {type, title: type}">
                                     <input data-bind="textInput: type, disable: !enableShowDB()" class="nodeTableType"
-                                           autocomplete="off" spellcheck="false" tabindex="-1"
+                                           autocomplete="on" spellcheck="false" tabindex="-1"
                                            onclick="editNodeTableType(event)" />
                                 </td>
                                 <td data-bind="attr: {length, title: length}">
                                     <input data-bind="textInput: length, disable: !enableShowDB()" class="nodeTableLength"
-                                           autocomplete="off" spellcheck="false" tabindex="-1"
+                                           autocomplete="on" spellcheck="false" tabindex="-1"
                                            onclick="editNodeTableLength(event)" />
                                 </td>
                             </tr>
@@ -1233,7 +1228,7 @@
                 <span>NOTE: Select checkboxes to choose the node tasks.</span><br>
                 <span>To enable this feature, go to <b>Settings->General</b> and select <b>Enable node tasks assignment</b>.</span>
 
-                <div class="settings-entry" style="margin: 12px 0 4px 0;">Actions:</div>
+                <div class="settings-entry" style="margin: 6px 0 2px 0;">Actions:</div>
                 <div class="nodeProps-controls" style="display: flex; ">
                     <input type="checkbox" id="chkSelectActionsId" style="margin: 0 20px 0 4px;">
                     <select id="nodeActionsId" class="nodeOpsMenu"
@@ -1245,9 +1240,9 @@
                             title="Action Details"></button>
                 </div>
 
-                <div class="settings-entry" style="margin: 8px 0 4px 0;">Services:</div>
+                <div class="settings-entry" style="margin: 2px 0 2px 0;">Services:</div>
                 <div class="nodeProps-controls" style="display: flex; ">
-                    <input type="checkbox" id="chkSelectServicesId" name="nodetasks" style="margin: 0 20px 0 4px;">
+                    <input type="checkbox" id="chkSelectServicesId" style="margin: 0 20px 0 4px;">
                     <select id="nodeServicesId" class="nodeOpsMenu"
                             data-bind="options: nodeServicesList,
                                 optionsText: 'label',
@@ -1257,9 +1252,9 @@
                             title="Service Details"></button>
                 </div>
 
-                <div class="settings-entry" style="margin: 8px 0 4px 0;">Operations:</div>
+                <div class="settings-entry" style="margin: 2px 0 2px 0;">Operations:</div>
                 <div class="nodeProps-controls" style="display: flex; ">
-                    <input type="checkbox" id="chkSelectOperationsId" name="nodetasks" style="margin: 0 20px 0 4px;">
+                    <input type="checkbox" id="chkSelectOperationsId" style="margin: 0 20px 0 4px;">
                     <select id="nodeOperationsId" class="nodeOpsMenu"
                             data-bind="options: nodeOperationsList,
                                 optionsText: 'label',
@@ -1269,7 +1264,31 @@
                             title="Operation Details"></button>
                 </div>
 
-                <div class="settings-entry" style="margin:8px 0 2px 0;">Expressions:</div>
+                <div class="settings-entry" style="margin: 2px 0 2px 0;">Subscribe:</div>
+                <div class="nodeProps-controls" style="display: flex; ">
+                    <input type="checkbox" id="chkSelectSubscribeId" style="margin: 0 20px 0 4px;">
+                    <select id="nodeSubscribeId" class="nodeOpsMenu"
+                            data-bind="options: nodeSubscribeList,
+                                optionsText: 'label',
+                                optionsValue: 'value'">
+                    </select>
+                    <button id="nodeSubscribeDetailsId" class="toolbar-button button-find" data-toggle="tooltip" style="margin-left: 6px;"
+                            title="Subscribe Details"></button>
+                </div>
+
+                <div class="settings-entry" style="margin: 2px 0 2px 0;">Publish:</div>
+                <div class="nodeProps-controls" style="display: flex; ">
+                    <input type="checkbox" id="chkSelectPublishId" style="margin: 0 20px 0 4px;">
+                    <select id="nodePublishId" class="nodeOpsMenu"
+                            data-bind="options: nodePublishList,
+                                optionsText: 'label',
+                                optionsValue: 'value'">
+                    </select>
+                    <button id="nodePublishDetailsId" class="toolbar-button button-find" data-toggle="tooltip" style="margin-left: 6px;"
+                            title="Publish Details"></button>
+                </div>
+
+                <div class="settings-entry" style="margin: 2px 0 2px 0;">Expressions:</div>
                 <div class="nodeProps-controls"  style="display: flex; ">
                     <input type="checkbox" id="chkSelectExpressionsId" name="nodetasks" style="margin: 0px 20px 0 4px;">
                     <textarea id="nodeExpressionsId" placeholder="[Enter content...]" autofocus rows="3" cols="42" wrap="hard"
