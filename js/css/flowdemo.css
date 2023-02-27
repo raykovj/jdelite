@@ -182,14 +182,16 @@ body.waiting * {
 	
 }
 #paletteAccordionId .ui-accordion-header{
-	margin: 0px 10px 1px 10px;
+	margin: 0px 0px 1px 10px;
+	padding-left: 2px;
+	padding-right: 2px;
 	font-family: Arial;
 	font-size: 10pt;
 	font-weight: bold;
 	text-indent: 0;
 	border: 1px solid #3a72c1;
 	background-color: #72AAFA;
-	width: 176px;
+	width: 188px;
 }
 	
 	
@@ -368,7 +370,7 @@ label {
 	display: grid;
 	background-color: #eaf0fa;
 	justify-content: start;
-	grid-template-columns: 24px 140px 40px 60px 100px;
+	grid-template-columns: 24px 120px 40px 80px 24px 100px 40px 40px;
 	row-gap: 8px;
 }
 .nodeColorSelect {
@@ -609,11 +611,12 @@ label {
 	position: absolute;
 }
 .partitionText {
-	width: 150px ;
+	width: 100px ;
 	height: 24px;
-	padding-left: 8px;
-	margin-right: 4px;
+	padding-left: 6px;
+	margin: 2px 4px 0 0;
 	border: 1px solid #808080;
+	
 	background-color: #fafafa;
 	font-weight: bold;
 	outline: none;

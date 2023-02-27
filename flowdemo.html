@@ -23,7 +23,7 @@
                 <span style="margin-left: 10px;"></span>
                 <button id="newId" class="toolbar-button button-new" data-toggle="tooltip" title="Create Flowchart..."></button>
                 <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open Flowchart..."></button>
-                <!--<button id="importId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Import Flowchart..."></button>-->
+                <button id="importId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Import Flowchart..."></button>
                 <span style="margin-left: 10px;"></span>
                 <button id="undoId" class="toolbar-button button-undo" data-toggle="tooltip" title="Undo"></button>
                 <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
@@ -140,24 +140,10 @@
             <div style="margin-top: 2px;"></div>
 
             <div id="paletteAccordionId" class="accordion-props-pages">
-                <h3 id="accHdrDemoId" data-bind="text: accHdrDemoTitle"></h3>
-                <div>
-                    <table id="accSETableId" class="accordion-items galleryFont">
-                        <caption  class="settings-caption">Start / End</caption>
-                        <tbody data-bind="foreach: gallerySENodes">
-                        <tr>
-                            <td data-bind="attr: {id}"
-                                ondragstart="onPaletteDragStart(event)"
-                                ondragend="onPaletteDragEnd(event)">
-                                <img role="presentation" draggable="true" class="componentItem"
-                                     data-bind="attr: {id: id, src: url, title: title}" />
-                                <span style="user-select: none;" data-bind="text: label"></span>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <h3 id="accHdrFlowId" data-bind="text: accHdrFlowTitle"></h3>
+                <div id="accTableFlowId">
                     <table id="accFlowTableId" class="accordion-items galleryFont" >
-                        <caption  class="settings-caption">Flow</caption>
+                        <!--<caption  class="settings-caption">Flow</caption>-->
                         <tbody data-bind="foreach: galleryFlowNodes">
                         <tr>
                             <td data-bind="attr: {id}"
@@ -170,36 +156,11 @@
                         </tr>
                         </tbody>
                     </table>
-                    <!--<table id="accQuizTableId" class="accordion-items galleryFont" >-->
-                        <!--<caption  class="settings-caption">Decision</caption>-->
-                        <!--<tbody data-bind="foreach: galleryQuizNodes">-->
-                        <!--<tr>-->
-                            <!--<td data-bind="attr: {id}"-->
-                                <!--ondragstart="onPaletteDragStart(event)"-->
-                                <!--ondragend="onPaletteDragEnd(event)">-->
-                                <!--<img role="presentation" draggable="true" class="componentItem"-->
-                                     <!--data-bind="attr: {id: id, src: url, title: title}" />-->
-                                <!--<span style="user-select: none;" data-bind="text: label"></span>-->
-                            <!--</td>-->
-                        <!--</tr>-->
-                        <!--</tbody>-->
-                    <!--</table>-->
-                    <table id="accSwimTableId" class="accordion-items galleryFont" >
-                        <caption  class="settings-caption">Side Swim</caption>
-                        <tbody data-bind="foreach: gallerySwimNodes">
-                        <tr>
-                            <td data-bind="attr: {id}"
-                                ondragstart="onPaletteDragStart(event)"
-                                ondragend="onPaletteDragEnd(event)">
-                                <img role="presentation" draggable="true" class="componentItem"
-                                     data-bind="attr: {id: id, src: url, title: title}" />
-                                <span style="user-select: none;" data-bind="text: label"></span>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                </div>
+
+                <h3 id="accHdrSidesId"  data-bind="text: accHdrMiscTitle"></h3>
+                <div id="accTableMiscsId">
                     <table id="accMiscTableId" class="accordion-items galleryFont" >
-                        <caption  class="settings-caption">Miscellaneous</caption>
                         <tbody data-bind="foreach: galleryMiscNodes">
                         <tr>
                             <td data-bind="attr: {id}"
@@ -214,27 +175,27 @@
                     </table>
                 </div>
 
-                <h3 id="accHdrPagesId"  data-bind="visible: showPageMode, text: accHdrPagesTitle"></h3>
-                <div>
-                    <table id="accHdrPagesTableId" class="accordion-items galleryFont" >
-                        <tbody data-bind="foreach: pageNodes">
-                        <tr>
-                            <td data-bind="attr: {id}"
-                                ondragstart="onPaletteDragStart(event)"
-                                ondragend="onPaletteDragEnd(event)">
-                                <img role="presentation" draggable="true" class="componentItem"
-                                     data-bind="attr: {id: id, src: url, title: title}" />
-                                <span style="user-select: none;" data-bind="text: label"></span>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <!--<h3 id="accHdrPagesId"  data-bind="text: accHdrPagesTitle"></h3>-->
+                <!--<div>-->
+                    <!--<table id="accHdrPagesTableId" class="accordion-items galleryFont" >-->
+                        <!--<tbody data-bind="foreach: pageNodes">-->
+                        <!--<tr>-->
+                            <!--<td data-bind="attr: {id}"-->
+                                <!--ondragstart="onPaletteDragStart(event)"-->
+                                <!--ondragend="onPaletteDragEnd(event)">-->
+                                <!--<img role="presentation" draggable="true" class="componentItem"-->
+                                     <!--data-bind="attr: {id: id, src: url, title: title}" />-->
+                                <!--<span style="user-select: none;" data-bind="text: label"></span>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--</tbody>-->
+                    <!--</table>-->
+                <!---->
+                    <!--<div style="margin-top: 10px;" class="emptyGalleryContent" >-->
+                        <!--<span style="margin-left: 30px;"></span>-->
+                        <!--<span class="diagram-text galleryFont" style="font-weight: bold;">Work In Progress...</span>-->
+                    <!--</div>-->
                 <!--</div>-->
-                    <div style="margin-top: 10px;" class="emptyGalleryContent" >
-                        <span style="margin-left: 30px;"></span>
-                        <span class="diagram-text galleryFont" style="font-weight: bold;">Work In Progress...</span>
-                    </div>
-                </div>
 
                 <!--<h3 id="accHdrBpelId"  data-bind="text: accHdrBpelTitle"></h3>-->
                 <!--<div class="emptyGalleryContent">-->
@@ -285,26 +246,10 @@
                 <li><a href="#settingsTabId-3">Colors</a></li>
                 <li><a href="#settingsTabId-4">Node Icons</a></li>
                 <li><a href="#settingsTabId-5">Schemes</a></li>
-                <li><a href="#settingsTabId-6">Integration</a></li>
+                <!--<li><a href="#settingsTabId-6">Integration</a></li>-->
             </ul>
 
             <div id="settingsTabId-1">
-
-                <!--<div class="settings-entry" style="margin: 0 0 0 4px; ">Edit / View Mode:</div>-->
-                <!--<div class="settings-controls">-->
-                    <!--<input type="radio" id="btnEditAllId" name="editMode" style="margin: 4px 4px 0 4px;">-->
-                    <!--<label for="btnEditAllId" style="vertical-align:baseline; margin: 0 20px 0 0;" >Edit</label>-->
-                    <!--<input type="radio" id="btnViewOnlyId" name="editMode" style="margin: 4px 4px 0 4px;">-->
-                    <!--<label for="btnViewOnlyId" style="vertical-align:baseline;  margin: 0 20px 4px 0;">View Only</label>-->
-                <!--</div>-->
-
-                <!--<div class="settings-entry" style="margin: 4px 0 0 4px;">Flow direction:</div>-->
-                <!--<div class="settings-controls">-->
-                    <!--<input type="radio" id="btnHorizontal" name="flowDir" style="margin: 4px 4px 0 4px;">-->
-                    <!--<label for="btnHorizontal" style="vertical-align:baseline; margin: 0 20px 0 0;" >Horizontal</label>-->
-                    <!--<input type="radio" id="btnVertical" name="flowDir" style="margin: 4px 4px 0 4px;">-->
-                    <!--<label for="btnVertical" style="vertical-align:baseline;  margin: 0 20px 4px 0;">Vertical</label>-->
-                <!--</div>-->
 
                 <div class="settingsMainGrid">
                     <div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 1/span 4;">Edit / View Mode:</div>
@@ -436,40 +381,60 @@
                     <label for="btnSETypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Start / End</label>
                     <div id="seBgnDisplayId" class="typeColorShape"></div>
                     <div id="seFgnDisplayId" class="typeColorShape"></div>
-                    <div>
-                        <!--<input type="checkbox" id="chkSEUpdId" style="margin: 0 6px 4px 0;">-->
-                        <!--<label for="chkSEUpdId" style="vertical-align: top;" >Update</label>-->
-                    </div>
 
+                    <input type="radio" id="btnDBTypeId" name="typeColors" style="margin:4px 0 0 10px;">
+                    <label for="btnDBTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Database</label>
+                    <div id="dbBgnDisplayId" class="typeColorShape"></div>
+                    <div id="dbFgnDisplayId" class="typeColorShape"></div>
+
+                    <!--////-->
                     <input type="radio" id="btnProcTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
                     <label for="btnProcTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Process</label>
                     <div id="procBgnDisplayId" class="typeColorShape"></div>
                     <div id="procFgnDisplayId" class="typeColorShape"></div>
-                    <div></div>
 
+                    <input type="radio" id="btnDocTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
+                    <label for="btnDocTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Document</label>
+                    <div id="docBgnDisplayId" class="typeColorShape"></div>
+                    <div id="docFgnDisplayId" class="typeColorShape"></div>
+
+                    <!--////-->
                     <input type="radio" id="btnIOTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
                     <label for="btnIOTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Input / Output</label>
                     <div id="ioBgnDisplayId" class="typeColorShape"></div>
                     <div id="ioFgnDisplayId" class="typeColorShape"></div>
-                    <div></div>
 
+                    <input type="radio" id="btnDocsTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
+                    <label for="btnDocsTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Documents</label>
+                    <div id="docsBgnDisplayId" class="typeColorShape"></div>
+                    <div id="docsFgnDisplayId" class="typeColorShape"></div>
+
+                    <!--////-->
                     <input type="radio" id="btnSideTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
                     <label for="btnSideTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Side Lanes</label>
                     <div id="sideBgnDisplayId" class="typeColorShape"></div>
                     <div id="sideFgnDisplayId" class="typeColorShape"></div>
-                    <div></div>
-
-                    <input type="radio" id="btnDecTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
-                    <label for="btnDecTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Decision</label>
-                    <div id="decBgnDisplayId" class="typeColorShape"></div>
-                    <div id="decFgnDisplayId" class="typeColorShape"></div>
-                    <div></div>
 
                     <input type="radio" id="btnTermTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">
                     <label for="btnTermTypeId" style="vertical-align:baseline; margin:4px 4px 4px 8px;" >Endpoint</label>
                     <div id="termBgnDisplayId" class="typeColorShape"></div>
                     <div id="termFgnDisplayId" class="typeColorShape"></div>
+
+                    <!--////-->
+                    <input type="radio" id="btnDecTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
+                    <label for="btnDecTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Decision</label>
+                    <div id="decBgnDisplayId" class="typeColorShape"></div>
+                    <div id="decFgnDisplayId" class="typeColorShape"></div>
                     <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+
+                    <!--<input type="radio" id="btnTermTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">-->
+                    <!--<label for="btnTermTypeId" style="vertical-align:baseline; margin:4px 4px 4px 8px;" >Endpoint</label>-->
+                    <!--<div id="termBgnDisplayId" class="typeColorShape"></div>-->
+                    <!--<div id="termFgnDisplayId" class="typeColorShape"></div>-->
+                    <!--<div></div>-->
                 </div>
 
                 <div class="settings-entry" style="margin: 4px 0 4px 0;">Line colors:</div>
@@ -479,16 +444,22 @@
                     <div id="linkDisplayId" class="typeColorShape"></div>
                     <div></div>
                     <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
 
                     <input type="radio" id="btnBorderTypeId" name="typeColors" style="margin:4px 0 0 10px;">
                     <label for="btnBorderTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Border</label>
                     <div id="borderDisplayId" class="typeColorShape"></div>
                     <div></div>
                     <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
 
 
-                <div class="settings-entry" style="margin: 4px 0 4px 0;">Select Colors:</div>
+                <div class="settings-entry" style="margin: 24px 0 4px 0;">Edit Selected Colors:</div>
                 <div class="nodeProps-controls nodeColorSelect">
                     <input id="typeColorPickId" type="text"  class="nodeColorItem"/>
                     <div class="nodeColorItem">
@@ -590,45 +561,45 @@
                 <div class="settings-footer-5"></div>
             </div>
 
-            <div id="settingsTabId-6" >
-                <div class="settingsNotesTitle" data-bind="text: integrationTitle()"></div>
-                <div style="margin-top: 4px; "></div>
-                <div class="settingsNotesFont"  data-bind="text: integrationTopNotes()"></div>
-                <div style="margin-top: 10px; "></div>
+            <!--<div id="settingsTabId-6" >-->
+                <!--<div class="settingsNotesTitle" data-bind="text: integrationTitle()"></div>-->
+                <!--<div style="margin-top: 4px; "></div>-->
+                <!--<div class="settingsNotesFont"  data-bind="text: integrationTopNotes()"></div>-->
+                <!--<div style="margin-top: 10px; "></div>-->
 
-                <div id="integrationTabId" style="overflow: hidden">
-                    <ul>
-                        <li><a href="#integrationTabId-1">React</a></li>
-                        <li><a href="#integrationTabId-2">Angular</a></li>
-                    </ul>
+                <!--<div id="integrationTabId" style="overflow: hidden">-->
+                    <!--<ul>-->
+                        <!--<li><a href="#integrationTabId-1">React</a></li>-->
+                        <!--<li><a href="#integrationTabId-2">Angular</a></li>-->
+                    <!--</ul>-->
 
-                    <div id="integrationTabId-1">
-                        <div class="settingsNotesTitle" data-bind="text: integrationReactTitle()"></div>
-                        <div style="margin-top: 4px; "></div>
-                        <div class="settingsNotesFont"  data-bind="text: integrationReactNotesTop()"></div>
-                        <div style="margin-top: 8px; "></div>
+                    <!--<div id="integrationTabId-1">-->
+                        <!--<div class="settingsNotesTitle" data-bind="text: integrationReactTitle()"></div>-->
+                        <!--<div style="margin-top: 4px; "></div>-->
+                        <!--<div class="settingsNotesFont"  data-bind="text: integrationReactNotesTop()"></div>-->
+                        <!--<div style="margin-top: 8px; "></div>-->
 
-                        <div class="nodeProps-controls">
-                            <button id="btnShowInputId" class="prefs-button buttonTextViewDef ">Show Input</button>
-                            <button id="btnShowOutputId" class="prefs-button buttonTextViewDef ">Show Output</button>
+                        <!--<div class="nodeProps-controls">-->
+                            <!--<button id="btnShowInputId" class="prefs-button buttonTextViewDef ">Show Input</button>-->
+                            <!--<button id="btnShowOutputId" class="prefs-button buttonTextViewDef ">Show Output</button>-->
 
-                        </div>
-                        <div style="margin-top: 8px; "></div>
-                        <div class="settingsNotesFont"  data-bind="text: integrationReactNotesBottom()"></div>
-                    </div>
+                        <!--</div>-->
+                        <!--<div style="margin-top: 8px; "></div>-->
+                        <!--<div class="settingsNotesFont"  data-bind="text: integrationReactNotesBottom()"></div>-->
+                    <!--</div>-->
 
-                    <div id="integrationTabId-2">
-                        <div style="margin: 16px 20px; "></div>
-                        <div class="settingsNotesTitle" data-bind="text: integrationAngularTitle()"></div>
-                        <div style="margin: 20px 20px; "></div>
-                        <div class="settingsNotesFont"  data-bind="text: integrationAngularNotesTop()"></div>
+                    <!--<div id="integrationTabId-2">-->
+                        <!--<div style="margin: 16px 20px; "></div>-->
+                        <!--<div class="settingsNotesTitle" data-bind="text: integrationAngularTitle()"></div>-->
+                        <!--<div style="margin: 20px 20px; "></div>-->
+                        <!--<div class="settingsNotesFont"  data-bind="text: integrationAngularNotesTop()"></div>-->
 
-                        <div class="settings-footer-6a"></div>
+                        <!--<div class="settings-footer-6a"></div>-->
 
-                    </div>
-                </div>
-                <div class="settings-footer-6"></div>
-            </div>
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="settings-footer-6"></div>-->
+            <!--</div>-->
 
         </div>
     </div>
@@ -702,9 +673,9 @@
             <span style="margin-left: 10px;"></span>
             <button id="createFolderId" class="toolbar-button button-newDir" data-toggle="tooltip" title="Create folder..."></button>
             <button id="deleteFSId" class="toolbar-button button-no-left button-deleteFS" data-toggle="tooltip" title="Delete selected"></button>
-            <span style="font-weight: bold; margin: 8px 6px 2px 70px;">Partition:</span>
+            <span style="font-weight: bold; margin: 8px 6px 2px 120px;">Partition:</span>
             <input id="partitionId"  type="text" class="partitionText" readonly spellcheck="false"
-                   data-bind="textInput: selectedPartition" />
+                   data-bind="textInput: selectedPartition, attr: {title: selectedPartition}" />
         </div>
 
         <div style="font-weight: bold; margin: 4px 0 4px; " data-bind="visible: isConnectionOK()">
@@ -975,8 +946,8 @@
                             data-bind="visible: isEditNameInvalid()" disabled></button>
                     <span class="invalid-message"
                             data-bind="visible: isEditNameInvalid(), text: validateNameMessage1()"></span>
-                    <span class="invalid-message"
-                            data-bind="visible: isEditNameInvalid(), text: validateNameMessage2()"></span>
+                    <!--<span class="invalid-message"-->
+                            <!--data-bind="visible: isEditNameInvalid(), text: validateNameMessage2()"></span>-->
                 </div>
 
                 <div class="settings-entry" style="margin: 6px 0 2px 0;">Node Icon:</div>
