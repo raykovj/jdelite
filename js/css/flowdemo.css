@@ -193,17 +193,6 @@ body.waiting * {
 	background-color: #72AAFA;
 	width: 188px;
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 table#accHdrDemoTableId td {
 	padding: 2px 0 2px 12px;
 	line-height: 18px;
@@ -830,7 +819,7 @@ label {
 }
 .about-title {
 	position: absolute;
-	top: 10%;
+	top: 20%;
 	left: 8%;
 	font-family: Arial;
 	font-style: italic;
