@@ -69,10 +69,6 @@
         <div id="containerId" class="main-container" onscroll="repaintDiagram()">
             <canvas id="canvasId" tabindex="0" draggable="true" class="flex-canvas"
                 data-bind="visible: isCanvasVisible()"></canvas>
-
-            <!--<div id="topProgressId" class="progressBar-settings progressBarShow" data-bind="visible: isProgressBarVisible()" >-->
-                <!--<div id="progressBarId" class="progressBar-settings-in" data-bind="visible: isProgressBarVisible()" ></div>-->
-            <!--</div>-->
         </div>
 
         <div id="topProgressId" class="progressBar-settings progressBarShow" data-bind="visible: isProgressBarVisible()" >
@@ -208,10 +204,6 @@
         </div>
 
     </div>
-
-    <!--<div id="topProgressId" class="progressBar-settings progressBarShow" data-bind="visible: isProgressBarVisible()" >-->
-        <!--<div id="progressBarId" class="progressBar-settings-in" data-bind="visible: isProgressBarVisible()" ></div>-->
-    <!--</div>-->
 
     <div id="blockResizeId" class="containerGroup" style="visibility: hidden">
         <div class="actions-toolbar">
@@ -425,15 +417,15 @@
                     <label for="btnDecTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Decision</label>
                     <div id="decBgnDisplayId" class="typeColorShape"></div>
                     <div id="decFgnDisplayId" class="typeColorShape"></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
 
-                    <!--<input type="radio" id="btnTermTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">-->
-                    <!--<label for="btnTermTypeId" style="vertical-align:baseline; margin:4px 4px 4px 8px;" >Endpoint</label>-->
-                    <!--<div id="termBgnDisplayId" class="typeColorShape"></div>-->
-                    <!--<div id="termFgnDisplayId" class="typeColorShape"></div>-->
+                    <input type="radio" id="btnCntrTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">
+                    <label for="btnCntrTypeId" style="vertical-align:baseline; margin:4px 4px 4px 8px;" >Container</label>
+                    <div id="cntrBgnDisplayId" class="typeColorShape"></div>
+                    <div id="cntrFgnDisplayId" class="typeColorShape"></div>
                     <!--<div></div>-->
                 </div>
 
@@ -459,7 +451,7 @@
                 </div>
 
 
-                <div class="settings-entry" style="margin: 24px 0 4px 0;">Edit Selected Colors:</div>
+                <div class="settings-entry" style="margin: 40px 0 4px 0;">Edit Selected Colors:</div>
                 <div class="nodeProps-controls nodeColorSelect">
                     <input id="typeColorPickId" type="text"  class="nodeColorItem"/>
                     <div class="nodeColorItem">
@@ -485,7 +477,7 @@
                     <button id="btnColorDefId" class="prefs-button buttonColorDef ">Use Defaults</button>
                 </div>
 
-                <div style="margin: 4px 0 0 0;"></div>
+                <!--<div style="margin: 4px 0 0 0;"></div>-->
                 <div >
                     <button id="resetAllColorsId" class="prefs-button resetColorsToDef"
                             title="Reset to default colors">Reset All Colors</button>
@@ -493,7 +485,7 @@
                             title="Reset to old colors">Rollback All</button>
                 </div>
 
-                <!--<div class="settings-footer-3"></div>-->
+                <div class="settings-footer-3"></div>
             </div>
 
             <div id="settingsTabId-4" >
@@ -932,7 +924,7 @@
             </ul>
 
             <div id="nodePropsTabId-1" >
-                <div class="settings-entry" style="margin: 0 0 2px 0;">Node name:</div>
+                <div class="settings-entry" style="margin: -4px 0 2px 0;">Node name:</div>
                 <div class="nodeProps-controls">
                     <input id="editNodeNameId" autofocus type="text" class="nameText"
                            autocomplete="off" spellcheck="false"
@@ -945,9 +937,7 @@
                     <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
                             data-bind="visible: isEditNameInvalid()" disabled></button>
                     <span class="invalid-message"
-                            data-bind="visible: isEditNameInvalid(), text: validateNameMessage1()"></span>
-                    <!--<span class="invalid-message"-->
-                            <!--data-bind="visible: isEditNameInvalid(), text: validateNameMessage2()"></span>-->
+                            data-bind="visible: isEditNameInvalid(), text: validateNameMessage()"></span>
                 </div>
 
                 <div class="settings-entry" style="margin: 6px 0 2px 0;">Node Icon:</div>
@@ -955,36 +945,30 @@
                     <select id="nodeIconItemsId" class="nodeIconMenu"
                             data-bind="options: nodeEmojiItems, optionsValue: 'value'">
                     </select>
-                    <input type="checkbox" id="chkShowNodeIconId" name="nodeIconShow" style="margin: 8px 2px 0 28px; ">
+                    <input type="checkbox" id="chkShowNodeIconId" name="nodeIconShow" style="margin: 6px 2px 0 28px; ">
                     <label for="chkShowNodeIconId" style="vertical-align: text-top;">Show Icon</label>
                 </div>
 
                 <div class="settings-entry" style="margin: 6px 0 2px 0;">Node Colors:</div>
                 <div class="nodeProps-controls prefsNodeDisplay">
                     <input id='nodeBckGndPickId' type="text"/>
-                    <ul style="list-style-type: none; margin: 0 0 0 16px; padding: 0;">
-                        <li >
-                            <div class="rectColorRadio">
-                                <input type="radio" id="btnNodeBckgndId" name="nodeFgn" >
-                                <label for="btnNodeBckgndId" style="vertical-align:baseline; " >Background</label>
-                            </div>
-                            <div id="nodeBkgnDisplayId" class="rectColorShape"></div>
-                        </li>
-                        <li >
-                            <div class="rectColorRadio">
-                                <input type="radio" id="btnNodeForgndId" name="nodeFgn" >
-                                <label for="btnNodeForgndId" style="vertical-align:baseline; ">Foreground</label>
-                            </div>
-                            <div id="nodeFgnDisplayId" class="rectColorShape"></div>
-                        </li>
-                        <li >
-                            <div class="rectColorRadio">
-                                <input type="radio" id="btnNodeBorderId" name="nodeFgn" >
-                                <label for="btnNodeBorderId" style="vertical-align:baseline; ">Border</label>
-                            </div>
-                            <div id="nodeBorderDisplayId" class="rectColorShape"></div>
-                        </li>
-                    </ul>
+                    <div class="nodeColorsGrid">
+                        <div class="rectColorRadio">
+                            <input type="radio" id="btnNodeBckgndId" name="nodeFgn" >
+                            <label for="btnNodeBckgndId" style="vertical-align:baseline; " >Background</label>
+                        </div>
+                        <div id="nodeBkgnDisplayId" class="rectColorShape"></div>
+                        <div class="rectColorRadio">
+                            <input type="radio" id="btnNodeForgndId" name="nodeFgn" >
+                            <label for="btnNodeForgndId" style="vertical-align:baseline; ">Foreground</label>
+                        </div>
+                        <div id="nodeFgnDisplayId" class="rectColorShape"></div>
+                        <div class="rectColorRadio">
+                            <input type="radio" id="btnNodeBorderId" name="nodeFgn" >
+                            <label for="btnNodeBorderId" >Border</label>
+                        </div>
+                        <div id="nodeBorderDisplayId" class="rectColorShape"></div>
+                    </div>
                     <button id="nodeColorDefId" class="prefs-button">Use Defaults</button>
                 </div>
 
@@ -1280,7 +1264,6 @@
                      data-bind="attr: {src: getDecisionIcon()}" />
                 <span style=" margin: 4px 0 4px 8px; ">Enter node name:&nbsp;</span>
             </div>
-            <!--<div style="font-weight: bold; margin: 4px 0 4px; ">Enter node name:</div>-->
             <div>
                 <input id="newNodeNameId" type="text" autocomplete="off" spellcheck="false" tabindex="0"
                        onkeyup="validateNodeName(event)"

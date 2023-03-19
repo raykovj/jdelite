@@ -380,19 +380,19 @@ label {
 	row-gap: 8px;
 }
 .settings-footer-1 {
-	margin: 6px 0 0 0;
+	margin: 8px 0 0 0;
 }
 .settings-footer-2 {
-	margin: 164px 0 0 0;
+	margin: 166px 0 0 0;
 }
 .settings-footer-3 {
-	margin: 0 0 0 0;
+	margin: 24px 0 0 0;
 }
 .settings-footer-4 {
-	margin: 195px 0 0 0;
+	margin: 197px 0 0 0;
 }
 .settings-footer-5 {
-	margin: 232px 0 0 0;
+	margin: 234px 0 0 0;
 }
 .settings-footer-6 {
 	margin: 1px 0 0 0;
@@ -410,14 +410,24 @@ label {
 	outline: none;
 }
 .prefsNodeDisplay {
-	display: flex;
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 46px 156px 100px;
 }
 #nodeColorDefId {
 	
-	margin: 20px 0 0 22px;
+	margin: 20px 0 0 16px;
 	width: 85px;
 	height: 26px;
 	display: inline-block;
+}
+.nodeColorsGrid {
+	margin-left: 10px;
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 98px 40px;
+	padding: 2px;
+	row-gap: 0px;
 }
 .rectColorRadio {
 	margin: 2px 0 2px 0;
@@ -666,13 +676,13 @@ label {
 	float: right;
 }
 .setAllColorsToDef {
-	margin: 4px 0 4px 8px;
+	margin: 4px 0 6px 8px;
 	width: 116px;
 	height: 28px;
 	float: right;
 }
 .resetColorsToDef {
-	margin: 4px 0 12px 8px;
+	margin: 4px 0 6px 8px;
 	width: 116px;
 	height: 28px;
 	float: right;
@@ -684,9 +694,9 @@ label {
 	float: right;
 }
 .buttonColorDef {
-	margin: 10px 0 12px 66px;
-	width: 85px;
-	height: 26px;
+	margin: 10px 0 12px 32px;
+	width: 116px;
+	height: 28px;
 }
 .buttonSettingsScheme {
 	margin: 2px 0 2px 2px;
