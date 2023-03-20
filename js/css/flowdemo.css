@@ -486,6 +486,17 @@ label {
 	float: right;
 }
 
+.nodeTextControlGrid {
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 60px 60px 60px 70px 70px;
+	/*padding: 2px;*/
+}
+.rectTextRadio {
+	margin: 2px 0 2px 0;
+	float: left;
+}
+
 /*#findNameId {*/
 	/*width: 234px;*/
 /*}*/
@@ -802,26 +813,20 @@ label {
 	margin: 6px 0 2px 58px;
 	width: 86px;
 	height: 28px;
-	/*float: right;*/
 }
 .prefs-dmsNode-button-def {
-	/*margin-left: 218px;*/
 	width: 85px;
 	height: 26px;
-	/*margin-left: 22px;*/
-	display: inline-block;
 }
 .prefs-textNode-button-apply {
-	width: 52px;
+	width: 56px;
 	height: 26px;
-	margin-left: 8px;
-	display: inline-block;
+	margin-left: 6px;
 }
 .prefs-textNode-button-clear {
 	width: 52px;
 	height: 26px;
 	margin-left: 2px;
-	display: inline-block;
 }
 .nodeTable-button-clear {
 	width: 52px;

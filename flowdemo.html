@@ -985,18 +985,24 @@
 
                 <div class="settings-entry" style="margin: 6px 0 2px 0;">Text Content:</div>
                 <div class="nodeProps-controls">
-                    <textarea id="editNodeContentId" placeholder="[Enter content...]" autofocus rows="4" cols="37" wrap="hard"
+                    <textarea id="editNodeContentId" placeholder="[Enter content...]" autofocus rows="4" cols="36" wrap="hard"
                               spellcheck="false" class="noresizeTextArea"></textarea>
                 </div>
 
                 <!--<div class="settings-entry" style="margin: 4px 0 2px 0;">Text Location:</div>-->
-                <div class="nodeProps-controls">
-                    <input type="radio" id="btnInsideId" name="nodeText" style="margin: 4px 0 0 4px;">
-                    <label for="btnInsideId" style="vertical-align:baseline; margin: 0 4px 0 0;" >Inside</label>
-                    <input type="radio" id="btnAboveId" name="nodeText" style="margin: 4px 0 0 6px;">
-                    <label for="btnAboveId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Above</label>
-                    <input type="radio" id="btnBelowId" name="nodeText" style="margin: 4px 0 0 6px;">
-                    <label for="btnBelowId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Below</label>
+                <div class="nodeProps-controls nodeTextControlGrid">
+                    <div class="rectTextRadio">
+                        <input type="radio" id="btnInsideId" name="nodeText" style="margin: 4px 0 0 4px;">
+                        <label for="btnInsideId" style="vertical-align:baseline; margin: 0 4px 0 0;" >Inside</label>
+                    </div>
+                    <div class="rectTextRadio">
+                        <input type="radio" id="btnAboveId" name="nodeText" style="margin: 4px 0 0 6px;">
+                        <label for="btnAboveId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Above</label>
+                    </div>
+                    <div class="rectTextRadio">
+                        <input type="radio" id="btnBelowId" name="nodeText" style="margin: 4px 0 0 6px;">
+                        <label for="btnBelowId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Below</label>
+                    </div>
                     <button id="btnTextApplyId" class="prefs-button prefs-textNode-button-apply">Confirm</button>
                     <button id="btnTextClearId" class="prefs-button prefs-textNode-button-clear">Clear</button>
                 </div>
