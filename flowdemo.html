@@ -613,7 +613,7 @@
 
     <div id="infoDialogId" class="settingsFont" style="display: none; ">
         <div style="font-weight: bold; margin: 4px; ">
-            <textarea id="infoTextId" rows="4" cols="30" wrap="hard" class="selectionFont"
+            <textarea id="infoTextId" rows="4" cols="30" wrap="hard" class="selectionFont noresizeTextArea"
                        spellcheck="false" readonly
                        data-bind="visible: infoMessageVisible, text: infoMessage"></textarea>
         </div>
@@ -621,7 +621,7 @@
 
     <div id="text1ViewDialogId" class="settingsFont" style="display: none; ">
         <div style="font-weight: bold;">
-            <textarea id="text1ViewId" rows="400" cols="60" wrap="hard" class="selectionFont"
+            <textarea id="text1ViewId" rows="400" cols="60" wrap="hard" class="selectionFont noresizeTextArea"
                       style="border: 1px solid blue; outline: none; " spellcheck="false" readonly
                        data-bind="visible: viewMessage1Visible, text: viewMessage1"></textarea>
         </div>
@@ -629,7 +629,7 @@
 
     <div id="text2ViewDialogId" class="settingsFont" style="display: none; ">
         <div style="font-weight: bold;">
-            <textarea id="text2ViewId" rows="400" cols="60" wrap="hard" class="selectionFont"
+            <textarea id="text2ViewId" rows="400" cols="60" wrap="hard" class="selectionFont noresizeTextArea"
                       style="border: 1px solid blue; outline: none; " spellcheck="false" readonly
                        data-bind="visible: viewMessage2Visible, text: viewMessage2"></textarea>
         </div>
@@ -648,7 +648,7 @@
 
     <div id="confirmDialogId" class="settingsFont" style="display: none; ">
         <div style="font-weight: bold; margin: 4px; ">
-            <textarea id="confirmTextId" rows="3" cols="50" wrap="hard" class="selectionFont"
+            <textarea id="confirmTextId" rows="3" cols="50" wrap="hard" class="selectionFont noresizeTextArea"
                        spellcheck="false" readonly
                        data-bind="text: confirmMessage"></textarea>
         </div>
@@ -930,7 +930,7 @@
                            autocomplete="off" spellcheck="false"
                            onkeyup="validateEditName(event)"
                            data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
-                    <input type="checkbox" id="chkHideNodeNameId" name="nodeNameHide" style="margin: 6px 2px 0 0; ">
+                    <input type="checkbox" id="chkHideNodeNameId" name="nodeNameHide" style="margin: 6px 0 0 0; ">
                     <label for="chkHideNodeNameId" style="vertical-align: text-top; " >Hide</label>
                 </div>
                 <div>
@@ -945,7 +945,7 @@
                     <select id="nodeIconItemsId" class="nodeIconMenu"
                             data-bind="options: nodeEmojiItems, optionsValue: 'value'">
                     </select>
-                    <input type="checkbox" id="chkShowNodeIconId" name="nodeIconShow" style="margin: 6px 2px 0 28px; ">
+                    <input type="checkbox" id="chkShowNodeIconId" name="nodeIconShow" style="margin: 6px 2px 0 24px; ">
                     <label for="chkShowNodeIconId" style="vertical-align: text-top;">Show Icon</label>
                 </div>
 
@@ -986,7 +986,7 @@
                 <div class="settings-entry" style="margin: 6px 0 2px 0;">Text Content:</div>
                 <div class="nodeProps-controls">
                     <textarea id="editNodeContentId" placeholder="[Enter content...]" autofocus rows="4" cols="37" wrap="hard"
-                              spellcheck="false"></textarea>
+                              spellcheck="false" class="noresizeTextArea"></textarea>
                 </div>
 
                 <!--<div class="settings-entry" style="margin: 4px 0 2px 0;">Text Location:</div>-->
@@ -1247,7 +1247,7 @@
                 <div class="nodeProps-controls"  style="display: flex; ">
                     <input type="checkbox" id="chkSelectExpressionsId" name="nodetasks" style="margin: 0px 20px 0 4px;">
                     <textarea id="nodeExpressionsId" placeholder="[Enter content...]" autofocus rows="3" cols="42" wrap="hard"
-                              spellcheck="false"></textarea>
+                              spellcheck="false" class="noresizeTextArea"></textarea>
                 </div>
 
                 <br><br><br>
