@@ -342,7 +342,7 @@ label {
 .settingsMainGrid {
 	display: grid;
 	justify-content: start;
-	grid-template-columns: 20px 70px 20px 140px 20px 70px 20px 130px;
+	grid-template-columns: 20px 60px 20px 150px 20px 60px 20px 140px;
 	row-gap: 2px;
 }
 .settingsFeaturesGrid {
@@ -489,12 +489,12 @@ label {
 .nodeTextControlGrid {
 	display: grid;
 	justify-content: start;
-	grid-template-columns: 60px 60px 60px 70px 70px;
+	grid-template-columns: 60px 62px 64px 64px 66px;
 	/*padding: 2px;*/
 }
 .rectTextRadio {
 	margin: 2px 0 2px 0;
-	float: left;
+	/*float: left;*/
 }
 
 /*#findNameId {*/
