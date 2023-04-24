@@ -367,7 +367,19 @@
 
             <div id="settingsTabId-3" style="height: 100%; ">
 
-                <div class="settings-entry" style="margin: -4px 0 4px 0;">Node type / background / foreground colors:</div>
+                <div class="settings-entry" style="margin: -4px 0 2px 0;">Canvas background / foreground (* border):</div>
+                <div class="typeColorsGrid">
+                    <input type="radio" id="btnCnvsTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">
+                    <label for="btnCnvsTypeId" style="vertical-align:baseline; margin: 4px 4px 4px 8px;" >Canvas *</label>
+                    <div id="cnvsBgnDisplayId" class="typeColorShape" ></div>
+                    <div id="cnvsFgnDisplayId" class="typeColorShape" ></div>
+
+                    <!--<input type="checkbox" id="btnShowGridId" style="margin:4px 0 0 10px;">-->
+                    <!--<label for="btnShowGridId"-->
+                           <!--style="vertical-align:baseline; margin: 4px 4px 0 8px; grid-column: 6/span 3; ">Show Grid on Mouse Move</label>-->
+                </div>
+
+                <div class="settings-entry" style="margin: 6px 0 2px 0;">Node type / background / foreground (* border) colors:</div>
                 <div class="typeColorsGrid">
                     <input type="radio" id="btnSETypeId" name="typeColors" style="margin:4px 0 0 10px;">
                     <label for="btnSETypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Start / End</label>
@@ -417,72 +429,66 @@
                     <label for="btnDecTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Decision</label>
                     <div id="decBgnDisplayId" class="typeColorShape"></div>
                     <div id="decFgnDisplayId" class="typeColorShape"></div>
-                    <!--<div></div>-->
-                    <!--<div></div>-->
-                    <!--<div></div>-->
-                    <!--<div></div>-->
 
                     <input type="radio" id="btnCntrTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">
-                    <label for="btnCntrTypeId" style="vertical-align:baseline; margin:4px 4px 4px 8px;" >Container</label>
+                    <label for="btnCntrTypeId" style="vertical-align:baseline; margin:4px 4px 4px 8px;" >Container *</label>
                     <div id="cntrBgnDisplayId" class="typeColorShape"></div>
                     <div id="cntrFgnDisplayId" class="typeColorShape"></div>
-                    <!--<div></div>-->
                 </div>
 
-                <div class="settings-entry" style="margin: 4px 0 4px 0;">Line colors:</div>
+                <div class="settings-entry" style="margin: 4px 0 2px 0;">Line colors:</div>
                 <div class="typeColorsGrid">
                     <input type="radio" id="btnLinkTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">
-                    <label for="btnLinkTypeId" style="vertical-align:baseline; margin: 4px 4px 4px 8px;" >Link</label>
-                    <div id="linkDisplayId" class="typeColorShape"></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <label for="btnLinkTypeId" style="vertical-align:baseline; margin: 4px 4px 0px 8px;" >Link Line</label>
+                    <div id="linkDisplayId" class="typeColorShape" style="grid-column: 3/span 2;"></div>
+
+                    <input type="radio" id="btnDrawTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">
+                    <label for="btnDrawTypeId" style="vertical-align:baseline; margin: 4px 4px 0px 8px;" >Draw Line</label>
+                    <div id="drawDisplayId" class="typeColorShape" style="grid-column: 7/span 2;"></div>
 
                     <input type="radio" id="btnBorderTypeId" name="typeColors" style="margin:4px 0 0 10px;">
-                    <label for="btnBorderTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Border</label>
-                    <div id="borderDisplayId" class="typeColorShape"></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <label for="btnBorderTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Node Borders</label>
+                    <div id="borderDisplayId" class="typeColorShape" style="grid-column: 3/span 2;"></div>
+
+                    <input type="radio" id="btnResizeTypeId" name="typeColors" style="margin:4px 0 0 10px;">
+                    <label for="btnResizeTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Resize Frame</label>
+                    <div id="resizeDisplayId" class="typeColorShape" style="grid-column: 7/span 2;"></div>
                 </div>
 
 
-                <div class="settings-entry" style="margin: 38px 0 4px 0;">Edit Selected Colors:</div>
+                <div class="settings-entry" style="margin: 5px 0 2px 0;">Edit Selected Colors:</div>
                 <div class="nodeProps-controls nodeColorSelect">
                     <input id="typeColorPickId" type="text"  class="nodeColorItem"/>
-                    <div class="nodeColorItem">
+                    <div class="nodeColorSelect">
                         <ul style="list-style-type: none; margin: 0 0 0 18px; padding: 0;">
                             <li >
                                 <div data-bind="visible: showBackgroundSelection">
                                     <div class="rectColorRadio">
                                         <input type="radio" id="btnBgnColorId" name="typeClrs" >
-                                        <label for="btnBgnColorId" style="vertical-align:baseline; " >Background</label>
+                                        <label id="btnBgnColorLabelId" for="btnBgnColorId" style="vertical-align:baseline; " >Background</label>
                                     </div>
                                     <div id="bgnColorDisplayId" class="rectColorShape"></div>
                                 </div>
                             </li>
                             <li >
-                                <div class="rectColorRadio">
-                                    <input type="radio" id="btnFgnColorId" name="typeClrs" >
-                                    <label for="btnFgnColorId" style="vertical-align:baseline; ">Foreground</label>
+                                <div data-bind="visible: showForegroundSelection">
+                                    <div class="rectColorRadio">
+                                        <input type="radio" id="btnFgnColorId" name="typeClrs" >
+                                        <label id="btnFgnColorLabelId" for="btnFgnColorId" style="vertical-align:baseline; ">Foreground</label>
+                                    </div>
+                                    <div id="fgnColorDisplayId" class="rectColorShape"></div>
                                 </div>
-                                <div id="fgnColorDisplayId" class="rectColorShape"></div>
                             </li>
                         </ul>
                     </div>
                     <button id="btnColorDefId" class="prefs-button buttonColorDef ">Use Defaults</button>
                 </div>
 
-                <!--<div style="margin: 4px 0 0 0;"></div>-->
                 <div >
                     <button id="resetAllColorsId" class="prefs-button resetColorsToDef"
                             title="Reset to default colors">Reset All Colors</button>
-                    <button id="rollbackColorsId" class="prefs-button setAllColorsToDef"
-                            title="Reset to old colors">Rollback All</button>
+                    <!--<button id="rollbackColorsId" class="prefs-button setAllColorsToDef"-->
+                            <!--title="Reset to old colors">Rollback All</button>-->
                 </div>
 
                 <div class="settings-footer-3"></div>
@@ -959,10 +965,10 @@
                         </div>
                         <div id="nodeBkgnDisplayId" class="rectColorShape"></div>
                         <div class="rectColorRadio">
-                            <input type="radio" id="btnNodeForgndId" name="nodeFgn" >
+                            <input type="radio" id="btnNodeForgndId" name="nodeFgn"  data-bind="enable: propsFgndVisible()">
                             <label for="btnNodeForgndId" style="vertical-align:baseline; ">Foreground</label>
                         </div>
-                        <div id="nodeFgnDisplayId" class="rectColorShape"></div>
+                        <div id="nodeFgnDisplayId" class="rectColorShape"  data-bind="enable: propsFgndVisible()"></div>
                         <div class="rectColorRadio">
                             <input type="radio" id="btnNodeBorderId" name="nodeFgn" >
                             <label for="btnNodeBorderId" >Border</label>
@@ -1076,7 +1082,7 @@
                     <span>To enable this feature, go to <b>Settings->General</b> and select <b>Enable ports cardinality assignment</b>.</span>
                 </div>
 
-                <div id="nodeCnxContainer" style="margin-top: 8px; ">
+                <div id="nodeCnxContainer" style="margin-top: 8px; overflow-y: auto">
                     <!--<div style="margin-top: 8px; "></div>-->
                     <table id="nodeHeadId">
                         <thead>
