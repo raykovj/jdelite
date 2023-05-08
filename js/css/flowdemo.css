@@ -570,7 +570,7 @@ label {
 	padding: 0 10px 0 30px;
 	width: 120px;
 }
-.ui-selectmenu-menu .ui-menu.schememenu .ui-menu-item-wrapper {
+.ui-selectmenu-menu .ui-menu.schemenames .ui-menu-item-wrapper {
 	padding: 0 10px 0 10px;
 	height: 20px;
 }
@@ -724,7 +724,7 @@ label {
 	margin-right: 4px;
 	border: 1px solid #808080;
 	background-color: #fafafa;
-	font-weight: bold;
+	
 	outline: none;
 }
 .buttonTextViewDef {
