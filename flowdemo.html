@@ -602,19 +602,30 @@
         </div>
     </div>
 
-    <div id="aboutDialogId" class="about-dlg" style="display: none; ">
+    <!-- ABOUT -->
+    <div id="aboutDialogId" class="about-dlg">
         <img class="about-img"/>
         <div class="about-title" data-bind="text: aboutTitle()"></div>
-        <span class="selectionFont vertical" style="padding: 20px 20px 2px; "
+        <span class="selectionFont vertical" style="padding: 12px 20px 2px; "
               data-bind="text: aboutTitle()"></span>
         <span class="galleryFont vertical" style="padding: 0 20px; "
              data-bind="text: aboutVersion()"></span>
         <span class="galleryFont vertical" style="padding: 8px 20px; "
-             data-bind="text: aboutText()"></span>
+             data-bind="html: aboutText()"></span>
         <span class="galleryFont vertical" style="padding: 2px 20px; "
              data-bind="html: aboutSources()"></span>
         <!--<span class="galleryFont vertical about-copyright" style="padding: 2px 20px 10px; "-->
              <!--data-bind="text: aboutCopyright()"></span>-->
+    </div>
+
+    <!-- WELCOME -->
+    <div id="welcomeDialogId" class="welcome-dlg">
+        <img class="about-img"/>
+        <div class="about-title" data-bind="text: welcomeTitle()"></div>
+        <div class="welcome-title"
+             data-bind="text: welcomeGreeting()"></div>
+        <span class="welcome-text vertical" style="padding: 20px; "
+             data-bind="html: welcomeTip()"></span>
     </div>
 
     <div id="infoDialogId" class="settingsFont" style="display: none; ">

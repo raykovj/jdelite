@@ -826,7 +826,8 @@ label {
 	outline: none;
 	height: 120px;
 	width: 460px;
-	background-image: url(../../images/splash/sb-460x300.png);
+	background-image: url(../../images/splash/mnt11.jpg);
+	
 	background-repeat: no-repeat;
 	background-position: top;
 	padding: 0;
@@ -845,6 +846,32 @@ label {
 	position: absolute;
 	bottom: 0;
 	float: left;
+}
+.welcome-dlg {
+	display: none;
+}
+.welcome-title {
+	text-align: center;
+	font-family: Script MT;
+	font-style: italic;
+	font-size: 64px;
+	color: #195aee;
+}
+.welcome-text {
+	text-align: center;
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	color: #195aee;
+}
+.welcome-tip {
+	border: none;
+	outline: none;
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	
+	foreground-color: #195aee;
 }
 .toolbar-button {
 	border: 1px solid #aaaaaa;
