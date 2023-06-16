@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/guide.css" type="text/css" />
+    <link rel="stylesheet" href="../../libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.css" type="text/css" />
+
+    <!--<script data-main="js/flowdemo" src="libs/require/require.js"></script>-->
+    <!--<link rel="stylesheet" href="libs/spectrum/spectrum.css"  type="text/css"/>-->
+    <title>User Guide</title>
+
+</head>
+
+<body>
+<!--<div class="master">-->
+    <div class="container">
+        <div class="topBar">
+            <img src="logo.png" width="100" height="50">
+        </div>
+        <div class="splitter">
+            <div id="left" class="contentList">
+                <div style="margin-top: 20px; "></div>
+                <button id="prefaceBtnId" class="textBtn first" onclick="selectText(event)">Preface</button>
+                <ul id="myList">
+                    <li><button id="howtoBtnId" class="caret textBtn first" onclick="selectText(event)">How-To Examples</button>
+                        <ul class="nested">
+                            <li><button id="startBtnId" class="textBtn second" onclick="selectText(event)">Start a Flowchart</button></li>
+                            <li><button id="initialBtnId" class="textBtn second" onclick="selectText(event)">Initial Editing</button></li>
+                            <li><button id="nodeEditBtnId" class="textBtn second" onclick="selectText(event)">Editing a Node</button></li>
+                            <li><button id="chartEditBtnId" class="textBtn second" onclick="selectText(event)">Editing the Flowchart</button></li>
+                            <li><button id="addingMoreBtnId" class="textBtn second" onclick="selectText(event)">Adding More Nodes</button></li>
+                            <li><button id="linkPropsBtnId" class="textBtn second" onclick="selectText(event)">Link Properties</button></li>
+                            <li><button id="moreEditBtnId" class="textBtn second" onclick="selectText(event)">More Flowchart Edits</button></li>
+                            <li><button id="containersBtnId" class="textBtn second" onclick="selectText(event)">Using Containers</button></li>
+                            <li><button id="searchBtnId" class="textBtn second" onclick="selectText(event)">Searching Nodes</button></li>
+                            <li><button id="layoutBtnId" class="textBtn second" onclick="selectText(event)">Modifying Layout</button></li>
+                            <li><button id="bpmBtnId" class="textBtn second" onclick="selectText(event)">Support for BPM</button></li>
+                            <li><button id="erdBtnId" class="textBtn second" onclick="selectText(event)">Support for ERD</button></li>
+                        </ul>
+                    </li>
+
+                    <li><button id="featuresBtnId" class="caret textBtn first" onclick="selectText(event)">Features</button>
+                        <ul class="nested">
+                            <li><button id="actionsBtnId" class="textBtn second" onclick="selectText(event)">User Interactions</button></li>
+                            <li><button id="fileSysBtnId" class="textBtn second" onclick="selectText(event)">FileSystem Browser</button></li>
+                            <li><button id="nodeCreateBtnId" class="textBtn second" onclick="selectText(event)">Creating a Node</button></li>
+                            <li><button id="gridEditBtnId" class="textBtn second" onclick="selectText(event)">Editing the Grid</button></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div id="separator" ></div>
+
+            <div id="right" class="contentTop">
+                <!--<div style="margin-top: 20px; "></div>-->
+                <div class="contentTitle">
+                    <h2>JDElite Flowchart Builder User's Guide</h2>
+                </div>
+                <div id="prefaceTextId" class="contentText">
+                    <p>JDElite Flowchart Builder offers design and modeling solutions for a wide variety of use cases:
+                    <ul>
+                        <li>Quickly and effortlessly create flowcharts for plan drafting, documenting, monitoring and management,
+                            visual modeling, or algorithm presentation.</li>
+                        <li>Design your flowcharts or entity-relationship diagrams with our exclusive patented readability
+                            features, including control of multiple links without overlapping. No coding required.</li>
+                        <li>The plugin architecture allows users to import/edit/export third party flowcharts. Generated
+                            output is in JSON format.</li>
+                    </ul>
+                    </p>
+                </div>
+
+                <div id="howtoTextId" class="contentText">
+                    <p>This section describes the features of JDElite flowchart
+                        editor. The free demo version has all of the built-in features, the only
+                        difference from the full version being that there is no access to the file system. You can
+                        create your own flowcharts but in order to save/reopen them you need the additional
+                        server module. There are five built-in sample flowcharts. They can be opened
+                        and edited but modifications cannot be saved. </p>
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/1GW2oUgkFB4"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+                            web-share" allowfullscreen></iframe>
+                </div>
+                <div id="startTextId" class="contentText">
+                    <p>You can build a flowchart by simply drag-and-drop nodes from the palette
+                        and by dragging links between the nodes, connecting the pop-up handles with the mouse. The flow
+                        direction can be either top to bottom or left to right and can be switched back and forth at any
+                        time during the design process. </p>
+                    <iframe width="560" height="315"
+                            src="https://youtu.be/slbsEy6pY0Y"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+                            web-share" allowfullscreen></iframe>
+                    <!--https://youtu.be/slbsEy6pY0Y-->
+                </div>
+                <div id="initialTextId" class="contentText">
+                    <p>Nodes are assigned names at node creation time that have to be unique across the
+                        flowchart. The names are either automatically generated or you can choose to enter your own.
+                        Duplicate names are rejected. Later you can change the nodes background/foreground/border colors
+                        either collectively from the global <i><b>Settings</b></i> dialog or individually for any particular
+                        node from its <i><b>Properties dialog</b></i>.</p>
+                </div>
+                <div id="nodeEditTextId" class="contentText">
+                    <p>From the node’s <i>Properties</i> dialog, you can edit
+                        the selected node: show/hide or change the node name, select a node icon, show/hide
+                        the icon, edit the background/foreground colors, and enter text inside or
+                        outside, above and/or below the node. This dialog is invoked from the
+                        right-click context menu or by double clicking on the node.</p>
+                </div>
+                <div id="chartEditTextId" class="contentText">
+                    <p>The nodes are positioned on a rectangular grid that consists of
+                        layers across the flow direction and
+                        lanes along the flow direction, and are allocated in the cells at the
+                        intersections. The areas between the layers are called <i>layer pipes</i>,
+                        and the areas between the lanes are called <i>lane pipes</i>. The connection
+                        links are traced along these pipes. The nodes can be moved to different grid
+                        cells, as well as copied and pasted. The link ports, in order to reconnect
+                        them, can be moved to different nodes by dragging the mouse between the connection
+                        ports.</p>
+                </div>
+                <div id="addingMoreTextId" class="contentText">
+                    <p>You can decide whether to use the side swim lanes or not.
+                        If you have selected a vertical flow direction, they appear on the left and on the right.
+                        If you have selected a horizontal flow direction, they appear at the top and at the bottom.
+                        You can choose to enable the association links to show relations between nodes. You can also
+                        select different color styles for the node icons.  You can add or remove layers and/or lanes
+                        from the right-click context menus outside of nodes and links.</p>
+                </div>
+                <div id="linkPropsTextId" class="contentText">
+                    <p>You can attach labels to the connection ports of the nodes
+                        by selecting the <i>Connectivity</i> tab in the node <i>Properties</i> dialog. You
+                        can also attach labels to the links or change their colors from the link <i>Properties</i>
+                        dialog that can be invoked from the right-click context menu or by double clicking
+                        on the link.</p>
+                </div>
+                <div id="moreEditTextId" class="contentText">
+                    <p>The sizes of the nodes can be changed either collectively from
+                        the <i>Node Size</i> tab on the <i>Settings</i> dialog, or individually within the
+                        flowchart by dragging the node outline with the mouse. For flowcharts that are
+                        larger than the browser window there is a convenient <i>Thumbnail View</i>
+                        dialog invokable from a button in the top right block above the palette. You
+                        can also change the flow direction by double clicking the arrow button in that
+                        block, as well as you can select a different scale for the flowchart.</p>
+                </div>
+                <div id="containersTextId" class="contentText">
+                    <p>Container blocks with two levels
+                        of nesting allow the user to create functional groups of nodes. After the
+                        initial drop, as well as at any time later, a block can be expanded or
+                        collapsed by clicking on the expand/collapse icon. The block can be sized to
+                        the desired dimensions by extending or shrinking it in any direction using the
+                        resize menu that pops up at the upper left corner of the outline in expanded
+                        state. If there is not enough free space around the block to expand it,
+                        additional layers and/or lanes are to be inserted.</p>
+                </div>
+                <div id="searchTextId" class="contentText">
+                    <p>The <i>Thumbnail View</i> described above may help to
+                        navigate large flowcharts that expand beyond the viewable area. Additionally,
+                        there is a Search tool that allows finding a single node or multiple nodes by
+                        full/partial name, or by matching text/pattern in the node content text.</p>
+                </div>
+                <div id="layoutTextId" class="contentText">
+                    <p>JDElite allows editing the flowcharts by manually modifying the layout.</p>
+                </div>
+                <div id="bpmTextId" class="contentText">
+                    <p>One of the important features of JDElite Flowchart Builder are the <b>task hooks</b>. Currently
+                        there are four types of task hooks that demonstrate this customizable feature: actions, services,
+                        operations and expressions. These hooks can be further attached to a business processing environment,
+                        in areas like design of flowchart diagrams for <b>business process modeling</b> (BPM) editors.</p>
+                </div>
+                <div id="erdTextId" class="contentText">
+                    <p>Another important feature of JDElite Flowchart Builder is that it can be used for the design
+                        of flowcharts, representing relational database models and structures - <b>entity relationship
+                            diagrams</b> (ERD).</p>
+                </div>
+
+
+                <div id="someTextId" class="contentText">
+                    <p></p>
+                </div>
+             </div>
+        </div>
+    </div>
+    <!--<div class="extraBar"></div>-->
+<!--</div>-->
+<script>
+
+    var _activeTitleId,
+        _activeBtnId;
+
+    function selectText(event) {
+        unselectAllLeft();
+        hideAllTexts();
+        var id = event.srcElement.id;
+        document.getElementById(id).classList.add("boldText");
+        if (id === "prefaceBtnId") {
+            document.getElementById("prefaceTextId").style.display = "block";
+        } else if (id === "howtoBtnId") {
+            document.getElementById("howtoTextId").style.display = "block";
+        } else if (id === "startBtnId") {
+            document.getElementById("startTextId").style.display = "block";
+        } else if (id === "initialBtnId") {
+            document.getElementById("initialTextId").style.display = "block";
+        } else if (id === "nodeEditBtnId") {
+            document.getElementById("nodeEditTextId").style.display = "block";
+        } else if (id === "chartEditBtnId") {
+            document.getElementById("chartEditTextId").style.display = "block";
+        } else if (id === "addingMoreBtnId") {
+            document.getElementById("addingMoreTextId").style.display = "block";
+        } else if (id === "linkPropsBtnId") {
+            document.getElementById("linkPropsTextId").style.display = "block";
+        } else if (id === "moreEditBtnId") {
+            document.getElementById("moreEditTextId").style.display = "block";
+        } else if (id === "containersBtnId") {
+            document.getElementById("containersTextId").style.display = "block";
+        } else if (id === "searchBtnId") {
+            document.getElementById("searchTextId").style.display = "block";
+        } else if (id === "layoutBtnId") {
+            document.getElementById("layoutTextId").style.display = "block";
+        } else if (id === "bpmBtnId") {
+            document.getElementById("bpmTextId").style.display = "block";
+        } else if (id === "erdBtnId") {
+            document.getElementById("erdTextId").style.display = "block";
+        }
+    }
+
+    function unselectAllLeft() {
+        document.getElementById("prefaceBtnId").classList.remove("boldText");
+
+        document.getElementById("howtoBtnId").classList.remove("boldText");
+        document.getElementById("startBtnId").classList.remove("boldText");
+        document.getElementById("initialBtnId").classList.remove("boldText");
+        document.getElementById("nodeEditBtnId").classList.remove("boldText");
+        document.getElementById("chartEditBtnId").classList.remove("boldText");
+        document.getElementById("addingMoreBtnId").classList.remove("boldText");
+        document.getElementById("linkPropsBtnId").classList.remove("boldText");
+        document.getElementById("moreEditBtnId").classList.remove("boldText");
+        document.getElementById("containersBtnId").classList.remove("boldText");
+        document.getElementById("searchBtnId").classList.remove("boldText");
+        document.getElementById("layoutBtnId").classList.remove("boldText");
+        document.getElementById("bpmBtnId").classList.remove("boldText");
+        document.getElementById("erdBtnId").classList.remove("boldText");
+
+        document.getElementById("featuresBtnId").classList.remove("boldText");
+        document.getElementById("actionsBtnId").classList.remove("boldText");
+        document.getElementById("fileSysBtnId").classList.remove("boldText");
+        document.getElementById("nodeCreateBtnId").classList.remove("boldText");
+        document.getElementById("gridEditBtnId").classList.remove("boldText");
+//        document.getElementById("prefaceBtnId").classList.remove("boldText");
+
+    }
+
+    function initTexts() {
+        unselectAllLeft();
+        hideAllTexts();
+        document.getElementById("prefaceBtnId").classList.add("boldText");
+        document.getElementById("prefaceTextId").style.display = "block";
+    }
+
+    function hideAllTexts() {
+        document.getElementById("prefaceTextId").style.display = "none";
+        document.getElementById("howtoTextId").style.display = "none";
+        document.getElementById("startTextId").style.display = "none";
+        document.getElementById("initialTextId").style.display = "none";
+        document.getElementById("nodeEditTextId").style.display = "none";
+        document.getElementById("chartEditTextId").style.display = "none";
+        document.getElementById("addingMoreTextId").style.display = "none";
+        document.getElementById("linkPropsTextId").style.display = "none";
+        document.getElementById("moreEditTextId").style.display = "none";
+        document.getElementById("containersTextId").style.display = "none";
+        document.getElementById("searchTextId").style.display = "none";
+        document.getElementById("layoutTextId").style.display = "none";
+        document.getElementById("bpmTextId").style.display = "none";
+        document.getElementById("erdTextId").style.display = "none";
+
+//        document.getElementById("featuresTextId").style.display = "none";
+//        document.getElementById("actionsTextId").style.display = "none";
+//        document.getElementById("fileSysTextId").style.display = "none";
+//        document.getElementById("nodeCreateTextId").style.display = "none";
+//        document.getElementById("gridEditTextId").style.display = "none";
+
+
+    }
+
+
+    initTexts();
+
+
+    function dragElement(element) {
+        var   mouseDown; // remember mouse down info
+        const left  = document.getElementById("left");
+        const right = document.getElementById("right");
+
+        element.onmousedown = onMouseDown;
+
+        function onMouseDown(e)
+        {
+            //console.log("mouse down: " + e.clientX);
+            mouseDown = {e,
+                offsetLeft:  element.offsetLeft,
+                offsetTop:   element.offsetTop,
+                leftWidth:  left.offsetWidth,
+                rightWidth: right.offsetWidth
+            };
+
+            document.onmousemove = onMouseMove;
+            document.onmouseup = function(e) {
+                //console.log("mouse up");
+                document.onmousemove = document.onmouseup = null;
+            }
+        }
+
+        function onMouseMove(e)
+        {
+            //console.log("mouse move: " + e.clientX);
+            var delta = {
+                x: e.clientX - mouseDown.e.clientX,
+                y: e.clientY - mouseDown.e.clientY
+            };
+
+            // Prevent negative-sized elements
+            delta.x = Math.min(Math.max(delta.x, -mouseDown.leftWidth), mouseDown.rightWidth);
+
+            element.style.left = mouseDown.offsetLeft + delta.x + "px";
+            left.style.width = (mouseDown.leftWidth + delta.x) + "px";
+            right.style.width = (mouseDown.rightWidth - delta.x) + "px";
+        }
+    }
+
+    dragElement(document.getElementById("separator"));
+
+    var toggler = document.getElementsByClassName("caret");
+    var i;
+
+    for (i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function() {
+            this.parentElement.querySelector(".nested").classList.toggle("active");
+            this.classList.toggle("caret-down");
+        });
+    }
+
+</script>
+
+</body>
+</html>

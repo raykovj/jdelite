@@ -8,17 +8,24 @@ body.waiting * {
 *:focus  {
 	outline-color: #72AAFA !important;
 }
+#navbarContainerId {
+	padding-bottom: 2px;
+}
 .top-toolbar {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: flex-start;
 	align-items: center;
-	margin: 0 0 0 8px;
+	
+	padding: 4px 0 4px;
 	width: 100%;
-	position: sticky;
+	height: 32px;
+	
+	position: fixed;
 	top: 0;
 	z-index: 10;
 	background-color: white;
+	
 }
 .actions-toolbar {
 	display: flex;
@@ -65,13 +72,13 @@ body.waiting * {
 .main-container {
 	-webkit-box-flex: 1;
 	display: grid;
-	grid-template-columns: 8px auto 8px;
+	grid-template-columns: 2px auto 2px;
 	grid-template-rows: 8px auto 8px;
 	background: #f5f5f5;
-	margin: 10px 0 10px 8px;
+	margin: 2px 0 10px 2px;
 	overflow-x: auto;
 	overflow-y: auto;
-	height: 100%;
+	
 	
 }
 .flex-canvas {
@@ -380,19 +387,19 @@ label {
 	row-gap: 8px;
 }
 .settings-footer-1 {
-	margin: 8px 0 0 0;
+	margin: 42px 0 0 0;
 }
 .settings-footer-2 {
-	margin: 166px 0 0 0;
+	margin: 200px 0 0 0;
 }
 .settings-footer-3 {
 	margin: 24px 0 0 0;
 }
 .settings-footer-4 {
-	margin: 197px 0 0 0;
+	margin: 231px 0 0 0;
 }
 .settings-footer-5 {
-	margin: 234px 0 0 0;
+	margin: 268px 0 0 0;
 }
 .settings-footer-6 {
 	margin: 1px 0 0 0;
@@ -752,26 +759,38 @@ label {
 	height: 26px;
 	margin-left: 2px;
 }
+.nodeTableTopButtons {
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 188px 30px 30px 30px 30px;
+	
+}
+.nodeTableBottomButtons {
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 16px 125px 58px 58px 58px;
+	
+}
 .nodeTable-button-clear {
 	width: 52px;
 	height: 26px;
-	margin-left: 6px;
-	display: inline-block;
-	float: right;
+	
+	
+	
 }
 .nodeTable-button-confirm {
 	width: 52px;
 	height: 26px;
-	margin-left: 6px;
-	display: inline-block;
-	float: right;
+	
+	
+	
 }
 .nodeTable-button-reset {
 	width: 52px;
 	height: 26px;
 	
-	display: inline-block;
-	float: right;
+	
+	
 }
 .prefs-colorNode-button-def {
 	width: 85px;
@@ -1278,6 +1297,9 @@ label {
 	
 	
 }
+.overflow {
+	z-index: 102;
+}
 .ui-menu {
 	
 	border: 1px solid #3a72c1 !important;
@@ -1480,6 +1502,9 @@ table#nodeTableContentId td {
 	border-collapse: collapse;
 	padding: 1px;
 	font-weight: bold;
+}
+table#nodeTableContentId tr:nth-child(even) {
+	background-color: #D6EEEE;
 }
 	
 	

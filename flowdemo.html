@@ -12,12 +12,14 @@
     <link rel="stylesheet" href="libs/spectrum/spectrum.css"  type="text/css"/>
 
     <title>JDElite Flowchart Builder</title>
+
 </head>
  
 <body>
 
-    <div style="padding-bottom: 2px; ">
-        <div class="top-toolbar">
+<div>
+    <div id="navbarContainerId">
+        <div id="navbarId" class="top-toolbar">
             <div id="toolbarId" class="actions-toolbar">
                 <button id="menuId" class="toolbar-button button-menu" data-toggle="tooltip" title="Main Menu..."></button>
                 <span style="margin-left: 10px;"></span>
@@ -64,6 +66,7 @@
             <span style="margin-left: 2px;"></span>
         </div>
     </div>
+    <div id="navbarGapId" ></div>
 
     <div id="topContainerId" class="top-container">
         <div id="containerId" class="main-container" onscroll="repaintDiagram()">
@@ -204,6 +207,8 @@
         </div>
 
     </div>
+
+</div>
 
     <div id="blockResizeId" class="containerGroup" style="visibility: hidden">
         <div class="actions-toolbar">
@@ -367,19 +372,20 @@
 
             <div id="settingsTabId-3" style="height: 100%; ">
 
-                <div class="settings-entry" style="margin: -4px 0 2px 0;">Canvas background / foreground (* border):</div>
-                <div class="typeColorsGrid">
-                    <input type="radio" id="btnCnvsTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">
-                    <label for="btnCnvsTypeId" style="vertical-align:baseline; margin: 4px 4px 4px 8px;" >Canvas *</label>
+                <div class="settings-entry" style="margin: -4px 0 4px 0;">Canvas / subject areas background / border:</div>
+                <div class="typeColorsGrid" style="margin-top: 4px; ">
+                    <input type="radio" id="btnCnvsTypeId" name="typeColors" style="margin: 4px 0 2px 10px;">
+                    <label for="btnCnvsTypeId" style="vertical-align:baseline; margin: 4px 4px 2px 8px;" >Canvas </label>
                     <div id="cnvsBgnDisplayId" class="typeColorShape" ></div>
-                    <div id="cnvsFgnDisplayId" class="typeColorShape" ></div>
+                    <div id="cnvsFgnDisplayId" class="typeColorShape" style="grid-column: 4/span 5;"></div>
 
-                    <!--<input type="checkbox" id="btnShowGridId" style="margin:4px 0 0 10px;">-->
-                    <!--<label for="btnShowGridId"-->
-                           <!--style="vertical-align:baseline; margin: 4px 4px 0 8px; grid-column: 6/span 3; ">Show Grid on Mouse Move</label>-->
+                    <input type="radio" id="btnSubsTypeId" name="typeColors" style="margin: 0 0 4px 10px;">
+                    <label for="btnSubsTypeId" style="vertical-align:baseline; margin: 0 4px 4px 8px;" >Subject Area </label>
+                    <div id="subsBgnDisplayId" class="typeColorShape" ></div>
+                    <div id="subsFgnDisplayId" class="typeColorShape" ></div>
                 </div>
 
-                <div class="settings-entry" style="margin: 6px 0 2px 0;">Node type / background / foreground (* border) colors:</div>
+                <div class="settings-entry" style="margin: 6px 0 4px 0;">Node type / background / foreground (border *) colors:</div>
                 <div class="typeColorsGrid">
                     <input type="radio" id="btnSETypeId" name="typeColors" style="margin:4px 0 0 10px;">
                     <label for="btnSETypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Start / End</label>
@@ -436,7 +442,7 @@
                     <div id="cntrFgnDisplayId" class="typeColorShape"></div>
                 </div>
 
-                <div class="settings-entry" style="margin: 4px 0 2px 0;">Line colors:</div>
+                <div class="settings-entry" style="margin: 4px 0 4px 0;">Line colors:</div>
                 <div class="typeColorsGrid">
                     <input type="radio" id="btnLinkTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">
                     <label for="btnLinkTypeId" style="vertical-align:baseline; margin: 4px 4px 0px 8px;" >Link Line</label>
@@ -456,8 +462,8 @@
                 </div>
 
 
-                <div class="settings-entry" style="margin: 5px 0 2px 0;">Edit Selected Colors:</div>
-                <div class="nodeProps-controls nodeColorSelect">
+                <div class="settings-entry" style="margin: 5px 0 4px 0;">Edit Selected Colors:</div>
+                <div class="nodeProps-controls nodeColorSelect" >
                     <input id="typeColorPickId" type="text"  class="nodeColorItem"/>
                     <div class="nodeColorSelect">
                         <ul style="list-style-type: none; margin: 0 0 0 18px; padding: 0;">
@@ -1029,20 +1035,20 @@
             <div id="nodePropsTabId-2" >
                 <span>NOTE: To enable this feature, go to <b>Settings->General</b> and select <b>Enable database records assignment</b>.</span>
 
-                <div style="margin-top: 14px;"></div>
-                <div>
-                    <span  class="settings-entry">DB Table Content:</span>
-                    <button id="btnMoveRowDownId" class="toolbar-button button-down button-no-left" style="float:right; "
-                            data-toggle="tooltip" title="Move Row Down"></button>
-                    <button id="btnMoveRowUpId" class="toolbar-button button-up button-no-left" style="float:right; "
-                            data-toggle="tooltip" title="Move Row Up"></button>
-                    <button id="btnRemoveRowId" class="toolbar-button button-delete button-no-left" style="float:right; "
+                <div class="nodeTableTopButtons" style="margin: 6px 0 0 0; ">
+                    <!--<span  class="settings-entry" style="padding: 10px 0;">DB Table Content:</span>-->
+                    <button id="btnAddRowId" class="toolbar-button button-add" data-toggle="tooltip" style="grid-column: 2"
+                            title="Add Row"></button>
+                    <button id="btnRemoveRowId" class="toolbar-button button-delete button-no-left"
                             data-toggle="tooltip" title="Remove Row"></button>
-                    <button id="btnAddRowId" class="toolbar-button button-add" data-toggle="tooltip" style="float:right; "
-                                title="Add Row"></button>
+                    <button id="btnMoveRowUpId" class="toolbar-button button-up button-no-left"
+                            data-toggle="tooltip" title="Move Row Up"></button>
+                    <button id="btnMoveRowDownId" class="toolbar-button button-down button-no-left"
+                            data-toggle="tooltip" title="Move Row Down"></button>
                 </div>
 
-                <div id="nodeTableContainer" style="margin-top: 20px;">
+
+                <div id="nodeTableContainer" style="margin-top: 4px;">
                     <table id="nodeTableContentId" style="width: 100%;">
                         <thead>
                             <tr>
@@ -1079,10 +1085,13 @@
                     </table>
                 </div>
 
-                <div class="nodeProps-controls" style="margin-top: 6px;">
+                <div class="nodeProps-controls nodeTableBottomButtons" style="margin-top: 6px;">
+                    <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
+                            data-bind="visible: dbTableErrorMsg"></button>
+                    <span class="invalid-message" data-bind="visible: dbTableErrorMsg">Duplicate field!</span>
+                    <button id="btnTableResetId" class="prefs-button nodeTable-button-reset" title="Reset all edits"  style="grid-column: 3">Reset</button>
                     <button id="btnTableClearId" class="prefs-button nodeTable-button-clear" title="Clear the table">Clear</button>
                     <button id="btnTableConfirmId" class="prefs-button nodeTable-button-confirm" title="Confirm all edits">Confirm</button>
-                    <button id="btnTableResetId" class="prefs-button nodeTable-button-reset" title="Reset all edits">Reset</button>
                 </div>
 
             </div>

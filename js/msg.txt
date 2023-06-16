@@ -1,0 +1,126 @@
+
+[README.md]
+# jdelite
+JDElite Diagram Builder is a Web flowchart editor for creating complex graph diagrams, based on JavaScript, HTML 5 and node.js. Its on-screen help and outstanding editing capabilities allow you to create quickly and easily flowcharts of any size. JDElite Diagram Builder's unique feature is that it offers unmatched readability to the most complex diagrams. This is achieved by the proprietary algorithms for orthogonal edge routing of directed graph diagrams with highly efficient edge crossings reduction (patent No. US 10,424,096). Visit http://www.jdelite.com to open the free editor or to learn more about it. You can watch the video clips that illustrate how to create and edit a diagram. You can open some of the built-in sample diagrams or you can create your own new diagrams (saving is disabled) and explore the powerful editing features.
+
+[managers]
+You may want to review my new Web diagramming tool JDElite Graph Diagram Builder.
+The demo is located at https://raykovj.github.io/flowdemo.html, or www.jdelite.com.
+I believe it would be of interest and use for a company like [name of company]. I'd appreciate your feedback.
+
+
+[recruiters]
+You may want to review my new Web diagramming tool JDElite Graph Diagram Builder.
+The demo is located at https://raykovj.github.io/flowdemo.html, or www.jdelite.com.
+I believe it would be of interest and use for a company like [name of company].
+I'd appreciate if you would forward this information to the appropriate parties at your company.
+
+[connect note to recruiter}
+You may want to review my new Web diagramming tool JDElite Graph Diagram Builder at www.jdelite.com.
+I believe my expertise would be of interest for a company like Google.
+I'd appreciate if you would forward this information to the appropriate parties at your company.
+
+[Darko]
+You may want to review my new Web diagramming tool JDElite Graph Diagram Builder at www.jdelite.com.
+I'd appreciate your feedback.
+[2]
+
+
+[Tyler Briggs, Google]
+Hi Tyler,
+I'm considering the possibility of applying for a job at Google.
+Naturally, I'm interested in the opportunity to work in a field related to my JDElite Graph Diagram Builder.
+I believe that my product would be of use for Google.
+Thanks, Jordan
+
+
+[Robert Gibby, PhD, IBM]
+Hi Robert,
+I'm considering the possibility of applying for a job at IBM.
+Naturally, I'm interested in the opportunity to work in a field related to my JDElite Graph Diagram Builder.
+I believe that my product would be of use for IBM.
+Thanks, Jordan
+
+
+[Caroline Scott, Google]
+Hi Caroline,
+Thank you for accepting my invite.
+A few days ago, I applied for a position of Engineering Manager at Google, Boulder, that I found on LinkedIn.
+It is possible that this position would not be a perfect fit for me.
+My interest is to work in a field related to the latest Web technologies.
+If you could help me find a position that fits my expertise, I'd be most grateful.
+Attached is my resume.
+Thanks, Jordan
+
+[Laura Llanas, IBM]
+Hi Laura,
+Thank you for accepting my invite.
+I'm considering the possibility of applying for a job at IBM.
+My interest is to work in a field related to the latest Web technologies, as you can see from my resume.
+If you could help me find a position that fits my expertise, I'd be most grateful.
+Please find attached my resume.
+Thanks, Jordan
+
+[Cadence PCB forum] 
+subject: new full-featured web complex flowcharting editor
+JDElite Diagram Builder www.jdelite.com is a Web flowchart tool for creating complex graph diagrams.
+This is a full-featured editor built on JavaScript/HTML5 with node.js access to the file system.
+Its on-screen help and outstanding editing capabilities allow to create quickly and easily flowcharts
+of any size and complexity. Its unique feature is that it offers unmatched readability to even the most
+complex diagrams. This is achieved by the proprietary algorithms for orthogonal edge routing of directed
+graph diagrams with highly efficient edge crossings reduction (patent No. US 10,424,096).
+This editor has the capacity to evolve into a complementary schematic tool.
+
+[jsPlumb] subject: 
+new full-featured web complex flowcharting editor
+JDElite Diagram Builder www.jdelite.com is a Web flowchart tool for creating complex graph diagrams.
+This is a full-featured editor built on JavaScript/HTML5 with node.js access to the file system.
+Its on-screen help and outstanding editing capabilities allow to create quickly and easily flowcharts
+of any size and complexity. Its unique feature is that it offers unmatched readability to even the most
+complex diagrams. This is achieved by the patented proprietary algorithms for orthogonal edge routing of directed
+graph diagrams with highly efficient edge crossings reduction (patent No. US 10,424,096).
+
+[drw.io = diagrams.net] 
+subject: new full-featured web complex flowcharting editor
+JDElite Diagram Builder www.jdelite.com is a Web flowchart tool for creating complex graph diagrams.
+This is a full-featured editor with node.js access to the file system.
+Its on-screen help and outstanding editing capabilities allow to create quickly and easily flowcharts
+of any size and complexity. Its unique feature is that it offers unmatched readability to even the most
+complex diagrams. This is achieved by the patented proprietary algorithms for orthogonal edge routing of directed
+graph diagrams with highly efficient edge crossings reduction.
+
+[Bogomil]
+Hi Bogomil,
+Please consider the following as some kind of an informational interview.
+I have built a professional state-of-the-art fully-featured Web flowcharting editor for creating complex graph diagrams -
+JDElite Diagram Builder (www.jdelite.com). It is based on my own patented edge routing algorithms (US 10,424,096).
+I have worked in this domain for over 20 years and I believe that this editor has a truly great value proposition.
+My goal at the moment is to sell JDElite Diagram Builder, together with my patent rights, to a software company
+that may benefit from its technical solutions and eventually use it as part of their product brand.
+We haven't been connected in-person so far, but I'm hoping that you might be willing to give me some advice
+or suggestions as to what is the best way to approach any potential buyers.
+Thank you for your time,
+Jordan Raykov
+
+[Darko]
+Hi Darko,
+Congratulations for your smart move to Google Boulder. I hope we'd come across each other sometimes.
+I have built JDElite Diagram Builder as a professional state-of-the-art fully-featured Web flowcharting editor for
+creating complex graph diagrams (www.jdelite.com). It is based on my patented edge routing algorithms (US 10,424,096).
+I believe that this editor has a truly great value proposition.
+My goal at the moment is to sell JDElite Diagram Builder. I'm hoping that you might be willing to give me some advice
+or suggestions as to what is the best way to approach Google.
+Thanks,
+Jordan
+
+[twitter]
+JDElite Diagram Builder @JDEliteDiagram is a full-featured Web graph flowcharting editor with outstanding 
+readability of complex diagrams supported by the patented edge routing algorithms: http://www.jdelite.com.
+
+#flowchart #flowcharting #flowcharts #diagram #diagramming #diagrams #algorithm #graphics #html #javascript #nodejs
+
+JDElite Diagram Builder was recently updated with important features: support for nested container blocks, switch components, multi-input decision components, and more...
+
+Здравей Мира,
+Не бих искал да отнемам от времето ти. Искам да поясня предишния си въпрос. В никакъв случай не очаквам от теб да ми помагаш за продажбата на моя продукт. Просто бих те помолил, ако ти е възможно, да ми дадеш съвет за процеса. Знаеш ли дали има някакви маркетингови групи към които бих могъл да се обърна? Аз се опивам да намеря контакти с компании, които биха били потенциални клиенти за моя продукт (www.jdelite.com). Сложих например един пост на един от техническите форуми на Cadence преди около две седмици, досега имам над 860 хита, но толкова. Как например да привлека вниманието на  Acquisitions в IBM, такова нещо възможно ли е? Финансовата стойност на моя продукт очевидно е много по–ниска от стойността на продуктите, с които ти си се занимавала,  но смятам че имам  сериозен value proposition. В продукта ми е приложен мой патент (има линк в профила ми). 
+Поздрави, Данчо
