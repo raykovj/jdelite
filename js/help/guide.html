@@ -18,13 +18,16 @@
 <!--<div class="master">-->
     <div class="container">
         <div class="topBar">
-            <img src="logo.png" width="100" height="50">
+            <img src="JDElogo.png" width="100" height="50">
+            <div class="contentTitle">
+                <span>JDElite Flowchart Builder User's Guide</span>
+            </div>
         </div>
         <div class="splitter">
-            <div id="left" class="contentList">
+            <div id="leftId">
                 <div style="margin-top: 20px; "></div>
                 <button id="prefaceBtnId" class="textBtn first" onclick="selectText(event)">Preface</button>
-                <ul id="myList">
+                <ul id="myListId">
                     <li><button id="howtoBtnId" class="caret textBtn first" onclick="selectText(event)">How-To Examples</button>
                         <ul class="nested">
                             <li><button id="startBtnId" class="textBtn second" onclick="selectText(event)">Start a Flowchart</button></li>
@@ -32,7 +35,7 @@
                             <li><button id="nodeEditBtnId" class="textBtn second" onclick="selectText(event)">Editing a Node</button></li>
                             <li><button id="chartEditBtnId" class="textBtn second" onclick="selectText(event)">Editing the Flowchart</button></li>
                             <li><button id="addingMoreBtnId" class="textBtn second" onclick="selectText(event)">Adding More Nodes</button></li>
-                            <li><button id="linkPropsBtnId" class="textBtn second" onclick="selectText(event)">Link Properties</button></li>
+                            <li><button id="linkPropsBtnId" class="textBtn second" onclick="selectText(event)">Editing a Link</button></li>
                             <li><button id="moreEditBtnId" class="textBtn second" onclick="selectText(event)">More Flowchart Edits</button></li>
                             <li><button id="containersBtnId" class="textBtn second" onclick="selectText(event)">Using Containers</button></li>
                             <li><button id="searchBtnId" class="textBtn second" onclick="selectText(event)">Searching Nodes</button></li>
@@ -42,14 +45,14 @@
                         </ul>
                     </li>
 
-                    <li><button id="featuresBtnId" class="caret textBtn first" onclick="selectText(event)">Features</button>
-                        <ul class="nested">
-                            <li><button id="actionsBtnId" class="textBtn second" onclick="selectText(event)">User Interactions</button></li>
-                            <li><button id="fileSysBtnId" class="textBtn second" onclick="selectText(event)">FileSystem Browser</button></li>
-                            <li><button id="nodeCreateBtnId" class="textBtn second" onclick="selectText(event)">Creating a Node</button></li>
-                            <li><button id="gridEditBtnId" class="textBtn second" onclick="selectText(event)">Editing the Grid</button></li>
-                        </ul>
-                    </li>
+                    <!--<li><button id="featuresBtnId" class="caret textBtn first" onclick="selectText(event)">Features</button>-->
+                        <!--<ul class="nested">-->
+                            <!--<li><button id="actionsBtnId" class="textBtn second" onclick="selectText(event)">User Interactions</button></li>-->
+                            <!--<li><button id="fileSysBtnId" class="textBtn second" onclick="selectText(event)">FileSystem Browser</button></li>-->
+                            <!--<li><button id="nodeCreateBtnId" class="textBtn second" onclick="selectText(event)">Creating a Node</button></li>-->
+                            <!--<li><button id="gridEditBtnId" class="textBtn second" onclick="selectText(event)">Editing the Grid</button></li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
 
                 </ul>
 
@@ -57,11 +60,11 @@
 
             <div id="separator" ></div>
 
-            <div id="right" class="contentTop">
-                <!--<div style="margin-top: 20px; "></div>-->
-                <div class="contentTitle">
-                    <h2>JDElite Flowchart Builder User's Guide</h2>
-                </div>
+            <div id="rightId">
+                <div style="margin-top: 40px; "></div>
+                <!--<div class="contentTitle">-->
+                    <!--<h2>JDElite Flowchart Builder User's Guide</h2>-->
+                <!--</div>-->
                 <div id="prefaceTextId" class="contentText">
                     <p>JDElite Flowchart Builder offers design and modeling solutions for a wide variety of use cases:
                     <ul>
@@ -82,11 +85,11 @@
                         create your own flowcharts but in order to save/reopen them you need the additional
                         server module. There are five built-in sample flowcharts. They can be opened
                         and edited but modifications cannot be saved. </p>
-                    <iframe width="560" height="315"
+                    <iframe width="600" height="382"
                             src="https://www.youtube.com/embed/1GW2oUgkFB4"
                             title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
-                            web-share" allowfullscreen></iframe>
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                 </div>
                 <div id="startTextId" class="contentText">
                     <p>You can build a flowchart by simply drag-and-drop nodes from the palette
@@ -94,36 +97,50 @@
                         direction can be either top to bottom or left to right and can be switched back and forth at any
                         time during the design process. </p>
                     <iframe width="560" height="315"
-                            src="https://youtu.be/slbsEy6pY0Y"
+                            src="https://www.youtube.com/embed/slbsEy6pY0Y"
                             title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
-                            web-share" allowfullscreen></iframe>
-                    <!--https://youtu.be/slbsEy6pY0Y-->
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                 </div>
                 <div id="initialTextId" class="contentText">
                     <p>Nodes are assigned names at node creation time that have to be unique across the
                         flowchart. The names are either automatically generated or you can choose to enter your own.
                         Duplicate names are rejected. Later you can change the nodes background/foreground/border colors
                         either collectively from the global <i><b>Settings</b></i> dialog or individually for any particular
-                        node from its <i><b>Properties dialog</b></i>.</p>
+                        node from its <i><b>Properties</b></i> dialog.</p>
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/Xz4z0iG9YNg"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                 </div>
                 <div id="nodeEditTextId" class="contentText">
-                    <p>From the node’s <i>Properties</i> dialog, you can edit
+                    <p>From the node’s <i><b>Properties</b></i> dialog, you can edit
                         the selected node: show/hide or change the node name, select a node icon, show/hide
                         the icon, edit the background/foreground colors, and enter text inside or
                         outside, above and/or below the node. This dialog is invoked from the
                         right-click context menu or by double clicking on the node.</p>
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/SQrXhW8EEnU"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                 </div>
                 <div id="chartEditTextId" class="contentText">
                     <p>The nodes are positioned on a rectangular grid that consists of
-                        layers across the flow direction and
-                        lanes along the flow direction, and are allocated in the cells at the
-                        intersections. The areas between the layers are called <i>layer pipes</i>,
-                        and the areas between the lanes are called <i>lane pipes</i>. The connection
+                        <i><b>layers</b></i> across the flow direction and
+                        <i><b>lanes</b></i> along the flow direction, and are allocated in the cells at the
+                        intersections. The areas between the layers are called <i><b>layer pipes</b></i>,
+                        and the areas between the lanes are called <i><b>lane pipes</b></i>. The connection
                         links are traced along these pipes. The nodes can be moved to different grid
                         cells, as well as copied and pasted. The link ports, in order to reconnect
                         them, can be moved to different nodes by dragging the mouse between the connection
                         ports.</p>
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/Chr-ujSut_4"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                 </div>
                 <div id="addingMoreTextId" class="contentText">
                     <p>You can decide whether to use the side swim lanes or not.
@@ -132,6 +149,11 @@
                         You can choose to enable the association links to show relations between nodes. You can also
                         select different color styles for the node icons.  You can add or remove layers and/or lanes
                         from the right-click context menus outside of nodes and links.</p>
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/hRLG29zbGRo"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                 </div>
                 <div id="linkPropsTextId" class="contentText">
                     <p>You can attach labels to the connection ports of the nodes
@@ -139,6 +161,11 @@
                         can also attach labels to the links or change their colors from the link <i>Properties</i>
                         dialog that can be invoked from the right-click context menu or by double clicking
                         on the link.</p>
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/USygu4Yn4NQ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                 </div>
                 <div id="moreEditTextId" class="contentText">
                     <p>The sizes of the nodes can be changed either collectively from
@@ -148,6 +175,11 @@
                         dialog invokable from a button in the top right block above the palette. You
                         can also change the flow direction by double clicking the arrow button in that
                         block, as well as you can select a different scale for the flowchart.</p>
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/hs1BohvvoV8"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                 </div>
                 <div id="containersTextId" class="contentText">
                     <p>Container blocks with two levels
@@ -158,26 +190,58 @@
                         resize menu that pops up at the upper left corner of the outline in expanded
                         state. If there is not enough free space around the block to expand it,
                         additional layers and/or lanes are to be inserted.</p>
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/rbTBEA-DCFk"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                 </div>
                 <div id="searchTextId" class="contentText">
                     <p>The <i>Thumbnail View</i> described above may help to
                         navigate large flowcharts that expand beyond the viewable area. Additionally,
                         there is a Search tool that allows finding a single node or multiple nodes by
                         full/partial name, or by matching text/pattern in the node content text.</p>
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/GwyJRG58Cag"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                 </div>
                 <div id="layoutTextId" class="contentText">
                     <p>JDElite allows editing the flowcharts by manually modifying the layout.</p>
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/-cdTu4AxBMc"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                 </div>
                 <div id="bpmTextId" class="contentText">
                     <p>One of the important features of JDElite Flowchart Builder are the <b>task hooks</b>. Currently
                         there are four types of task hooks that demonstrate this customizable feature: actions, services,
                         operations and expressions. These hooks can be further attached to a business processing environment,
                         in areas like design of flowchart diagrams for <b>business process modeling</b> (BPM) editors.</p>
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/mSXSqnVrRm8"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                 </div>
                 <div id="erdTextId" class="contentText">
                     <p>Another important feature of JDElite Flowchart Builder is that it can be used for the design
                         of flowcharts, representing relational database models and structures - <b>entity relationship
                             diagrams</b> (ERD).</p>
+                    <p>- adding a table:</p>
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/HCVuMA0CHLQ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    <p>- adding relationships:</p>
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/RCg8DjQwre8"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                 </div>
 
 
@@ -247,12 +311,11 @@
         document.getElementById("bpmBtnId").classList.remove("boldText");
         document.getElementById("erdBtnId").classList.remove("boldText");
 
-        document.getElementById("featuresBtnId").classList.remove("boldText");
-        document.getElementById("actionsBtnId").classList.remove("boldText");
-        document.getElementById("fileSysBtnId").classList.remove("boldText");
-        document.getElementById("nodeCreateBtnId").classList.remove("boldText");
-        document.getElementById("gridEditBtnId").classList.remove("boldText");
-//        document.getElementById("prefaceBtnId").classList.remove("boldText");
+//        document.getElementById("featuresBtnId").classList.remove("boldText");
+//        document.getElementById("actionsBtnId").classList.remove("boldText");
+//        document.getElementById("fileSysBtnId").classList.remove("boldText");
+//        document.getElementById("nodeCreateBtnId").classList.remove("boldText");
+//        document.getElementById("gridEditBtnId").classList.remove("boldText");
 
     }
 
@@ -294,8 +357,8 @@
 
     function dragElement(element) {
         var   mouseDown; // remember mouse down info
-        const left  = document.getElementById("left");
-        const right = document.getElementById("right");
+        const left  = document.getElementById("leftId");
+        const right = document.getElementById("rightId");
 
         element.onmousedown = onMouseDown;
 

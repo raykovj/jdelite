@@ -1,6 +1,7 @@
 html,
 body {
-  	height: 100%;
+  	height: 98vh;
+	overflow-y: hidden;
 }
 body.waiting * {
 	cursor: progress !important;
@@ -20,12 +21,10 @@ body.waiting * {
 	padding: 4px 0 4px;
 	width: 100%;
 	height: 32px;
-	
 	position: fixed;
 	top: 0;
 	z-index: 10;
 	background-color: white;
-	
 }
 .actions-toolbar {
 	display: flex;
@@ -38,13 +37,16 @@ body.waiting * {
 	
 }
 .diagram-title {
-	flex: 1 1 0;
+	display: flex;
+	
 	
 	border: 1px solid #8aa2f1;
 	
 	background-color: #E1F5FF;
-	width: 100px;
-	height: 26px;
+	width: 80px;
+	height: 20px;
+	margin-top: 2px;
+	padding: 6px 2px 0 8px;
 }
 .diagram-text {
 	margin: 0 0 0 4px;
@@ -64,31 +66,32 @@ body.waiting * {
 .diagram-name {
 	flex: 1 0 auto;
 	 height: 26px;
+	padding: 0 2px 4px 6px;
 }
 .top-container {
 	display: -webkit-box;
 	
+	
+	
+	
 }
 .main-container {
 	-webkit-box-flex: 1;
-	display: grid;
-	grid-template-columns: 2px auto 2px;
-	grid-template-rows: 8px auto 8px;
-	background: #f5f5f5;
-	margin: 2px 0 10px 2px;
-	overflow-x: auto;
-	overflow-y: auto;
+	margin: auto;
+	width: 98%;
+	height: auto;
 	
-	
+	overflow: auto !important;
 }
-.flex-canvas {
-	grid-column-start: 2;
-	grid-row-start: 2;
-	align-self: start;
-	justify-self: center;
-	background: #FFFFFF;
+.main-canvas {
 	border: none;
 	outline: none;
+	overflow: auto;
+	display: block;
+	margin: 4px auto;
+	
+	
+	padding:  6px 0 20px 0;
 }
 .palette-content {
 	margin: 0 0 8px 0;

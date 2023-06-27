@@ -17,7 +17,7 @@
  
 <body>
 
-<div>
+<div style="height: auto;">
     <div id="navbarContainerId">
         <div id="navbarId" class="top-toolbar">
             <div id="toolbarId" class="actions-toolbar">
@@ -26,16 +26,25 @@
                 <button id="newId" class="toolbar-button button-new" data-toggle="tooltip" title="Create Flowchart..."></button>
                 <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open Flowchart..."></button>
                 <button id="importId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Import Flowchart..."></button>
-                <span style="margin-left: 10px;"></span>
-                <button id="undoId" class="toolbar-button button-undo" data-toggle="tooltip" title="Undo"></button>
+                <!--<span style="margin-left: 10px;"></span>-->
+                <button id="undoId" class="toolbar-button button-no-left button-undo" data-toggle="tooltip" title="Undo"></button>
                 <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
-                <span style="margin-left: 10px;"></span>
-                <button id="deleteId" class="toolbar-button button-delete" data-toggle="tooltip" title="Remove Selections"></button>
+                <!--<span style="margin-left: 10px;"></span>-->
+                <button id="deleteId" class="toolbar-button button-no-left button-delete" data-toggle="tooltip" title="Remove Selections"></button>
                 <button id="copyId" class="toolbar-button button-no-left button-copy" data-toggle="tooltip" title="Copy Selections"></button>
                 <button id="pasteId" class="toolbar-button button-no-left button-paste" data-toggle="tooltip" title="Paste Selections"></button>
-                <span style="margin-left: 10px;"></span>
-                <button id="saveId" class="toolbar-button button-save" data-toggle="tooltip" title="Save"></button>
+                <!--<span style="margin-left: 10px;"></span>-->
+                <button id="saveId" class="toolbar-button button-no-left button-save" data-toggle="tooltip" title="Save"></button>
                 <button id="saveAsId" class="toolbar-button button-no-left button-saveAs" data-toggle="tooltip" title="Save As..."></button>
+                <!--<span style="margin-left: 10px;"></span>-->
+            </div>
+            <div id="toolbar2Id" class="diagram-toolbar">
+                <button id="refreshId" class="toolbar-button button-no-left button-refresh" data-toggle="tooltip" title="Refresh Flowchart & Reset Scaling"></button>
+                <button id="findId" class="toolbar-button button-no-left button-find" data-toggle="tooltip"
+                        title="Search... &nbsp;&nbsp;Ctrl+Shift+F"></button>
+                <button id="clearId" class="toolbar-button button-no-left button-clear" data-toggle="tooltip" title="Clear Flowchart"></button>
+                <button id="leftId" class="toolbar-button button-no-left button-left" data-toggle="tooltip" title="Previous Flowchart"></button>
+                <button id="rightId" class="toolbar-button button-no-left button-right" data-toggle="tooltip" title="Next Flowchart"></button>
                 <span style="margin-left: 10px;"></span>
                 <button id="configId" class="toolbar-button button-config" data-toggle="tooltip" title="Settings..."></button>
                 <button id="helpId" class="toolbar-button button-no-left button-help" data-toggle="tooltip" title="Help..."></button>
@@ -43,23 +52,12 @@
             <div>
                 <span style="margin-left: 10px;"></span>
             </div>
-            <div id="toolbar2Id" class="diagram-toolbar">
-                <button id="refreshId" class="toolbar-button button-refresh" data-toggle="tooltip" title="Refresh Flowchart & Reset Scaling"></button>
-                <button id="findId" class="toolbar-button button-no-left button-find" data-toggle="tooltip"
-                        title="Search... &nbsp;&nbsp;Ctrl+Shift+F"></button>
-                <button id="clearId" class="toolbar-button button-no-left button-clear" data-toggle="tooltip" title="Clear Flowchart"></button>
-                <button id="leftId" class="toolbar-button button-no-left button-left" data-toggle="tooltip" title="Previous Flowchart"></button>
-                <button id="rightId" class="toolbar-button button-no-left button-right" data-toggle="tooltip" title="Next Flowchart"></button>
-            </div>
-            <div>
-                <span style="margin-left: 10px;"></span>
-            </div>
             <div id="diagramNameId" style=" margin: 0 0 2px 0;">
                 <div class="diagram-title">
-                    <span class="selectionFont" style="padding: 4px 2px 0 8px;">Flowchart:</span>
+                    <span class="selectionFont">Flowchart:</span>
                 </div>
-                <div class="diagram-name">
-                    <span class="selectionFont" style="padding: 4px 2px 0 6px; "
+                <div >
+                    <span class="selectionFont diagram-name"
                         data-bind="text: diagramDisplayName()"></span>
                 </div>
             </div>
@@ -70,7 +68,7 @@
 
     <div id="topContainerId" class="top-container">
         <div id="containerId" class="main-container" onscroll="repaintDiagram()">
-            <canvas id="canvasId" tabindex="0" draggable="true" class="flex-canvas"
+            <canvas id="canvasId" tabindex="0" draggable="true" class="main-canvas"
                 data-bind="visible: isCanvasVisible()"></canvas>
         </div>
 
