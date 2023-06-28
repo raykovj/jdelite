@@ -5,11 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/guide.css" type="text/css" />
-    <link rel="stylesheet" href="../../libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.theme.css" type="text/css" />
-    <link rel="stylesheet" href="../../libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.css" type="text/css" />
+    <!--<link rel="stylesheet" href="../../libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.theme.css" type="text/css" />-->
+    <!--<link rel="stylesheet" href="../../libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.css" type="text/css" />-->
 
-    <!--<script data-main="js/flowdemo" src="libs/require/require.js"></script>-->
-    <!--<link rel="stylesheet" href="libs/spectrum/spectrum.css"  type="text/css"/>-->
     <title>User Guide</title>
 
 </head>
@@ -45,14 +43,14 @@
                         </ul>
                     </li>
 
-                    <!--<li><button id="featuresBtnId" class="caret textBtn first" onclick="selectText(event)">Features</button>-->
+                    <li><button id="featuresBtnId" class="caret textBtn first" onclick="selectText(event)">Brief List of Features</button>
                         <!--<ul class="nested">-->
                             <!--<li><button id="actionsBtnId" class="textBtn second" onclick="selectText(event)">User Interactions</button></li>-->
                             <!--<li><button id="fileSysBtnId" class="textBtn second" onclick="selectText(event)">FileSystem Browser</button></li>-->
                             <!--<li><button id="nodeCreateBtnId" class="textBtn second" onclick="selectText(event)">Creating a Node</button></li>-->
                             <!--<li><button id="gridEditBtnId" class="textBtn second" onclick="selectText(event)">Editing the Grid</button></li>-->
                         <!--</ul>-->
-                    <!--</li>-->
+                    </li>
 
                 </ul>
 
@@ -76,6 +74,7 @@
                             output is in JSON format.</li>
                     </ul>
                     </p>
+                    <p>Select a topic in the left pane to review the corresponding video clip.</p>
                 </div>
 
                 <div id="howtoTextId" class="contentText">
@@ -85,6 +84,9 @@
                         create your own flowcharts but in order to save/reopen them you need the additional
                         server module. There are five built-in sample flowcharts. They can be opened
                         and edited but modifications cannot be saved. </p>
+                    <!--<iframe src="https://giphy.com/embed/8GEOmESx6Gr1petk6S" width="480" height="370"-->
+                            <!--frameBorder="0" class="giphy-embed" allowFullScreen></iframe>-->
+                    <!--<p><a href="https://giphy.com/gifs/8GEOmESx6Gr1petk6S">via GIPHY</a></p>-->
                     <iframe width="600" height="382"
                             src="https://www.youtube.com/embed/1GW2oUgkFB4"
                             title="YouTube video player" frameborder="0"
@@ -103,9 +105,9 @@
                             allowfullscreen></iframe>
                 </div>
                 <div id="initialTextId" class="contentText">
-                    <p>Nodes are assigned names at node creation time that have to be unique across the
-                        flowchart. The names are either automatically generated or you can choose to enter your own.
-                        Duplicate names are rejected. Later you can change the nodes background/foreground/border colors
+                    <p>Nodes are assigned names at node creation time. Names have to be unique across the
+                        flowchart. The names are either automatically generated or you can choose to enter your choice.
+                        Duplicate names are rejected. At Later time you can change the nodes properties like background/foreground/border colors or sizes
                         either collectively from the global <i><b>Settings</b></i> dialog or individually for any particular
                         node from its <i><b>Properties</b></i> dialog.</p>
                     <iframe width="560" height="315"
@@ -118,7 +120,7 @@
                     <p>From the node’s <i><b>Properties</b></i> dialog, you can edit
                         the selected node: show/hide or change the node name, select a node icon, show/hide
                         the icon, edit the background/foreground colors, and enter text inside or
-                        outside, above and/or below the node. This dialog is invoked from the
+                        outside, above and/or below the node. This dialog is invoked from the node
                         right-click context menu or by double clicking on the node.</p>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/SQrXhW8EEnU"
@@ -133,7 +135,7 @@
                         intersections. The areas between the layers are called <i><b>layer pipes</b></i>,
                         and the areas between the lanes are called <i><b>lane pipes</b></i>. The connection
                         links are traced along these pipes. The nodes can be moved to different grid
-                        cells, as well as copied and pasted. The link ports, in order to reconnect
+                        cells, as well as copied and pasted. The link ports, in order to reassign
                         them, can be moved to different nodes by dragging the mouse between the connection
                         ports.</p>
                     <iframe width="560" height="315"
@@ -156,10 +158,10 @@
                             allowfullscreen></iframe>
                 </div>
                 <div id="linkPropsTextId" class="contentText">
-                    <p>You can attach labels to the connection ports of the nodes
-                        by selecting the <i>Connectivity</i> tab in the node <i>Properties</i> dialog. You
-                        can also attach labels to the links or change their colors from the link <i>Properties</i>
-                        dialog that can be invoked from the right-click context menu or by double clicking
+                    <p>You can attach labels to the connection ports of the nodes inside the
+                        <b><i>Connectivity</i></b> tab in the node <b><i>Properties</i></b> dialog. You
+                        can also attach labels to the links or change their colors from the link <b><i>Properties</i></b>
+                        dialog that can be invoked from the link right-click context menu or by double clicking
                         on the link.</p>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/USygu4Yn4NQ"
@@ -169,9 +171,9 @@
                 </div>
                 <div id="moreEditTextId" class="contentText">
                     <p>The sizes of the nodes can be changed either collectively from
-                        the <i>Node Size</i> tab on the <i>Settings</i> dialog, or individually within the
+                        the <b><i>Node Size</i></b> tab on the <b><i>Settings</i></b> dialog, or individually within the
                         flowchart by dragging the node outline with the mouse. For flowcharts that are
-                        larger than the browser window there is a convenient <i>Thumbnail View</i>
+                        larger than the browser window there is a convenient <b><i>Thumbnail View</i></b>
                         dialog invokable from a button in the top right block above the palette. You
                         can also change the flow direction by double clicking the arrow button in that
                         block, as well as you can select a different scale for the flowchart.</p>
@@ -185,8 +187,8 @@
                     <p>Container blocks with two levels
                         of nesting allow the user to create functional groups of nodes. After the
                         initial drop, as well as at any time later, a block can be expanded or
-                        collapsed by clicking on the expand/collapse icon. The block can be sized to
-                        the desired dimensions by extending or shrinking it in any direction using the
+                        collapsed by clicking on the expand/collapse icon on the upper rim of the block. The block
+                        can be sized to the desired dimensions by extending or shrinking it in any direction using the
                         resize menu that pops up at the upper left corner of the outline in expanded
                         state. If there is not enough free space around the block to expand it,
                         additional layers and/or lanes are to be inserted.</p>
@@ -197,9 +199,9 @@
                             allowfullscreen></iframe>
                 </div>
                 <div id="searchTextId" class="contentText">
-                    <p>The <i>Thumbnail View</i> described above may help to
+                    <p>The <b><i>Thumbnail View</i></b> described above may help to
                         navigate large flowcharts that expand beyond the viewable area. Additionally,
-                        there is a Search tool that allows finding a single node or multiple nodes by
+                        there is a <b><i>Search</i></b> tool that allows finding a single node or multiple nodes by
                         full/partial name, or by matching text/pattern in the node content text.</p>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/GwyJRG58Cag"
@@ -245,13 +247,60 @@
                 </div>
 
 
-                <div id="someTextId" class="contentText">
-                    <p></p>
+                <div id="featuresTextId" class="contentText">
+                    <p>Following is a brief list of the wide range of features,
+                        accessible from the toolbar, from the context menus, or by using the mouse.
+                    <ul>
+                        <li>Most of the actions accessible from the top toolbar buttons can also be invoked from the
+                            <b><i>drop-down menu</i></b> in the upper left corner:
+                            <p><img src="../../images/guide/toolbar.png" width="580" height="40"></p>
+                            <p>The editor actions are <b><i>undoable</i></b> through an unlimited number of
+                                <b><i>Undo/Redo</i></b> steps.
+                            </p>
+                        </li>
+                        <li>The editor has a proprietary <b><i>file system browser</i></b> that is invokable when a server
+                            connection is available. It has full access to the file system for easy navigation. The created
+                            flowcharts, in JSON format, can be saved in existing folders or in newly created ones. Files
+                            and folders can be renamed or removed as well. The default server connection uses <b><i>node.js</i></b>.
+                            <p><img src="../../images/guide/browser.png" width="480" height="400"></p>
+                        </li>
+                        <li>A new node is created either by dragging an item from the palette on the right of the screen
+                            to an accepting cell on the canvas, or by positioning the mouse on an empty cell and selecting
+                            a node type from the context menu. The menu shows only nodes that are accepted at this location:
+                            <p><img src="../../images/guide/addNode.png" width="400" height="210"></p>
+                            <p>The start and end layers, as well as the left and right swim lanes, are optional. They all accept
+                                their specific node types from the palette or from the mouse context menus.</p>
+                        </li>
+                        <li>The flowchart frame size can be modified at any time by inserting new layers or lanes, and/or
+                            removing the unused ones:
+                            <p><img src="../../images/guide/removeLayer.png" width="200" height="200"></p>
+                        </li>
+                        <li><p>The <b><i>Decision</i></b> node has two outputs: ‘YES’ and ‘NO’, and it accepts multiple inputs.
+                            The configuration of the decision outputs can be edited from the
+                            <b><i>Configure Decision Layout</i></b> dialog, which is accessed from the context menu on the
+                            decision nodes:</p>
+                            <div style="display: inline-block">
+                            <img src="../../images/guide/yesno.png" width="200" height="200">
+                            <img src="../../images/guide/noyes.png" width="200" height="200">
+                            </div>
+                        </li>
+                    </ul>
+
+                    </p>
                 </div>
+
+                <!--<div id="someTextId" class="contentText">-->
+                    <!--<p> TBD. </p>-->
+                <!--</div>-->
+
              </div>
         </div>
+
     </div>
-    <!--<div class="extraBar"></div>-->
+
+    <div class="mainFooter"></div>
+
+<!--<div class="extraBar"></div>-->
 <!--</div>-->
 <script>
 
@@ -291,6 +340,8 @@
             document.getElementById("bpmTextId").style.display = "block";
         } else if (id === "erdBtnId") {
             document.getElementById("erdTextId").style.display = "block";
+        } else if (id === "featuresBtnId") {
+            document.getElementById("featuresTextId").style.display = "block";
         }
     }
 
@@ -311,7 +362,7 @@
         document.getElementById("bpmBtnId").classList.remove("boldText");
         document.getElementById("erdBtnId").classList.remove("boldText");
 
-//        document.getElementById("featuresBtnId").classList.remove("boldText");
+        document.getElementById("featuresBtnId").classList.remove("boldText");
 //        document.getElementById("actionsBtnId").classList.remove("boldText");
 //        document.getElementById("fileSysBtnId").classList.remove("boldText");
 //        document.getElementById("nodeCreateBtnId").classList.remove("boldText");
@@ -342,7 +393,7 @@
         document.getElementById("bpmTextId").style.display = "none";
         document.getElementById("erdTextId").style.display = "none";
 
-//        document.getElementById("featuresTextId").style.display = "none";
+        document.getElementById("featuresTextId").style.display = "none";
 //        document.getElementById("actionsTextId").style.display = "none";
 //        document.getElementById("fileSysTextId").style.display = "none";
 //        document.getElementById("nodeCreateTextId").style.display = "none";
