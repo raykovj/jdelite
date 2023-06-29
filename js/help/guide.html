@@ -5,11 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/guide.css" type="text/css" />
-    <!--<link rel="stylesheet" href="../../libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.theme.css" type="text/css" />-->
-    <!--<link rel="stylesheet" href="../../libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.css" type="text/css" />-->
-
     <title>User Guide</title>
-
 </head>
 
 <body>
@@ -44,12 +40,14 @@
                     </li>
 
                     <li><button id="featuresBtnId" class="caret textBtn first" onclick="selectText(event)">Brief List of Features</button>
-                        <!--<ul class="nested">-->
-                            <!--<li><button id="actionsBtnId" class="textBtn second" onclick="selectText(event)">User Interactions</button></li>-->
-                            <!--<li><button id="fileSysBtnId" class="textBtn second" onclick="selectText(event)">FileSystem Browser</button></li>-->
-                            <!--<li><button id="nodeCreateBtnId" class="textBtn second" onclick="selectText(event)">Creating a Node</button></li>-->
-                            <!--<li><button id="gridEditBtnId" class="textBtn second" onclick="selectText(event)">Editing the Grid</button></li>-->
-                        <!--</ul>-->
+                        <ul class="nested">
+                            <li><button id="flowBtnId" class="textBtn second" onclick="selectText(event)">Data Flow Directions</button></li>
+                            <li><button id="settingsBtnId" class="textBtn second" onclick="selectText(event)">Settings Dialog</button></li>
+                            <li><button id="browserBtnId" class="textBtn second" onclick="selectText(event)">File System Browser</button></li>
+                            <li><button id="addNodeBtnId" class="textBtn second" onclick="selectText(event)">Creating a Node</button></li>
+                            <li><button id="cnxLinkBtnId" class="textBtn second" onclick="selectText(event)">Connection Links</button></li>
+                            <li><button id="decisionBtnId" class="textBtn second" onclick="selectText(event)">Decision Configuration</button></li>
+                        </ul>
                     </li>
 
                 </ul>
@@ -60,9 +58,6 @@
 
             <div id="rightId">
                 <div style="margin-top: 40px; "></div>
-                <!--<div class="contentTitle">-->
-                    <!--<h2>JDElite Flowchart Builder User's Guide</h2>-->
-                <!--</div>-->
                 <div id="prefaceTextId" class="contentText">
                     <p>JDElite Flowchart Builder offers design and modeling solutions for a wide variety of use cases:
                     <ul>
@@ -73,17 +68,16 @@
                         <li>The plugin architecture allows users to import/edit/export third party flowcharts. Generated
                             output is in JSON format.</li>
                     </ul>
-                    </p>
-                    <p>Select a topic in the left pane to review the corresponding video clip.</p>
+                    <p>Select a topic in the left pane to review the corresponding video clips and pictures.</p>
                 </div>
 
                 <div id="howtoTextId" class="contentText">
-                    <p>This section describes the features of JDElite flowchart
-                        editor. The free demo version has all of the built-in features, the only
+                    <p>This section demonstrates the features of JDElite Flowchart Builder using short video clips.
+                        The free demo version has all of the built-in features, the only
                         difference from the full version being that there is no access to the file system. You can
                         create your own flowcharts but in order to save/reopen them you need the additional
                         server module. There are five built-in sample flowcharts. They can be opened
-                        and edited but modifications cannot be saved. </p>
+                        and edited but modifications cannot be saved. </p><br>
                     <!--<iframe src="https://giphy.com/embed/8GEOmESx6Gr1petk6S" width="480" height="370"-->
                             <!--frameBorder="0" class="giphy-embed" allowFullScreen></iframe>-->
                     <!--<p><a href="https://giphy.com/gifs/8GEOmESx6Gr1petk6S">via GIPHY</a></p>-->
@@ -97,7 +91,7 @@
                     <p>You can build a flowchart by simply drag-and-drop nodes from the palette
                         and by dragging links between the nodes, connecting the pop-up handles with the mouse. The flow
                         direction can be either top to bottom or left to right and can be switched back and forth at any
-                        time during the design process. </p>
+                        time during the design process. </p><br>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/slbsEy6pY0Y"
                             title="YouTube video player" frameborder="0"
@@ -109,7 +103,7 @@
                         flowchart. The names are either automatically generated or you can choose to enter your choice.
                         Duplicate names are rejected. At Later time you can change the nodes properties like background/foreground/border colors or sizes
                         either collectively from the global <i><b>Settings</b></i> dialog or individually for any particular
-                        node from its <i><b>Properties</b></i> dialog.</p>
+                        node from its <i><b>Properties</b></i> dialog.</p><br>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/Xz4z0iG9YNg"
                             title="YouTube video player" frameborder="0"
@@ -121,7 +115,7 @@
                         the selected node: show/hide or change the node name, select a node icon, show/hide
                         the icon, edit the background/foreground colors, and enter text inside or
                         outside, above and/or below the node. This dialog is invoked from the node
-                        right-click context menu or by double clicking on the node.</p>
+                        right-click context menu or by double clicking on the node.</p><br>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/SQrXhW8EEnU"
                             title="YouTube video player" frameborder="0"
@@ -137,7 +131,7 @@
                         links are traced along these pipes. The nodes can be moved to different grid
                         cells, as well as copied and pasted. The link ports, in order to reassign
                         them, can be moved to different nodes by dragging the mouse between the connection
-                        ports.</p>
+                        ports.</p><br>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/Chr-ujSut_4"
                             title="YouTube video player" frameborder="0"
@@ -150,7 +144,7 @@
                         If you have selected a horizontal flow direction, they appear at the top and at the bottom.
                         You can choose to enable the association links to show relations between nodes. You can also
                         select different color styles for the node icons.  You can add or remove layers and/or lanes
-                        from the right-click context menus outside of nodes and links.</p>
+                        from the right-click context menus outside of nodes and links.</p><br>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/hRLG29zbGRo"
                             title="YouTube video player" frameborder="0"
@@ -162,7 +156,7 @@
                         <b><i>Connectivity</i></b> tab in the node <b><i>Properties</i></b> dialog. You
                         can also attach labels to the links or change their colors from the link <b><i>Properties</i></b>
                         dialog that can be invoked from the link right-click context menu or by double clicking
-                        on the link.</p>
+                        on the link.</p><br>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/USygu4Yn4NQ"
                             title="YouTube video player" frameborder="0"
@@ -176,7 +170,7 @@
                         larger than the browser window there is a convenient <b><i>Thumbnail View</i></b>
                         dialog invokable from a button in the top right block above the palette. You
                         can also change the flow direction by double clicking the arrow button in that
-                        block, as well as you can select a different scale for the flowchart.</p>
+                        block, as well as you can select a different scale for the flowchart.</p><br>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/hs1BohvvoV8"
                             title="YouTube video player" frameborder="0"
@@ -191,7 +185,7 @@
                         can be sized to the desired dimensions by extending or shrinking it in any direction using the
                         resize menu that pops up at the upper left corner of the outline in expanded
                         state. If there is not enough free space around the block to expand it,
-                        additional layers and/or lanes are to be inserted.</p>
+                        additional layers and/or lanes are to be inserted.</p><br>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/rbTBEA-DCFk"
                             title="YouTube video player" frameborder="0"
@@ -202,7 +196,7 @@
                     <p>The <b><i>Thumbnail View</i></b> described above may help to
                         navigate large flowcharts that expand beyond the viewable area. Additionally,
                         there is a <b><i>Search</i></b> tool that allows finding a single node or multiple nodes by
-                        full/partial name, or by matching text/pattern in the node content text.</p>
+                        full/partial name, or by matching text/pattern in the node content text.</p><br>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/GwyJRG58Cag"
                             title="YouTube video player" frameborder="0"
@@ -210,7 +204,7 @@
                             allowfullscreen></iframe>
                 </div>
                 <div id="layoutTextId" class="contentText">
-                    <p>JDElite allows editing the flowcharts by manually modifying the layout.</p>
+                    <p>JDElite allows editing the flowcharts by manually modifying the layout.</p><br>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/-cdTu4AxBMc"
                             title="YouTube video player" frameborder="0"
@@ -221,7 +215,7 @@
                     <p>One of the important features of JDElite Flowchart Builder are the <b>task hooks</b>. Currently
                         there are four types of task hooks that demonstrate this customizable feature: actions, services,
                         operations and expressions. These hooks can be further attached to a business processing environment,
-                        in areas like design of flowchart diagrams for <b>business process modeling</b> (BPM) editors.</p>
+                        in areas like design of flowchart diagrams for <b>business process modeling</b> (BPM) editors.</p><br>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/mSXSqnVrRm8"
                             title="YouTube video player" frameborder="0"
@@ -231,14 +225,14 @@
                 <div id="erdTextId" class="contentText">
                     <p>Another important feature of JDElite Flowchart Builder is that it can be used for the design
                         of flowcharts, representing relational database models and structures - <b>entity relationship
-                            diagrams</b> (ERD).</p>
-                    <p>- adding a table:</p>
+                            diagrams</b> (ERD).</p><br>
+                    <p><b><i>Adding a table:</i></b></p>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/HCVuMA0CHLQ"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
-                    <p>- adding relationships:</p>
+                    <p><b><i>Adding relationships:</i></b></p>
                     <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/RCg8DjQwre8"
                             title="YouTube video player" frameborder="0"
@@ -246,48 +240,107 @@
                             allowfullscreen></iframe>
                 </div>
 
+                <!-- -->
+                <!-- -->
 
                 <div id="featuresTextId" class="contentText">
-                    <p>Following is a brief list of the wide range of features,
-                        accessible from the toolbar, from the context menus, or by using the mouse.
-                    <ul>
-                        <li>Most of the actions accessible from the top toolbar buttons can also be invoked from the
-                            <b><i>drop-down menu</i></b> in the upper left corner:
-                            <p><img src="../../images/guide/toolbar.png" width="580" height="40"></p>
-                            <p>The editor actions are <b><i>undoable</i></b> through an unlimited number of
-                                <b><i>Undo/Redo</i></b> steps.
-                            </p>
-                        </li>
-                        <li>The editor has a proprietary <b><i>file system browser</i></b> that is invokable when a server
-                            connection is available. It has full access to the file system for easy navigation. The created
-                            flowcharts, in JSON format, can be saved in existing folders or in newly created ones. Files
-                            and folders can be renamed or removed as well. The default server connection uses <b><i>node.js</i></b>.
-                            <p><img src="../../images/guide/browser.png" width="480" height="400"></p>
-                        </li>
-                        <li>A new node is created either by dragging an item from the palette on the right of the screen
-                            to an accepting cell on the canvas, or by positioning the mouse on an empty cell and selecting
-                            a node type from the context menu. The menu shows only nodes that are accepted at this location:
-                            <p><img src="../../images/guide/addNode.png" width="400" height="210"></p>
-                            <p>The start and end layers, as well as the left and right swim lanes, are optional. They all accept
-                                their specific node types from the palette or from the mouse context menus.</p>
-                        </li>
-                        <li>The flowchart frame size can be modified at any time by inserting new layers or lanes, and/or
-                            removing the unused ones:
-                            <p><img src="../../images/guide/removeLayer.png" width="200" height="200"></p>
-                        </li>
-                        <li><p>The <b><i>Decision</i></b> node has two outputs: ‘YES’ and ‘NO’, and it accepts multiple inputs.
-                            The configuration of the decision outputs can be edited from the
-                            <b><i>Configure Decision Layout</i></b> dialog, which is accessed from the context menu on the
-                            decision nodes:</p>
-                            <div style="display: inline-block">
-                            <img src="../../images/guide/yesno.png" width="200" height="200">
-                            <img src="../../images/guide/noyes.png" width="200" height="200">
-                            </div>
-                        </li>
-                    </ul>
+                    Following is a brief list of the wide range of features,
+                    accessible from the toolbar, from the context menus, or by simply using the mouse.
+                    Most of the actions accessible from the <b><i>top toolbar</i></b> buttons can also be invoked from the
+                    <b><i>drop-down menu</i></b> in the upper left corner:
+                    <p><img src="../../images/guide/toolbar.png" width="580" height="40"></p>
+                    <p></p>
+                    <p>The editor actions are <b><i>undoable</i></b> through an unlimited number of
+                        <b><i>Undo/Redo</i></b> steps.
+                    </p><br>
 
-                    </p>
                 </div>
+                <div id="flowTextId" class="contentText">
+                    <p>The <b><i>data flow direction</i></b> can be initially selected to be either top to bottom or left
+                    to right, and can be changed or switched back and forth at any time by double clicking
+                    the arrow button in the block above the palette, or from the <b><i>Settings</i></b> dialog.
+                    The flowchart is rotated and flipped which does not otherwise affect its content.
+                    The flipping preserves the correlation between the flowchart internal directions and
+                    the canvas coordinate system:</p><br>
+                    <div style="display: block">
+                        <p><b><i>vertical:</i></b></p>
+                        <img src="../../images/guide/vertical.png" width="462" height="268">
+                        <p><b><i>horizontal:</i></b></p>
+                        <img src="../../images/guide/horizontal.png" width="463" height="272">
+                    </div><br>
+                </div>
+
+                <div id="settingsTextId" class="contentText">
+                    <p>The <b><i>General</i></b> tab of <b><i>Settings</i></b> dialog offers several different selection
+                    modes. Most of them can be changed at any time during the flowchart design without affecting the
+                    previous work:</p><br>
+                    <p><img src="../../images/guide/general.png" width="550" height="550"></p>
+                    <br>
+                    <p>The <b><i>Node Size</i></b> tab of <b><i>Settings</i></b> dialog allows to select or modify
+                    globally the sizes of groups of nodes:</p><br>
+                    <p><img src="../../images/guide/nodeSizes.png" width="550" height="350"></p>
+                    <br>
+                    <p>The <b><i>Colors</i></b> tab of <b><i>Settings</i></b> dialog allows to select the background
+                    and/or foreground colors, as well as borders, of particular node types. The selections are saved
+                    in the output JSON file, from where the values are read when the next time the file is open:</p><br>
+                    <p><img src="../../images/guide/nodeColors.png" width="550" height="504"></p>
+                    <br>
+                    <p>The <b><i>Node Icons</i></b> tab of <b><i>Settings</i></b> dialog allows to select several images
+                    to be displayed as nodes icons. In a future release the image selections will be provided from
+                    icons configuration file(s):</p><br>
+                    <p><img src="../../images/guide/nodeIcons.png" width="550" height="426"></p>
+                    <br>
+                    <p>The <b><i>Schemes</i></b> tab of <b><i>Settings</i></b> dialog allows to save the color selections
+                    in a local configuration file for further reuse:</p><br>
+                    <p><img src="../../images/guide/schemes.png" width="550" height="260"></p><br>
+                </div>
+
+                <div id="browserTextId" class="contentText">
+                    <p>The editor has a proprietary <b><i>file system browser</i></b> that is invokable when a server
+                    connection is available. It has full access to the file system for easy navigation. The created
+                    flowcharts, in JSON format, can be saved in existing folders or in newly created ones. Files
+                    and folders can be renamed or removed as well. The default server connection uses <b><i>node.js</i></b></p>.
+                    <p><img src="../../images/guide/browser.png" width="453" height="443"></p><br>
+                </div>
+                <div id="addNodeTextId" class="contentText">
+                    <p>A <b><i>new node</i></b> is created either by dragging an item from the palette on the right of the screen
+                    to an accepting cell on the canvas, or by positioning the mouse on an empty cell and selecting
+                    a node type from the context menu. The menu shows only nodes that are accepted at this location:</p><br>
+                    <p><img src="../../images/guide/addNode.png" width="408" height="237"></p><br>
+                    <p>The start and end layers, as well as the left and right swim lanes, are optional. They all accept
+                        their specific node types from the palette or from the mouse context menus.</p><br>
+                    <p>The flowchart <b><i>frame size</i></b> can be modified from the context menus at any time by inserting
+                    new layers or lanes, and/or removing the unused ones:</p><br>
+                    <p><img src="../../images/guide/removeLayer.png" width="208" height="200"></p><br>
+                </div>
+                <div id="cnxLinkTextId" class="contentText">
+                    <p>The <b><i>connections</i></b> between the nodes are created by dragging the mouse between the
+                    connection handles that pop up on the outlines of the accepting nodes under the mouse pointer.
+                    The connection is routed after the mouse pointer is dropped over an accepting handle when the
+                    handle is selected. Later on, a connection can be reassigned by dragging any port of the link
+                    to another accepting handle on a different node:</p><br>
+                    <p><img src="../../images/guide/link.png" width="395" height="231"></p><br>
+
+                    <p>In addition to the standard link connections, there is also another kind: <b><i>association links</i></b>.
+                    They can only be traced sidewise between the nodes, and are represented by dashed lines:</p><br>
+                    <p><img src="../../images/guide/aslink.png" width="394" height="232"></p><br>
+                </div>
+                        <!--<div>The flowchart <b><i>frame size</i></b> can be modified from the context menus at any time by inserting-->
+                            <!--new layers or lanes, and/or removing the unused ones:-->
+                            <!--<p><img src="../../images/guide/removeLayer.png" width="208" height="200"></p><br>-->
+                        <!--</div>-->
+
+                <div id="decisionTextId" class="contentText">
+                    <p>The <b><i>Decision</i></b> node has two outputs: ‘YES’ and ‘NO’, and it accepts multiple inputs.
+                    The configuration of the decision outputs can be edited from the
+                    <b><i>Configure...</i></b> dialog, which is accessed from the context menu on the
+                    decision nodes and offers six different options:</p><br>
+                    <div style="display: inline-block">
+                    <img src="../../images/guide/yesno.png" width="312" height="300">
+                    <img src="../../images/guide/noyes.png" width="312" height="300">
+                    </div><br>
+                </div>
+
 
                 <!--<div id="someTextId" class="contentText">-->
                     <!--<p> TBD. </p>-->
@@ -342,6 +395,18 @@
             document.getElementById("erdTextId").style.display = "block";
         } else if (id === "featuresBtnId") {
             document.getElementById("featuresTextId").style.display = "block";
+        } else if (id === "flowBtnId") {
+            document.getElementById("flowTextId").style.display = "block";
+        } else if (id === "settingsBtnId") {
+            document.getElementById("settingsTextId").style.display = "block";
+        } else if (id === "browserBtnId") {
+            document.getElementById("browserTextId").style.display = "block";
+        } else if (id === "addNodeBtnId") {
+            document.getElementById("addNodeTextId").style.display = "block";
+        } else if (id === "cnxLinkBtnId") {
+            document.getElementById("cnxLinkTextId").style.display = "block";
+        } else if (id === "decisionBtnId") {
+            document.getElementById("decisionTextId").style.display = "block";
         }
     }
 
@@ -363,10 +428,12 @@
         document.getElementById("erdBtnId").classList.remove("boldText");
 
         document.getElementById("featuresBtnId").classList.remove("boldText");
-//        document.getElementById("actionsBtnId").classList.remove("boldText");
-//        document.getElementById("fileSysBtnId").classList.remove("boldText");
-//        document.getElementById("nodeCreateBtnId").classList.remove("boldText");
-//        document.getElementById("gridEditBtnId").classList.remove("boldText");
+        document.getElementById("flowBtnId").classList.remove("boldText");
+        document.getElementById("settingsBtnId").classList.remove("boldText");
+        document.getElementById("browserBtnId").classList.remove("boldText");
+        document.getElementById("addNodeBtnId").classList.remove("boldText");
+        document.getElementById("cnxLinkBtnId").classList.remove("boldText");
+        document.getElementById("decisionBtnId").classList.remove("boldText");
 
     }
 
@@ -394,14 +461,15 @@
         document.getElementById("erdTextId").style.display = "none";
 
         document.getElementById("featuresTextId").style.display = "none";
-//        document.getElementById("actionsTextId").style.display = "none";
-//        document.getElementById("fileSysTextId").style.display = "none";
-//        document.getElementById("nodeCreateTextId").style.display = "none";
-//        document.getElementById("gridEditTextId").style.display = "none";
+        document.getElementById("flowTextId").style.display = "none";
+        document.getElementById("settingsTextId").style.display = "none";
+        document.getElementById("browserTextId").style.display = "none";
+        document.getElementById("addNodeTextId").style.display = "none";
+        document.getElementById("cnxLinkTextId").style.display = "none";
+        document.getElementById("decisionTextId").style.display = "none";
 
 
     }
-
 
     initTexts();
 
