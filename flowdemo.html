@@ -17,7 +17,7 @@
  
 <body>
 
-<div style="height: auto;">
+<!--<div style="height: auto;">-->
     <div id="navbarContainerId">
         <div id="navbarId" class="top-toolbar">
             <div id="toolbarId" class="actions-toolbar">
@@ -72,9 +72,9 @@
                 data-bind="visible: isCanvasVisible()"></canvas>
         </div>
 
-        <div id="topProgressId" class="progressBar-settings progressBarShow" data-bind="visible: isProgressBarVisible()" >
-            <div id="progressBarId" class="progressBar-settings-in" data-bind="visible: isProgressBarVisible()" ></div>
-        </div>
+        <!--<div id="topProgressId" class="progressBar-settings progressBarShow" data-bind="visible: isProgressBarVisible()" >-->
+            <!--<div id="progressBarId" class="progressBar-settings-in" data-bind="visible: isProgressBarVisible()" ></div>-->
+        <!--</div>-->
 
         <div id="paletteCtrId" class="palette-content">
             <div class="group-box current-settings">
@@ -203,10 +203,13 @@
             </div>
 
         </div>
-
     </div>
 
-</div>
+    <!--<div id="topProgressId" class="progressBar-settings progressBarShow" data-bind="visible: isProgressBarVisible()" >-->
+        <!--<div id="progressBarId" class="progressBar-settings-in" data-bind="visible: isProgressBarVisible()" ></div>-->
+    <!--</div>-->
+
+<!--</div>-->
 
     <div id="blockResizeId" class="containerGroup" style="visibility: hidden">
         <div class="actions-toolbar">
@@ -383,7 +386,7 @@
                     <div id="subsFgnDisplayId" class="typeColorShape" ></div>
                 </div>
 
-                <div class="settings-entry" style="margin: 6px 0 4px 0;">Node type / background / foreground (border *) colors:</div>
+                <div class="settings-entry" style="margin: 6px 0 4px 0;">Node type background / foreground (border *) colors:</div>
                 <div class="typeColorsGrid">
                     <input type="radio" id="btnSETypeId" name="typeColors" style="margin:4px 0 0 10px;">
                     <label for="btnSETypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Start / End</label>

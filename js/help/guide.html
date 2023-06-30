@@ -33,6 +33,7 @@
                             <li><button id="moreEditBtnId" class="textBtn second" onclick="selectText(event)">More Flowchart Edits</button></li>
                             <li><button id="containersBtnId" class="textBtn second" onclick="selectText(event)">Using Containers</button></li>
                             <li><button id="searchBtnId" class="textBtn second" onclick="selectText(event)">Searching Nodes</button></li>
+                            <li><button id="scrollingBtnId" class="textBtn second" onclick="selectText(event)">Flowchart Scrolling</button></li>
                             <li><button id="layoutBtnId" class="textBtn second" onclick="selectText(event)">Modifying Layout</button></li>
                             <li><button id="bpmBtnId" class="textBtn second" onclick="selectText(event)">Support for BPM</button></li>
                             <li><button id="erdBtnId" class="textBtn second" onclick="selectText(event)">Support for ERD</button></li>
@@ -341,6 +342,15 @@
                     </div><br>
                 </div>
 
+                <div id="scrollingTextId" class="contentText">
+                    <p>Large flowcharts may expands beyond the browser window size. You can scroll a flowchart either by
+                        dragging the mouse inside the canvas or by using the <b><i>Thumbnail View</i></b>. </p><br>
+                    <iframe width="560" height="380"
+                            src="https://www.youtube.com/embed/_TECL-NpxjU"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                </div>
 
                 <!--<div id="someTextId" class="contentText">-->
                     <!--<p> TBD. </p>-->
@@ -387,6 +397,8 @@
             document.getElementById("containersTextId").style.display = "block";
         } else if (id === "searchBtnId") {
             document.getElementById("searchTextId").style.display = "block";
+        } else if (id === "scrollingBtnId") {
+            document.getElementById("scrollingTextId").style.display = "block";
         } else if (id === "layoutBtnId") {
             document.getElementById("layoutTextId").style.display = "block";
         } else if (id === "bpmBtnId") {
@@ -423,6 +435,7 @@
         document.getElementById("moreEditBtnId").classList.remove("boldText");
         document.getElementById("containersBtnId").classList.remove("boldText");
         document.getElementById("searchBtnId").classList.remove("boldText");
+        document.getElementById("scrollingBtnId").classList.remove("boldText");
         document.getElementById("layoutBtnId").classList.remove("boldText");
         document.getElementById("bpmBtnId").classList.remove("boldText");
         document.getElementById("erdBtnId").classList.remove("boldText");
@@ -456,6 +469,7 @@
         document.getElementById("moreEditTextId").style.display = "none";
         document.getElementById("containersTextId").style.display = "none";
         document.getElementById("searchTextId").style.display = "none";
+        document.getElementById("scrollingTextId").style.display = "none";
         document.getElementById("layoutTextId").style.display = "none";
         document.getElementById("bpmTextId").style.display = "none";
         document.getElementById("erdTextId").style.display = "none";
