@@ -866,7 +866,10 @@ label {
 	outline: none;
 	height: 120px;
 	width: 460px;
-	background-image: url(../../images/splash/mnt11.jpg);
+	
+	
+	background-image: url(../../images/splash/mnt32-2.JPG);
+	
 	
 	background-repeat: no-repeat;
 	background-position: top;
@@ -878,7 +881,7 @@ label {
 	top: 20%;
 	left: 8%;
 	font-family: Arial;
-	font-style: italic;
+	
 	font-size: 36px;
 	color: #ffffff;
 }
@@ -893,7 +896,7 @@ label {
 .welcome-title {
 	text-align: center;
 	font-family: Script MT;
-	font-style: italic;
+	
 	font-size: 64px;
 	color: #195aee;
 }
@@ -908,7 +911,7 @@ label {
 	border: none;
 	outline: none;
 	font-family: Arial;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: bold;
 	
 	foreground-color: #195aee;
