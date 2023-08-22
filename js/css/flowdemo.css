@@ -2,7 +2,7 @@ html,
 body {
 	margin: 0;
   	height: 100vh;
-	overflow-y: hidden;
+	overflow: hidden;
 }
 body.waiting * {
 	cursor: progress !important;
@@ -12,8 +12,15 @@ body.waiting * {
 *:focus  {
 	outline-color: #72AAFA !important;
 }
+#screenId {
+	display: grid;
+	grid-template-rows: 54px auto ;
+	column-gap: 0;
+}
 #navbarContainerId {
-	padding-bottom: 2px;
+	display: inline;
+	padding-bottom: 10px;
+	
 }
 .top-toolbar {
 	width: 100%;
@@ -24,14 +31,14 @@ body.waiting * {
 	
 	display: inline-flex;
 	flex-flow: row wrap;
-	position: fixed;
+	
 	top: 0;
 	left: 0;
-	z-index: 10;
 }
 .actions-toolbar {
 	display: flex;
 	flex: 0 0 auto;
+	
 	
 }
 .diagram-toolbar {
@@ -40,16 +47,16 @@ body.waiting * {
 	
 }
 .diagram-title {
-	display: flex;
+	display: inline;
 	
 	
 	border: 1px solid #8aa2f1;
 	
 	background-color: #E1F5FF;
-	width: 80px;
+	width: 70px;
 	height: 20px;
 	margin-top: 2px;
-	padding: 6px 2px 0 8px;
+	padding: 4px 2px 2px 8px;
 }
 .diagram-text {
 	margin: 0 0 0 4px;
@@ -60,7 +67,7 @@ body.waiting * {
 	flex-flow: row nowrap;
 	justify-content: flex-start;
 	align-items: center;
-	margin: 2px 0 0 8px;
+	margin: -4px 0 4px 0;
 }
 .emptyGalleryContent {
 	display: flex;
@@ -74,24 +81,24 @@ body.waiting * {
 .top-container {
 	display: grid;
 	grid-template-columns: auto 214px;
-	grid-template-rows: auto 20px;
+	grid-template-rows: auto 10px;
 	column-gap: 0;
 	overflow: auto !important;
-	padding: 10px 0 0 10px;
+	padding: 2px 0 0 10px;
+	
 }
 .main-container {
+	display: grid;
+	grid-template-columns: 8px auto 8px;
+	grid-template-rows: 2px auto 8px;
 	grid-column-start: 1;
 	grid-row-start: 1;
 	align-self: start;
 	justify-content: center;
-	display: grid;
-	grid-template-columns: 8px auto 8px;
-	grid-template-rows: 2px auto 8px;
-	width: 98%;
-	height: auto;
-	overflow: auto !important;
-	margin: 20px 0 20px;
-	padding:  0 0 20px 0;
+	width: 100%;
+	overflow-y: auto !important;
+	overflow-x: auto !important;
+	margin: 4px 0 20px;
 	
 }
 .main-canvas {
@@ -101,7 +108,7 @@ body.waiting * {
 	grid-column-start: 2;
 	grid-row-start: 2;
 	align-self: start;
-	margin:  4px 4px 24px 4px;
+	margin:  0 4px 24px 4px;
 	padding:  0 0 74px 0;
 }
 .palette-content {
@@ -109,7 +116,7 @@ body.waiting * {
 	grid-row-start: 1;
 	align-self: start;
 	justify-self: center;
-	margin: 20px 0 12px 0;
+	margin: 4px 0 12px 0;
 	display: none;
 	padding:  4px 0 20px 0;
 	
@@ -408,7 +415,7 @@ label {
 	row-gap: 8px;
 }
 .settings-footer-1 {
-	margin: 42px 0 0 0;
+	margin: 22px 0 0 0;
 }
 .settings-footer-2 {
 	margin: 200px 0 0 0;
@@ -437,25 +444,44 @@ label {
 	height: 18px;
 	outline: none;
 }
+.inlineNameText {
+	width: 240px;
+	height: 22px;
+	
+	border: 1px solid green;
+}
+.inlineNameContainer {
+	position: absolute;
+	outline: none;
+	
+	
+	width: 246px;
+	height: 26px;
+	
+	
+	
+	visibility: hidden;
+	
+	z-index: 20;
+}
 .prefsNodeDisplay {
 	display: grid;
 	justify-content: start;
-	grid-template-columns: 46px 156px 100px;
+	grid-template-columns: 40px 156px 106px;
 }
 #nodeColorDefId {
 	
-	margin: 20px 0 0 16px;
+	margin: 10px 0 0 24px;
 	width: 85px;
 	height: 26px;
 	display: inline-block;
 }
 .nodeColorsGrid {
-	margin-left: 10px;
+	margin-left: 6px;
 	display: grid;
 	justify-content: start;
-	grid-template-columns: 98px 40px;
+	grid-template-columns: 90px 48px;
 	padding: 2px;
-	row-gap: 0px;
 }
 .rectColorRadio {
 	margin: 2px 0 2px 0;
@@ -638,10 +664,12 @@ label {
 	font-weight: bold;
 	margin: 4px 0 8px;
 }
-.selectGroup {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: flex-start;
+.selectSaveGroup {
+	margin: 2px 0 0 0;
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 100px 320px;
+	
 	font-weight: bold;
 }
 .containerGroup {
@@ -679,13 +707,19 @@ label {
 	margin-bottom: 8px;
 }
 .saveAsText {
-	width: 236px;
-	margin: 8px 0 4px;
-	height: 24px;
+	width: 252px;
+	margin: 6px 0 4px;
+	height: 22px;
 	padding-left: 4px;
-	
 	border: 1px solid #808080;
-	
+	font-weight: bold;
+}
+.saveAsVersion {
+	width: 100px;
+	margin: 6px 0 4px;
+	height: 22px;
+	padding-left: 4px;
+	border: 1px solid #808080;
 	font-weight: bold;
 }
 .prefs-button {
@@ -1247,6 +1281,9 @@ label {
 	background: #72AAFA !important;
 	
 	margin: -4px -5px 0 -5px !important;
+}
+.noTitleBar .ui-dialog-titlebar {
+	
 }
 .ui-dialog .ui-dialog-buttonpane button {
 	border-radius: 2px !important;

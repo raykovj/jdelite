@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="js/css/flowdemo.css" type="text/css" />
-    <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.theme.css" type="text/css" />
-    <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.12.1/jquery-ui.css" type="text/css" />
+    <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.13.2/jquery-ui.theme.css" type="text/css" />
+    <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.13.2/jquery-ui.css" type="text/css" />
 
     <script data-main="js/flowdemo" src="libs/require/require.js"></script>
     <link rel="stylesheet" href="libs/spectrum/spectrum.css"  type="text/css"/>
@@ -17,8 +17,9 @@
  
 <body>
 
-<!--<div style="height: auto;">-->
-    <div id="navbarContainerId">
+<div id="screenId" >
+<!--<div id="screenId" style="height: auto;">-->
+    <!--<div id="navbarContainerId">-->
         <div id="navbarId" class="top-toolbar">
             <div id="toolbarId" class="actions-toolbar">
                 <button id="menuId" class="toolbar-button button-menu" data-toggle="tooltip" title="Main Menu..."></button>
@@ -37,8 +38,8 @@
                 <button id="saveId" class="toolbar-button button-no-left button-save" data-toggle="tooltip" title="Save"></button>
                 <button id="saveAsId" class="toolbar-button button-no-left button-saveAs" data-toggle="tooltip" title="Save As..."></button>
                 <!--<span style="margin-left: 10px;"></span>-->
-            </div>
-            <div id="toolbar2Id" class="diagram-toolbar">
+            <!--</div>-->
+            <!--<div id="toolbar2Id" class="diagram-toolbar">-->
                 <button id="refreshId" class="toolbar-button button-no-left button-refresh" data-toggle="tooltip" title="Refresh Flowchart & Reset Scaling"></button>
                 <button id="findId" class="toolbar-button button-no-left button-find" data-toggle="tooltip"
                         title="Search Node... &nbsp;&nbsp;Ctrl+Shift+F"></button>
@@ -48,11 +49,11 @@
                 <span style="margin-left: 10px;"></span>
                 <button id="configId" class="toolbar-button button-config" data-toggle="tooltip" title="Settings..."></button>
                 <button id="helpId" class="toolbar-button button-no-left button-help" data-toggle="tooltip" title="Help..."></button>
-            </div>
-            <div>
+            <!--</div>-->
+            <!--<div>-->
                 <span style="margin-left: 10px;"></span>
             </div>
-            <div id="diagramNameId" style=" margin: 0 0 2px 0;">
+            <div id="diagramNameId">
                 <div class="diagram-title">
                     <span class="selectionFont">Flowchart:</span>
                 </div>
@@ -63,8 +64,8 @@
             </div>
             <span style="margin-left: 2px;"></span>
         </div>
-    </div>
-    <div id="navbarGapId" ></div>
+    <!--</div>-->
+    <!--<div id="navbarGapId" style="min-width:1px;min-height:1px;"></div>-->
 
     <div id="topContainerId" class="top-container">
         <div id="containerId" class="main-container" onscroll="repaintDiagram()">
@@ -209,7 +210,7 @@
         <!--<div id="progressBarId" class="progressBar-settings-in" data-bind="visible: isProgressBarVisible()" ></div>-->
     <!--</div>-->
 
-<!--</div>-->
+</div>
 
     <div id="blockResizeId" class="containerGroup" style="visibility: hidden">
         <div class="actions-toolbar">
@@ -307,6 +308,9 @@
                     <label for="chkShowNodeTasks" style="padding-top: 4px ; " >Enable node tasks assignment</label>
                     <input type="checkbox" id="chkHideNamesId" name="hideNames" style="margin: 4px 4px 0 0;">
                     <label for="chkHideNamesId" style="padding-top: 4px ; " >Hide node names</label>
+
+                    <input type="checkbox" id="chkShowBorders" name="borders" style="margin: 4px 4px 0 0;">
+                    <label for="chkShowBorders" style="padding-top: 4px ; " >Show node borders</label>
                 </div>
 
                 <div class="settingsMainGrid">
@@ -314,12 +318,12 @@
                     <div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 5/span 4;">Grid Spacing:</div>
                 </div>
                 <div class="settings-controls settingsSpaceGrid">
-                    <input type="text" id="spinnerLevelsId" class="spinnerStyle">
+                    <input type="text" id="spinnerLevelsId" class="spinnerStyle" readonly>
                     <label for="spinnerLevelsId" class="spinner-label" style="padding-top: 6px; margin-left: 2px;" >Layers <b>*</b></label>
-                    <input type="text" id="spinnerLanesId" class="spinnerStyle">
+                    <input type="text" id="spinnerLanesId" class="spinnerStyle" readonly>
                     <label for="spinnerLanesId" class="spinner-label" style="padding-top: 6px; margin-left: 2px;">Lanes <b>*</b></label>
 
-                    <input type="text" id="spinnerSpaceId" class="spinnerStyle">
+                    <input type="text" id="spinnerSpaceId" class="spinnerStyle" readonly>
                     <label for="spinnerSpaceId" class="spinner-label" style="padding-top: 6px; margin-left: 2px;" >pixels</label>
                 </div>
 
@@ -340,27 +344,27 @@
             <div id="settingsTabId-2">
                 <div class="settings-entry">Start / End</div>
                 <div class="settings-controls">
-                    <input type="text" id="spinnerSEWidthId" class="spinnerStyle">
+                    <input type="text" id="spinnerSEWidthId" class="spinnerStyle" readonly>
                     <label for="spinnerSEWidthId" class="spinner-label" style="margin-right: 10px;" >Width (px)</label>
-                    <input type="text" id="spinnerSEHeightId" class="spinnerStyle">
+                    <input type="text" id="spinnerSEHeightId" class="spinnerStyle" readonly>
                     <label for="spinnerSEHeightId" class="spinner-label">Height (px)</label>
                     <button id="dmsSEDefId" class="prefs-button prefs-dms-button-def">Use Defaults</button>
                 </div>
 
                 <div class="settings-entry">Flow / Side</div>
                 <div class="settings-controls">
-                    <input type="text" id="spinnerNodeWidthId" class="spinnerStyle">
+                    <input type="text" id="spinnerNodeWidthId" class="spinnerStyle" readonly>
                     <label for="spinnerNodeWidthId" class="spinner-label" style="margin-right: 10px;" >Width (px)</label>
-                    <input type="text" id="spinnerNodeHeightId" class="spinnerStyle">
+                    <input type="text" id="spinnerNodeHeightId" class="spinnerStyle" readonly>
                     <label for="spinnerNodeHeightId" class="spinner-label">Height (px)</label>
                     <button id="dmsFlowDefId" class="prefs-button prefs-dms-button-def ">Use Defaults</button>
                 </div>
 
                 <div class="settings-entry">Decision</div>
                 <div class="settings-controls">
-                    <input type="text" id="spinnerDecisionWidthId" class="spinnerStyle">
+                    <input type="text" id="spinnerDecisionWidthId" class="spinnerStyle" readonly>
                     <label for="spinnerDecisionWidthId" class="spinner-label" style="margin-right: 10px;" >Width (px)</label>
-                    <input type="text" id="spinnerDecisionHeightId" class="spinnerStyle">
+                    <input type="text" id="spinnerDecisionHeightId" class="spinnerStyle" readonly>
                     <label for="spinnerDecisionHeightId" class="spinner-label">Height (px)</label>
                     <button id="dmsDecisionDefId" class="prefs-button prefs-dms-button-def">Use Defaults</button>
                 </div>
@@ -378,9 +382,12 @@
                     <input type="radio" id="btnCnvsTypeId" name="typeColors" style="margin: 4px 0 2px 10px;">
                     <label for="btnCnvsTypeId" style="vertical-align:baseline; margin: 4px 4px 2px 8px;" >Canvas </label>
                     <div id="cnvsBgnDisplayId" class="typeColorShape" ></div>
-                    <div id="cnvsFgnDisplayId" class="typeColorShape" style="grid-column: 4/span 5;"></div>
+                    <div id="cnvsFgnDisplayId" class="typeColorShape" style="grid-column: 4/span 5"></div>
 
-                    <input type="radio" id="btnSubsTypeId" name="typeColors" style="margin: 0 0 4px 10px;">
+                    <!--<input type="checkbox" id="chkBorderShowId" style="margin: 0 0 0 12px;">-->
+                    <!--<label for="chkBorderShowId" style="padding: 4px 0 0 10px; grid-column: 6/span 3" >Show Nodes Borders</label>-->
+
+                    <input type="radio" id="btnSubsTypeId" name="typeColors" style="margin: 0 0 4px 10px; ">
                     <label for="btnSubsTypeId" style="vertical-align:baseline; margin: 0 4px 4px 8px;" >Subject Area </label>
                     <div id="subsBgnDisplayId" class="typeColorShape" ></div>
                     <div id="subsFgnDisplayId" class="typeColorShape" ></div>
@@ -643,21 +650,21 @@
         </div>
     </div>
 
-    <div id="text1ViewDialogId" class="settingsFont" style="display: none; ">
-        <div style="font-weight: bold;">
-            <textarea id="text1ViewId" rows="400" cols="60" wrap="hard" class="selectionFont noresizeTextArea"
-                      style="border: 1px solid blue; outline: none; " spellcheck="false" readonly
-                       data-bind="visible: viewMessage1Visible, text: viewMessage1"></textarea>
-        </div>
-    </div>
+    <!--<div id="text1ViewDialogId" class="settingsFont" style="display: none; ">-->
+        <!--<div style="font-weight: bold;">-->
+            <!--<textarea id="text1ViewId" rows="400" cols="60" wrap="hard" class="selectionFont noresizeTextArea"-->
+                      <!--style="border: 1px solid blue; outline: none; " spellcheck="false" readonly-->
+                       <!--data-bind="visible: viewMessage1Visible, text: viewMessage1"></textarea>-->
+        <!--</div>-->
+    <!--</div>-->
 
-    <div id="text2ViewDialogId" class="settingsFont" style="display: none; ">
-        <div style="font-weight: bold;">
-            <textarea id="text2ViewId" rows="400" cols="60" wrap="hard" class="selectionFont noresizeTextArea"
-                      style="border: 1px solid blue; outline: none; " spellcheck="false" readonly
-                       data-bind="visible: viewMessage2Visible, text: viewMessage2"></textarea>
-        </div>
-    </div>
+    <!--<div id="text2ViewDialogId" class="settingsFont" style="display: none; ">-->
+        <!--<div style="font-weight: bold;">-->
+            <!--<textarea id="text2ViewId" rows="400" cols="60" wrap="hard" class="selectionFont noresizeTextArea"-->
+                      <!--style="border: 1px solid blue; outline: none; " spellcheck="false" readonly-->
+                       <!--data-bind="visible: viewMessage2Visible, text: viewMessage2"></textarea>-->
+        <!--</div>-->
+    <!--</div>-->
 
     <!--<div id="textViewDialogId" class="settingsFont" style="display: none; ">-->
         <!--<div class="selectDirView" style="font-weight: bold; margin: 4px; display: inline; ">-->
@@ -667,6 +674,15 @@
             <!--<textarea id="text2ViewId" rows="400" cols="80" wrap="hard" class="selectionFont"-->
                       <!--style="border: 1px solid blue; margin-left: 2px; " spellcheck="false" readonly-->
                        <!--data-bind="visible: viewMessageVisible, text: viewMessage2"></textarea>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div id="editNodeDialogId" class="settingsFont noTitleBar" style="display: none; ">-->
+        <!--<div style="width: 110%; height: 100%;">-->
+            <!--&lt;!&ndash;<input id="inlineNodeNameId" autofocus type="text" class="inlineNameText"&ndash;&gt;-->
+                   <!--&lt;!&ndash;autocomplete="off" spellcheck="false"&ndash;&gt;-->
+                   <!--&lt;!&ndash;onkeyup="validateEditName(event)"&ndash;&gt;-->
+                   <!--&lt;!&ndash;data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>&ndash;&gt;-->
         <!--</div>-->
     <!--</div>-->
 
@@ -742,16 +758,22 @@
             </div>
         </div>
 
-        <div class="selectGroup" data-bind="visible: isConnectionOK() && isSaveMode()"
-             style="margin: 2px 0 0 0;">
-            <!--<div style="font-weight: bold; margin: 6px 0 0; ">Enter file name:</div>-->
-            <span style="margin: 16px 6px 0 0 ; ">Enter file name:</span>
+        <div class="selectSaveGroup" data-bind="visible: isConnectionOK() && isSaveMode()">
+            <span style="margin: 10px 6px 0 0 ; ">Enter file name:</span>
             <div>
                 <input id="saveAsFileNameId" type="text" autocomplete="off" spellcheck="false"
                        onkeyup="validateSaveAsFileName(event)" class="saveAsText"
                        data-bind="textInput: saveAsFileNameValue, css: {invalidInput: saveAsInputInvalid() }"/>
                 <span style="margin: 4px 0px 4px 2px; font-weight: bold;">.json</span>
             </div>
+            <span style="margin: 12px 6px 0 0 ; ">Enter version #:</span>
+            <div>
+                <input id="saveVersionId" type="text" autocomplete="off" spellcheck="false"
+                       onkeyup="validateAsVersion(event)" class="saveAsVersion"
+                       data-bind="textInput: saveAsNewVersion, css: {invalidInput: versionInputInvalid()}"/>
+                <span style="margin: 4px 0px 4px 2px; font-weight: bold;">(numbers and single dots only)</span>
+            </div>
+
         </div>
         <div style="margin: 6px 0 0 0;" data-bind="visible: saveAsInputInvalid()">
             <button class="icon-textInvalid invalidText" style="vertical-align: middle; " disabled></button>
@@ -938,6 +960,19 @@
         </div>
     </div>
 
+    <div id="inlineNameContainerId" class="inlineNameContainer">
+        <input id="inlineNodeNameId" autofocus type="text" class="inlineNameText"
+               autocomplete="off" spellcheck="false"
+               onkeyup="validateInlineNodeName(event)"
+               data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
+        <div style="background: white">
+            <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
+                    data-bind="visible: isEditNameInvalid()" disabled></button>
+                        <span class="invalid-message"
+                              data-bind="visible: isEditNameInvalid(), text: validateNameMessage()"></span>
+        </div>
+    </div>
+
     <div id="nodePropsDialogId" class="settingsFont" style="display: none; overflow: hidden; ">
         <div id="nodePropsTabId" class="nodePropsContainer">
             <ul>
@@ -952,7 +987,7 @@
                 <div class="nodeProps-controls">
                     <input id="editNodeNameId" autofocus type="text" class="nameText"
                            autocomplete="off" spellcheck="false"
-                           onkeyup="validateEditName(event)"
+                           onkeyup="validateDialogNodeName(event)"
                            data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
                     <input type="checkbox" id="chkHideNodeNameId" name="nodeNameHide" style="margin: 6px 0 0 0; ">
                     <label for="chkHideNodeNameId" style="vertical-align: text-top; " >Hide</label>
@@ -993,18 +1028,23 @@
                         </div>
                         <div id="nodeBorderDisplayId" class="rectColorShape"></div>
                     </div>
-                    <button id="nodeColorDefId" class="prefs-button">Use Defaults</button>
+                    <div>
+                        <button id="nodeColorDefId" class="prefs-button">Use Defaults</button>
+                        <input type="checkbox" id="chkNodeBorderId" name="nodeNameHide" style="margin: 18px 0 0 0; ">
+                        <label for="chkNodeBorderId" style="vertical-align: text-top; " >Show Border</label>
+
+                    </div>
                 </div>
 
                 <div class="settings-entry" style="margin: 6px 0 2px 0;">Node size (px):</div>
                 <div class="nodeProps-controls">
-                    <input type="text" id="spNodeWidthId" class="spinnerStyleNode" >
+                    <input type="text" id="spNodeWidthId" class="spinnerStyleNode" readonly>
                     <label for="spNodeWidthId" class="spinner-label-node">Width</label>
                     <span style="margin: 0 0 0 10px;"></span>
-                    <input type="text" id="spNodeHeightId" class="spinnerStyleNode" >
+                    <input type="text" id="spNodeHeightId" class="spinnerStyleNode" readonly>
                     <label for="spNodeHeightId" class="spinner-label-node">Height</label>
                     <span style="margin: 0 0 0 12px;"></span>
-                    <button id="nodeSizeDefId" class="prefs-button prefs-dmsNode-button-def">Use Defaults</button>
+                    <button id="nodeSizeDefId" class="prefs-button prefs-dmsNode-button-def">Reset</button>
                 </div>
 
                 <div class="settings-entry" style="margin: 6px 0 2px 0;">Text Content:</div>

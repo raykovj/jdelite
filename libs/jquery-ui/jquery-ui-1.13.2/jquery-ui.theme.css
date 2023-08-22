@@ -1,5 +1,5 @@
 /*!
- * jQuery UI CSS Framework 1.12.1
+ * jQuery UI CSS Framework 1.13.2
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -158,18 +158,18 @@ a.ui-button:active,
 .ui-widget-content .ui-priority-secondary,
 .ui-widget-header .ui-priority-secondary {
 	opacity: .7;
-	filter:Alpha(Opacity=70); 
+	-ms-filter: "alpha(opacity=70)"; 
 	font-weight: normal;
 }
 .ui-state-disabled,
 .ui-widget-content .ui-state-disabled,
 .ui-widget-header .ui-state-disabled {
 	opacity: .35;
-	filter:Alpha(Opacity=35); 
+	-ms-filter: "alpha(opacity=35)"; 
 	background-image: none;
 }
 .ui-state-disabled .ui-icon {
-	filter:Alpha(Opacity=35); 
+	-ms-filter: "alpha(opacity=35)"; 
 }
 .ui-icon {
 	width: 16px;
@@ -203,7 +203,9 @@ a.ui-button:active,
 .ui-button .ui-icon {
 	background-image: url("images/ui-icons_777777_256x240.png");
 }
-.ui-icon-blank { background-position: 16px 16px; }
+.ui-icon-blank.ui-icon-blank.ui-icon-blank {
+	background-image: none;
+}
 .ui-icon-caret-1-n { background-position: 0 0; }
 .ui-icon-caret-1-ne { background-position: -16px 0; }
 .ui-icon-caret-1-e { background-position: -32px 0; }
@@ -405,7 +407,7 @@ a.ui-button:active,
 .ui-widget-overlay {
 	background: #aaaaaa;
 	opacity: .003;
-	filter: Alpha(Opacity=.3); 
+	-ms-filter: Alpha(Opacity=.3); 
 }
 .ui-widget-shadow {
 	-webkit-box-shadow: 0px 0px 5px #666666;
