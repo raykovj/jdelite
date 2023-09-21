@@ -444,13 +444,13 @@ label {
 	height: 18px;
 	outline: none;
 }
-.inlineNameText {
+.inlineInputText {
 	width: 240px;
 	height: 22px;
 	
 	border: 1px solid green;
 }
-.inlineNameContainer {
+.inlineInputContainer {
 	position: absolute;
 	outline: none;
 	
@@ -463,6 +463,10 @@ label {
 	visibility: hidden;
 	
 	z-index: 20;
+}
+.inlineAreaContainer {
+}
+.inlineAreaText {
 }
 .prefsNodeDisplay {
 	display: grid;
@@ -804,15 +808,10 @@ label {
 	width: 85px;
 	height: 26px;
 }
-.prefs-textNode-button-apply {
-	width: 56px;
-	height: 26px;
-	margin-left: 6px;
-}
 .prefs-textNode-button-clear {
-	width: 52px;
+	width: 82px;
 	height: 26px;
-	margin-left: 2px;
+	margin-left: 36px;
 }
 .nodeTableTopButtons {
 	display: grid;

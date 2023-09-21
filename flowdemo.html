@@ -377,15 +377,17 @@
 
             <div id="settingsTabId-3" style="height: 100%; ">
 
-                <div class="settings-entry" style="margin: -4px 0 4px 0;">Canvas / subject areas background / border:</div>
+                <div class="settings-entry" style="margin: -4px 0 4px 0;">Canvas / Subject areas background / border:</div>
                 <div class="typeColorsGrid" style="margin-top: 4px; ">
                     <input type="radio" id="btnCnvsTypeId" name="typeColors" style="margin: 4px 0 2px 10px;">
                     <label for="btnCnvsTypeId" style="vertical-align:baseline; margin: 4px 4px 2px 8px;" >Canvas </label>
                     <div id="cnvsBgnDisplayId" class="typeColorShape" ></div>
-                    <div id="cnvsFgnDisplayId" class="typeColorShape" style="grid-column: 4/span 5"></div>
+                    <!--<div id="cnvsFgnDisplayId" class="typeColorShape" style="grid-column: 4/span 5"></div>-->
+                    <div id="cnvsFgnDisplayId" class="typeColorShape"></div>
 
-                    <!--<input type="checkbox" id="chkBorderShowId" style="margin: 0 0 0 12px;">-->
-                    <!--<label for="chkBorderShowId" style="padding: 4px 0 0 10px; grid-column: 6/span 3" >Show Nodes Borders</label>-->
+                    <input type="radio" id="btnPortHltTypeId" name="typeColors" style="margin:4px 0 0 10px;">
+                    <label for="btnPortHltTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Ports Highlight</label>
+                    <div id="portHltBgnDisplayId" class="typeColorShape" style="grid-column: 7/span 2;"></div>
 
                     <input type="radio" id="btnSubsTypeId" name="typeColors" style="margin: 0 0 4px 10px; ">
                     <label for="btnSubsTypeId" style="vertical-align:baseline; margin: 0 4px 4px 8px;" >Subject Area </label>
@@ -677,15 +679,6 @@
         <!--</div>-->
     <!--</div>-->
 
-    <!--<div id="editNodeDialogId" class="settingsFont noTitleBar" style="display: none; ">-->
-        <!--<div style="width: 110%; height: 100%;">-->
-            <!--&lt;!&ndash;<input id="inlineNodeNameId" autofocus type="text" class="inlineNameText"&ndash;&gt;-->
-                   <!--&lt;!&ndash;autocomplete="off" spellcheck="false"&ndash;&gt;-->
-                   <!--&lt;!&ndash;onkeyup="validateEditName(event)"&ndash;&gt;-->
-                   <!--&lt;!&ndash;data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>&ndash;&gt;-->
-        <!--</div>-->
-    <!--</div>-->
-
     <div id="confirmDialogId" class="settingsFont" style="display: none; ">
         <div style="font-weight: bold; margin: 4px; ">
             <textarea id="confirmTextId" rows="3" cols="50" wrap="hard" class="selectionFont noresizeTextArea"
@@ -960,8 +953,21 @@
         </div>
     </div>
 
-    <div id="inlineNameContainerId" class="inlineNameContainer">
-        <input id="inlineNodeNameId" autofocus type="text" class="inlineNameText"
+    <div id="inlineInputContainerId" class="inlineInputContainer">
+        <input id="inlineInputFieldId" autofocus type="text" class="inlineInputText"
+               autocomplete="off" spellcheck="false"
+               onkeyup="validateInlineNodeName(event)"
+               data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
+        <div style="background: white">
+            <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
+                    data-bind="visible: isEditNameInvalid()" disabled></button>
+                        <span class="invalid-message"
+                              data-bind="visible: isEditNameInvalid(), text: validateNameMessage()"></span>
+        </div>
+    </div>
+
+    <div id="inlineAreaContainerId" class="inlineAreaContainer" style="display: none;">
+        <input id="inlineTextAreaId" autofocus type="text" class="inlineAreaText"
                autocomplete="off" spellcheck="false"
                onkeyup="validateInlineNodeName(event)"
                data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
@@ -1067,7 +1073,6 @@
                         <input type="radio" id="btnBelowId" name="nodeText" style="margin: 4px 0 0 6px;">
                         <label for="btnBelowId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Below</label>
                     </div>
-                    <button id="btnTextApplyId" class="prefs-button prefs-textNode-button-apply">Confirm</button>
                     <button id="btnTextClearId" class="prefs-button prefs-textNode-button-clear">Clear</button>
                 </div>
 
