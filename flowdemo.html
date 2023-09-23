@@ -966,17 +966,15 @@
         </div>
     </div>
 
-    <div id="inlineAreaContainerId" class="inlineAreaContainer" style="display: none;">
-        <input id="inlineTextAreaId" autofocus type="text" class="inlineAreaText"
-               autocomplete="off" spellcheck="false"
-               onkeyup="validateInlineNodeName(event)"
-               data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
-        <div style="background: white">
-            <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
-                    data-bind="visible: isEditNameInvalid()" disabled></button>
-                        <span class="invalid-message"
-                              data-bind="visible: isEditNameInvalid(), text: validateNameMessage()"></span>
-        </div>
+    <div id="inlineAreaContainerId" class="inlineAreaContainer">
+        <textarea id="inlineTextAreaId"
+               autofocus rows="4" cols="36" wrap="hard"
+               spellcheck="false" class="noresizeTextArea"></textarea>
+        <!--<div style="background: white">-->
+            <!--<button style="vertical-align: middle; "</button>-->
+                        <!--<span class="invalid-message"-->
+                              <!--data-bind="text: validateNameMessage()"></span>-->
+        <!--</div>-->
     </div>
 
     <div id="nodePropsDialogId" class="settingsFont" style="display: none; overflow: hidden; ">

@@ -465,6 +465,18 @@ label {
 	z-index: 20;
 }
 .inlineAreaContainer {
+	position: absolute;
+	outline: none;
+	
+	
+	width: 286px;
+	height: 64px;
+	
+	
+	
+	visibility: hidden;
+	
+	z-index: 20;
 }
 .inlineAreaText {
 }
