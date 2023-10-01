@@ -70,7 +70,9 @@
     <div id="topContainerId" class="top-container">
         <div id="containerId" class="main-container" onscroll="repaintDiagram()">
             <canvas id="canvasId" tabindex="0" draggable="true" class="main-canvas"
-                data-bind="visible: isCanvasVisible()"></canvas>
+                data-bind="visible: isCanvasVisible()">
+                <!--<div style="visibility: hidden; display: none; width: 1000px; height: 1px;"></div>-->
+            </canvas>
         </div>
 
         <!--<div id="topProgressId" class="progressBar-settings progressBarShow" data-bind="visible: isProgressBarVisible()" >-->

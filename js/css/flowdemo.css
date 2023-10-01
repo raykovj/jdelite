@@ -95,9 +95,11 @@ body.waiting * {
 	grid-row-start: 1;
 	align-self: start;
 	justify-content: center;
+	
 	width: 100%;
-	overflow-y: auto !important;
-	overflow-x: auto !important;
+	height: 100vh;
+	
+	overflow: auto  !important;
 	margin: 4px 0 20px;
 	
 }
@@ -105,11 +107,34 @@ body.waiting * {
 	border: none;
 	outline: none;
 	overflow: auto !important;
+	
 	grid-column-start: 2;
 	grid-row-start: 2;
 	align-self: start;
 	margin:  0 4px 24px 4px;
 	padding:  0 0 74px 0;
+}
+	
+	
+	
+	
+	
+::-webkit-scrollbar:horizontal {
+	height: 12px;
+}
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	-webkit-border-radius: 1px;
+	border-radius: 1px;
+}
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border-radius: 1px;
+	background: rgba(255,0,0,0.8);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4);
 }
 .palette-content {
 	grid-column-start: 2;
