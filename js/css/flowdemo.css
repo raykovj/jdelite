@@ -114,6 +114,18 @@ body.waiting * {
 	margin:  0 4px 24px 4px;
 	padding:  0 0 74px 0;
 }
+.mainFooter {
+	grid-column-start: 2;
+	grid-row-start: 3;
+	border: 1px solid blue;
+	background-color: #c9defa;
+	width: 100%;
+	height: 6px;
+	
+	
+	
+	
+}
 	
 	
 	
@@ -160,6 +172,26 @@ body.waiting * {
 	position: absolute;
 	top: 45%;
 	left: 85%;
+	font-family: Arial;
+	font-size: 18px;
+	color: #ffffff;
+	transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+}
+.bottomMessage {
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 50px;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(140,180,255,0.6);
+	z-index: 20;
+}
+.bottomText {
+	position: absolute;
+	top: 45%;
+	left: 45%;
 	font-family: Arial;
 	font-size: 18px;
 	color: #ffffff;

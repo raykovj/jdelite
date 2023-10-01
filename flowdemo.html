@@ -69,10 +69,12 @@
 
     <div id="topContainerId" class="top-container">
         <div id="containerId" class="main-container" onscroll="repaintDiagram()">
-            <canvas id="canvasId" tabindex="0" draggable="true" class="main-canvas"
+            <canvas id="canvasId" class="main-canvas" tabindex="0" draggable="true"
                 data-bind="visible: isCanvasVisible()">
-                <!--<div style="visibility: hidden; display: none; width: 1000px; height: 1px;"></div>-->
+                <!--<div style="visibility: visible; width: 1000px; height: 1px; border: 1px solid red;"></div>-->
             </canvas>
+
+            <!--<div class="mainFooter"></div>-->
         </div>
 
         <!--<div id="topProgressId" class="progressBar-settings progressBarShow" data-bind="visible: isProgressBarVisible()" >-->
@@ -206,6 +208,7 @@
             </div>
 
         </div>
+
     </div>
 
     <!--<div id="topProgressId" class="progressBar-settings progressBarShow" data-bind="visible: isProgressBarVisible()" >-->
@@ -1395,6 +1398,10 @@
 
     <div id="saveOverlayId" class="overlayMessage">
         <div id="saveMessageId" class="overlaySaveText" data-bind="text: overlayText()"></div>
+    </div>
+
+    <div id="bottomOverlayId" class="bottomMessage">
+        <div id="bottomTextId" class="bottomText" data-bind="text: bottomMessageText()"></div>
     </div>
 
 
