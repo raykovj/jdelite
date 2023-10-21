@@ -153,7 +153,7 @@ body.waiting * {
 	grid-row-start: 1;
 	align-self: start;
 	justify-self: center;
-	margin: 4px 0 12px 0;
+	margin: 0 0 12px 0;
 	display: none;
 	padding:  4px 0 20px 0;
 	
@@ -237,7 +237,7 @@ body.waiting * {
 	display: table;
 	table-layout: fixed;
 	border-collapse: collapse;
-	margin-top: 8px;
+	margin-top: 4px;
 }
 .main-props-row {
 	display: table-row;
@@ -283,6 +283,11 @@ body.waiting * {
 	background-color: #72AAFA;
 	width: 188px;
 }
+.accordSelect {
+	font-family: Arial;
+	font-size: 9pt;
+	font-weight: bold;
+}
 table#accHdrDemoTableId td {
 	padding: 2px 0 2px 12px;
 	line-height: 18px;
@@ -304,6 +309,10 @@ table#accQuizTableId td {
 	line-height: 14px;
 }
 table#accMiscTableId td {
+	padding: 0 0 0 12px;
+	line-height: 14px;
+}
+table#accERDTableId td {
 	padding: 0 0 0 12px;
 	line-height: 14px;
 }
@@ -405,7 +414,7 @@ label {
 	display: grid;
 	justify-content: start;
 	grid-template-columns: 20px 230px 20px 220px;
-	row-gap: 2px;
+	row-gap: 4px;
 }
 .settingsSpaceGrid {
 	display: grid;
@@ -451,7 +460,7 @@ label {
 	display: grid;
 	background-color: #eaf0fa;
 	justify-content: start;
-	grid-template-columns: 24px 120px 40px 80px 24px 100px 40px 40px;
+	grid-template-columns: 24px 84px 38px 46px 24px 68px 38px 46px 24px 68px 36px 34px;
 	row-gap: 8px;
 }
 .nodeColorSelect {
@@ -472,22 +481,22 @@ label {
 	row-gap: 8px;
 }
 .settings-footer-1 {
-	margin: 22px 0 0 0;
+	margin: 74px 0 0 0;
 }
 .settings-footer-2 {
-	margin: 200px 0 0 0;
+	margin: 220px 0 0 0;
 }
 .settings-footer-3 {
 	margin: 24px 0 0 0;
 }
 .settings-footer-4 {
-	margin: 231px 0 0 0;
+	margin: 251px 0 0 0;
 }
 .settings-footer-5 {
-	margin: 268px 0 0 0;
+	margin: 288px 0 0 0;
 }
 .settings-footer-6 {
-	margin: 1px 0 0 0;
+	margin: 6px 0 0 0;
 }
 .settings-footer-6a {
 	margin: 126px 0 0 0;
@@ -836,7 +845,7 @@ label {
 	float: right;
 }
 .prefsIconsAllDef {
-	margin: 133px 0 12px 0;
+	margin: 20px 0 12px 0;
 	width: 110px;
 	height: 28px;
 	float: right;
@@ -1097,6 +1106,23 @@ label {
 	background-color: #a2cAFF;
 }
 .flow-button:active {
+	background-color: #82AAFA;
+}
+.dgm-button {
+	border: none;
+	outline: none;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	height: 20px;
+	width: 20px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.dgm-button:hover {
+	background-color: #a2cAFF;
+}
+.dgm-button:active {
 	background-color: #82AAFA;
 }
 .hints-text {
@@ -1701,7 +1727,7 @@ table#findTableId td:hover {
 	border-radius: 5px;
 	background: #d3d3d3;
 	outline: none;
-	margin-top: 6px;
+	
 	opacity: 0.7;
 	-webkit-transition: .2s; 
 	transition: opacity .2s;

@@ -83,10 +83,30 @@
 
         <div id="paletteCtrId" class="palette-content">
             <div class="group-box current-settings">
-                <div data-bind="visible: isCanvasVisible()" >
+                <!--<div style="margin-top: 6px;"></div>-->
+                <!--<div class="accordSelect" style="display: block;">-->
+                    <!--<span style="margin: 0 0 0 6px; ">Diagram Type:</span>-->
+                    <!--<div>-->
+                        <!--<input type="radio" id="btnFlowId" name="accMode" style="margin: 6px 2px 0 6px;">-->
+                        <!--<label for="btnFlowId" style="vertical-align:middle; margin: 0 2px 0 2px;" >Flowchart</label>-->
+                        <!--<input type="radio" id="btnERDId" name="accMode" style="margin: 0 2px 0 14px;;">-->
+                        <!--<label for="btnERDId" style="vertical-align:middle;  margin: 0 2px 0 2px;">ERD</label>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div style="margin-top: 6px;"></div>
+                <div style="display: inline-block;">
+                    <!--<div style="width: 128px; height: 1px; border-top: 1px solid blue; margin: 10px 20px 0 2px; float: left;"></div>-->
+                    <div style="float: right;">
+                        <button id="btnDgmModeDId" class="dgm-button btn-down-16"
+                                data-bind="visible: !isDgmFlow()" title="Show"></button>
+                        <button id="btnDgmModeUId" class="dgm-button btn-up-16"
+                                data-bind="visible: isDgmFlow()" title="Hide"></button>
+                    </div>
+                </div>
+                <div style="margin-top: 2px;" data-bind="visible: isDgmFlow()" >
                     <input type="range" min="65" max="200" value="100" id="scaleId" class="scaleSlider">
                 </div>
-                <div class="main-props diagram-text galleryFont">
+                <div class="main-props diagram-text galleryFont" data-bind="visible:isDgmFlow()">
                     <div class="main-props-row">
                         <div class="main-props-cell1">
                             <span style="font-weight: bold;">Canvas Scale:</span>
@@ -145,7 +165,6 @@
                 <h3 id="accHdrFlowId" data-bind="text: accHdrFlowTitle"></h3>
                 <div id="accTableFlowId">
                     <table id="accFlowTableId" class="accordion-items galleryFont" >
-                        <!--<caption  class="settings-caption">Flow</caption>-->
                         <tbody data-bind="foreach: galleryFlowNodes">
                         <tr>
                             <td data-bind="attr: {id}"
@@ -160,7 +179,7 @@
                     </table>
                 </div>
 
-                <h3 id="accHdrSidesId"  data-bind="text: accHdrMiscTitle"></h3>
+                <h3 id="accHdrMiscId"  data-bind="text: accHdrMiscTitle"></h3>
                 <div id="accTableMiscsId">
                     <table id="accMiscTableId" class="accordion-items galleryFont" >
                         <tbody data-bind="foreach: galleryMiscNodes">
@@ -176,6 +195,23 @@
                         </tbody>
                     </table>
                 </div>
+
+                <!--<h3 id="accHdrERDId"  data-bind="text: accHdrERDTitle"></h3>-->
+                <!--<div id="accTableERDId">-->
+                    <!--<table id="accERDTableId" class="accordion-items galleryFont" >-->
+                        <!--<tbody data-bind="foreach: galleryERDNodes">-->
+                        <!--<tr>-->
+                            <!--<td data-bind="attr: {id}"-->
+                                <!--ondragstart="onPaletteDragStart(event)"-->
+                                <!--ondragend="onPaletteDragEnd(event)">-->
+                                <!--<img role="presentation" draggable="true" class="componentItem"-->
+                                     <!--data-bind="attr: {id: id, src: url, title: title}" />-->
+                                <!--<span style="user-select: none;" data-bind="text: label"></span>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--</tbody>-->
+                    <!--</table>-->
+                <!--</div>-->
 
                 <!--<h3 id="accHdrPagesId"  data-bind="text: accHdrPagesTitle"></h3>-->
                 <!--<div>-->
@@ -257,40 +293,47 @@
 
                 <div class="settingsMainGrid">
                     <div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 1/span 4;">Edit / View Mode:</div>
-                    <div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 5/span 4;">Paging Style:</div>
+                    <!--<div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 5/span 4;">Paging Style:</div>-->
+                    <div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 5/span 4;">Flow Direction:</div>
                 </div>
                 <div class="settings-controls settingsMainGrid">
-                    <input type="radio" id="btnEditAllId" name="editMode" style="margin: 0 4px 0 0;">
+                    <input type="radio" id="btnEditAllId" name="editMode" style="margin: 0 4px 0 0; width: 18px; height: 18px;">
                     <label for="btnEditAllId" style="vertical-align:baseline; margin: 0 0 0 4px;" >Edit</label>
-                    <input type="radio" id="btnViewOnlyId" name="editMode" style="margin: 0 4px 0 0;">
+                    <input type="radio" id="btnViewOnlyId" name="editMode" style="margin: 0 4px 0 0; width: 18px; height: 18px;">
                     <label for="btnViewOnlyId" style="vertical-align:baseline;  margin: 0 0 0 4px;">View Only</label>
-                    <input type="radio" id="btnFlowchartId" name="pagingStyle" style="margin: 0 4px 0 0;">
-                    <label for="btnFlowchartId" style="vertical-align:baseline; margin: 0 0 0 4px;" >Single</label>
-                    <input type="radio" id="btnFlowPagesId" name="pagingStyle" style="margin: 0 4px 0 0;">
-                    <label for="btnFlowPagesId" style="vertical-align:baseline;  margin: 0 0 0 4px;" >Multipage</label>
-                </div>
 
-                <div class="settingsMainGrid">
-                    <div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 1/span 4;">Flow Direction:</div>
-                    <div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 5/span 4;">Layout Mode:</div>
-                </div>
-                <div class="settings-controls settingsMainGrid">
-                    <input type="radio" id="btnVertical" name="flowDir" style="margin: 0 4px 0 0;">
+                    <!--<input type="radio" id="btnFlowchartId" name="pagingStyle" style="margin: 0 4px 0 0;">-->
+                    <!--<label for="btnFlowchartId" style="vertical-align:baseline; margin: 0 0 0 4px;" >Single</label>-->
+                    <!--<input type="radio" id="btnFlowPagesId" name="pagingStyle" style="margin: 0 4px 0 0;">-->
+                    <!--<label for="btnFlowPagesId" style="vertical-align:baseline;  margin: 0 0 0 4px;" >Multipage</label>-->
+
+                    <input type="radio" id="btnVertical" name="flowDir" style="margin: 0 4px 0 0; width: 18px; height: 18px;">
                     <label for="btnVertical" style="vertical-align:baseline; margin: 0 0 0 4px;" >Vertical</label>
-                    <input type="radio" id="btnHorizontal" name="flowDir" style="margin: 0 4px 0 0;">
+                    <input type="radio" id="btnHorizontal" name="flowDir" style="margin: 0 4px 0 0; width: 18px; height: 18px;">
                     <label for="btnHorizontal" style="vertical-align:baseline;  margin: 0 0 0 4px;">Horizontal</label>
-                    <input type="radio" id="btnManualId" name="layoutMode" style="margin: 0 4px 0 0;">
-                    <label for="btnManualId" style="vertical-align:baseline; margin: 0 0 0 4px;" >Manual</label>
-                    <input type="radio" id="btnAutoId" name="layoutMode" style="margin: 0 4px 0 0;">
-                    <label for="btnAutoId" style="vertical-align:baseline;  margin: 0 0 0 4px;">Auto</label>
                 </div>
 
-                <div class="settings-entry" style="margin: 4px 0 0 4px;">Flowchart features:</div>
+                <!--<div class="settingsMainGrid">-->
+                    <!--<div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 1/span 4;">Flow Direction:</div>-->
+                    <!--<div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 5/span 4;">Layout Mode:</div>-->
+                <!--</div>-->
+                <!--<div class="settings-controls settingsMainGrid">-->
+                    <!--<input type="radio" id="btnVertical" name="flowDir" style="margin: 0 4px 0 0;">-->
+                    <!--<label for="btnVertical" style="vertical-align:baseline; margin: 0 0 0 4px;" >Vertical</label>-->
+                    <!--<input type="radio" id="btnHorizontal" name="flowDir" style="margin: 0 4px 0 0;">-->
+                    <!--<label for="btnHorizontal" style="vertical-align:baseline;  margin: 0 0 0 4px;">Horizontal</label>-->
+                    <!--<input type="radio" id="btnManualId" name="layoutMode" style="margin: 0 4px 0 0;">-->
+                    <!--<label for="btnManualId" style="vertical-align:baseline; margin: 0 0 0 4px;" >Manual</label>-->
+                    <!--<input type="radio" id="btnAutoId" name="layoutMode" style="margin: 0 4px 0 0;">-->
+                    <!--<label for="btnAutoId" style="vertical-align:baseline;  margin: 0 0 0 4px;">Auto</label>-->
+                <!--</div>-->
+
+                <div class="settings-entry" style="margin: 4px 0 0 4px;">Features:</div>
                 <div class="settings-controls settingsFeaturesGrid">
                     <input type="checkbox" id="chkStartEnd" style="margin: 4px 4px 0 0;">
                     <label for="chkStartEnd" style="padding-top: 4px ; " >Add Start/End layers</label>
                     <input type="checkbox" id="chkShowRefs" name="edRefs" style="margin: 4px 4px 0 0;">
-                    <label for="chkShowRefs" style="padding-top: 4px ; " >Enable association links</label>
+                    <label for="chkShowRefs" style="padding-top: 4px ; " >Show association links</label>
                     <!--<input type="checkbox" id="chkGrid" name="df" style="margin: 4px 4px 0 0;">-->
                     <!--<label for="chkGrid" style="vertical-align:baseline;" >Show Grid</label>-->
 
@@ -344,7 +387,7 @@
                 <div class="settings-footer-1"></div>
                 <div>
                     <span class="vertical" style="padding: 0 0 0 4px; ">
-                        <b>*</b> &nbsp;Choose the initial grid only, later you can modify the grid from the canvas menus</span>
+                        <b>*</b> &nbsp;Choose the initial grid only, further down you can modify the grid from the canvas menus</span>
                 </div>
             </div>
 
@@ -384,106 +427,128 @@
 
             <div id="settingsTabId-3" style="height: 100%; ">
 
-                <div class="settings-entry" style="margin: -4px 0 4px 0;">Canvas / Subject areas background / border:</div>
+                <div class="settings-entry" style="margin: -4px 0 4px 0;">Canvas / Special areas background / border:</div>
                 <div class="typeColorsGrid" style="margin-top: 4px; ">
-                    <input type="radio" id="btnCnvsTypeId" name="typeColors" style="margin: 4px 0 2px 10px;">
-                    <label for="btnCnvsTypeId" style="vertical-align:baseline; margin: 4px 4px 2px 8px;" >Canvas </label>
+                    <input type="radio" id="btnCnvsTypeId" name="typeColors" style="margin: 4px 0 2px 4px; width: 18px; height: 18px;">
+                    <label for="btnCnvsTypeId" style="vertical-align:baseline; margin: 4px 4px 2px 4px;" >Canvas </label>
                     <div id="cnvsBgnDisplayId" class="typeColorShape" ></div>
                     <!--<div id="cnvsFgnDisplayId" class="typeColorShape" style="grid-column: 4/span 5"></div>-->
                     <div id="cnvsFgnDisplayId" class="typeColorShape"></div>
 
-                    <input type="radio" id="btnPortHltTypeId" name="typeColors" style="margin:4px 0 0 10px;">
-                    <label for="btnPortHltTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Ports Highlight</label>
-                    <div id="portHltBgnDisplayId" class="typeColorShape" style="grid-column: 7/span 2;"></div>
+                    <input type="radio" id="btnCntrTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
+                    <label for="btnCntrTypeId" style="vertical-align:baseline; margin:4px 4px 4px 6px;" >Container</label>
+                    <div id="cntrBgnDisplayId" class="typeColorShape"></div>
+                    <div id="cntrFgnDisplayId" class="typeColorShape" style="grid-column: 8/span 5;"></div>
 
-                    <input type="radio" id="btnSubsTypeId" name="typeColors" style="margin: 0 0 4px 10px; ">
-                    <label for="btnSubsTypeId" style="vertical-align:baseline; margin: 0 4px 4px 8px;" >Subject Area </label>
+                    <input type="radio" id="btnSubsTypeId" name="typeColors" style="margin: 0 0 4px 4px; width: 18px; height: 18px; ">
+                    <label for="btnSubsTypeId" style="vertical-align:baseline; margin: 0 4px 4px 4px;" >Subject Area </label>
                     <div id="subsBgnDisplayId" class="typeColorShape" ></div>
                     <div id="subsFgnDisplayId" class="typeColorShape" ></div>
+
+                    <input type="radio" id="btnPortHltTypeId" name="typeColors" style="margin:4px 0 0 6px; width: 18px; height: 18px;">
+                    <label for="btnPortHltTypeId" style="vertical-align:baseline; margin: 4px 4px 0 6px;" >Ports Hlt</label>
+                    <div id="portHltBgnDisplayId" class="typeColorShape" style="grid-column: 7/span 2;"></div>
+
                 </div>
 
-                <div class="settings-entry" style="margin: 6px 0 4px 0;">Node type background / foreground (border *) colors:</div>
+                <div class="settings-entry" style="margin: 6px 0 4px 0;">Node type background / foreground colors:</div>
                 <div class="typeColorsGrid">
-                    <input type="radio" id="btnSETypeId" name="typeColors" style="margin:4px 0 0 10px;">
-                    <label for="btnSETypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Start / End</label>
+                    <input type="radio" id="btnSETypeId" name="typeColors" style="margin:4px 0 0 4px; width: 18px; height: 18px;">
+                    <label for="btnSETypeId" style="vertical-align:baseline; margin: 4px 4px 0 4px;" >Start / End</label>
                     <div id="seBgnDisplayId" class="typeColorShape"></div>
                     <div id="seFgnDisplayId" class="typeColorShape"></div>
 
-                    <input type="radio" id="btnDBTypeId" name="typeColors" style="margin:4px 0 0 10px;">
-                    <label for="btnDBTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Database</label>
+                    <input type="radio" id="btnDBTypeId" name="typeColors" style="margin:4px 0 0 6px; width: 18px; height: 18px;">
+                    <label for="btnDBTypeId" style="vertical-align:baseline; margin: 4px 4px 0 6px;" >Database</label>
                     <div id="dbBgnDisplayId" class="typeColorShape"></div>
-                    <div id="dbFgnDisplayId" class="typeColorShape"></div>
+                    <div id="dbFgnDisplayId" class="typeColorShape" ></div>
+
+                    <input type="radio" id="btnDBTableId" name="typeColors" style="margin:4px 0 0 6px; width: 18px; height: 18px;">
+                    <label for="btnDBTableId" style="vertical-align:baseline; margin: 4px 4px 0 6px;" >DB Table</label>
+                    <div id="tblBgnDisplayId" class="typeColorShape"></div>
+                    <div id="tblFgnDisplayId" class="typeColorShape" ></div>
 
                     <!--////-->
-                    <input type="radio" id="btnProcTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
-                    <label for="btnProcTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Process</label>
+                    <input type="radio" id="btnProcTypeId" name="typeColors" style="margin: 4px 0 0 4px; width: 18px; height: 18px;">
+                    <label for="btnProcTypeId" style="vertical-align:baseline; margin: 4px 4px 0 4px;" >Process</label>
                     <div id="procBgnDisplayId" class="typeColorShape"></div>
                     <div id="procFgnDisplayId" class="typeColorShape"></div>
 
-                    <input type="radio" id="btnDocTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
-                    <label for="btnDocTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Document</label>
+                    <input type="radio" id="btnDocTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
+                    <label for="btnDocTypeId" style="vertical-align:baseline; margin: 4px 4px 0 6px;" >Document</label>
                     <div id="docBgnDisplayId" class="typeColorShape"></div>
                     <div id="docFgnDisplayId" class="typeColorShape"></div>
 
+                    <input type="radio" id="btnEntTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
+                    <label for="btnEntTypeId" style="vertical-align:baseline; margin: 4px 4px 0 6px;" >Entity</label>
+                    <div id="entBgnDisplayId" class="typeColorShape"></div>
+                    <div id="entFgnDisplayId" class="typeColorShape"></div>
+
                     <!--////-->
-                    <input type="radio" id="btnIOTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
-                    <label for="btnIOTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Input / Output</label>
+                    <input type="radio" id="btnIOTypeId" name="typeColors" style="margin: 4px 0 0 4px; width: 18px; height: 18px;">
+                    <label for="btnIOTypeId" style="vertical-align:baseline; margin: 4px 4px 0 4px;" >Input / Output</label>
                     <div id="ioBgnDisplayId" class="typeColorShape"></div>
                     <div id="ioFgnDisplayId" class="typeColorShape"></div>
 
-                    <input type="radio" id="btnDocsTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
-                    <label for="btnDocsTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Documents</label>
+                    <input type="radio" id="btnDocsTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
+                    <label for="btnDocsTypeId" style="vertical-align:baseline; margin: 4px 6px 0 6px;" >Documents</label>
                     <div id="docsBgnDisplayId" class="typeColorShape"></div>
                     <div id="docsFgnDisplayId" class="typeColorShape"></div>
 
+                    <input type="radio" id="btnRelTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
+                    <label for="btnRelTypeId" style="vertical-align:baseline; margin: 4px 6px 0 6px;" >Relation</label>
+                    <div id="relBgnDisplayId" class="typeColorShape"></div>
+                    <div id="relFgnDisplayId" class="typeColorShape"></div>
+
                     <!--////-->
-                    <input type="radio" id="btnSideTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
-                    <label for="btnSideTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Side Lanes</label>
+                    <input type="radio" id="btnSideTypeId" name="typeColors" style="margin: 4px 0 0 4px; width: 18px; height: 18px;">
+                    <label for="btnSideTypeId" style="vertical-align:baseline; margin: 4px 4px 0 4px;" >Side Lanes</label>
                     <div id="sideBgnDisplayId" class="typeColorShape"></div>
                     <div id="sideFgnDisplayId" class="typeColorShape"></div>
 
-                    <input type="radio" id="btnTermTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">
-                    <label for="btnTermTypeId" style="vertical-align:baseline; margin:4px 4px 4px 8px;" >Endpoint</label>
+                    <input type="radio" id="btnTermTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
+                    <label for="btnTermTypeId" style="vertical-align:baseline; margin:4px 4px 4px 6px;" >Endpoint</label>
                     <div id="termBgnDisplayId" class="typeColorShape"></div>
                     <div id="termFgnDisplayId" class="typeColorShape"></div>
 
-                    <!--////-->
-                    <input type="radio" id="btnDecTypeId" name="typeColors" style="margin: 4px 0 0 10px;">
-                    <label for="btnDecTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Decision</label>
-                    <div id="decBgnDisplayId" class="typeColorShape"></div>
-                    <div id="decFgnDisplayId" class="typeColorShape"></div>
+                    <input type="radio" id="btnAttrTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
+                    <label for="btnAttrTypeId" style="vertical-align:baseline; margin:4px 4px 4px 6px;" >Attribute</label>
+                    <div id="attrBgnDisplayId" class="typeColorShape"></div>
+                    <div id="attrFgnDisplayId" class="typeColorShape"></div>
 
-                    <input type="radio" id="btnCntrTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">
-                    <label for="btnCntrTypeId" style="vertical-align:baseline; margin:4px 4px 4px 8px;" >Container *</label>
-                    <div id="cntrBgnDisplayId" class="typeColorShape"></div>
-                    <div id="cntrFgnDisplayId" class="typeColorShape"></div>
+                    <!--////-->
+                    <input type="radio" id="btnDecTypeId" name="typeColors" style="margin: 4px 0 0 4px; width: 18px; height: 18px;">
+                    <label for="btnDecTypeId" style="vertical-align:baseline; margin: 4px 4px 0 4px;" >Decision</label>
+                    <div id="decBgnDisplayId" class="typeColorShape"></div>
+                    <div id="decFgnDisplayId" class="typeColorShape" style="grid-column: 4/span 2;"></div>
+
                 </div>
 
                 <div class="settings-entry" style="margin: 4px 0 4px 0;">Line colors:</div>
                 <div class="typeColorsGrid">
-                    <input type="radio" id="btnLinkTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">
-                    <label for="btnLinkTypeId" style="vertical-align:baseline; margin: 4px 4px 0px 8px;" >Link Line</label>
+                    <input type="radio" id="btnLinkTypeId" name="typeColors" style="margin: 4px 0 0 4px; width: 18px; height: 18px;">
+                    <label for="btnLinkTypeId" style="vertical-align:baseline; margin: 4px 4px 0px 4px;" >Link Line</label>
                     <div id="linkDisplayId" class="typeColorShape" style="grid-column: 3/span 2;"></div>
 
-                    <input type="radio" id="btnDrawTypeId" name="typeColors" style="margin: 4px 0 4px 10px;">
-                    <label for="btnDrawTypeId" style="vertical-align:baseline; margin: 4px 4px 0px 8px;" >Draw Line</label>
-                    <div id="drawDisplayId" class="typeColorShape" style="grid-column: 7/span 2;"></div>
+                    <input type="radio" id="btnDrawTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
+                    <label for="btnDrawTypeId" style="vertical-align:baseline; margin: 4px 4px 0px 6px;" >Draw Line</label>
+                    <div id="drawDisplayId" class="typeColorShape" style="grid-column: 7/span 6;"></div>
 
-                    <input type="radio" id="btnBorderTypeId" name="typeColors" style="margin:4px 0 0 10px;">
-                    <label for="btnBorderTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Node Borders</label>
+                    <input type="radio" id="btnBorderTypeId" name="typeColors" style="margin:4px 0 0 4px; width: 18px; height: 18px;">
+                    <label for="btnBorderTypeId" style="vertical-align:baseline; margin: 4px 4px 0 4px;" >Node Border</label>
                     <div id="borderDisplayId" class="typeColorShape" style="grid-column: 3/span 2;"></div>
 
-                    <input type="radio" id="btnResizeTypeId" name="typeColors" style="margin:4px 0 0 10px;">
-                    <label for="btnResizeTypeId" style="vertical-align:baseline; margin: 4px 4px 0 8px;" >Resize Frame</label>
+                    <input type="radio" id="btnResizeTypeId" name="typeColors" style="margin:4px 0 0 6px; width: 18px; height: 18px;">
+                    <label for="btnResizeTypeId" style="vertical-align:baseline; margin: 4px 4px 0 6px;" >Resize </label>
                     <div id="resizeDisplayId" class="typeColorShape" style="grid-column: 7/span 2;"></div>
                 </div>
 
 
-                <div class="settings-entry" style="margin: 5px 0 4px 0;">Edit Selected Colors:</div>
+                <div id="colorEditTitleId" class="settings-entry" style="margin: 10px 0 4px 0;">Edit Selected Colors:</div>
                 <div class="nodeProps-controls nodeColorSelect" >
                     <input id="typeColorPickId" type="text"  class="nodeColorItem"/>
                     <div class="nodeColorSelect">
-                        <ul style="list-style-type: none; margin: 0 0 0 18px; padding: 0;">
+                        <ul style="list-style-type: none; margin: 0 0 0 15px; padding: 0;">
                             <li >
                                 <div data-bind="visible: showBackgroundSelection">
                                     <div class="rectColorRadio">
@@ -990,7 +1055,7 @@
                 <li><a href="#nodePropsTabId-1">General</a></li>
                 <li><a href="#nodePropsTabId-2">Table Data</a></li>
                 <li><a href="#nodePropsTabId-3">Connectivity</a></li>
-                <li><a href="#nodePropsTabId-4">Tasks</a></li>
+                <!--<li><a href="#nodePropsTabId-4">Tasks</a></li>-->
             </ul>
 
             <div id="nodePropsTabId-1" >
@@ -1057,7 +1122,7 @@
                     <input type="text" id="spNodeHeightId" class="spinnerStyleNode" readonly>
                     <label for="spNodeHeightId" class="spinner-label-node">Height</label>
                     <span style="margin: 0 0 0 12px;"></span>
-                    <button id="nodeSizeDefId" class="prefs-button prefs-dmsNode-button-def">Reset</button>
+                    <button id="nodeSizeDefId" class="prefs-button prefs-dmsNode-button-def">Use Defaults</button>
                 </div>
 
                 <div class="settings-entry" style="margin: 6px 0 2px 0;">Text Content:</div>
