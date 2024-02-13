@@ -2,7 +2,8 @@ html,
 body {
 	margin: 0;
   	height: 100vh;
-	overflow: hidden;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 body.waiting * {
 	cursor: progress !important;
@@ -12,21 +13,25 @@ body.waiting * {
 *:focus  {
 	outline-color: #72AAFA !important;
 }
-#screenId {
+.screenContainer {
 	display: grid;
-	grid-template-rows: 54px auto ;
-	column-gap: 0;
+	grid-template-rows: 54px 1200px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
-#navbarContainerId {
-	display: inline;
-	padding-bottom: 10px;
 	
-}
+	
+	
 .top-toolbar {
+	grid-row-start: 1;
 	width: 100%;
 	height: 32px;
 	padding: 0 6px;
 	margin: 8px auto;
+	visibility: visible !important;
 	
 	
 	display: inline-flex;
@@ -51,6 +56,7 @@ body.waiting * {
 	
 	
 	border: 1px solid #8aa2f1;
+	border-radius: 4px;
 	
 	background-color: #E1F5FF;
 	width: 70px;
@@ -79,6 +85,7 @@ body.waiting * {
 	padding: 0 2px 4px 6px;
 }
 .top-container {
+	grid-row-start: 2;
 	display: grid;
 	grid-template-columns: auto 214px;
 	grid-template-rows: auto 10px;
@@ -148,15 +155,31 @@ body.waiting * {
 ::-webkit-scrollbar-thumb:window-inactive {
 	background: rgba(255,0,0,0.4);
 }
+.typeSelection {
+	display: grid;
+	grid-template-rows: 22px 22px 22px;
+	align-self: start;
+}
 .palette-content {
-	grid-column-start: 2;
-	grid-row-start: 1;
+	grid-column: 2;
+	grid-row: 1;
 	align-self: start;
 	justify-self: center;
+	height: 500px;
+	overflow-y: scroll !important;
 	margin: 0 0 12px 0;
 	display: none;
-	padding:  4px 0 20px 0;
-	
+}
+.palette-wrapper {
+	display: block;
+	overflow: scroll;
+}
+.palette-hr {
+	width: 136px;
+	height: 1px;
+	border-top: 1px solid blue;
+	margin: 8px 10px 0 2px;
+	float: left;
 }
 .overlayMessage {
 	position: fixed;
@@ -257,12 +280,14 @@ body.waiting * {
 }
 .accordion-items {
 	width: 192px;
+	height: 14px;
 }
 .accordion-props-pages {
+	
 	width: 214px;
 	
 	
-	height: 408px;
+	height: 428px;
 }
 #paletteAccordionId .ui-accordion-content {
 	margin: 0 10px 0 10px;
@@ -273,8 +298,9 @@ body.waiting * {
 }
 #paletteAccordionId .ui-accordion-header{
 	margin: 0px 0px 1px 10px;
-	padding-left: 2px;
-	padding-right: 2px;
+	padding: 2px 2px 8px 2px;
+	
+	
 	font-family: Arial;
 	font-size: 10pt;
 	font-weight: bold;
@@ -288,23 +314,7 @@ body.waiting * {
 	font-size: 9pt;
 	font-weight: bold;
 }
-table#accHdrDemoTableId td {
-	padding: 2px 0 2px 12px;
-	line-height: 18px;
-}
-table#accSETableId td {
-	padding: 0 0 0 12px;
-	line-height: 14px;
-}
 table#accFlowTableId td {
-	padding: 0 0 0 12px;
-	line-height: 14px;
-}
-table#accSwimTableId td {
-	padding: 0 0 0 12px;
-	line-height: 14px;
-}
-table#accQuizTableId td {
 	padding: 0 0 0 12px;
 	line-height: 14px;
 }
@@ -316,9 +326,13 @@ table#accERDTableId td {
 	padding: 0 0 0 12px;
 	line-height: 14px;
 }
-table#accHdrPagesTableId td {
-	padding: 2px 0 2px 12px;
-	line-height: 18px;
+table#accLOGTableId td {
+	padding: 0 0 0 12px;
+	line-height: 14px;
+}
+table#accPROCTableId td {
+	padding: 0 0 0 12px;
+	line-height: 14px;
 }
 #thumbnailDialogId {
 	overflow: hidden !important;
@@ -378,6 +392,11 @@ table#accHdrPagesTableId td {
 }
 .complist {
 	list-style-type: none;
+}
+.settingsView {
+	display: none;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 .galleryFont {
 	font-family: Arial;
@@ -481,7 +500,7 @@ label {
 	row-gap: 8px;
 }
 .settings-footer-1 {
-	margin: 74px 0 0 0;
+	margin: 118px 0 0 0;
 }
 .settings-footer-2 {
 	margin: 220px 0 0 0;
@@ -501,6 +520,9 @@ label {
 .settings-footer-6a {
 	margin: 126px 0 0 0;
 }
+.nodePropsFooter {
+	margin: 40px 0 0 0;
+}
 .nodeProps-controls {
 	background-color: #eaf0fa;
 	margin: 1px 0 2px 0;
@@ -519,32 +541,83 @@ label {
 .inlineInputContainer {
 	position: absolute;
 	outline: none;
-	
-	
 	width: 246px;
 	height: 26px;
-	
-	
-	
 	visibility: hidden;
-	
 	z-index: 20;
 }
 .inlineAreaContainer {
 	position: absolute;
 	outline: none;
-	
-	
 	width: 286px;
 	height: 64px;
-	
-	
-	
 	visibility: hidden;
-	
 	z-index: 20;
 }
-.inlineAreaText {
+.taskEditor {
+	position: absolute;
+	outline: none;
+	width: 252px;
+	height: 328px;
+	visibility: hidden;
+	z-index: 20;
+	border: 2px solid navy;
+	background-color: #f3f6fc;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+}
+.taskNodeTitle {
+	font-family: Arial;
+	font-size: 12px;
+	margin: 4px 0 0 2px;
+	font-weight: bold;
+	border: none;
+	outline: none;
+	width: 244px;
+	height: 18px;
+	background-color: #f3f6fc;
+}
+.taskItem {
+	margin: 10px 2px 6px 10px;
+	background-color: #ddeafa;
+}
+.taskListMenu {
+	height: 14px;
+	
+	margin: 4px 0 4px 0;
+}
+.taskListSelection {
+	margin: 4px 0 2px 0;
+	
+}
+.taskSelectBtn {
+	border: none;
+	outline: none;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	height: 24px;
+	width: 24px;
+	background-color: #ddeafa;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.taskSelectBtn:hover {
+	background-color: #dddddd;
+}
+.taskSelectBtn:disabled {
+	background-color: #ffffff;
+	cursor: default;
+	opacity: 0.5;
+}
+.taskSelectBtn:active {
+	background-color: #bbbbbb;
+}
+.taskEditGrid {
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 184px 26px 26px;
+	margin-top: 4px;
 }
 .prefsNodeDisplay {
 	display: grid;
@@ -677,7 +750,7 @@ label {
 }
 .ui-selectmenu-menu .ui-menu.customicons .ui-menu-item-wrapper {
 	padding: 0 10px 0 30px;
-	height: 20px;
+	height: 16px;
 }
 .ui-selectmenu-text {
 	
@@ -700,8 +773,10 @@ label {
 	padding: 0 10px 0 30px;
 	
 }
-	
-	
+.cardinalityMenu {
+	height: 20px;
+	width: 200px;
+}
 .ui-selectmenu-menu .ui-menu.porticons .ui-menu-item-wrapper {
 	padding: 0 10px 0 30px;
 	width: 120px;
@@ -712,7 +787,7 @@ label {
 }
 .settingsSchemeMenu {
 	height: 16px;
-	width: 120px;
+	
 	margin: 4px 0 4px 0;
 	
 }
@@ -813,9 +888,8 @@ label {
 	cursor: pointer;
 }
 .prefs-button-def {
-	margin-left: 52px;
-	width: 86px;
-	height: 28px
+	width: 80px;
+	height: 28px;
 }
 .prefs-button:hover {
 	background-color: #d0d0d0;
@@ -855,11 +929,22 @@ label {
 	width: 116px;
 	height: 28px;
 }
-.buttonSettingsScheme {
-	margin: 2px 0 2px 2px;
+.btnSettingsScheme {
+	margin: 2px 0 2px 6px;
 	width: 100px;
 	height: 26px;
 	float: right;
+}
+.btnSettingsScheme2 {
+	margin: 2px 0 2px 6px;
+	width: 120px;
+	height: 26px;
+	float: right;
+}
+.btnSettingsSchemeSave {
+	margin: 2px 0 2px auto;
+	width: 100px;
+	height: 26px;
 }
 .schemeName {
 	width: 232px;
@@ -936,29 +1021,6 @@ label {
 	line-height: normal;
 }
 .disabled { color: #aaaaaa; }
-.decision-top {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: center;
-	align-items: flex-start;
-	
-	
-	
-	
-	
-	
-	
-}
-.decision-item {
-	flex: 0 0 auto;
-	align-self: center;
-}
-.decision-slx {
-	opacity: 0.5;
-}
-.decision-slx:hover {
-	opacity: 1.0;
-}
 .lineStyle-top {
 	display: flex;
 	flex-flow: row nowrap;
@@ -977,11 +1039,7 @@ label {
 	outline: none;
 	height: 120px;
 	width: 460px;
-	
-	
 	background-image: url(../../images/splash/mnt32-2.JPG);
-	
-	
 	background-repeat: no-repeat;
 	background-position: top;
 	padding: 0;
@@ -1027,14 +1085,195 @@ label {
 	
 	foreground-color: #195aee;
 }
+#startToTopBtn {
+	
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 9999;
+	border: none;
+	outline: none;
+	background-color: #ee4e36;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 2px;
+	background-image: url(../../images/toolbar/scrollToTop32.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width:32px;
+	height:32px;
+}
+#startToTopBtn:hover {
+	background-color: #555;
+}
+.startPage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	color: #08105d;
+	display: grid;
+	grid-template-columns: 8px auto 80px;
+	grid-template-rows: 2px 80px 80px 340px 400px;
+	overflow: auto  !important;
+	
+}
+.startPageTop {
+	grid-column: 2;
+	grid-row: 2;
+	display: grid;
+	grid-template-columns: 120px auto 120px;
+	width: 98%;
+	height: 80px;
+}
+.startPageHeader {
+	
+	display: flex;
+	flex-wrap: nowrap;
+	grid-column:  2;
+	grid-row: 2;
+	justify-self: center;
+	
+}
+.startLogoImg {
+	
+	border: 2px solid white;
+	outline: 2px solid white;
+	height: 67px;
+	width: 100px;
+	background-image: url(../../images/splash/JDEliteGraphTM100.png);
+	background-repeat: no-repeat;
+	background-position: top;
+	margin: 6px 0 0 6px;
+}
+.startJDEtitle {
+	
+	text-align: center;
+	font-family: Arial;
+	font-size: 24px;
+	font-weight: bold;
+	color: #08105d;
+	margin: 20px 0 0 20px;
+}
+.startDiagramTab {
+	border: 3px solid #ccccff;
+	border-radius: 10px;
+	
+	background-color: #bde5ee;
+	width: 200px;
+	height: 34px;
+	
+	text-align: center;
+	padding: 12px 0;
+}
+.startDiagramTab:hover {
+	border: 3px solid #8485CC !important;
+	background-color: #a4c8ee !important;
+	cursor: pointer;
+}
+.startDiagramContent {
+	border: 3px solid #8485CC;
+	border-radius: 10px;
+	background-color: #bde5ee;
+	width: 260px;
+	height: 298px;
+	margin-top: 20px;
+	
+}
+	
+	
+	
+	
+	
+	
+.startDiagramTypes {
+	margin: 10px 0 0 0;
+	display: flex;
+	flex-wrap: wrap;
+	grid-column: 1/span 2;
+	justify-self: center;
+	grid-row: 3;
+}
+.startDiagramTitle {
+	margin: 10px 0 0 8px;
+	font-family: Arial;
+	font-size: 22px;
+	font-weight: bold;
+	color: #08105d;
+}
+.startCallGroup1 {
+	display: flex; margin: 8px 0 0 0;
+}
+.startCallGroup2 {
+	display: flex; margin: -12px 0 0 0;
+}
+.startCallGroup3 {
+	display: flex; margin: -11px 0 0 0;
+}
+.startTextDetails {
+	text-align: left;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 2.0;
+	color: #08105d;
+	margin: 10px 0 0 0;
+}
+.startGoButton {
+	margin: 10px 0 0 8px;
+}
+.startFlowImg {
+	grid-column: 1;
+	
+	border: 1px solid green;
+	width: 220px;
+	height: 156px;
+	background-image: url(../../images/splash/commonFlow220.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 20px 0 0 20px;
+}
+.startDBImg {
+	grid-column: 1;
+	width: 242px;
+	border: 1px solid green;
+	height: 152px;
+	background-image: url(../../images/splash/databaseERD220.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 20px 0 0 8px;
+}
+.startLOGImg {
+	grid-column: 1;
+	border: 1px solid green;
+	width: 216px;
+	height: 154px;
+	background-image: url(../../images/splash/logicalERD220.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 20px 0 0 20px;
+}
+.startProcImg {
+	grid-column: 1;
+	border: 1px solid green;
+	width: 242px;
+	height: 154px;
+	background-image: url(../../images/splash/businessProc221.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 20px 0 0 8px;
+}
 .toolbar-button {
-	border: 1px solid #aaaaaa;
+	
+	border: none;
 	outline: none;
 	transition-duration: 0.2s;
 	cursor: pointer;
 	height: 28px;
 	width: 30px;
-	background-color: #efefef;
+	background-color: #fff;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -1107,6 +1346,11 @@ label {
 }
 .flow-button:active {
 	background-color: #82AAFA;
+}
+.flow-button:disabled {
+	background-color: #ffffff;
+	cursor: default;
+	opacity: 0.5;
 }
 .dgm-button {
 	border: none;
@@ -1246,6 +1490,12 @@ label {
 .button-down {
 	background-image: url(../../images/toolbar/navigate_down24.png);
 }
+.button-goRight {
+	background-image: url(../../images/toolbar/goRight24.png);
+}
+.button-goLeft {
+	background-image: url(../../images/toolbar/goLeft24.png);
+}
 .button-leftDir {
 	background-image: url(../../images/toolbar/arrow_left24.png);
 }
@@ -1357,21 +1607,13 @@ label {
 	background-repeat: no-repeat;
 	background-position: center;
 }
-.button-decisionPrev {
-	background-image: url(../../images/toolbar/navigate_left24.png);
-	vertical-align: 90%;
-}
-.button-decisionNext {
-	background-image: url(../../images/toolbar/navigate_right24.png);
-	vertical-align: 90%;
-}
 .ui-dialog-title{
 	
 	font-size: 10pt !important;
 	color: #ffffff !important;
+	
 }
 .ui-dialog-titlebar {
-	
 	background: #72AAFA !important;
 	
 	margin: -4px -5px 0 -5px !important;
@@ -1379,17 +1621,39 @@ label {
 .noTitleBar .ui-dialog-titlebar {
 	
 }
+.ui-dialog .ui-dialog-titlebar-close .ui-icon-closethick {
+	background-image: url(../../images/toolbar/delete18x24Wht.png);
+	background-position: left+3px top !important;
+	border: none;
+	outline: none;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	height: 24px;
+	width: 24px;
+	background-repeat: no-repeat;
+	margin: -12px -16px -4px !important;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+	background: none !important;
+	border: none !important;
+}
+.ui-dialog .ui-dialog-titlebar-close .ui-icon-closethick:hover {
+	background-image: url(../../images/toolbar/delete18x24Blue.png);
+	padding: 0 !important;
+	background-color: #ddeafa;
+	margin: -12px -16px -4px !important;
+}
 .ui-dialog .ui-dialog-buttonpane button {
-	border-radius: 2px !important;
+	border-radius: 0 !important;
 }
 .ui-dialog .ui-dialog-buttonpane button:focus {
-	border-radius: 0px !important;
+	border-radius: 0 !important;
 }
 .ui-dialog .ui-dialog-buttonpane button:hover {
 	background-color: #d0d0d0 !important;
 }
 .ui-dialog .ui-dialog-buttonpane button:active{
-	border-radius: 0px !important;
+	border-radius: 1px !important;
 	background-color: #72AAFA !important;
 	outline-color: #72AAFA !important;
 }
@@ -1545,8 +1809,6 @@ table#linkPropsTableId td {
 	padding: 2px;
 }
 .nodePropsContainer {
-	
-	
 	overflow: hidden;
 	height:410px;
 }
@@ -1567,17 +1829,6 @@ table#linkPropsTableId td {
 	width: 184px;
 	
 	margin: 0;
-}
-.nodeOpsMenu {
-	height: 16px;
-	
-	margin: 4px 0 4px 0;
-}
-.btnNodeOps {
-	margin: 20px 0 2px 2px;
-	width: 100px;
-	height: 26px;
-	float: right;
 }
 .ui-tooltip {
 	
@@ -1643,6 +1894,163 @@ table#dirsTableId td {
 	
 	height:312px;
 	width:98%;
+}
+.dbTableCardinality {
+	position: absolute;
+	outline: none;
+	width: 216px  !important;
+	height: 118px;
+	visibility: hidden;
+	border: 2px solid navy;
+	background-color: #f3f6fc;
+}
+#dbCardinalityId {
+	display:block;
+	
+	height: 118px;
+	width: 100%;
+}
+#portCardSelectionId {
+	margin: 10px;
+	width: 208px;
+}
+.decision-top {
+	display: grid;
+	grid-template-columns: 50px 28px 104px 34px;
+	grid-template-rows: 30px 40px 30px;
+	align-items: center;
+	margin: 10px 0 0 10px;
+}
+.decision-item {
+	
+	align-self: center;
+}
+.decisionTitle {
+	font-family: Arial;
+	font-size: 12px;
+	margin: 4px 0 2px 4px;
+	font-weight: bold;
+	border: none;
+	outline: none;
+	width: 228px;
+	height: 20px;
+	background-color: #f3f6fc;
+}
+.decisionLayout {
+	position: absolute;
+	
+	width: 236px;
+	height: 182px;
+	visibility: hidden;
+	border: 2px solid navy;
+	background-color: #f3f6fc;
+}
+#decisionContentId {
+	display: block;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	width: 100%;
+}
+.decisionButtons {
+	width: 70px;
+	height: 25px;
+	margin: 6px 6px 6px 0;
+	float: right;
+	border: 1px solid navy;
+}
+.dbTableContainer {
+	position: absolute;
+	outline: none;
+	width: 346px  !important;
+	height: 166px;
+	visibility: hidden;
+	border: 2px solid navy;
+	background-color: #f3f6fc;
+}
+.dbTableTitle {
+	font-family: Arial;
+	font-size: 12px;
+	margin: 4px 0 2px 2px;
+	font-weight: bold;
+	border: none;
+	outline: none;
+	width: 208px;
+	height: 20px;
+	background-color: #f3f6fc;
+}
+.dbTableCaption {
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 6px 0 2px 8px;
+	text-align:left;
+}
+.dbTableTooltip {
+	position: absolute;
+	outline: none;
+	visibility: hidden;
+	heigth: 16px;
+	z-index: 100;
+}
+.dbTableTooltipContent {
+	height: 16px;
+	font-family: Arial;
+	font-size: 12px;
+	margin-left: 2px;
+	font-weight: bold;
+	outline: none;
+	border: none;
+}
+table#dbTableColumnDefId th {
+	padding: 1px 1px 1px 1px;
+	color: #ffffff;
+	background-color: #72AAFA !important;
+}
+table#dbTableColumnDefId td {
+	text-align: center;
+	border-collapse: collapse;
+	padding: 1px;
+	background-color: #c9eeef;
+}
+	
+	
+	
+table#dbTableContentId td {
+	
+	
+	
+	
+	border: 1px solid #aaaaaa;
+}
+	
+.dbTableContentButtons {
+	width: 70px;
+	height: 25px;
+	margin: 6px 4px 6px 0;
+	float: right;
+	border: 1px solid navy;
+}
+#inputKeyId {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 2px;
+	
+}
+#inputTypeId {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 2px;
+}
+#inputAutoIncrId {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 2px;
+}
+#inputNotNullId {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 2px;
 }
 #nodeTableContainer {
 	display: block;
