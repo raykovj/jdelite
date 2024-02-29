@@ -259,7 +259,6 @@
         </div>
     </div>
 
-
 </div>
 
     <div id="blockResizeId" class="containerGroup" style="visibility: hidden">
@@ -291,7 +290,7 @@
         <div id="settingsTabId" >
             <ul>
                 <li><a href="#settingsTabId-1">General</a></li>
-                <li><a href="#settingsTabId-2">Node Size</a></li>
+                <!--<li><a href="#settingsTabId-2">Node Size</a></li>-->
                 <li><a href="#settingsTabId-3">Colors</a></li>
                 <li><a href="#settingsTabId-4">Node Icons</a></li>
                 <li><a href="#settingsTabId-5">Schemes</a></li>
@@ -375,39 +374,39 @@
                 </div>
             </div>
 
-            <div id="settingsTabId-2">
-                <div class="settings-entry">Start / End</div>
-                <div class="settings-controls">
-                    <input type="text" id="spinnerSEWidthId" class="spinnerStyle" readonly>
-                    <label for="spinnerSEWidthId" class="spinner-label" style="margin-right: 10px;" >Width (px)</label>
-                    <input type="text" id="spinnerSEHeightId" class="spinnerStyle" readonly>
-                    <label for="spinnerSEHeightId" class="spinner-label">Height (px)</label>
-                    <button id="dmsSEDefId" class="prefs-button prefs-dms-button-def">Use Defaults</button>
-                </div>
+            <!--<div id="settingsTabId-2">-->
+                <!--<div class="settings-entry">Start / End</div>-->
+                <!--<div class="settings-controls">-->
+                    <!--<input type="text" id="spinnerSEWidthId" class="spinnerStyle" readonly>-->
+                    <!--<label for="spinnerSEWidthId" class="spinner-label" style="margin-right: 10px;" >Width (px)</label>-->
+                    <!--<input type="text" id="spinnerSEHeightId" class="spinnerStyle" readonly>-->
+                    <!--<label for="spinnerSEHeightId" class="spinner-label">Height (px)</label>-->
+                    <!--<button id="dmsSEDefId" class="prefs-button prefs-dms-button-def">Use Defaults</button>-->
+                <!--</div>-->
 
-                <div class="settings-entry">Flow / Side</div>
-                <div class="settings-controls">
-                    <input type="text" id="spinnerNodeWidthId" class="spinnerStyle" readonly>
-                    <label for="spinnerNodeWidthId" class="spinner-label" style="margin-right: 10px;" >Width (px)</label>
-                    <input type="text" id="spinnerNodeHeightId" class="spinnerStyle" readonly>
-                    <label for="spinnerNodeHeightId" class="spinner-label">Height (px)</label>
-                    <button id="dmsFlowDefId" class="prefs-button prefs-dms-button-def ">Use Defaults</button>
-                </div>
+                <!--<div class="settings-entry">Flow / Side</div>-->
+                <!--<div class="settings-controls">-->
+                    <!--<input type="text" id="spinnerNodeWidthId" class="spinnerStyle" readonly>-->
+                    <!--<label for="spinnerNodeWidthId" class="spinner-label" style="margin-right: 10px;" >Width (px)</label>-->
+                    <!--<input type="text" id="spinnerNodeHeightId" class="spinnerStyle" readonly>-->
+                    <!--<label for="spinnerNodeHeightId" class="spinner-label">Height (px)</label>-->
+                    <!--<button id="dmsFlowDefId" class="prefs-button prefs-dms-button-def ">Use Defaults</button>-->
+                <!--</div>-->
 
-                <div class="settings-entry">Decision</div>
-                <div class="settings-controls">
-                    <input type="text" id="spinnerDecisionWidthId" class="spinnerStyle" readonly>
-                    <label for="spinnerDecisionWidthId" class="spinner-label" style="margin-right: 10px;" >Width (px)</label>
-                    <input type="text" id="spinnerDecisionHeightId" class="spinnerStyle" readonly>
-                    <label for="spinnerDecisionHeightId" class="spinner-label">Height (px)</label>
-                    <button id="dmsDecisionDefId" class="prefs-button prefs-dms-button-def">Use Defaults</button>
-                </div>
+                <!--<div class="settings-entry">Decision</div>-->
+                <!--<div class="settings-controls">-->
+                    <!--<input type="text" id="spinnerDecisionWidthId" class="spinnerStyle" readonly>-->
+                    <!--<label for="spinnerDecisionWidthId" class="spinner-label" style="margin-right: 10px;" >Width (px)</label>-->
+                    <!--<input type="text" id="spinnerDecisionHeightId" class="spinnerStyle" readonly>-->
+                    <!--<label for="spinnerDecisionHeightId" class="spinner-label">Height (px)</label>-->
+                    <!--<button id="dmsDecisionDefId" class="prefs-button prefs-dms-button-def">Use Defaults</button>-->
+                <!--</div>-->
 
-                <div >
-                    <button id="allDmsToDefId" class="prefs-button prefs-all-button">Use All Defaults</button>
-                </div>
-                <div class="settings-footer-2"></div>
-            </div>
+                <!--<div >-->
+                    <!--<button id="allDmsToDefId" class="prefs-button prefs-all-button">Use All Defaults</button>-->
+                <!--</div>-->
+                <!--<div class="settings-footer-2"></div>-->
+            <!--</div>-->
 
             <div id="settingsTabId-3" style="height: 100%; ">
 
@@ -655,14 +654,15 @@
     <!-- ABOUT -->
     <div id="aboutDialogId" class="about-dlg">
         <img class="about-img"/>
+        <img class="about-logo"/>
         <div class="about-title" data-bind="text: aboutTitle()"></div>
-        <span class="selectionFont vertical" style="padding: 12px 20px 2px; "
+        <span class="aboutTitleFont vertical" style="padding: 12px 20px 2px; "
               data-bind="text: aboutTitle()"></span>
-        <span class="galleryFont vertical" style="padding: 0 20px; "
+        <span class="about-font vertical" style="padding: 0 20px; "
              data-bind="text: aboutVersion()"></span>
-        <span class="galleryFont vertical" style="padding: 8px 20px; "
+        <span class="about-font vertical" style="padding: 8px 20px; "
              data-bind="html: aboutText()"></span>
-        <span class="galleryFont vertical" style="padding: 2px 20px; "
+        <span class="about-font vertical" style="padding: 2px 20px; "
              data-bind="html: aboutSources()"></span>
         <!--<span class="galleryFont vertical about-copyright" style="padding: 2px 20px 10px; "-->
              <!--data-bind="text: aboutCopyright()"></span>-->
@@ -936,11 +936,19 @@
              data-bind="visible: isConnectionOK() && isSaveMode() && !showTemplatesOnly()">
             <span style="margin: 10px 6px 0 0 ; ">Enter file name:</span>
             <div>
-                <input id="saveAsFileNameId" type="text" autocomplete="off" spellcheck="false"
-                       onkeyup="validateSaveAsFileName(event)" class="saveAsText"
-                       data-bind="textInput: saveAsFileNameValue, css: {invalidInput: saveAsInputInvalid() }"/>
-                <span style="margin: 4px 0px 4px 2px; font-weight: bold;">.json</span>
+                <input id="saveAsFileNameId" autofocus type="text" class="saveAsText"
+                       autocomplete="off" spellcheck="false"
+                       onkeyup="validateSaveAsFileName(event)"
+                       data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
+                <span style="margin: 4px 4px 8px 4px; font-weight: bold;">.json</span>
+                <div style="background: white">
+                    <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
+                            data-bind="visible: isEditNameInvalid()" disabled></button>
+                        <span class="invalid-message"
+                              data-bind="visible: isEditNameInvalid(), text: validateNameMessage()"></span>
+                </div>
             </div>
+
             <span style="margin: 12px 6px 0 0 ; ">Enter version #:</span>
             <div>
                 <input id="saveVersionId" type="text" autocomplete="off" spellcheck="false"
@@ -960,45 +968,17 @@
     <div id="newFlowDialogId" class="settingsFont" style="display: none; ">
         <div style="font-weight: bold; margin: 4px 0 4px; ">Enter file name:</div>
         <div>
-            <input id="newFileNameId" type="text" autocomplete="off" spellcheck="false"
-                   onkeyup="validateFSName(event)"
-                   style="height: 20px; width: 320px; margin: 4px 0 8px;"
-                   data-bind="textInput: newFSNameValue, css: {invalidInput: isInputInvalid() }"/>
+            <input id="newFileNameId" autofocus type="text" class="nameText"
+                   autocomplete="off" spellcheck="false"
+                   onkeyup="validateNewFlowName(event)"
+                   data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
             <span style="margin: 4px 4px 8px 4px; font-weight: bold;">.json</span>
-        </div>
-        <div>
-            <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
-                    data-bind="visible: isInputInvalid()" disabled></button>
-            <span class="invalid-message"
-                    data-bind="visible: isInputInvalid(), text: validateMessage()"></span>
-        </div>
-        <div>
-            <!--<div class="settings-entry">Diagram Type:</div>-->
-            <!--<div class="settings-controls">-->
-                <!--<div class="typeSelection">-->
-                    <!--<div>-->
-                        <!--<input id="btnFlowDiagramId" type="radio" name="dgmTypeMode" style="margin: 0 2px 0 8px;">-->
-                        <!--<label id="btnFlowDiagramLabelId" for="btnFlowDiagramId" style="vertical-align: 20%; margin: 0 2px 0 2px;"-->
-                               <!--data-bind="text: diagramTypeFlow"></label>-->
-                    <!--</div>-->
-                    <!--<div>-->
-                        <!--<input id="btnERDDiagramId" type="radio" name="dgmTypeMode" style="margin: 0 2px 0 8px;">-->
-                        <!--<label id="btnERDDiagramLabelId" for="btnERDDiagramId" style="vertical-align: 20%;  margin: 0 2px 0 2px;"-->
-                               <!--data-bind="text: diagramTypeERD"></label>-->
-                    <!--</div>-->
-                    <!--<div>-->
-                        <!--<input id="btnLOGDiagramId" type="radio" name="dgmTypeMode" style="margin: 0 2px 0 8px;">-->
-                        <!--<label id="btnLOGDiagramLabelId" for="btnLOGDiagramId" style="vertical-align: 20%;  margin: 0 2px 0 2px;"-->
-                               <!--data-bind="text: diagramTypeLOG"></label>-->
-                    <!--</div>-->
-                    <!--<div>-->
-                        <!--<input id="btnPROCDiagramId" type="radio" name="dgmTypeMode" style="margin: 0 2px 0 8px;">-->
-                        <!--<label id="btnPROCDiagramLabelId" for="btnPROCDiagramId" style="vertical-align: 20%;  margin: 0 2px 0 2px;"-->
-                               <!--data-bind="text: diagramTypeProc"></label>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-            <!--</div>-->
+            <div style="background: white">
+                <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
+                        data-bind="visible: isEditNameInvalid()" disabled></button>
+                        <span class="invalid-message"
+                              data-bind="visible: isEditNameInvalid(), text: validateNameMessage()"></span>
+            </div>
         </div>
     </div>
 
@@ -1012,15 +992,16 @@
         </div>
         <div style="font-weight: bold; margin: 4px 0 4px; ">Enter folder name:</div>
         <div>
-            <input id="newFolderNameId" type="text" autocomplete="off" spellcheck="false"
-                   onkeyup="validateFSName(event, true)" class="folderText newFolderText"
-                   data-bind="textInput: newFSNameValue, css: {invalidInput: isInputInvalid() }"/>
-        </div>
-        <div>
-            <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
-                    data-bind="visible: isInputInvalid()" disabled></button>
-            <span class="invalid-message"
-                    data-bind="visible: isInputInvalid(), text: validateMessage()"></span>
+            <input id="newFolderNameId" autofocus type="text" class="folderText newFolderText"
+                   autocomplete="off" spellcheck="false"
+                   onkeyup="validateNewFolderName(event)"
+                   data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
+            <div style="background: white">
+                <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
+                        data-bind="visible: isEditNameInvalid()" disabled></button>
+                        <span class="invalid-message"
+                              data-bind="visible: isEditNameInvalid(), text: validateNameMessage()"></span>
+            </div>
         </div>
     </div>
 
@@ -1462,98 +1443,95 @@
     </div>
 
     <div id="nodePropsDialogId" class="settingsFont" style="display: none; overflow: hidden;">
-        <!--<div id="nodePropsTabId" class="nodePropsContainer">-->
+        <div class="settings-entry" style="margin: 6px 0 2px 0;">Node name:</div>
+        <div class="nodeProps-controls">
+            <input id="editNodeNameId" autofocus type="text" class="nameText"
+                   autocomplete="off" spellcheck="false"
+                   onkeyup="validateDialogNodeName(event)"
+                   data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
+            <input type="checkbox" id="chkHideNodeNameId" name="nodeNameHide" style="margin: 6px 0 0 0; ">
+            <label for="chkHideNodeNameId" style="vertical-align: text-top; " >Hide</label>
+        </div>
+        <div>
+            <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
+                    data-bind="visible: isEditNameInvalid()" disabled></button>
+            <span class="invalid-message"
+                    data-bind="visible: isEditNameInvalid(), text: validateNameMessage()"></span>
+        </div>
 
-                <div class="settings-entry" style="margin: 6px 0 2px 0;">Node name:</div>
-                <div class="nodeProps-controls">
-                    <input id="editNodeNameId" autofocus type="text" class="nameText"
-                           autocomplete="off" spellcheck="false"
-                           onkeyup="validateDialogNodeName(event)"
-                           data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
-                    <input type="checkbox" id="chkHideNodeNameId" name="nodeNameHide" style="margin: 6px 0 0 0; ">
-                    <label for="chkHideNodeNameId" style="vertical-align: text-top; " >Hide</label>
+        <div class="settings-entry" style="margin: 6px 0 2px 0;">Node Icon:</div>
+        <div class="nodeProps-controls">
+            <select id="nodeIconItemsId" class="nodeIconMenu"
+                    data-bind="options: nodeEmojiItems, optionsValue: 'value'">
+            </select>
+            <input type="checkbox" id="chkShowNodeIconId" name="nodeIconShow" style="margin: 6px 2px 0 24px; ">
+            <label for="chkShowNodeIconId" style="vertical-align: text-top;">Show Icon</label>
+        </div>
+
+        <div class="settings-entry" style="margin: 6px 0 2px 0;">Node Colors:</div>
+        <div class="nodeProps-controls prefsNodeDisplay">
+            <input id='nodeBckGndPickId' type="text"/>
+            <div class="nodeColorsGrid">
+                <div class="rectColorRadio">
+                    <input type="radio" id="btnNodeBckgndId" name="nodeClr" >
+                    <label for="btnNodeBckgndId" style="vertical-align:baseline; " >Background</label>
                 </div>
-                <div>
-                    <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
-                            data-bind="visible: isEditNameInvalid()" disabled></button>
-                    <span class="invalid-message"
-                            data-bind="visible: isEditNameInvalid(), text: validateNameMessage()"></span>
+                <div id="nodeBkgnDisplayId" class="rectColorShape"></div>
+
+                <div class="rectColorRadio">
+                    <input type="radio" id="btnNodeForgndId" name="nodeClr"  data-bind="enable: propsFgndVisible()">
+                    <label for="btnNodeForgndId" style="vertical-align:baseline; ">Foreground</label>
                 </div>
+                <div id="nodeFgnDisplayId" class="rectColorShape"  data-bind="enable: propsFgndVisible()"></div>
 
-                <div class="settings-entry" style="margin: 6px 0 2px 0;">Node Icon:</div>
-                <div class="nodeProps-controls">
-                    <select id="nodeIconItemsId" class="nodeIconMenu"
-                            data-bind="options: nodeEmojiItems, optionsValue: 'value'">
-                    </select>
-                    <input type="checkbox" id="chkShowNodeIconId" name="nodeIconShow" style="margin: 6px 2px 0 24px; ">
-                    <label for="chkShowNodeIconId" style="vertical-align: text-top;">Show Icon</label>
+                <div class="rectColorRadio">
+                    <input type="radio" id="btnNodeBorderId" name="nodeClr" >
+                    <label for="btnNodeBorderId" >Border</label>
                 </div>
+                <div id="nodeBorderDisplayId" class="rectColorShape"></div>
+            </div>
+            <div>
+                <button id="nodeColorDefId" class="prefs-button">Use Defaults</button>
+                <input type="checkbox" id="chkNodeBorderId" name="nodeNameHide" style="margin: 18px 0 0 0; ">
+                <label for="chkNodeBorderId" style="vertical-align: text-top; " >Show Border</label>
 
-                <div class="settings-entry" style="margin: 6px 0 2px 0;">Node Colors:</div>
-                <div class="nodeProps-controls prefsNodeDisplay">
-                    <input id='nodeBckGndPickId' type="text"/>
-                    <div class="nodeColorsGrid">
-                        <div class="rectColorRadio">
-                            <input type="radio" id="btnNodeBckgndId" name="nodeClr" >
-                            <label for="btnNodeBckgndId" style="vertical-align:baseline; " >Background</label>
-                        </div>
-                        <div id="nodeBkgnDisplayId" class="rectColorShape"></div>
+            </div>
+        </div>
 
-                        <div class="rectColorRadio">
-                            <input type="radio" id="btnNodeForgndId" name="nodeClr"  data-bind="enable: propsFgndVisible()">
-                            <label for="btnNodeForgndId" style="vertical-align:baseline; ">Foreground</label>
-                        </div>
-                        <div id="nodeFgnDisplayId" class="rectColorShape"  data-bind="enable: propsFgndVisible()"></div>
-
-                        <div class="rectColorRadio">
-                            <input type="radio" id="btnNodeBorderId" name="nodeClr" >
-                            <label for="btnNodeBorderId" >Border</label>
-                        </div>
-                        <div id="nodeBorderDisplayId" class="rectColorShape"></div>
-                    </div>
-                    <div>
-                        <button id="nodeColorDefId" class="prefs-button">Use Defaults</button>
-                        <input type="checkbox" id="chkNodeBorderId" name="nodeNameHide" style="margin: 18px 0 0 0; ">
-                        <label for="chkNodeBorderId" style="vertical-align: text-top; " >Show Border</label>
-
-                    </div>
-                </div>
-
-                <div class="settings-entry" style="margin: 6px 0 2px 0;">Node size (px):</div>
-                <div class="nodeProps-controls">
-                    <input type="text" id="spNodeWidthId" class="spinnerStyleNode" readonly>
-                    <label for="spNodeWidthId" class="spinner-label-node">Width</label>
-                    <span style="margin: 0 0 0 10px;"></span>
-                    <input type="text" id="spNodeHeightId" class="spinnerStyleNode" readonly>
-                    <label for="spNodeHeightId" class="spinner-label-node">Height</label>
-                    <span style="margin: 0 0 0 12px;"></span>
-                    <button id="nodeSizeDefId" class="prefs-button prefs-dmsNode-button-def">Use Defaults</button>
-                </div>
-
-                <div class="settings-entry" style="margin: 6px 0 2px 0;">Text Content:</div>
-                <div class="nodeProps-controls">
-                    <textarea id="editNodeContentId" placeholder="[Enter content...]" autofocus rows="4" cols="36" wrap="hard"
-                              spellcheck="false" class="noresizeTextArea"></textarea>
-                </div>
-
-                <!--<div class="settings-entry" style="margin: 4px 0 2px 0;">Text Location:</div>-->
-                <div class="nodeProps-controls nodeTextControlGrid">
-                    <div class="rectTextRadio">
-                        <input type="radio" id="btnInsideId" name="nodeText" style="margin: 4px 0 0 4px;">
-                        <label for="btnInsideId" style="vertical-align:baseline; margin: 0 4px 0 0;" >Inside</label>
-                    </div>
-                    <div class="rectTextRadio">
-                        <input type="radio" id="btnAboveId" name="nodeText" style="margin: 4px 0 0 4px;">
-                        <label for="btnAboveId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Above</label>
-                    </div>
-                    <div class="rectTextRadio">
-                        <input type="radio" id="btnBelowId" name="nodeText" style="margin: 4px 0 0 6px;">
-                        <label for="btnBelowId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Below</label>
-                    </div>
-                    <button id="btnTextClearId" class="prefs-button prefs-textNode-button-clear">Clear</button>
-                </div>
-                <!--<div class="nodePropsFooter" data-bind="visible: !showIconSelection()"></div>-->
+        <!--<div class="settings-entry" style="margin: 6px 0 2px 0;">Node size (px):</div>-->
+        <!--<div class="nodeProps-controls">-->
+            <!--<input type="text" id="spNodeWidthId" class="spinnerStyleNode" readonly>-->
+            <!--<label for="spNodeWidthId" class="spinner-label-node">Width</label>-->
+            <!--<span style="margin: 0 0 0 10px;"></span>-->
+            <!--<input type="text" id="spNodeHeightId" class="spinnerStyleNode" readonly>-->
+            <!--<label for="spNodeHeightId" class="spinner-label-node">Height</label>-->
+            <!--<span style="margin: 0 0 0 12px;"></span>-->
+            <!--<button id="nodeSizeDefId" class="prefs-button prefs-dmsNode-button-def">Use Defaults</button>-->
         <!--</div>-->
+
+        <div class="settings-entry" style="margin: 6px 0 2px 0;">Text Content:</div>
+        <div class="nodeProps-controls">
+            <textarea id="editNodeContentId" placeholder="[Enter content...]" autofocus rows="4" cols="36" wrap="hard"
+                      spellcheck="false" class="noresizeTextArea"></textarea>
+        </div>
+
+        <!--<div class="settings-entry" style="margin: 4px 0 2px 0;">Text Location:</div>-->
+        <div class="nodeProps-controls nodeTextControlGrid">
+            <div class="rectTextRadio">
+                <input type="radio" id="btnInsideId" name="nodeText" style="margin: 4px 0 0 4px;">
+                <label for="btnInsideId" style="vertical-align:baseline; margin: 0 4px 0 0;" >Inside</label>
+            </div>
+            <div class="rectTextRadio">
+                <input type="radio" id="btnAboveId" name="nodeText" style="margin: 4px 0 0 4px;">
+                <label for="btnAboveId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Above</label>
+            </div>
+            <div class="rectTextRadio">
+                <input type="radio" id="btnBelowId" name="nodeText" style="margin: 4px 0 0 6px;">
+                <label for="btnBelowId" style="vertical-align:baseline;  margin: 0 4px 0 0;">Below</label>
+            </div>
+            <button id="btnTextClearId" class="prefs-button prefs-textNode-button-clear">Clear</button>
+        </div>
+        <!--<div class="nodePropsFooter"></div>-->
     </div>
 
     <div id="decisionLayoutId" class="decisionLayout">
@@ -1618,6 +1596,8 @@
     <div id="bottomOverlayId" class="bottomMessage">
         <div id="bottomTextId" class="bottomText" data-bind="text: bottomMessageText()"></div>
     </div>
+
+    <div id="startHereId" class="startHereTip" data-bind="visible: startHereVisible()"></div>
 
 
 </body>

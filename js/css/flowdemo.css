@@ -1,7 +1,7 @@
 html,
 body {
 	margin: 0;
-  	height: 100vh;
+  	
 	overflow-y: auto;
 	overflow-x: hidden;
 }
@@ -29,16 +29,17 @@ body.waiting * {
 	grid-row-start: 1;
 	width: 100%;
 	height: 32px;
-	padding: 0 6px;
-	margin: 8px auto;
-	visibility: visible !important;
+	padding: 2px 6px;
 	
+	visibility: visible !important;
+	background-color: #ffffff;
 	
 	display: inline-flex;
 	flex-flow: row wrap;
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 5;
 }
 .actions-toolbar {
 	display: flex;
@@ -90,8 +91,9 @@ body.waiting * {
 	grid-template-columns: auto 214px;
 	grid-template-rows: auto 10px;
 	column-gap: 0;
-	overflow: auto !important;
+	
 	padding: 2px 0 0 10px;
+	height: 98%;
 	
 }
 .main-container {
@@ -104,7 +106,8 @@ body.waiting * {
 	justify-content: center;
 	
 	width: 100%;
-	height: 100vh;
+	
+	
 	
 	overflow: auto  !important;
 	margin: 4px 0 20px;
@@ -121,18 +124,16 @@ body.waiting * {
 	margin:  0 4px 24px 4px;
 	padding:  0 0 74px 0;
 }
-.mainFooter {
-	grid-column-start: 2;
-	grid-row-start: 3;
-	border: 1px solid blue;
-	background-color: #c9defa;
-	width: 100%;
-	height: 6px;
 	
 	
 	
 	
-}
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -166,14 +167,13 @@ body.waiting * {
 	align-self: start;
 	justify-self: center;
 	height: 500px;
-	overflow-y: scroll !important;
+	
+	
 	margin: 0 0 12px 0;
 	display: none;
 }
-.palette-wrapper {
-	display: block;
-	overflow: scroll;
-}
+	
+	
 .palette-hr {
 	width: 136px;
 	height: 1px;
@@ -189,7 +189,7 @@ body.waiting * {
 	top: 0;
 	left: 0;
 	background-color: rgba(140,180,255,0.6);
-	z-index: 20;
+	z-index: 2002;
 }
 .overlaySaveText {
 	position: absolute;
@@ -345,9 +345,7 @@ table#accPROCTableId td {
 	
 	
 }
-.ui-dialog-titlebar-close {
-	visibility: hidden;
-}
+	
 .showCloseButton .ui-dialog-titlebar-close {
 	visibility: visible;
 }
@@ -856,12 +854,23 @@ label {
 	font-weight: bold;
 	outline: none;
 }
+.folderText {
+	width: 100% ;
+	height: 24px;
+	padding-left: 4px;
+	margin-right: 4px;
+	border: 1px solid #808080;
+	background-color: #fafafa;
+	font-weight: bold;
+	outline: none;
+}
 #searchDirId {
 	margin: 0px 0 0 0;
 }
 .newFolderText {
 	width: 97%;
 	margin-bottom: 8px;
+	
 }
 .saveAsText {
 	width: 252px;
@@ -1042,22 +1051,45 @@ label {
 	background-image: url(../../images/splash/mnt32-2.JPG);
 	background-repeat: no-repeat;
 	background-position: top;
+	opacity: 0.5;
 	padding: 0;
 	margin: 0;
 }
 .about-title {
 	position: absolute;
-	top: 20%;
-	left: 8%;
+	top: 10%;
+	left: 30%;
 	font-family: Arial;
-	
-	font-size: 36px;
-	color: #ffffff;
+	font-weight: bold;
+	font-size: 24px;
+	color: #1a2f77;
+}
+.about-logo {
+	border: none;
+	outline: none;
+	position: absolute;
+	top: 4%;
+	left: 4%;
+	height: 68px;
+	width: 100px;
+	background-image: url(../../images/splash/JDEliteGraphTM100.png);
+	background-repeat: no-repeat;
 }
 .about-copyright {
 	position: absolute;
 	bottom: 0;
 	float: left;
+}
+.aboutTitleFont {
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	color: #08105d;
+}
+.about-font {
+	font-family: Arial;
+	font-size: 12px;
+	color: #080f77;
 }
 .welcome-dlg {
 	display: none;
@@ -1085,27 +1117,23 @@ label {
 	
 	foreground-color: #195aee;
 }
-#startToTopBtn {
 	
-	position: fixed;
-	bottom: 20px;
-	right: 30px;
-	z-index: 9999;
-	border: none;
-	outline: none;
-	background-color: #ee4e36;
-	cursor: pointer;
-	padding: 15px;
-	border-radius: 2px;
-	background-image: url(../../images/toolbar/scrollToTop32.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	width:32px;
-	height:32px;
-}
-#startToTopBtn:hover {
-	background-color: #555;
-}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 .startPage {
 	position: absolute;
 	top: 0;
@@ -1117,7 +1145,7 @@ label {
 	display: grid;
 	grid-template-columns: 8px auto 80px;
 	grid-template-rows: 2px 80px 80px 340px 400px;
-	overflow: auto  !important;
+	
 	
 }
 .startPageTop {
@@ -1181,6 +1209,18 @@ label {
 	height: 298px;
 	margin-top: 20px;
 	
+}
+.startHereTip {
+	position: fixed;
+	border: none;
+	outline: none;
+	top: 32px;
+	left: 38px;
+	height: 60px;
+	width: 100px;
+	background-image: url(../../images/splash/startHere.png);
+	background-repeat: no-repeat;
+	z-index: 5;
 }
 	
 	
@@ -1618,9 +1658,7 @@ label {
 	
 	margin: -4px -5px 0 -5px !important;
 }
-.noTitleBar .ui-dialog-titlebar {
 	
-}
 .ui-dialog .ui-dialog-titlebar-close .ui-icon-closethick {
 	background-image: url(../../images/toolbar/delete18x24Wht.png);
 	background-position: left+3px top !important;
@@ -1706,33 +1744,21 @@ label {
 	display: none;
 	z-index: 1000;
 	width: 200px;
-	
-	border: 1px solid #cccccc;
-	
-	
-	
-	
-	
-	
-	
-}
-.overflow {
-	z-index: 102;
+	height: auto;
 }
 .ui-menu {
-	
-	border: 1px solid #3a72c1 !important;
+	border: 1px solid #080f77 !important;
 }
 .ui-menu .ui-menu-item {
 	margin: 2px;
 	padding: 4px;
+	height: 20px;
 	cursor: pointer;
 	font-family: sans-serif  !important;
 	font-size: 13px  !important;
+	
+	color: #080f77;
 }
-	
-	
-	
 .ui-menu .ui-menu-divider {
 	margin: 0 !important;
 	height: 0;
@@ -1752,13 +1778,10 @@ label {
 	background-color: #D3EEFE;
 }
 .ctx-menu li:hover kbd {
-	display: none !important;
+	outline: none;
 }
 table, th, td {
-	
 	background-color: #E1F5FF;
-	
-	
 	border: 2px solid #ffffff;
 	border-radius: 4px;
 	border-collapse: collapse;

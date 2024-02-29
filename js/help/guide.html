@@ -12,7 +12,7 @@
 <!--<div class="master">-->
     <div class="container">
         <div class="topBar">
-            <img src="JDElogo.png" width="100" height="50">
+            <!--<img class="logo">-->
             <div class="contentTitle">
                 <span>JDElite Flowchart Builder Users' Guide</span>
             </div>
@@ -22,29 +22,44 @@
                 <div style="margin-top: 20px; "></div>
                 <button id="prefaceBtnId" class="textBtn first" onclick="selectText(event)">Preface</button>
                 <ul id="myListId">
-                    <li><button id="howtoBtnId" class="caret textBtn first" onclick="selectText(event)">How-To Examples</button>
+                    <li><button id="basicsBtnId" class="caret textBtn first" onclick="selectText(event)">Editor Basics</button>
                         <ul class="nested">
-                            <li><button id="startBtnId" class="textBtn second" onclick="selectText(event)">Start a Flowchart</button></li>
-                            <li><button id="initialBtnId" class="textBtn second" onclick="selectText(event)">Initial Editing</button></li>
-                            <li><button id="nodeEditBtnId" class="textBtn second" onclick="selectText(event)">Editing a Node</button></li>
-                            <li><button id="chartEditBtnId" class="textBtn second" onclick="selectText(event)">Editing the Flowchart</button></li>
-                            <li><button id="addingMoreBtnId" class="textBtn second" onclick="selectText(event)">Adding More Nodes</button></li>
-                            <li><button id="linkPropsBtnId" class="textBtn second" onclick="selectText(event)">Editing a Link</button></li>
-                            <li><button id="moreEditBtnId" class="textBtn second" onclick="selectText(event)">More Flowchart Edits</button></li>
-                            <!--<li><button id="containersBtnId" class="textBtn second" onclick="selectText(event)">Using Containers</button></li>-->
-                            <li><button id="searchBtnId" class="textBtn second" onclick="selectText(event)">Searching Nodes</button></li>
-                            <li><button id="scrollingBtnId" class="textBtn second" onclick="selectText(event)">Flowchart Scrolling</button></li>
-                            <li><button id="layoutBtnId" class="textBtn second" onclick="selectText(event)">Modifying Layout</button></li>
-                            <!--<li><button id="bpmBtnId" class="textBtn second" onclick="selectText(event)">Support for BPM</button></li>-->
-                            <li><button id="erdBtnId" class="textBtn second" onclick="selectText(event)">Support for ERD</button></li>
+                            <li><button id="settingsBtnId" class="textBtn second" onclick="selectText(event)">Settings Dialog</button></li>
+                            <li><button id="browserBtnId" class="textBtn second" onclick="selectText(event)">File System Browser</button></li>
+                            <li><button id="paletteBtnId" class="textBtn second" onclick="selectText(event)">Nodes Palette</button></li>
+                            <!--<li><button id="erdBtnId" class="textBtn second" onclick="selectText(event)">Support for ERD</button></li>-->
                         </ul>
                     </li>
 
-                    <li><button id="featuresBtnId" class="caret textBtn first" onclick="selectText(event)">Brief List of Features</button>
+                    <li><button id="flowchartBtnId" class="caret textBtn first" onclick="selectText(event)">Flowcharts</button>
+                        <ul class="nested">
+                            <li><button id="flowStartBtnId" class="textBtn second" onclick="selectText(event)">Start a Flowchart</button></li>
+                            <li><button id="nodeEditBtnId" class="textBtn second" onclick="selectText(event)">Editing a Node</button></li>
+                            <!--<li><button id="chartEditBtnId" class="textBtn second" onclick="selectText(event)">Editing the Flowchart</button></li>-->
+                            <!--<li><button id="addingMoreBtnId" class="textBtn second" onclick="selectText(event)">Adding More Nodes</button></li>-->
+                            <!--<li><button id="linkPropsBtnId" class="textBtn second" onclick="selectText(event)">Editing a Link</button></li>-->
+                            <!--<li><button id="moreEditBtnId" class="textBtn second" onclick="selectText(event)">More Flowchart Edits</button></li>-->
+                            <!--<li><button id="containersBtnId" class="textBtn second" onclick="selectText(event)">Using Containers</button></li>-->
+                            <!--<li><button id="searchBtnId" class="textBtn second" onclick="selectText(event)">Searching Nodes</button></li>-->
+                            <!--<li><button id="scrollingBtnId" class="textBtn second" onclick="selectText(event)">Flowchart Scrolling</button></li>-->
+                            <!--<li><button id="layoutBtnId" class="textBtn second" onclick="selectText(event)">Modifying Layout</button></li>-->
+                        </ul>
+                    </li>
+
+                    <li><button id="databaseBtnId" class="caret textBtn first" onclick="selectText(event)">Database ERD</button>
+                        <ul class="nested">
+                            <!--<li><button id="erdBtnId" class="textBtn second" onclick="selectText(event)">Support for ERD</button></li>-->
+                        </ul>
+                    </li>
+
+                    <li><button id="logicalBtnId" class="caret textBtn first" onclick="selectText(event)">Logical ERD</button>
+                        <ul class="nested">
+                        </ul>
+                    </li>
+
+                    <li><button id="featuresBtnId" class="caret textBtn first" onclick="selectText(event)">Common Features</button>
                         <ul class="nested">
                             <li><button id="flowBtnId" class="textBtn second" onclick="selectText(event)">Data Flow Directions</button></li>
-                            <li><button id="settingsBtnId" class="textBtn second" onclick="selectText(event)">Settings Dialog</button></li>
-                            <li><button id="browserBtnId" class="textBtn second" onclick="selectText(event)">File System Browser</button></li>
                             <li><button id="addNodeBtnId" class="textBtn second" onclick="selectText(event)">Creating a Node</button></li>
                             <li><button id="cnxLinkBtnId" class="textBtn second" onclick="selectText(event)">Connection Links</button></li>
                             <li><button id="decisionBtnId" class="textBtn second" onclick="selectText(event)">Decision / Relationship</button></li>
@@ -60,70 +75,149 @@
             <div id="rightId">
                 <div style="margin-top: 40px; "></div>
                 <div id="prefaceTextId" class="contentText">
-                    <p>JDElite Flowchart Builder offers design and modeling solutions for a wide variety of use cases:
-                    <ul>
-                        <li>Quickly and effortlessly create flowcharts for plan drafting, documenting, monitoring and management,
-                            visual modeling, or algorithm presentation.</li>
-                        <li>Design your flowcharts or entity-relationship diagrams with our exclusive patented readability
-                            features, including control of multiple links without overlapping. No coding required.</li>
-                        <li>The plugin architecture allows users to import/edit/export third party flowcharts. Generated
-                            output is in JSON format.</li>
-                    </ul>
-                    <p>Select a topic in the left pane to review the corresponding video clips and pictures.</p>
+                    <p>JDElite Flowchart Builder offers design and modeling solutions for a wide variety of use cases.
+                        The bullets in this guide demonstrate the features of JDElite Flowchart Builder with the help of
+                        screenshots and  short video clips. The free demo version has all of the built-in features. The only
+                        difference from the full version is that there is no access to the file system. You can
+                        create your diagrams but in order to save/reopen them you'll need the additional
+                        server module. There are built-in sample <b>templates</b> for each diagram type. In the free demo they
+                        can be edited but not saved. In the full version they can be copied to files, edited and saved.
+                    </p><br>
+                    <p>
+                        The start page shows the paths to the three supported diagram types.
+                        You can switch any time to one of these types by clicking at the <b>Start Here</b> button on the
+                        top toolbar. It is pointed most of the time by a bubble. In the free demo version the buttons
+                        <b>Open... </b> are redirected to open corresponding
+                        templates rather than to the proprietary file browser in the full version.
+                    </p><br>
+                    <p><img src="../../images/splash/whereToStart.png" width="186" height="120"></p>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/startBuilder.gif" width="524" height="335"></p><br>
+                    </div>
+                    <br><br>
                 </div>
 
-                <div id="howtoTextId" class="contentText">
-                    <p>This section demonstrates the features of JDElite Flowchart Builder using short video clips.
-                        The free demo version has all of the built-in features, the only
-                        difference from the full version being that there is no access to the file system. You can
-                        create your own flowcharts but in order to save/reopen them you need the additional
-                        server module. There are five built-in sample flowcharts. They can be opened
-                        and edited but modifications cannot be saved. </p><br>
-                    <!--<iframe src="https://giphy.com/embed/8GEOmESx6Gr1petk6S" width="480" height="370"-->
-                            <!--frameBorder="0" class="giphy-embed" allowFullScreen></iframe>-->
-                    <!--<p><a href="https://giphy.com/gifs/8GEOmESx6Gr1petk6S">via GIPHY</a></p>-->
-                    <iframe width="600" height="382"
-                            src="https://www.youtube.com/embed/1GW2oUgkFB4"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+                <div id="basicsTextId" class="contentText">
+                    <p>Following is a brief list of the wide range of features,
+                        accessible from the toolbar, as well as from context menus or by simply using the mouse.
+                        Most of the actions accessible from the <b>top toolbar</b> buttons can also be invoked from the
+                        hamburger <b>drop-down menu</b> in the upper left corner:</p><br>
+                    <p><img src="../../images/guide/toolbar.png" width="580" height="40"></p><br>
+                    <p>The following actions are initiated as follows:</p>
+                    <p><img src="../../images/toolbar/addFile24.png" width="24" height="24"> - Start Here: it brings the
+                        start page allowing you to switch to a different diagram type</p>
+                    <p><img src="../../images/toolbar/open24.png" width="24" height="24"> - Open the file system browser (see
+                        the File System Browser entry below)</p>
+                    <p><img src="../../images/toolbar/import24.png" width="24" height="24"> - Open a template</p>
+                    <p><img src="../../images/toolbar/undo24.png" width="24" height="24"> - Undo the latest action</p>
+                    <p><img src="../../images/toolbar/redo24.png" width="24" height="24"> - Redo the latest action that has been undone</p>
+                    <p><img src="../../images/toolbar/delete18x24.png" width="18" height="24"> &nbsp;- Delete the selected individual element,
+                        or a selected group</p>
+                    <p><img src="../../images/toolbar/copyNew24.png" width="24" height="24"> - Copy the selected element or the group</p>
+                    <p><img src="../../images/toolbar/pasteNew24.png" width="24" height="24"> - Paste the selected element or group
+                        to a location pointed by the mouse</p>
+                    <p><img src="../../images/toolbar/save24.png" width="24" height="24"> - Save the flowchart (enabled if there are any
+                        changes from the last save action)</p>
+                    <p><img src="../../images/toolbar/save_as24.png" width="24" height="24"> - Save the flowchart as a new copy
+                        (always enabled)</p>
+                    <p><img src="../../images/toolbar/refresh24.png" width="24" height="24"> - Refresh the flowchart and reset the scaling,
+                        if any</p>
+                    <p><img src="../../images/toolbar/find24.png" width="24" height="24"> - Open the <b>Search</b> dialog</p>
+                    <p><img src="../../images/toolbar/brush24.png" width="24" height="24"> - Clear the canvas without saving current changes,
+                        if any</p>
+                    <p><img src="../../images/toolbar/navigate_left24.png" width="24" height="24"> - Navigate to the previous flowchart,
+                        if such is available, and ask to save current changes</p>
+                    <p><img src="../../images/toolbar/navigate_right24.png" width="24" height="24"> - Navigate to the next flowchart,
+                        if such is available, and ask to save current changes</p>
+                    <p><img src="../../images/toolbar/config24.png" width="24" height="24"> - Open the <b>Settings</b> dialog</p>
+                    <p><img src="../../images/toolbar/help24.png" width="24" height="24"> - Open the drop down help menu</p>
+                    <br><p>The editor actions are <b>undoable</b> through an unlimited number of
+                    <b>Undo/Redo<</b> steps.
+                </p><br><br>
                 </div>
-                <div id="startTextId" class="contentText">
-                    <p>You can build a flowchart by simply drag-and-drop nodes from the palette
-                        and by dragging links between the nodes, connecting the pop-up handles with the mouse. The flow
-                        direction can be either top to bottom or left to right and can be switched back and forth at any
-                        time during the design process. </p><br>
-                    <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/slbsEy6pY0Y"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+
+                <div id="settingsTextId" class="contentText">
+                    <p>The <b>Settings</b> dialog applies to all supported diagram types. It can be invoked at any time
+                        from the <b>Settings</b> icon on the toolbar: &nbsp;
+                        <img src="../../images/toolbar/config24.png" width="24" height="24"></p><br>
+                    <p>The <b>General</b> tab of <b>Settings</b> dialog offers several different selection
+                        options. The <b>Horizontal</b> direction apply to flowcharts only. Some of the selections can be
+                        changed at any time during the diagram design without affecting the previous work:</p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/guide/general.png" width="550" height="504"></p>
+                    </div>
+                    <br>
+                    <!--<p>The <b>Node Size</b> tab of <b>Settings</b> dialog allows to select or modify-->
+                    <!--globally the sizes of groups of nodes:</p><br>-->
+                    <!--<p><img src="../../images/guide/nodeSizes.png" width="550" height="350"></p>-->
+                    <!--<br>-->
+                    <p>The <b>Colors</b> tab of <b>Settings</b> dialog allows to select the background
+                        and/or foreground colors, as well as borders, of all particular node types, as well as other
+                        common graphical elements. The selections usually affect the current diagram and are saved
+                        in its output JSON file, from where the values are read the next time the file is open.
+                        In addition any current set of color selections can be saved as a named color scheme from
+                        the next <b>Schemes</b> tab.</b></p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/guide/nodeColors.png" width="550" height="504"></p>
+                    </div>
+                    <br>
+                    <p>The <b>Node Icons</b> tab of <b>Settings</b> dialog allows to choose from a selection of images
+                        to be displayed as nodes icons by nodes categories. The image selections will be provided
+                        from icons configuration file(s):</p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/guide/nodeIcons.png" width="550" height="504"></p>
+                    </div>
+                    <br>
+                    <p>The <b>Schemes</b> tab of <b>Settings</b> dialog allows to save named color selections
+                        in local configuration files for further reuse. There are 3 built-in color schemes: <b>default</b>,
+                        <b>blueSplash</b> and  <b>greenSplash</b>. The selected scheme in the top left drop-down is used by
+                        all new diagrams. The particular color selections from <b>Colors</b> tab may overwrite the scheme colors
+                        for the current diagram.
+                    </p></p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/guide/schemes.png" width="550" height="504"></p>
+                    </div>
+                    <br><br>
                 </div>
-                <div id="initialTextId" class="contentText">
-                    <p>Nodes are assigned names at node creation time. Names have to be unique across the
-                        flowchart. The names are either automatically generated or you can choose to enter your choice.
-                        Duplicate names are rejected. At Later time you can change the nodes properties like background/foreground/border colors or sizes
-                        either collectively from the global <b>Settings</b> dialog or individually for any particular
-                        node from its <b>Properties</b> dialog.</p><br>
-                    <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/Xz4z0iG9YNg"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+
+                <div id="browserTextId" class="contentText">
+                    <p>The editor has a proprietary <b>file system browser</b> that is accessible when a server
+                        connection is available. It has full access to the file system for easy navigation to open, save
+                        and delete files, and to display, create and delete folders. The created
+                        diagrams, in JSON format, can be saved in existing folders or in newly created ones. The
+                        server connection uses <b>node.js</b>.</p>
+                    <p>Below is the browser when it is invoked to open a diagram:</p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/guide/browser.png" width="453" height="443"></p><br>
+                    </div>
+                    <p>The actions of the buttons on the top of the file browser are:
+                    <p><img src="../../images/toolbar/arrow_left24.png" width="24" height="24"> - Move on level up</p>
+                    <p><img src="../../images/toolbar/arrow_right24.png" width="24" height="24"> - Move one level down</p>
+                    <p><img src="../../images/toolbar/addFile24.png" width="24" height="24"> - Create new folder
+                        at the current location</p>
+                    <p><img src="../../images/toolbar/delete18x24.png"> &nbsp;- Delete the selected file of folder</p><br>
+                    <p>Below is the brouser when it is invoked to save a diagram:</p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/guide/browserSave.png" width="453" height="443"></p>
+                    </div>
+                    <br><br>
                 </div>
-                <div id="nodeEditTextId" class="contentText">
-                    <p>From the node’s <b>Properties</b> dialog, you can edit
-                        the selected node: show/hide or change the node name, select a node icon, show/hide
-                        the icon, edit the background/foreground colors, and enter text inside or
-                        outside, above and/or below the node. This dialog is invoked from the node
-                        right-click context menu or by double clicking on the node.</p><br>
-                    <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/SQrXhW8EEnU"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+                <div id="paletteTextId" class="contentText">
+                    <p>The <b>Nodes Palette</b> on the right of the screen leaves the central part of the screen for the
+                    diagram canvas. As it is demonstrated later, the nodes icons are dragged with the mouse over the canvas.
+                    The icons from <b>Basic Flowchart</b> and <b>Additional Symbols</b> tabs are all accepted in a
+                    flowchart diagram. Icons from tabs for diagram types different from the current diagram are rejected.</p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/palettes.gif" width="212" height="501"></p>
+                    </div>
+                    <br><br>
+                    <!--<p>Nodes are assigned names at node creation time. Names have to be unique across the-->
+                        <!--flowchart. Node names are automatically generated. They can be changed inline any time later.-->
+                        <!--Duplicate names are rejected. <br>All common node properties like background/foreground/border colors,-->
+                        <!--and content text inside can be changed individually from node's-->
+                        <!--<b>Properties</b> dialog.</p><br>-->
                 </div>
-                <div id="chartEditTextId" class="contentText">
+               <div id="chartEditTextId" class="contentText">
                     <p>The nodes are positioned on a rectangular grid that consists of
                         <b>layers</b> across the flow direction and
                         <b>lanes</b> along the flow direction, and are allocated in the cells at the
@@ -212,17 +306,6 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                 </div>
-                <!--<div id="bpmTextId" class="contentText">-->
-                    <!--<p>One of the important features of JDElite Flowchart Builder are the <b>task hooks</b>. Currently-->
-                        <!--there are four types of task hooks that demonstrate this customizable feature: actions, services,-->
-                        <!--operations and expressions. These hooks can be further attached to a business processing environment,-->
-                        <!--in areas like design of flowchart diagrams for <b>business process modeling</b> (BPM) editors.</p><br>-->
-                    <!--<iframe width="560" height="315"-->
-                            <!--src="https://www.youtube.com/embed/mSXSqnVrRm8"-->
-                            <!--title="YouTube video player" frameborder="0"-->
-                            <!--allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"-->
-                            <!--allowfullscreen></iframe>-->
-                <!--</div>-->
                 <div id="erdTextId" class="contentText">
                     <p>Another important feature of JDElite Flowchart Builder is that it can be used for the design
                         of flowcharts, representing relational database models and structures - <b>entity relationship
@@ -241,48 +324,90 @@
                             allowfullscreen></iframe>
                 </div>
 
-                <!-- -->
-                <!-- -->
+                <!-- FLOWCHART -->
+
+                <div id="flowchartTextId" class="contentText">
+                    <p><b>Flowcharts</b> represent the steps of algorithms, processes or workflows, vizualising the
+                        structure of the problems or tasks.<br>The template shown below represents the steps of
+                        a bank transaction.
+                    </p>
+                    <br>
+                    <p><img src="../../images/guide/openFlowTemplate.png" width="360" height="150"></p>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/guide/bankTemplate.png" width="502" height="516"></p>
+                    </div><br><br>
+                </div>
+
+                <div id="flowStartTextId" class="contentText">
+                    <p>You build a diagram by simply drag-and-drop nodes from the palette
+                        and by dragging links between the nodes, connecting the pop-up handles with the mouse.  </p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/startNewFlow.gif" width="706" height="585"></p>
+                    </div><br><br>
+                </div>
+
+                <div id="nodeEditTextId" class="contentText">
+                    <p>When moving the mouse over the node two editable areas are visualized under rhe cursor: the node name
+                        and the node text content. Double-clicking at any of them, the corresponding text field is open,
+                        accepting the keyboard input.The name field has some restrictions displayed under the field when
+                        the rules are violated. The content area does not have any restrictions. The changes are accepted
+                        when the <b>Enter</b> key is pressed. When the content size is very large, from the right-click
+                        context menu on the node you can toggle to compress the text showing only two lines or expand it in full:
+                    </p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/nodeEdit1crop.gif" width="785" height="547"></p>
+                    </div><br><br>
+
+                    <p>The editing of these fields can be done also from the <b>Properties</b> dialog that is invoked from
+                        the context menu by right click on the node. Additional text can be attached to the node above
+                        and/or below:</p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/nodeEdit2crop.gif" width="785" height="547"></p>
+                    </div><br><br>
+
+                    <p>From the <b>Properties</b> dialog you can also edit the node colors, add/remove an icon, and hide/unhide
+                        the node name:</p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/nodeEdit3crop.gif" width="785" height="547"></p>
+                    </div><br><br>
+
+                    <p>Resizing the nodes horizontally and vertically is easy by mouse dragging one of the sides or one
+                        of the corners. You can reset the extra sizes either by node's context menu or globally by the
+                        canvas context menu: </p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/nodeEdit4crop.gif" width="785" height="547"></p>
+                    </div><br><br>
+
+                    <br>
+                </div>
+
+                <!-- DB -->
+
+                <div id="databaseTextId" class="contentText">
+                    <p><b>Database ERD's</b> (entity-relationship diagrams) represent the physical structure of
+                    databases. The diagram nodes corresponds to the database tables and show the detailed table
+                        structures</p><br>
+                    <p><img src="../../images/guide/openDBTemplate.png" width="360" height="150"></p>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/guide/dbTemplate.png" width="900" height="400"></p>
+                    </div><br><br>
+                </div>
+
+                <!-- LOG -->
+
+                <div id="logicalTextId" class="contentText">
+                    <p><b>Logical ERD's</b>  (entity-relationship diagrams) represent the logical structure of
+                        ...</p><br>
+                    <p><img src="../../images/guide/openLOGTemplate.png" width="360" height="150"></p>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/guide/logTemplate.png" width="600" height="480"></p>
+                    </div><br><br>
+                </div>
+
+                <!-- COMMON -->
 
                 <div id="featuresTextId" class="contentText">
-                    <p>Following is a brief list of the wide range of features,
-                    accessible from the toolbar, from the context menus, or by simply using the mouse.
-                    Most of the actions accessible from the <b>top toolbar</b> buttons can also be invoked from the
-                    hamburger <b>drop-down menu</b> in the upper left corner:</p><br>
-                    <p><img src="../../images/guide/toolbar.png" width="580" height="40"></p><br>
-                    <p>The following actions are initiated as follows:</p>
-                    <p><img src="../../images/toolbar/addFile24.png" width="24" height="24"> - Create new flowchart: the new
-                        file name can contain only alphanumeric characters, dots, dashes, and underscores</p>
-                    <p><img src="../../images/toolbar/open24.png" width="24" height="24"> - Open the file system browser (see
-                        the File System Browser entry below)</p>
-                    <p><img src="../../images/toolbar/import24.png" width="24" height="24"> - Open a template</p>
-                    <p><img src="../../images/toolbar/undo24.png" width="24" height="24"> - Undo the latest action</p>
-                    <p><img src="../../images/toolbar/redo24.png" width="24" height="24"> - Redo the latest action that has been undone</p>
-                    <p><img src="../../images/toolbar/delete18x24.png" width="18" height="24"> &nbsp;- Delete the selected individual element,
-                        or a selected group</p>
-                    <p><img src="../../images/toolbar/copyNew24.png" width="24" height="24"> - Copy the selected element or the group</p>
-                    <p><img src="../../images/toolbar/pasteNew24.png" width="24" height="24"> - Paste the selected element or group
-                        to a location pointed by the mouse</p>
-                    <p><img src="../../images/toolbar/save24.png" width="24" height="24"> - Save the flowchart (enabled if there are any
-                        changes from the last save action)</p>
-                    <p><img src="../../images/toolbar/save_as24.png" width="24" height="24"> - Save the flowchart as a new copy
-                        (always enabled)</p>
-                    <p><img src="../../images/toolbar/refresh24.png" width="24" height="24"> - Refresh the flowchart and reset the scaling,
-                        if any</p>
-                    <p><img src="../../images/toolbar/find24.png" width="24" height="24"> - Open the <b>Search</b> dialog</p>
-                    <p><img src="../../images/toolbar/brush24.png" width="24" height="24"> - Clear the canvas without saving current changes,
-                        if any</p>
-                    <p><img src="../../images/toolbar/navigate_left24.png" width="24" height="24"> - Navigate to the previous flowchart,
-                        if such is available, and ask to save current changes</p>
-                    <p><img src="../../images/toolbar/navigate_right24.png" width="24" height="24"> - Navigate to the next flowchart,
-                        if such is available, and ask to save current changes</p>
-                    <p><img src="../../images/toolbar/config24.png" width="24" height="24"> - Open the <b>Settings</b> dialog</p>
-                    <p><img src="../../images/toolbar/help24.png" width="24" height="24"> - Open the drop down help menu</p>
-                    <br><p>The editor actions are <b>undoable</b> through an unlimited number of
-                        <b>Undo/Redo<</b> steps.
-                    </p><br>
-                    <div></div><br>
-                </div>
+             </div>
                 <div id="flowTextId" class="contentText">
                     <p>The <b>data flow direction</b> can be initially selected to be either top to bottom or left
                     to right, and can be changed or switched back and forth at any time by double clicking
@@ -298,48 +423,16 @@
                     </div><br>
                 </div>
 
-                <div id="settingsTextId" class="contentText">
-                    <p>The <b>General</b> tab of <b>Settings</b> dialog offers several different selection
-                    modes. Most of them can be changed at any time during the flowchart design without affecting the
-                    previous work:</p><br>
-                    <p><img src="../../images/guide/general.png" width="550" height="550"></p>
-                    <br>
-                    <p>The <b>Node Size</b> tab of <b>Settings</b> dialog allows to select or modify
-                    globally the sizes of groups of nodes:</p><br>
-                    <p><img src="../../images/guide/nodeSizes.png" width="550" height="350"></p>
-                    <br>
-                    <p>The <b>Colors</b> tab of <b>Settings</b> dialog allows to select the background
-                    and/or foreground colors, as well as borders, of particular node types. The selections are saved
-                    in the output JSON file, from where the values are read when the next time the file is open:</p><br>
-                    <p><img src="../../images/guide/nodeColors.png" width="550" height="504"></p>
-                    <br>
-                    <p>The <b>Node Icons</b> tab of <b>Settings</b> dialog allows to select several images
-                    to be displayed as nodes icons. In a future release the image selections will be provided from
-                    icons configuration file(s):</p><br>
-                    <p><img src="../../images/guide/nodeIcons.png" width="550" height="426"></p>
-                    <br>
-                    <p>The <b>Schemes</b> tab of <b>Settings</b> dialog allows to save the color selections
-                    in local configuration files for further reuse:</p><br>
-                    <p><img src="../../images/guide/schemes.png" width="550" height="260"></p><br>
-                </div>
-
-                <div id="browserTextId" class="contentText">
-                    <p>The editor has a proprietary <b>file system browser</b> that is invokable when a server
-                    connection is available. It has full access to the file system for easy navigation. The created
-                    flowcharts, in JSON format, can be saved in existing folders or in newly created ones. Files
-                    and folders can be renamed or removed as well. The default server connection uses <b>node.js</b></p>.
-                    <p><img src="../../images/guide/browser.png" width="453" height="443"></p><br>
-                </div>
                 <div id="addNodeTextId" class="contentText">
                     <p>A <b>new node</b> is created either by dragging an item from the palette on the right of the screen
                     to an accepting cell on the canvas, or by positioning the mouse on an empty cell and selecting
                     a node type from the context menu. The menu shows only nodes that are accepted at this location:</p><br>
-                    <p><img src="../../images/guide/addNode.png" width="408" height="237"></p><br>
+                    <p><img src="../../images/guide/addNode.png" width="410" height="310"></p><br>
                     <p>The start and end layers, as well as the left and right swim lanes, are optional. They all accept
                         their specific node types from the palette or from the mouse context menus.</p><br>
                     <p>The flowchart <b>frame size</b> can be modified from the context menus at any time by inserting
                     new layers or lanes, and/or removing the unused ones:</p><br>
-                    <p><img src="../../images/guide/removeLayer.png" width="208" height="200"></p><br>
+                    <p><img src="../../images/guide/removeLayer.png" width="208" height="220"></p><br>
                 </div>
                 <div id="cnxLinkTextId" class="contentText">
                     <p>The <b>connections</b> between the nodes are created by dragging the mouse between the
@@ -416,34 +509,42 @@
         document.getElementById(id).classList.add("boldText");
         if (id === "prefaceBtnId") {
             document.getElementById("prefaceTextId").style.display = "block";
-        } else if (id === "howtoBtnId") {
-            document.getElementById("howtoTextId").style.display = "block";
-        } else if (id === "startBtnId") {
-            document.getElementById("startTextId").style.display = "block";
-        } else if (id === "initialBtnId") {
-            document.getElementById("initialTextId").style.display = "block";
+        } else if (id === "basicsBtnId") {
+            document.getElementById("basicsTextId").style.display = "block";
+        } else if (id === "paletteBtnId") {
+            document.getElementById("paletteTextId").style.display = "block";
         } else if (id === "nodeEditBtnId") {
             document.getElementById("nodeEditTextId").style.display = "block";
-        } else if (id === "chartEditBtnId") {
-            document.getElementById("chartEditTextId").style.display = "block";
-        } else if (id === "addingMoreBtnId") {
-            document.getElementById("addingMoreTextId").style.display = "block";
-        } else if (id === "linkPropsBtnId") {
-            document.getElementById("linkPropsTextId").style.display = "block";
-        } else if (id === "moreEditBtnId") {
-            document.getElementById("moreEditTextId").style.display = "block";
+//        } else if (id === "chartEditBtnId") {
+//            document.getElementById("chartEditTextId").style.display = "block";
+//        } else if (id === "addingMoreBtnId") {
+//            document.getElementById("addingMoreTextId").style.display = "block";
+//        } else if (id === "linkPropsBtnId") {
+//            document.getElementById("linkPropsTextId").style.display = "block";
+//        } else if (id === "moreEditBtnId") {
+//            document.getElementById("moreEditTextId").style.display = "block";
 //        } else if (id === "containersBtnId") {
 //            document.getElementById("containersTextId").style.display = "block";
-        } else if (id === "searchBtnId") {
-            document.getElementById("searchTextId").style.display = "block";
-        } else if (id === "scrollingBtnId") {
-            document.getElementById("scrollingTextId").style.display = "block";
-        } else if (id === "layoutBtnId") {
-            document.getElementById("layoutTextId").style.display = "block";
-//        } else if (id === "bpmBtnId") {
-//            document.getElementById("bpmTextId").style.display = "block";
-        } else if (id === "erdBtnId") {
-            document.getElementById("erdTextId").style.display = "block";
+//        } else if (id === "searchBtnId") {
+//            document.getElementById("searchTextId").style.display = "block";
+//        } else if (id === "scrollingBtnId") {
+//            document.getElementById("scrollingTextId").style.display = "block";
+//        } else if (id === "layoutBtnId") {
+//            document.getElementById("layoutTextId").style.display = "block";
+//        } else if (id === "erdBtnId") {
+//            document.getElementById("erdTextId").style.display = "block";
+
+        } else if (id === "flowchartBtnId") {
+            document.getElementById("flowchartTextId").style.display = "block";
+        } else if (id === "flowStartBtnId") {
+            document.getElementById("flowStartTextId").style.display = "block";
+
+        } else if (id === "databaseBtnId") {
+            document.getElementById("databaseTextId").style.display = "block";
+
+        } else if (id === "logicalBtnId") {
+            document.getElementById("logicalTextId").style.display = "block";
+
         } else if (id === "featuresBtnId") {
             document.getElementById("featuresTextId").style.display = "block";
         } else if (id === "flowBtnId") {
@@ -464,20 +565,25 @@
     function unselectAllLeft() {
         document.getElementById("prefaceBtnId").classList.remove("boldText");
 
-        document.getElementById("howtoBtnId").classList.remove("boldText");
-        document.getElementById("startBtnId").classList.remove("boldText");
-        document.getElementById("initialBtnId").classList.remove("boldText");
+        document.getElementById("basicsBtnId").classList.remove("boldText");
+        document.getElementById("paletteBtnId").classList.remove("boldText");
         document.getElementById("nodeEditBtnId").classList.remove("boldText");
-        document.getElementById("chartEditBtnId").classList.remove("boldText");
-        document.getElementById("addingMoreBtnId").classList.remove("boldText");
-        document.getElementById("linkPropsBtnId").classList.remove("boldText");
-        document.getElementById("moreEditBtnId").classList.remove("boldText");
+//        document.getElementById("chartEditBtnId").classList.remove("boldText");
+//        document.getElementById("addingMoreBtnId").classList.remove("boldText");
+//        document.getElementById("linkPropsBtnId").classList.remove("boldText");
+//        document.getElementById("moreEditBtnId").classList.remove("boldText");
 //        document.getElementById("containersBtnId").classList.remove("boldText");
-        document.getElementById("searchBtnId").classList.remove("boldText");
-        document.getElementById("scrollingBtnId").classList.remove("boldText");
-        document.getElementById("layoutBtnId").classList.remove("boldText");
-//        document.getElementById("bpmBtnId").classList.remove("boldText");
-        document.getElementById("erdBtnId").classList.remove("boldText");
+//        document.getElementById("searchBtnId").classList.remove("boldText");
+//        document.getElementById("scrollingBtnId").classList.remove("boldText");
+//        document.getElementById("layoutBtnId").classList.remove("boldText");
+//        document.getElementById("erdBtnId").classList.remove("boldText");
+
+        document.getElementById("flowchartBtnId").classList.remove("boldText");
+        document.getElementById("flowStartBtnId").classList.remove("boldText");
+
+        document.getElementById("databaseBtnId").classList.remove("boldText");
+
+        document.getElementById("logicalBtnId").classList.remove("boldText");
 
         document.getElementById("featuresBtnId").classList.remove("boldText");
         document.getElementById("flowBtnId").classList.remove("boldText");
@@ -498,9 +604,9 @@
 
     function hideAllTexts() {
         document.getElementById("prefaceTextId").style.display = "none";
-        document.getElementById("howtoTextId").style.display = "none";
-        document.getElementById("startTextId").style.display = "none";
-        document.getElementById("initialTextId").style.display = "none";
+        document.getElementById("basicsTextId").style.display = "none";
+//        document.getElementById("startTextId").style.display = "none";
+        document.getElementById("paletteTextId").style.display = "none";
         document.getElementById("nodeEditTextId").style.display = "none";
         document.getElementById("chartEditTextId").style.display = "none";
         document.getElementById("addingMoreTextId").style.display = "none";
@@ -510,8 +616,14 @@
         document.getElementById("searchTextId").style.display = "none";
         document.getElementById("scrollingTextId").style.display = "none";
         document.getElementById("layoutTextId").style.display = "none";
-//        document.getElementById("bpmTextId").style.display = "none";
         document.getElementById("erdTextId").style.display = "none";
+
+        document.getElementById("flowchartTextId").style.display = "none";
+        document.getElementById("flowStartTextId").style.display = "none";
+
+        document.getElementById("databaseTextId").style.display = "none";
+
+        document.getElementById("logicalTextId").style.display = "none";
 
         document.getElementById("featuresTextId").style.display = "none";
         document.getElementById("flowTextId").style.display = "none";

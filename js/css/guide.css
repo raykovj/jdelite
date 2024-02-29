@@ -17,11 +17,22 @@ p { margin: 0; }
 }
 .contentTitle {
     display: block;
-    margin-top: 10px;
+    margin: 10px 0 0 60px;
     padding: 2px 20px;
     font-family: Arial;
     font-size: 22px;
     
+}
+.logo {
+    border: none;
+    outline: none;
+    position: absolute;
+    
+    
+    height: 40px;
+    width: 80px;
+    background-image: url(../../images/splash/JDEliteGraphTM100.png);
+    background-repeat: no-repeat;
 }
 .container {
     width: 100%;
