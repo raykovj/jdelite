@@ -888,6 +888,9 @@ label {
 	border: 1px solid #808080;
 	font-weight: bold;
 }
+.colorpicker, .colorpicker * {
+	z-index: 9999;
+}
 .prefs-button {
 	border: 1px solid #bbbbbb;
 	border-radius: 2px;
@@ -1148,14 +1151,12 @@ label {
 	
 	
 }
-.startPageTop {
-	grid-column: 2;
-	grid-row: 2;
-	display: grid;
-	grid-template-columns: 120px auto 120px;
-	width: 98%;
-	height: 80px;
-}
+	
+	
+	
+	
+	
+	
 .startPageHeader {
 	
 	display: flex;
@@ -1437,6 +1438,12 @@ label {
 .button-add {
 	background-image: url(../../images/toolbar/add24.png);
 }
+.button-addPK {
+	background-image: url(../../images/toolbar/addPK24.png);
+}
+.button-addFK {
+	background-image: url(../../images/toolbar/addFK24.png);
+}
 .button-new {
 	background-image: url(../../images/toolbar/addFile24.png);
 }
@@ -1578,6 +1585,9 @@ label {
 .block-shrinkV {
 	background-image: url(../../images/toolbar/shrinkV201.png);
 }
+.emptyImage {
+	background-image: url(../../images/dataflow/empty20x10.png);
+}
 	
 	
 .lineStyle-button {
@@ -1643,7 +1653,7 @@ label {
 	margin-left: 4px;
 }
 .icon-textInvalid {
-	background-image: url(../../images/toolbar/textWarning10x10.png);
+	background-image: url(../../images/toolbar/textError10x10.png);
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -1955,15 +1965,15 @@ table#dirsTableId td {
 	font-weight: bold;
 	border: none;
 	outline: none;
-	width: 228px;
+	width: 218px;
 	height: 20px;
 	background-color: #f3f6fc;
 }
 .decisionLayout {
 	position: absolute;
 	
-	width: 236px;
-	height: 182px;
+	width: 226px;
+	height: 176px;
 	visibility: hidden;
 	border: 2px solid navy;
 	background-color: #f3f6fc;
@@ -1985,7 +1995,8 @@ table#dirsTableId td {
 .dbTableContainer {
 	position: absolute;
 	outline: none;
-	width: 346px  !important;
+	
+	width: 420px  !important;
 	height: 166px;
 	visibility: hidden;
 	border: 2px solid navy;
@@ -1999,6 +2010,7 @@ table#dirsTableId td {
 	border: none;
 	outline: none;
 	width: 208px;
+	
 	height: 20px;
 	background-color: #f3f6fc;
 }
@@ -2054,11 +2066,59 @@ table#dbTableContentId td {
 	float: right;
 	border: 1px solid navy;
 }
+.dbTableListMenu {
+	height: 10px !important;
+	margin: 1px 0 1px 0;
+}
+#btnDBRowConfirmId {
+	margin-left: 10px;
+}
+.ui-selectmenu-menu .dbKeys.keysmenu {
+	padding: 0 10px 4px 1px;
+	height: 10px;
+	line-height: 1.0;
+}
+.ui-selectmenu-open > ul{
+	max-height: 200px;
+	overflow-y: scroll;
+}
+#inputKeyId+.ui-selectmenu-button.ui-button {
+	max-height: 9px !important;
+	color: black;
+	background-color: white;
+	border: 1px solid navy;
+	padding: 3px 24px 7px 4px;
+}
+#inputTypeId+.ui-selectmenu-button.ui-button {
+	max-height: 9px !important;
+	color: black;
+	background-color: white;
+	border: 1px solid navy;
+	padding: 3px 42px 7px 2px;
+}
+#inputAutoIncrId+.ui-selectmenu-button.ui-button {
+	max-height: 9px !important;
+	color: black;
+	background-color: white;
+	border: 1px solid navy;
+	padding: 3px 32px 7px 2px;
+}
+#inputNotNullId+.ui-selectmenu-button.ui-button {
+	max-height: 9px !important;
+	color: black;
+	background-color: white;
+	border: 1px solid navy;
+	padding: 3px 32px 7px 2px;
+}
+	
+	
+	
+	
+	
 #inputKeyId {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	text-indent: 2px;
-	
 }
 #inputTypeId {
 	-webkit-appearance: none;
@@ -2066,14 +2126,28 @@ table#dbTableContentId td {
 	text-indent: 2px;
 }
 #inputAutoIncrId {
+	
+	border-radius: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	text-indent: 2px;
+	-ms-appearance: none;
+	
+	
+	
+	
 }
 #inputNotNullId {
+	
+	
+	overflow: hidden;
+	white-space: nowrap;
+	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	text-indent: 2px;
+	-ms-appearance: none;
 }
 #nodeTableContainer {
 	display: block;
