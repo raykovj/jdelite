@@ -15,7 +15,7 @@ body.waiting * {
 }
 .screenContainer {
 	display: grid;
-	grid-template-rows: 54px 1200px;
+	grid-template-rows: 54px auto;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -56,14 +56,18 @@ body.waiting * {
 	display: inline;
 	
 	
-	border: 1px solid #8aa2f1;
-	border-radius: 4px;
+	
+	
 	
 	background-color: #E1F5FF;
-	width: 70px;
-	height: 20px;
+	text-align: center;
+	width: 56px;
+	height: 24px;
 	margin-top: 2px;
-	padding: 4px 2px 2px 8px;
+	padding: 4px 2px 2px 4px;
+}
+.cnx-info {
+	width: 88px;
 }
 .diagram-text {
 	margin: 0 0 0 4px;
@@ -83,7 +87,7 @@ body.waiting * {
 .diagram-name {
 	flex: 1 0 auto;
 	 height: 26px;
-	padding: 0 2px 4px 6px;
+	padding: 4px 2px 0 6px;
 }
 .top-container {
 	grid-row-start: 2;
@@ -624,7 +628,7 @@ label {
 }
 #nodeColorDefId {
 	
-	margin: 10px 0 0 24px;
+	margin: 10px 0 0 14px;
 	width: 85px;
 	height: 26px;
 	display: inline-block;
@@ -745,6 +749,12 @@ label {
 }
 .noresizeTextArea {
 	resize: none;
+}
+.sp-picker-container,
+.sp-palette-container {
+	float: none;
+	display: inline-block;
+	vertical-align: bottom;
 }
 .ui-selectmenu-menu .ui-menu.customicons .ui-menu-item-wrapper {
 	padding: 0 10px 0 30px;
@@ -890,6 +900,7 @@ label {
 }
 .colorpicker, .colorpicker * {
 	z-index: 9999;
+	position: relative;
 }
 .prefs-button {
 	border: 1px solid #bbbbbb;
@@ -1241,8 +1252,11 @@ label {
 	font-weight: bold;
 	color: #08105d;
 }
+.startCallGroup0 {
+	display: flex; margin: -20px 0 0 0;
+}
 .startCallGroup1 {
-	display: flex; margin: 8px 0 0 0;
+	display: flex; margin: -12px 0 0 0;
 }
 .startCallGroup2 {
 	display: flex; margin: -12px 0 0 0;
@@ -1407,6 +1421,28 @@ label {
 .dgm-button:active {
 	background-color: #82AAFA;
 }
+.dgm-button:disabled {
+	background-color: #ffffff;
+	cursor: default;
+	opacity: 0.5;
+}
+.dgm-btn-outline {
+	margin: 2px 2px 2px 4px;
+	border: 1px solid #8aa2f1;
+	border-radius: 2px;
+}
+.dgm-hr-constrs {
+	width: 266px;
+	height: 1px;
+	border-top: 1px solid blue;
+	margin: 12px 0 0 6px;
+}
+.dgm-hr-indexes {
+	width: 288px;
+	height: 1px;
+	border-top: 1px solid blue;
+	margin: 12px 0 0 6px;
+}
 .hints-text {
 	display: inline-block;
 	width: 140px;
@@ -1418,6 +1454,21 @@ label {
 	width: 20px;
 	background-color: transparent;
 	cursor: pointer;
+}
+.cnx-button {
+	
+	
+	
+	
+	
+	
+	background-color: #E1F5FF;
+	cursor: pointer;
+	height: 30px;
+	width: 28px;
+	
+	background-repeat: no-repeat;
+	background-position: center;
 }
 .componentItem {
 	vertical-align: middle;
@@ -1449,6 +1500,9 @@ label {
 }
 .button-import {
 	background-image: url(../../images/toolbar/import24.png);
+}
+.button-inOut {
+	background-image: url(../../images/toolbar/inOut24.png);
 }
 .button-export {
 	background-image: url(../../images/toolbar/export24.png);
@@ -1557,6 +1611,12 @@ label {
 }
 .button-findDisks {
 	background-image: url(../../images/toolbar/help24.png);
+}
+.button-cnxOn {
+	background-image: url(../../images/toolbar/cnxOn24.png);
+}
+.button-cnxOff {
+	background-image: url(../../images/toolbar/cnxOff24.png);
 }
 .button-expand11 {
 	background-image: url(../../images/dataflow/expand11.png);
@@ -1687,6 +1747,34 @@ label {
 	padding: 0 !important;
 	background-color: #ddeafa;
 	margin: -12px -16px -4px !important;
+}
+.close-button {
+	border: none;
+	outline: none;
+	position: fixed;
+	top: 4px;
+	right: 4px;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	height: 18px;
+	width: 24px;
+	
+	background-image: url(../../images/toolbar/delete18x24Wht.png);
+	background-repeat: no-repeat;
+	
+	z-index: 1000;
+}
+.close-button:hover {
+	background-color: #dddddd;
+	background-image: url(../../images/toolbar/delete18x24Blue.png);
+}
+.close-button:disabled {
+	background-color: #ffffff;
+	cursor: default;
+	opacity: 0.5;
+}
+.close-button:active {
+	background-color: #bbbbbb;
 }
 .ui-dialog .ui-dialog-buttonpane button {
 	border-radius: 0 !important;
@@ -1992,9 +2080,10 @@ table#dirsTableId td {
 .dbTableContainer {
 	position: absolute;
 	outline: none;
+	display: block;
+	width: 380px  !important;
 	
-	width: 420px  !important;
-	height: 166px;
+	
 	visibility: hidden;
 	border: 2px solid navy;
 	background-color: #f3f6fc;
@@ -2034,8 +2123,11 @@ table#dirsTableId td {
 	outline: none;
 	border: none;
 }
+.cursor-pointer {
+	cursor: pointer;
+}
 table#dbTableColumnDefId th {
-	padding: 1px 1px 1px 1px;
+	padding: 1px;
 	color: #ffffff;
 	background-color: #72AAFA !important;
 }
@@ -2044,6 +2136,38 @@ table#dbTableColumnDefId td {
 	border-collapse: collapse;
 	padding: 1px;
 	background-color: #c9eeef;
+}
+table#dbTblIndexColumnsId {
+	cursor: pointer;
+}
+table#dbTblIndexColumnsId th {
+	padding: 1px;
+	color: #ffffff;
+	background-color: #72AAFA !important;
+}
+table#dbTblIndexColumnsId tr {
+	
+}
+table#dbTblIndexColumnsId td {
+	text-align: center;
+	cursor: pointer;
+	padding: 1px;
+}
+table#dbTblConstrColumnsId {
+	cursor: pointer;
+}
+table#dbTblConstrColumnsId th {
+	padding: 1px;
+	color: #ffffff;
+	background-color: #72AAFA !important;
+}
+table#dbTblConstrColumnsId tr {
+	
+}
+table#dbTblConstrColumnsId td {
+	text-align: center;
+	cursor: pointer;
+	padding: 1px;
 }
 	
 	
@@ -2059,59 +2183,129 @@ table#dbTableContentId td {
 .dbTableContentButtons {
 	width: 70px;
 	height: 25px;
-	margin: 6px 4px 6px 0;
+	margin: 0 4px 6px 0;
 	float: right;
 	border: 1px solid navy;
 }
 .dbTableListMenu {
 	height: 10px !important;
-	margin: 1px 0 1px 0;
 }
+.dbTable-button {
+	border: 1px solid #bbbbbb;
+	
+	
+	width: 56px;
+	height: 22px;
+	
+	
+	cursor: pointer;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.dbTable-button:hover {
+	background-color: #dddddd;
+}
+.dbTable-button:disabled {
+	background-color: #ffffff;
+	cursor: default;
+	opacity: 0.5;
+}
+.dbTable-button:active {
+	background-color: #bbbbbb;
+}
+	
+	
+	
+	
+	
 #btnDBRowConfirmId {
 	margin-left: 10px;
 }
-.ui-selectmenu-menu .dbKeys.keysmenu {
-	padding: 0 10px 4px 1px;
-	height: 10px;
-	line-height: 1.0;
+	
+	
+#importFromId+.ui-selectmenu-button.ui-button {
+	max-height: 12px !important;
+	color: black;
+	background-color: white;
+	border: 1px solid navy;
+	padding: 3px 27px 7px 4px;
+}
+#exportToId+.ui-selectmenu-button.ui-button {
+	max-height: 12px !important;
+	color: black;
+	background-color: white;
+	border: 1px solid navy;
+	padding: 3px 27px 7px 4px;
+}
+.inOut-footer {
+	margin: 74px 0 0 0;
 }
 .ui-selectmenu-open > ul{
 	max-height: 200px;
 	overflow-y: scroll;
 }
+.cnstrDBType {
+	width: 88px;
+}
+.cnstrDBdef {
+	width: 102px;
+}
+.cnstrDBTable {
+	width: 88px;
+}
+.cnstrDBColumn {
+	width: 88px;
+}
+.cnstrDBall {
+	max-height: 22px !important;
+	color: navy;
+	background-color: white;
+	border: 1px solid #666;
+	padding: 3px 2px 2px 2px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 2px;
+}
 #inputKeyId+.ui-selectmenu-button.ui-button {
-	max-height: 9px !important;
+	max-height: 10px !important;
 	color: black;
 	background-color: white;
 	border: 1px solid navy;
-	padding: 3px 24px 7px 4px;
+	padding: 3px 27px 7px 4px;
 }
 #inputTypeId+.ui-selectmenu-button.ui-button {
-	max-height: 9px !important;
+	max-height: 10px !important;
 	color: black;
 	background-color: white;
 	border: 1px solid navy;
-	padding: 3px 42px 7px 2px;
+	padding: 3px 104px 7px 4px;
 }
-#inputAutoIncrId+.ui-selectmenu-button.ui-button {
-	max-height: 9px !important;
-	color: black;
-	background-color: white;
-	border: 1px solid navy;
-	padding: 3px 32px 7px 2px;
-}
-#inputNotNullId+.ui-selectmenu-button.ui-button {
-	max-height: 9px !important;
+#autoIncrId+.ui-selectmenu-button.ui-button {
+	max-height: 10px !important;
 	color: black;
 	background-color: white;
 	border: 1px solid navy;
 	padding: 3px 32px 7px 2px;
 }
-	
-	
-	
-	
-	
+#notNullId+.ui-selectmenu-button.ui-button {
+	max-height: 10px !important;
+	color: black;
+	background-color: white;
+	border: 1px solid navy;
+	padding: 3px 32px 7px 2px;
+}
+.idxDBColumn {
+	max-height: 22px !important;
+	width: 128px;
+	color: navy;
+	background-color: white;
+	border: 1px solid #666;
+	padding: 3px 2px 2px 2px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 2px;
+}
 #inputKeyId {
 	-webkit-appearance: none;
 	-moz-appearance: none;

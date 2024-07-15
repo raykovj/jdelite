@@ -21,37 +21,34 @@
     <div id="navbarId" class="top-toolbar">
         <div id="toolbarId" class="actions-toolbar">
             <button id="menuId" class="toolbar-button button-menu" data-toggle="tooltip" title="Main Menu..."></button>
-            <!--<span style="margin-left: 10px;"></span>-->
             <button id="newId" class="toolbar-button button-new" data-toggle="tooltip" title="Start Here..."></button>
             <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open Diagram..."></button>
             <button id="importId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Open Template..."></button>
-            <!--<span style="margin-left: 10px;"></span>-->
+            <button id="inOutId" class="toolbar-button button-no-left button-inOut" data-toggle="tooltip" title="Import DB/Export DB..."></button>
             <button id="undoId" class="toolbar-button button-no-left button-undo" data-toggle="tooltip" title="Undo"></button>
             <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
-            <!--<span style="margin-left: 10px;"></span>-->
             <button id="deleteId" class="toolbar-button button-no-left button-delete" data-toggle="tooltip" title="Remove Selections"></button>
             <button id="copyId" class="toolbar-button button-no-left button-copy" data-toggle="tooltip" title="Copy Selections"></button>
             <button id="pasteId" class="toolbar-button button-no-left button-paste" data-toggle="tooltip" title="Paste Selections"></button>
-            <!--<span style="margin-left: 10px;"></span>-->
             <button id="saveId" class="toolbar-button button-no-left button-save" data-toggle="tooltip" title="Save"></button>
             <button id="saveAsId" class="toolbar-button button-no-left button-saveAs" data-toggle="tooltip" title="Save As..."></button>
-            <!--<span style="margin-left: 10px;"></span>-->
-        <!--</div>-->
-        <!--<div id="toolbar2Id" class="diagram-toolbar">-->
             <button id="refreshId" class="toolbar-button button-no-left button-refresh" data-toggle="tooltip" title="Refresh Diagram & Reset Scaling"></button>
             <button id="findId" class="toolbar-button button-no-left button-find" data-toggle="tooltip"
                     title="Search Node... &nbsp;&nbsp;Ctrl+Shift+F"></button>
             <button id="clearId" class="toolbar-button button-no-left button-clear" data-toggle="tooltip" title="Clear Diagram"></button>
             <button id="leftId" class="toolbar-button button-no-left button-left" data-toggle="tooltip" title="Previous Diagram"></button>
             <button id="rightId" class="toolbar-button button-no-left button-right" data-toggle="tooltip" title="Next Diagram"></button>
-            <!--<span style="margin-left: 10px;"></span>-->
             <button id="configId" class="toolbar-button button-config" data-toggle="tooltip" title="Settings..."></button>
             <button id="helpId" class="toolbar-button button-no-left button-help" data-toggle="tooltip" title="Help..."></button>
-        <!--</div>-->
-        <!--<div>-->
-            <span style="margin-left: 10px;"></span>
+            <span style="margin-left: 4px;"></span>
         </div>
         <div id="diagramNameId">
+            <div style="margin: 2px 0 0 4px;">
+                <div id="cnxOnId" class="cnx-button button-cnxOn" style="display: none;"
+                     data-bind="visible: cnxInfo()" title="Connection On"></div>
+                <div id="cnxOffId" class="cnx-button button-cnxOff"
+                     data-bind="visible: !cnxInfo()" title="Connection Off"></div>
+            </div>
             <div class="diagram-title">
                 <span class="selectionFont">Diagram:</span>
             </div>
@@ -59,6 +56,12 @@
                 <span class="selectionFont diagram-name"
                     data-bind="text: diagramDisplayName()"></span>
             </div>
+            <!--<div style="margin: 2px 0 0 4px;">-->
+                <!--<div id="cnxOnId" class="cnx-button button-cnxOn" style="display: none;"-->
+                        <!--data-bind="visible: cnxInfo()" title="Connection On"></div>-->
+                <!--<div id="cnxOffId" class="cnx-button button-cnxOff"  style="display: none;"-->
+                        <!--data-bind="visible: !cnxInfo()" title="Connection Off"></div>-->
+            <!--</div>-->
         </div>
         <span style="margin-left: 2px;"></span>
     </div>
@@ -666,6 +669,7 @@
              data-bind="html: aboutSources()"></span>
         <!--<span class="galleryFont vertical about-copyright" style="padding: 2px 20px 10px; "-->
              <!--data-bind="text: aboutCopyright()"></span>-->
+        <button class="close-button"></button>
     </div>
 
     <!-- WELCOME -->
@@ -746,23 +750,30 @@
                 </div>
                 <ul>
                     <li>
-                        <div class="startCallGroup1">
+                        <div class="startCallGroup0">
                             <span class="startTextDetails" >Start a new database ERD</span>
                             <button id="btnCreateERDId" class="flow-button button-goRight startGoButton"
                                     title="Select"></button>
                         </div>
                     </li>
                     <li>
-                        <div class="startCallGroup2">
+                        <div class="startCallGroup1">
                             <span class="startTextDetails" >Go to template</span>
                             <button id="btnTemplateERDId" class="flow-button button-goRight startGoButton"
                                     title="Select"></button>
                         </div>
                     </li>
                     <li>
-                        <div class="startCallGroup3">
+                        <div class="startCallGroup2">
                             <span class="startTextDetails" >Open a database ERD</span>
                             <button id="btnOpenERDId" class="flow-button button-goRight startGoButton"
+                                    title="Select"></button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="startCallGroup3">
+                            <span class="startTextDetails" >Import / Export DB script</span>
+                            <button id="btnInOutERDId" class="flow-button button-goRight startGoButton"
                                     title="Select"></button>
                         </div>
                     </li>
@@ -1185,15 +1196,15 @@
         <div style="display: flex">
             <div data-bind="visible: !showDBTableEditorOnLeft()">
                 <input class="dbTableTitle" autofocus type="text" readonly
-                       data-bind="textInput: '<  '+propsNodeName(), attr: {title: propsNodeName()}"/>
+                       data-bind="textInput: '<  '+dbEditorPath(), attr: {title: dbEditorPath()}"/>
             </div>
             <div style="display: flex; margin: 6px 6px 0 6px;">
                 <button id="btnAddNewRowId" class="toolbar-button button-add" data-toggle="tooltip"
                         title="Add New Row"></button>
                 <button id="btnAddPKRowId" class="toolbar-button button-addPK" data-toggle="tooltip"
                         title="Expand Composite Primary Key"></button>
-                <button id="btnAddFKRowId" class="toolbar-button button-addFK" data-toggle="tooltip"
-                        title="Expand Composite Foreign Key"></button>
+                <!--<button id="btnAddFKRowId" class="toolbar-button button-addFK" data-toggle="tooltip"-->
+                        <!--title="Expand Composite Foreign Key"></button>-->
                 <button id="btnRemoveCurrRowId" class="toolbar-button button-delete button-no-left"
                         data-toggle="tooltip" title="Remove Selected Row"></button>
                 <button id="btnMoveCurrRowUpId" class="toolbar-button button-up button-no-left"
@@ -1203,18 +1214,18 @@
             </div>
             <div data-bind="visible: showDBTableEditorOnLeft()">
                 <input class="dbTableTitle" type="text" readonly style="text-align: right;"
-                       data-bind="textInput: propsNodeName()+' > ', attr: {title: propsNodeName()}"/>
+                       data-bind="textInput: dbEditorPath()+' > ', attr: {title: dbEditorPath()}"/>
             </div>
         </div>
-        <div id="dbTableEditorId">
+        <div id="dbTableEditorId" style="display: block;">
             <table id="dbTableColumnDefId" style="width: 100%; table-layout: fixed; ">
                 <thead><tr>
-                    <th style="width: 7%;" title="Key">Key</th>
-                    <th style="width: 34%;" title="Field Name">Field Name</th>
-                    <th style="width: 19%;" title="Data Type">Data Type</th>
-                    <th style="width: 11%;" title="Length">Lengt</th>
-                    <th style="width: 15%;" title="AutoIncrement">AutoInc</th>
-                    <th style="width: 14%;" title="Not Nullable">NotNul</th>
+                    <th style="width: 10%;" title="Key">Key</th>
+                    <th style="width: 52%;" title="Field Name">Column</th>
+                    <th style="width: 33%;" title="Data Type">Data Type</th>
+                    <th style="width: 15%;" title="Length">Lengt</th>
+                    <!--<th style="width: 17%;" title="Autoincrement">AutoInc</th>-->
+                    <!--<th style="width: 16%;" title="Not Nullable">NotNull</th>-->
                 </tr></thead>
                 <caption class="dbTableCaption">Active Columns / Row Content:</caption>
                 <tbody>
@@ -1223,52 +1234,159 @@
                         <td align="center"><input type="checkbox" id="chkFieldId" checked="true"></td>
                         <td align="center"><input type="checkbox" id="chkTypeId" ></td>
                         <td align="center"><input type="checkbox" id="chkLengthId" ></td>
-                        <td align="center"><input type="checkbox" id="chkAutoIncrId" ></td>
-                        <td align="center"><input type="checkbox" id="chkNotNullId" ></td>
+                        <!--<td align="center"><input type="checkbox" id="chkAutoIncrId" ></td>-->
+                        <!--<td align="center"><input type="checkbox" id="chkNotNullId" ></td>-->
                     </tr>
                     <tr>
                         <td >
                                 <select id="inputKeyId" class="dbTableListMenu"
-                                        data-bind="options: dbTableKeys,
+                                        data-bind="options: dbColumnKeys,
                                 optionsText: 'label',
                                 optionsValue: 'id'">
                                 </select>
                         </td>
                         <td >
-                            <input id="inputFieldId" type="text"  style="width: 128px;"
+                            <input id="inputFieldId" type="text" style="width: 167px; height: 16px; margin-left:-2px;"
                                    autocomplete="off" spellcheck="false"
                                    onkeyup="validateFieldName(event)"
                                    data-bind="textInput: fieldValue, css: {invalidInput: isFieldInvalid() }"/>
                         </td>
                         <td >
                                 <select id="inputTypeId" class="dbTableListMenu"
-                                        data-bind="options: dbTableTypes,
+                                        data-bind="options: dbColumnTypes,
                                 optionsText: 'label',
                                 optionsValue: 'id'">
                                 </select>
                         </td>
-                        <td ><input id="inputLengthId" style="width: 38px;"
+                        <td ><input id="inputLengthId" style="width: 42px; height: 16px;"
                                     data-bind="textInput: dbTableLength">
                         </td>
-                        <td >
-                            <select id="inputAutoIncrId" class="dbTableListMenu"
-                                    data-bind="options: dbTableAutoIncr,
-                                optionsText: 'label',
-                                optionsValue: 'id'">
-                            </select>
-                        </td>
-                        <td >
-                            <select id="inputNotNullId" class="dbTableListMenu"
-                                    data-bind="options: dbTableNotNull,
-                                optionsText: 'label',
-                                optionsValue: 'id'">
-                            </select>
-                        </td>
+                        <!--<td >-->
+                            <!--&lt;!&ndash;<button id="constraintsId" class="dbTable-button btn-down-16"></button>&ndash;&gt;-->
+                            <!--<select id="autoIncrId" class="dbTableListMenu"-->
+                                    <!--data-bind="options: dbColumnAutoIncr,-->
+                                <!--optionsText: 'label',-->
+                                <!--optionsValue: 'id'">-->
+                            <!--</select>-->
+                        <!--</td>-->
+                        <!--<td >-->
+                            <!--&lt;!&ndash;<button id="indexesId" class="dbTable-button btn-down-16"></button>&ndash;&gt;-->
+                            <!--<select id="notNullId" class="dbTableListMenu"-->
+                                    <!--data-bind="options: dbColumnNotNull,-->
+                                <!--optionsText: 'label',-->
+                                <!--optionsValue: 'id'">-->
+                            <!--</select>-->
+                        <!--</td>-->
 
                     </tr>
                 </tbody>
             </table>
         </div>
+
+        <div style="margin-top: 6px;"></div>
+        <!-- CONSTRAINTS -->
+        <div style="display: flex; ">
+            <div >
+                <button id="btnShowCnstrId" class="dgm-button btn-down-16 dgm-btn-outline"
+                        data-bind="visible: !showDBConstraints()" title="Show Constraints"></button>
+                <button id="btnHideCnstrId" class="dgm-button btn-up-16 dgm-btn-outline"
+                        data-bind="visible: showDBConstraints()" title="Hide Constraints"></button>
+            </div>
+            <span class="dbTableCaption">Constraints</span>
+            <div style="display: flex; margin: 0 0 2px 210px;" data-bind="visible: showDBConstraints()">
+                <button id="btnAddConstraintId" class="toolbar-button button-add" data-toggle="tooltip"
+                        title="Add New Row"></button>
+                <button id="btnRemoveConstraintId" class="toolbar-button button-delete button-no-left"
+                        data-toggle="tooltip" title="Remove Selected Row"></button>
+            </div>
+        </div>
+        <div id="dbTblConstraintsId" style="display: block; margin: -6px 0 0 0;" data-bind="visible: showDBConstraints()">
+            <table id="dbTblConstrColumnsId" style="width: 100%; table-layout: fixed; ">
+
+                <thead><tr>
+                    <th style="width: 24%;">Type</th>
+                    <th style="width: 28%;">Definition</th>
+                    <th style="width: 24%;">Table</th>
+                    <th style="width: 24%;">Column</th>
+                </tr></thead>
+                <tbody data-bind="foreach: { data: dbTableConstraints, as: 'dbConstr' }">
+                <tr>
+                    <td><select class="cnstrDBType cnstrDBall cursor-pointer"
+                                data-bind="options: dbConstr.type,
+                                    optionsText: 'label',
+                                    optionsValue: 'id'">
+                    </select>
+                    </td>
+                    <td><select class="cnstrDBdef cnstrDBall cursor-pointer"
+                                data-bind="options: dbConstr.def,
+                                    optionsText: 'label',
+                                    optionsValue: 'id'">
+                    </select>
+                    </td>
+                    <td><select class="cnstrDBTable cnstrDBall cursor-pointer"
+                                data-bind="options: dbConstr.table,
+                                    optionsText: 'label',
+                                    optionsValue: 'id'">
+                    </select>
+                    </td>
+                    <td><select class="cnstrDBColumn cnstrDBall cursor-pointer"
+                                data-bind="options: dbConstr.column,
+                                    optionsText: 'label',
+                                    optionsValue: 'id'">
+                    </select>
+                    </td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+        <!-- INDEXES -->
+        <div style="display: flex; ">
+            <div >
+                <button id="btnShowIdxsId" class="dgm-button btn-down-16 dgm-btn-outline"
+                        data-bind="visible: !showDBIndexes()" title="Show Indexes"></button>
+                <button id="btnHideIdxsId" class="dgm-button btn-up-16 dgm-btn-outline"
+                        data-bind="visible: showDBIndexes()" title="Hide Indexes"></button>
+            </div>
+            <span class="dbTableCaption">Indexes</span>
+            <div style="display: flex; margin: 0 0 2px 230px;" data-bind="visible: showDBIndexes()">
+                <button id="btnAddIndexId" class="toolbar-button button-add" data-toggle="tooltip"
+                        title="Add New Row"></button>
+                <button id="btnRemoveIndexId" class="toolbar-button button-delete button-no-left"
+                        data-toggle="tooltip" title="Remove Selected Row"></button>
+            </div>
+        </div>
+        <div id="dbTblIndexesId" style="display: block; margin: -6px 0 0 0;" data-bind="visible: showDBIndexes()">
+            <table id="dbTblIndexColumnsId" style="width: 100%; table-layout: fixed; ">
+                <thead><tr>
+                    <th style="width: 50%;">Name</th>
+                    <th style="width: 35%;">Column</th>
+                    <th style="width: 15%;">Unique</th>
+                </tr></thead>
+                <tbody data-bind="foreach: { data: dbTableIndexes, as: 'dbIndex' }">
+                    <tr>
+                        <td><input type="text" class="cursor-pointer"
+                                   data-bind="textInput: dbIndex.name"
+                                   style="width: 176px; height: 16px;">
+                        </td>
+                        <td><select class="idxDBColumn cursor-pointer"
+                                    data-bind="options: dbIndex.columns,
+                                    optionsText: 'label',
+                                    optionsValue: 'id'">
+                            </select>
+                        </td>
+                        <td><input type="checkbox"
+                                   data-bind="checked: dbIndex.unique"
+                                   style="text-align: center;">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- BUTTONS & ERRORS -->
+        <div style="margin-top: 6px;"></div>
         <div >
             <button id="btnDBRowCancelId" class="prefs-button dbTableContentButtons">Close</button>
             <button id="btnDBRowConfirmId" class="prefs-button dbTableContentButtons">Confirm</button>
@@ -1286,6 +1404,13 @@
                     data-bind="visible: isKeyInvalid()" disabled></button>
             <span class="invalid-message"
                     data-bind="visible: isKeyInvalid(), text: validateKeyMessage()"></span>
+        </div>
+
+        <div style="background: white; margin-left: 6px;">
+            <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
+                    data-bind="visible: isDuplicateType()" disabled></button>
+            <span class="invalid-message"
+                    data-bind="visible: isDuplicateType(), text: duplicateConstraintMessage()"></span>
         </div>
 
     </div>
@@ -1480,6 +1605,39 @@
         </div>
     </div>
 
+    <div id="importExportDialogId" class="settingsFont" style="display: none; overflow: hidden;">
+        <div id="importExportTabId">
+            <ul>
+                <li><a href="#inOutTabId-1">Import</a></li>
+                <li><a href="#inOutTabId-2">Export</a></li>
+            </ul>
+
+            <div id="inOutTabId-1">
+                <div class="settings-entry">Import Database Script to ER Diagram</div>
+                <div class="settings-entry" style="margin: 20px 0 6px 0; ">Select Database:</div>
+
+                <select id="importFromId"
+                        data-bind="options: dbsToImport,
+                                optionsText: 'label',
+                                optionsValue: 'id'">
+                </select>
+                <div class="inOut-footer"></div>
+            </div>
+
+            <div id="inOutTabId-2">
+                <div class="settings-entry">Export ER Diagram to Database Script</div>
+                <div class="settings-entry" style="margin: 20px 0 6px 0; ">Select Database:</div>
+
+                <select id="exportToId"
+                        data-bind="options: dbsToExport,
+                                optionsText: 'label',
+                                optionsValue: 'id'">
+                </select>
+                <div class="inOut-footer"></div>
+            </div>
+        </div>
+    </div>
+
     <div id="nodePropsDialogId" class="settingsFont" style="display: none; overflow: hidden;">
         <div class="settings-entry" style="margin: 6px 0 2px 0;">Node name:</div>
         <div class="nodeProps-controls">
@@ -1549,7 +1707,7 @@
 
         <div class="settings-entry" style="margin: 6px 0 2px 0;">Text Content:</div>
         <div class="nodeProps-controls">
-            <textarea id="editNodeContentId" placeholder="[Enter content...]" autofocus rows="4" cols="36" wrap="hard"
+            <textarea id="editNodeContentId" placeholder="[Enter content...]" autofocus rows="4" cols="30" wrap="hard"
                       spellcheck="false" class="noresizeTextArea"></textarea>
         </div>
 
