@@ -77,9 +77,16 @@
             <!--<div id="progressBarId" class="progressBar-settings-in" data-bind="visible: isProgressBarVisible()" ></div>-->
         <!--</div>-->
 
+        <!--<div class="showDBSelect" data-bind="visible: showDBName()" >-->
+
+        <!--</div>-->
         <div id="paletteCtrId" class="palette-content">
+            <div style="margin-top: 4px;"></div>
+            <div class="showDBSelect" data-bind="visible: showDBName() && selectedDBName().length > 0" >
+                <span class="showDBText" data-bind="text: 'Database: '+selectedDBName()">/</span>
+            </div>
             <div class="group-box current-settings">
-                <div style="margin-top: 4px;"></div>
+                <div style="margin-top: 2px;"></div>
                 <div class="accordSelect" style="display: block;">
                     <div class="typeSelection">
                         <div>
@@ -910,7 +917,7 @@
         </div>
 
         <div style="margin: 8px 0 0 0; font-weight: bold;"
-             data-bind="visible: isConnectionOK() && isOpenMode() && !showTemplatesOnly()">
+             data-bind="visible: isConnectionOK() && (isOpenMode() || isImportDBMode()) && !showTemplatesOnly()">
             <span style="margin: 16px 0 6px 0 ; ">Files Type:</span>
             <select id="selectFileTypeId" onchange="onFileTypeChange(event)"
                     data-bind="options: filesTypes, value: selectedFileType ">
@@ -942,7 +949,7 @@
         </div>
 
         <div class="selectSaveGroup"
-             data-bind="visible: isConnectionOK() && isSaveMode() && !showTemplatesOnly()">
+             data-bind="visible: isConnectionOK() && (isSaveMode() || isExportDBMode()) && !showTemplatesOnly()">
             <span style="margin: 10px 6px 0 0 ; ">Enter file name:</span>
             <div>
                 <input id="saveAsFileNameId" autofocus type="text" class="saveAsText"
@@ -1220,10 +1227,10 @@
         <div id="dbTableEditorId" style="display: block;">
             <table id="dbTableColumnDefId" style="width: 100%; table-layout: fixed; ">
                 <thead><tr>
-                    <th style="width: 10%;" title="Key">Key</th>
-                    <th style="width: 52%;" title="Field Name">Column</th>
-                    <th style="width: 33%;" title="Data Type">Data Type</th>
-                    <th style="width: 15%;" title="Length">Lengt</th>
+                    <th style="width: 10%;" title="Key">&nbsp;Key</th>
+                    <th style="width: 48%;" title="Field Name">&nbsp;Column</th>
+                    <th style="width: 30%;" title="Data Type">&nbsp;Data Type</th>
+                    <th style="width: 12%;" title="Length">&nbsp;Lengt</th>
                     <!--<th style="width: 17%;" title="Autoincrement">AutoInc</th>-->
                     <!--<th style="width: 16%;" title="Not Nullable">NotNull</th>-->
                 </tr></thead>
@@ -1239,45 +1246,28 @@
                     </tr>
                     <tr>
                         <td >
-                                <select id="inputKeyId" class="dbTableListMenu"
+                            <select id="inputKeyId" class="dbTableListMenu"
                                         data-bind="options: dbColumnKeys,
                                 optionsText: 'label',
                                 optionsValue: 'id'">
                                 </select>
                         </td>
                         <td >
-                            <input id="inputFieldId" type="text" style="width: 167px; height: 16px; margin-left:-2px;"
+                            <input id="inputFieldId" type="text" class="inputFieldDB"
                                    autocomplete="off" spellcheck="false"
                                    onkeyup="validateFieldName(event)"
                                    data-bind="textInput: fieldValue, css: {invalidInput: isFieldInvalid() }"/>
                         </td>
                         <td >
-                                <select id="inputTypeId" class="dbTableListMenu"
+                            <select id="inputTypeId" class="dbTableListMenu"
                                         data-bind="options: dbColumnTypes,
                                 optionsText: 'label',
                                 optionsValue: 'id'">
                                 </select>
                         </td>
-                        <td ><input id="inputLengthId" style="width: 42px; height: 16px;"
+                        <td ><input id="inputLengthId" class="inputLengthDB"
                                     data-bind="textInput: dbTableLength">
                         </td>
-                        <!--<td >-->
-                            <!--&lt;!&ndash;<button id="constraintsId" class="dbTable-button btn-down-16"></button>&ndash;&gt;-->
-                            <!--<select id="autoIncrId" class="dbTableListMenu"-->
-                                    <!--data-bind="options: dbColumnAutoIncr,-->
-                                <!--optionsText: 'label',-->
-                                <!--optionsValue: 'id'">-->
-                            <!--</select>-->
-                        <!--</td>-->
-                        <!--<td >-->
-                            <!--&lt;!&ndash;<button id="indexesId" class="dbTable-button btn-down-16"></button>&ndash;&gt;-->
-                            <!--<select id="notNullId" class="dbTableListMenu"-->
-                                    <!--data-bind="options: dbColumnNotNull,-->
-                                <!--optionsText: 'label',-->
-                                <!--optionsValue: 'id'">-->
-                            <!--</select>-->
-                        <!--</td>-->
-
                     </tr>
                 </tbody>
             </table>
@@ -1293,7 +1283,7 @@
                         data-bind="visible: showDBConstraints()" title="Hide Constraints"></button>
             </div>
             <span class="dbTableCaption">Constraints</span>
-            <div style="display: flex; margin: 0 0 2px 210px;" data-bind="visible: showDBConstraints()">
+            <div style="display: flex; margin: 0 0 2px 290px;" data-bind="visible: showDBConstraints()">
                 <button id="btnAddConstraintId" class="toolbar-button button-add" data-toggle="tooltip"
                         title="Add New Row"></button>
                 <button id="btnRemoveConstraintId" class="toolbar-button button-delete button-no-left"
@@ -1302,47 +1292,53 @@
         </div>
         <div id="dbTblConstraintsId" style="display: block; margin: -6px 0 0 0;" data-bind="visible: showDBConstraints()">
             <table id="dbTblConstrColumnsId" style="width: 100%; table-layout: fixed; ">
-
                 <thead><tr>
-                    <th style="width: 24%;">Type</th>
-                    <th style="width: 28%;">Definition</th>
-                    <th style="width: 24%;">Table</th>
-                    <th style="width: 24%;">Column</th>
+                    <th style="width: 22%;">&nbsp;Type</th>
+                    <th style="width: 22%;">&nbsp;Definition</th>
+                    <th style="width: 16%;">&nbsp;Name</th>
+                    <th style="width: 20%;">&nbsp;Table</th>
+                    <th style="width: 20%;">&nbsp;Column</th>
                 </tr></thead>
                 <tbody data-bind="foreach: { data: dbTableConstraints, as: 'dbConstr' }">
-                <tr>
-                    <td><select class="cnstrDBType cnstrDBall cursor-pointer"
-                                data-bind="options: dbConstr.type,
-                                    optionsText: 'label',
-                                    optionsValue: 'id'">
-                    </select>
-                    </td>
-                    <td><select class="cnstrDBdef cnstrDBall cursor-pointer"
-                                data-bind="options: dbConstr.def,
-                                    optionsText: 'label',
-                                    optionsValue: 'id'">
-                    </select>
-                    </td>
-                    <td><select class="cnstrDBTable cnstrDBall cursor-pointer"
-                                data-bind="options: dbConstr.table,
-                                    optionsText: 'label',
-                                    optionsValue: 'id'">
-                    </select>
-                    </td>
-                    <td><select class="cnstrDBColumn cnstrDBall cursor-pointer"
-                                data-bind="options: dbConstr.column,
-                                    optionsText: 'label',
-                                    optionsValue: 'id'">
-                    </select>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <select class="cnstrDBType cnstrDBall cursor-pointer"
+                                    data-bind="options: dbConstr.type,
+                                        optionsText: 'label',
+                                        optionsValue: 'id'">
+                            </select>
+                        </td>
+                        <td >
+                            <select class="cnstrDBDef cnstrDBall cursor-pointer"
+                                    data-bind="options: dbConstr.def,
+                                        optionsText: 'label',
+                                        optionsValue: 'id'">
+                            </select>
+                        </td>
+                        <td >
+                            <input class="cnstrDBName cnstrDBall cursor-pointer" type="text"/>
+                        </td>
+                        <td >
+                            <select class="cnstrDBTable cnstrDBall cursor-pointer"
+                                    data-bind="options: dbConstr.table,
+                                        optionsText: 'label',
+                                        optionsValue: 'id'">
+                            </select>
+                        </td>
+                        <td >
+                            <select class="cnstrDBColumn cnstrDBall cursor-pointer"
+                                    data-bind="options: dbConstr.column,
+                                        optionsText: 'label',
+                                        optionsValue: 'id'">
+                            </select>
+                        </td>
+                    </tr>
                 </tbody>
-
             </table>
         </div>
 
         <!-- INDEXES -->
-        <div style="display: flex; ">
+        <div style="display: flex; margn-top: 28px;">
             <div >
                 <button id="btnShowIdxsId" class="dgm-button btn-down-16 dgm-btn-outline"
                         data-bind="visible: !showDBIndexes()" title="Show Indexes"></button>
@@ -1350,7 +1346,7 @@
                         data-bind="visible: showDBIndexes()" title="Hide Indexes"></button>
             </div>
             <span class="dbTableCaption">Indexes</span>
-            <div style="display: flex; margin: 0 0 2px 230px;" data-bind="visible: showDBIndexes()">
+            <div style="display: flex; margin: 0 0 2px 312px;" data-bind="visible: showDBIndexes()">
                 <button id="btnAddIndexId" class="toolbar-button button-add" data-toggle="tooltip"
                         title="Add New Row"></button>
                 <button id="btnRemoveIndexId" class="toolbar-button button-delete button-no-left"
@@ -1360,15 +1356,14 @@
         <div id="dbTblIndexesId" style="display: block; margin: -6px 0 0 0;" data-bind="visible: showDBIndexes()">
             <table id="dbTblIndexColumnsId" style="width: 100%; table-layout: fixed; ">
                 <thead><tr>
-                    <th style="width: 50%;">Name</th>
-                    <th style="width: 35%;">Column</th>
-                    <th style="width: 15%;">Unique</th>
+                    <th style="width: 50%;">&nbsp;Name</th>
+                    <th style="width: 35%;">&nbsp;Column</th>
+                    <th style="width: 15%;">&nbsp;Unique</th>
                 </tr></thead>
                 <tbody data-bind="foreach: { data: dbTableIndexes, as: 'dbIndex' }">
                     <tr>
-                        <td><input type="text" class="cursor-pointer"
-                                   data-bind="textInput: dbIndex.name"
-                                   style="width: 176px; height: 16px;">
+                        <td><input type="text" class="cursor-pointer idxDbName"
+                                   data-bind="textInput: dbIndex.name">
                         </td>
                         <td><select class="idxDBColumn cursor-pointer"
                                     data-bind="options: dbIndex.columns,
@@ -1388,7 +1383,7 @@
         <!-- BUTTONS & ERRORS -->
         <div style="margin-top: 6px;"></div>
         <div >
-            <button id="btnDBRowCancelId" class="prefs-button dbTableContentButtons">Close</button>
+            <button id="btnDBRowCancelId" class="prefs-button dbTableContentButtons">Cancel</button>
             <button id="btnDBRowConfirmId" class="prefs-button dbTableContentButtons">Confirm</button>
         </div>
 
@@ -1607,33 +1602,28 @@
 
     <div id="importExportDialogId" class="settingsFont" style="display: none; overflow: hidden;">
         <div id="importExportTabId">
-            <ul>
-                <li><a href="#inOutTabId-1">Import</a></li>
-                <li><a href="#inOutTabId-2">Export</a></li>
-            </ul>
-
-            <div id="inOutTabId-1">
-                <div class="settings-entry">Import Database Script to ER Diagram</div>
-                <div class="settings-entry" style="margin: 20px 0 6px 0; ">Select Database:</div>
-
-                <select id="importFromId"
-                        data-bind="options: dbsToImport,
+            <div class="settings-controls settings-entry" style="display: block">
+                <!--<div class="settings-entry">Import Database Script to ER Diagram</div>-->
+                <div class="settings-entry" style="margin: 20px 0 6px 12px; ">Select Database:</div>
+                <div style="margin: 0 0 0 12px; ">
+                    <select id="importExportId"
+                            data-bind="options: dbsToImport,
                                 optionsText: 'label',
                                 optionsValue: 'id'">
-                </select>
+                    </select>
+                </div>
+
+                <div style="margin: 20px 0 0 6px;">
+                    <input type="radio" id="btnImportDBId" name="inOut" style="margin: 4px 4px 0 4px;">
+                    <label for="btnImportDBId" style="vertical-align:baseline; margin: 0 14px 0 0;" >Import Database Script</label>
+                </div>
+                <div style="margin: 6px 0 0 6px;">
+                    <input type="radio" id="btnExportDBId" name="inOut" style="margin: 4px 4px 0 4px;">
+                    <label for="btnExportDBId" style="vertical-align:baseline;  margin: 0 0 0 0;">Export Database Script</label>
+                </div>
+
                 <div class="inOut-footer"></div>
             </div>
-
-            <div id="inOutTabId-2">
-                <div class="settings-entry">Export ER Diagram to Database Script</div>
-                <div class="settings-entry" style="margin: 20px 0 6px 0; ">Select Database:</div>
-
-                <select id="exportToId"
-                        data-bind="options: dbsToExport,
-                                optionsText: 'label',
-                                optionsValue: 'id'">
-                </select>
-                <div class="inOut-footer"></div>
             </div>
         </div>
     </div>

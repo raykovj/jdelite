@@ -93,7 +93,7 @@ body.waiting * {
 	grid-row-start: 2;
 	display: grid;
 	grid-template-columns: auto 214px;
-	grid-template-rows: auto 10px;
+	grid-template-rows: auto auto 10px;
 	column-gap: 0;
 	
 	padding: 2px 0 0 10px;
@@ -312,6 +312,26 @@ body.waiting * {
 	border: 1px solid #3a72c1;
 	background-color: #72AAFA;
 	width: 188px;
+}
+.showDBSelect {
+	
+	
+	
+	border: 1px solid  #3a72c1;
+	border-radius: 2px;
+	background-color: #E1F5FF;
+	width: 191px;
+	height: 24px;
+	display: block;
+	margin: 0 0 2px 10px;
+}
+.showDBText {
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: bold;
+	vertical-align: sub;
+	margin: 0px 0 0 18px;
+	padding: 0px 0 0 0;
 }
 .accordSelect {
 	font-family: Arial;
@@ -1206,7 +1226,7 @@ label {
 	padding: 12px 0;
 }
 .startDiagramTab:hover {
-	border: 3px solid #8485CC !important;
+	
 	background-color: #a4c8ee !important;
 	cursor: pointer;
 }
@@ -2081,8 +2101,8 @@ table#dirsTableId td {
 	position: absolute;
 	outline: none;
 	display: block;
-	width: 380px  !important;
 	
+	width: 460px  !important;
 	
 	visibility: hidden;
 	border: 2px solid navy;
@@ -2093,12 +2113,13 @@ table#dirsTableId td {
 	font-size: 12px;
 	margin: 4px 0 2px 2px;
 	font-weight: bold;
-	border: none;
+	border: 1px solid navy;
 	outline: none;
-	width: 208px;
+	width: 288px;
 	
 	height: 20px;
-	background-color: #f3f6fc;
+	background-color: #c9eeef;
+	
 }
 .dbTableCaption {
 	font-family: Arial;
@@ -2132,6 +2153,17 @@ table#dbTableColumnDefId th {
 	background-color: #72AAFA !important;
 }
 table#dbTableColumnDefId td {
+	text-align: center;
+	border-collapse: collapse;
+	padding: 1px;
+	background-color: #c9eeef;
+}
+table#dbTblAdtlConstrId th {
+	padding: 1px;
+	color: #ffffff;
+	background-color: #72AAFA !important;
+}
+table#dbTblAdtlConstrId td {
 	text-align: center;
 	border-collapse: collapse;
 	padding: 1px;
@@ -2239,23 +2271,43 @@ table#dbTableContentId td {
 	padding: 3px 27px 7px 4px;
 }
 .inOut-footer {
-	margin: 74px 0 0 0;
+	margin: 44px 0 0 0;
 }
 .ui-selectmenu-open > ul{
 	max-height: 200px;
 	overflow-y: scroll;
 }
 .cnstrDBType {
-	width: 88px;
+	
+	width: 97px;
 }
-.cnstrDBdef {
-	width: 102px;
+.cnstrDBDef {
+	
+	width: 98px;
+}
+.cnstrDBDefStr {
+	width: 240px;
+	height: 15px;
+}
+.cnstrDBName {
+	width: 65px;
+	height: 15px;
 }
 .cnstrDBTable {
+	
 	width: 88px;
 }
 .cnstrDBColumn {
+	
 	width: 88px;
+}
+.cnstrAdtlDBType {
+	
+	width: 97px;
+}
+.cnstrAdtlDBName {
+	width: 65px;
+	height: 15px;
 }
 .cnstrDBall {
 	max-height: 22px !important;
@@ -2272,14 +2324,23 @@ table#dbTableContentId td {
 	color: black;
 	background-color: white;
 	border: 1px solid navy;
-	padding: 3px 27px 7px 4px;
+	padding: 3px 37px 7px 4px;
+}
+.inputFieldDB {
+	width: 207px;
+	height: 16px;
+	margin-left:-2px;
 }
 #inputTypeId+.ui-selectmenu-button.ui-button {
 	max-height: 10px !important;
 	color: black;
 	background-color: white;
 	border: 1px solid navy;
-	padding: 3px 104px 7px 4px;
+	padding: 3px 128px 7px 4px;
+}
+.inputLengthDB {
+	width: 46px;
+	height: 16px;
 }
 #autoIncrId+.ui-selectmenu-button.ui-button {
 	max-height: 10px !important;
@@ -2295,9 +2356,13 @@ table#dbTableContentId td {
 	border: 1px solid navy;
 	padding: 3px 32px 7px 2px;
 }
+.idxDbName {
+	width: 216px;
+	height: 16px;
+}
 .idxDBColumn {
 	max-height: 22px !important;
-	width: 128px;
+	width: 158px;
 	color: navy;
 	background-color: white;
 	border: 1px solid #666;

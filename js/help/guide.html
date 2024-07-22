@@ -53,7 +53,9 @@
                             <li><button id="dbKeysBtnId" class="textBtn second" onclick="selectText(event)">Primary and Foreign Keys</button></li>
                             <li><button id="dbStartBtnId" class="textBtn second" onclick="selectText(event)">Create a Table Node</button></li>
                             <li><button id="dbCardinalBtnId" class="textBtn second" onclick="selectText(event)">Notations and Cardinality</button></li>
-                            <li><button id="dbCompositeBtnId" class="textBtn second" onclick="selectText(event)">Composite Keys</button></li>
+                            <!--<li><button id="dbCompositeBtnId" class="textBtn second" onclick="selectText(event)">Composite Keys</button></li>-->
+                            <li><button id="dbConstraintsBtnId" class="textBtn second" onclick="selectText(event)">Constraints</button></li>
+                            <li><button id="dbIndexesBtnId" class="textBtn second" onclick="selectText(event)">Indexes</button></li>
                         </ul>
                     </li>
 
@@ -91,7 +93,7 @@
                     </p><br>
                     <p><img src="../../images/splash/whereToStart.png" width="185" height="119"></p>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/startBuilder.gif" width="524" height="335"></p><br>
+                        <p><img src="../../images/gifs/startNewBuilder.gif" width="524" height="335"></p><br>
                     </div>
                     <br><br>
                 </div>
@@ -113,7 +115,7 @@
                         accessible from the <b>top toolbar</b> buttons, as well as from context menus or by mouse/keyboard shortcuts.
                         Most of these actions can also be invoked from the
                         hamburger <b>main drop-down menu</b> in the upper left corner:</p><br>
-                    <p><img src="../../images/guide/toolbar.png" width="541" height="32"></p><br>
+                    <p><img src="../../images/guide/toolbar1.png" width="670" height="32"></p><br>
                     <p>The following actions are initiated as follows:</p>
                     <p><img src="../../images/toolbar/menu24.png" width="24" height="24"> - Main drop-down menu</p>
                     <p><img src="../../images/toolbar/addFile24.png" width="24" height="24"> - Start Here: it brings the
@@ -122,6 +124,8 @@
                         the File System Browser entry below)</p>
                     <p><img src="../../images/toolbar/import24.png" width="24" height="24"> - Open a template for the selected
                         diagram type</p>
+                    <p><img src="../../images/toolbar/inOut24.png" width="24" height="24"> - Open the <b>Import/Export</b>
+                        dialog to import database scripts to ERDs and/or to export ERDs to scripts</p>
                     <p><img src="../../images/toolbar/undo24.png" width="24" height="24"> - Undo the latest action (Ctrl+Z)</p>
                     <p><img src="../../images/toolbar/redo24.png" width="24" height="24"> - Redo the latest action that has
                         been undone (Ctrl+Shift+Z)</p>
@@ -146,6 +150,12 @@
                         if such is available, and ask to save current changes</p>
                     <p><img src="../../images/toolbar/config24.png" width="24" height="24"> - Open the <b>Settings</b> dialog</p>
                     <p><img src="../../images/toolbar/help24.png" width="24" height="24"> - Open the drop down help menu</p>
+                    <br>
+                    <div><img src="../../images/toolbar/cnxOn24.png" width="24" height="24"> <span style="vertical-align: top">/</span>
+                        <img src="../../images/toolbar/cnxOff24.png" width="24" height="24">
+                        <span style="vertical-align: top">- Indicate that the connection to the server is on/off</span>
+                    </div>
+
                     <br><p>The editor actions are <b>undoable</b> through an unlimited number of
                     <b>Undo/Redo</b> steps. The undo buffer is cleared by a save action.
                 </p><br><br>
@@ -478,9 +488,10 @@
                         The diagram nodes correspond to the database tables and show the detailed table designs.
                         The relationships between entities are represented as links between the diagram nodes.
                         <br><br>
-                        The ERD you created is saved as a file in JSON format.
+                        The ERD you create is saved as a file in JSON format.
                         This file can be exported to a specific database script. Vice versa a database script can be
-                        imported to a JSON file as an internal structure that can be visualized in the editor.
+                        imported to a JSON file as an internal structure that can be visualized in the editor. The current
+                        version supports <b>SQLite</b> and <b>MySQL</b>.
 
                         <br><br>Each database table represents an <b>entity</b> and contains <b>rows</b> and <b>columns</b>.
                         The rows are called <b>records</b>. Each record is an instance of the entity. All records in a table
@@ -531,7 +542,7 @@
                         feature in relational databases. It establishes and ensures the <b>referential integrity</b> between the
                         referencing columns and the referenced columns.
                         <br><br>The primary keys and the foreign keys have different background color.
-                        <br><br>The small vertical bars at the both ends of the link below show the <b>cardinality</b>.
+                        <br><br>The small vertical bars at the both ends of the link below show the particular <b>cardinality</b>.
                         It defines the possible number of occurrences of the primary entity <b>customer</b> that are associated
                         with the possible number of occurrences of the foreign entity <b>contact</b>. In the example below
                         each customer can have only one contact associated with him and each contact corresponds to only
@@ -581,7 +592,7 @@
                         down if there are no restrictions for it.</p>
                     <br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbStart.gif" width="864" height="540"></p>
+                        <p><img src="../../images/gifs/dbNewStart.gif" width="684" height="490"></p>
                     </div><br><br>
                 </div>
 
@@ -634,7 +645,7 @@
                         <img src="../../images/toolbar/addPK24.png" width="24" height="24">
                     to create the new row, then add the necessary data in the remaining fields.</p><br><br>
                         <div style="display:flex; justify-content: center; ">
-                            <p><img src="../../images/gifs/accounts.gif" width="658" height="349"></p>
+                            <p><img src="../../images/gifs/accountsNew.gif" width="691" height="461"></p>
                         </div>
                         <br>Adding rows for primary keys using the button
                         <img src="../../images/toolbar/addPK24.png" width="24" height="24">
@@ -653,7 +664,14 @@
                     </div><br><br>
                 </div>
 
-                <!-- LOG -->
+                <div id="dbConstraintsTextId" class="contentText" style="margin-top: -20px;">
+                    <p></p>
+                </div>
+
+                <div id="dbIndexesTextId" class="contentText" style="margin-top: -20px;">
+                </div>
+
+            <!-- LOG -->
 
                 <div id="logicalTextId" class="contentText" style="margin-top: -20px;">
                     <p><b>Logical ERDs</b> (entity-relationship diagrams) are used to design the conceptual or logical
@@ -808,8 +826,12 @@
             document.getElementById("dbStartTextId").style.display = "block";
         } else if (id === "dbCardinalBtnId") {
             document.getElementById("dbCardinalTextId").style.display = "block";
-        } else if (id === "dbCompositeBtnId") {
-            document.getElementById("dbCompositeTextId").style.display = "block";
+//        } else if (id === "dbCompositeBtnId") {
+//            document.getElementById("dbCompositeTextId").style.display = "block";
+        } else if (id === "dbConstraintsBtnId") {
+            document.getElementById("dbConstraintsTextId").style.display = "block";
+        } else if (id === "dbIndexesBtnId") {
+            document.getElementById("dbIndexesTextId").style.display = "block";
 
 
         } else if (id === "logicalBtnId") {
@@ -850,7 +872,9 @@
         document.getElementById("dbKeysBtnId").classList.remove("boldText");
         document.getElementById("dbStartBtnId").classList.remove("boldText");
         document.getElementById("dbCardinalBtnId").classList.remove("boldText");
-        document.getElementById("dbCompositeBtnId").classList.remove("boldText");
+//        document.getElementById("dbCompositeBtnId").classList.remove("boldText");
+        document.getElementById("dbConstraintsBtnId").classList.remove("boldText");
+        document.getElementById("dbIndexesBtnId").classList.remove("boldText");
 
         document.getElementById("logicalBtnId").classList.remove("boldText");
         document.getElementById("logNotationBtnId").classList.remove("boldText");
@@ -893,6 +917,8 @@
         document.getElementById("dbStartTextId").style.display = "none";
         document.getElementById("dbCardinalTextId").style.display = "none";
         document.getElementById("dbCompositeTextId").style.display = "none";
+        document.getElementById("dbConstraintsTextId").style.display = "none";
+        document.getElementById("dbIndexesTextId").style.display = "none";
 
         document.getElementById("logicalTextId").style.display = "none";
         document.getElementById("logNotationTextId").style.display = "none";
