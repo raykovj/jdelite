@@ -2113,13 +2113,24 @@ table#dirsTableId td {
 	font-size: 12px;
 	margin: 4px 0 2px 2px;
 	font-weight: bold;
-	border: 1px solid navy;
+	border: none;
 	outline: none;
 	width: 288px;
-	
-	height: 20px;
-	background-color: #c9eeef;
-	
+	height: 24px;
+	color: white;
+	background-color: #72AAFA;
+}
+.dbTableTitle2 {
+	font-family: Arial;
+	font-size: 12px;
+	margin: 4px 0 2px 2px;
+	font-weight: bold;
+	border: none;
+	outline: none;
+	width: 208px;
+	height: 24px;
+	color: white;
+	background-color: #72AAFA;
 }
 .dbTableCaption {
 	font-family: Arial;
