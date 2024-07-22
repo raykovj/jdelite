@@ -2111,11 +2111,12 @@ table#dirsTableId td {
 .dbTableTitle {
 	font-family: Arial;
 	font-size: 12px;
-	margin: 4px 0 2px 2px;
+	margin: 2px 0 2px 2px;
+	
 	font-weight: bold;
 	border: none;
 	outline: none;
-	width: 288px;
+	width: 290px;
 	height: 24px;
 	color: white;
 	background-color: #72AAFA;
@@ -2123,7 +2124,7 @@ table#dirsTableId td {
 .dbTableTitle2 {
 	font-family: Arial;
 	font-size: 12px;
-	margin: 4px 0 2px 2px;
+	margin: 2px 0 2px 2px;
 	font-weight: bold;
 	border: none;
 	outline: none;
