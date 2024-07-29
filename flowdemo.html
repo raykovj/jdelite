@@ -1302,31 +1302,31 @@
                 <tbody data-bind="foreach: { data: dbTableConstraints, as: 'dbConstr' }">
                     <tr>
                         <td>
-                            <select class="cnstrDBType cnstrDBall cursor-pointer"
+                            <select id="cnstrDBTypeId" class="cnstrDBType cnstrDBall cursor-pointer"
                                     data-bind="options: dbConstr.type,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
                             </select>
                         </td>
                         <td >
-                            <select class="cnstrDBDef cnstrDBall cursor-pointer"
+                            <select id="cnstrDBDef" class="cnstrDBDef cnstrDBall cursor-pointer"
                                     data-bind="options: dbConstr.def,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
                             </select>
                         </td>
                         <td >
-                            <input class="cnstrDBName cnstrDBall cursor-pointer" type="text"/>
+                            <input id="cnstrDBNameId" class="cnstrDBName cnstrDBall cursor-pointer" type="text"/>
                         </td>
                         <td >
-                            <select class="cnstrDBTable cnstrDBall cursor-pointer"
+                            <select id="cnstrDBTableId" class="cnstrDBTable cnstrDBall cursor-pointer"
                                     data-bind="options: dbConstr.table,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
                             </select>
                         </td>
                         <td >
-                            <select class="cnstrDBColumn cnstrDBall cursor-pointer"
+                            <select id="cnstrDBColumnId" class="cnstrDBColumn cnstrDBall cursor-pointer"
                                     data-bind="options: dbConstr.column,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
@@ -1614,6 +1614,10 @@
                 </div>
 
                 <div style="margin: 20px 0 0 6px;">
+                    <input type="radio" id="btnLocalDBId" name="inOut" style="margin: 4px 4px 0 4px;">
+                    <label for="btnLocalDBId" style="vertical-align:baseline; margin: 0 14px 0 0;" >ERD Design</label>
+                </div>
+                <div style="margin: 6px 0 0 6px;">
                     <input type="radio" id="btnImportDBId" name="inOut" style="margin: 4px 4px 0 4px;">
                     <label for="btnImportDBId" style="vertical-align:baseline; margin: 0 14px 0 0;" >Import Database Script</label>
                 </div>

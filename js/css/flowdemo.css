@@ -314,12 +314,11 @@ body.waiting * {
 	width: 188px;
 }
 .showDBSelect {
-	
-	
-	
 	border: 1px solid  #3a72c1;
 	border-radius: 2px;
-	background-color: #E1F5FF;
+	
+	color: white;
+	background-color: #72AAFA;
 	width: 191px;
 	height: 24px;
 	display: block;
@@ -822,6 +821,10 @@ label {
 .ui-selectmenu-menu .ui-menu.demofiles .ui-menu-item-wrapper {
 	padding: 4px 10px 0 10px;
 	height: 18px;
+}
+.ui-selectmenu-menu .ui-menu.cstrtypes .ui-menu-item-wrapper {
+	padding: 0 10px 0 10px;
+	height: 20px;
 }
 	
 	
@@ -2283,11 +2286,23 @@ table#dbTableContentId td {
 	padding: 3px 27px 7px 4px;
 }
 .inOut-footer {
-	margin: 44px 0 0 0;
+	margin: 14px 0 0 0;
 }
 .ui-selectmenu-open > ul{
 	max-height: 200px;
 	overflow-y: scroll;
+}
+#cnstrDBTypeId+.ui-selectmenu-button.ui-button {
+	max-height: 10px !important;
+	color: black;
+	background-color: white;
+	border: 1px solid navy;
+	
+}
+#cnstrDBTypeId {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 2px;
 }
 .cnstrDBType {
 	

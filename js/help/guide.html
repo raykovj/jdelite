@@ -488,33 +488,41 @@
                         The diagram nodes correspond to the database tables and show the detailed table designs.
                         The relationships between entities are represented as links between the diagram nodes.
                         <br><br>
-                        The ERD you create is saved as a file in JSON format.
-                        This file can be exported to a specific database script. Vice versa a database script can be
-                        imported to a JSON file as an internal structure that can be visualized in the editor. The current
-                        version supports <b>SQLite</b> and <b>MySQL</b>.
+                        <b>NOTE: </b> Currently the existing dadabase products, for many various reasons, do not exhibit
+                        full or partial interoperability. The standard correlation between the relational databases
+                        remains the SQL language. Here in the following explanations we focus on the common basic concepts.<br><br>
+
+                        There is an unified approach in the <b>JDElite Flowchart builder</b>'s UI to handle internally the
+                        differences between some of the most popular databases on the market. The common UI is tuned to
+                        the chosen database.
+                        The ERD you create in <b>JDElite Flowchart Builder</b> is saved as a file in JSON format.
+                        This file can be exported to a specific script for automated creation of a database. Vice
+                        versa a database script can be imported to a JSON file as an internal structure that can be
+                        visualized and further modified in the editor. This is the example of the support for
+                        <b>SQLite</b> and <b>MySQL</b> in the current version.
 
                         <br><br>Each database table represents an <b>entity</b> and contains <b>rows</b> and <b>columns</b>.
-                        The rows are called <b>records</b>. Each record is an instance of the entity. All records in a table
-                        have identical structure. For example, the records in the <b>CUSTOMER</b> table in a database are
-                        instances of the <b>customer</b> entity and correspond to different customers.
+                        The rows are also called <b>records</b>. Each record is an instance of the entity. All records in a table
+                        have identical structure. For example, the records in the <b>CUSTOMER</b> table below are
+                        instances of the <b>customer</b> entity and each record corresponds to a particular customer.
 
-                        <br><br>The database table record is composed of fields (or attributes). The same fields from all records
-                        constitute the table columns. For example, the record fields in the <b>CUSTOMER</b> table are
-                        <b>customer_id</b>, <b>first_name</b>, <b>middle_name</b> and <b>last_name</b>. These are also
+                        <br><br>The database table record is composed of fields (also called attributes). The same fields
+                        from all records constitute the table columns. For example, the record fields in the <b>CUSTOMER</b>
+                        table are <b>customer_id</b>, <b>first_name</b>, <b>middle_name</b> and <b>last_name</b>. These are also
                         the database table column names:<br><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/dbTableExample.png" width="428" height="105"></p>
                     </div>
-                        <br>Each field/column has a set of properties, most of them common for different database products.
-                        Each diagram node represents in its own table form the structure of an entity record of the
-                        database table. The rows in the diagram node table correspond to the database record fields/columns.
-                        The rows in the <b>CUSTOMER</b> diagram node below contain these
-                        field names in the second column.  The other columns show some of the properties values of the
-                        particular field/column. In databases these values are stored internally.
+                        <br>Each database table field/column has a set of properties.
+                        Each diagram node in <b>JDElite Flowchart Builder</b> represents in its own table form the structure of
+                        an entity record of the database table. The rows in the diagram node table correspond to the database
+                        record fields/columns. The rows in the <b>CUSTOMER</b> diagram node below contain these
+                        field names in the second column.  The other columns show the properties values of the
+                        particular field/column.
                     </p><br>
                     <p><img src="../../images/guide/openDBTemplate.png" width="360" height="152"></p>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/dbTemplate.png" width="900" height="400"></p>
+                        <p><img src="../../images/guide/dbTemplate.png" width="827" height="495"></p>
                     </div><br><br>
                 </div>
 
@@ -562,28 +570,40 @@
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/addDBNode.png" width="411" height="269"></p>
                     </div><br>
-                    <p>The node name can be edited by double-clicking at the name field.
-                        <br>The <b>DB table node editor</b> is invoked by double-clicking at either the table title bar or at
-                        any table row. You can add, edit or remove a row, as well as rearrange the rows orders. These actions
-                        are position sensitive. The editor actions are demonstrated below.
-                        <br>The node columns <b>Key</b> and <b>Field Name</b> are preselected for the minimal size of the table
-                        node and cannot be unselected. The remaining columns can be selected to be displayed or not. These selections
-                        do not affect the actual content of the node table row. The six designated node columns are common for the most
+                    <p>The node name can be edited by double-clicking at the name field.</p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/guide/dbNodeExample.png" width="359" height="124"></p>
+                    </div><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/guide/dbNodeExample2.png" width="451" height="129"></p>
+                    </div><br>
+
+                    <p>The <b>DB table node editor</b> is invoked by double-clicking at either the table title bar or at
+                        a table row. You can add, edit or remove a row, as well as rearrange the rows orders. You can also
+                        define database table indexes and database column constraints. The states of these actions
+                        depend on the position of the selected table row. The editor actions are demonstrated further below.</p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/guide/dbNodeEditor.png" width="713" height="280"></p>
+                    </div><br>
+
+                    <p>The node columns <b>Key</b> and <b>Field Name</b> are preselected for the minimal size of the table
+                        node and cannot be unselected. The remaining two columns can be displayed or stay hidden. These selections
+                        do not affect the actual content of the node table row. The four designated node columns are common for the most
                         existing databases. As it was mentioned before, they correspond to the fields properties of a database
                         record (the database table columns). Currently they are as follows:</p><br>
                     <p> <b>Key</b> - designates the field as either primary or foreign key, or none.</p>
                     <p> <b>Field Name</b> - the database record field name.</p>
                     <p> <b>Data Type</b> - data type of the record field content.</p>
-                    <p> <b>Length</b> - the length of the data in the record field.</p>
-                    <p> <b>Auto Increment</b> - allows a unique number to be generated automatically when a new record is inserted
-                        into the database table.</p>
+                    <!--<p> <b>Length</b> - the length of the data in the record field.</p>-->
+                    <!--<p> <b>Auto Increment</b> - allows a unique number to be generated automatically when a new record is inserted-->
+                        <!--into the database table.</p>-->
                     <p> <b>Not Null</b> - ensures that the given column of the database table is never assigned the null value.</p>
                         <br>The buttons on the toolbar of the DB table editor are as follow:
                     <p><img src="../../images/toolbar/add24.png" width="24" height="24"> - Add a new empty row.</p>
                     <p><img src="../../images/toolbar/addPK24.png" width="24" height="24"> - Add an additional row for primary key
                         (for a composite primary key).</p>
-                    <p><img src="../../images/toolbar/addFK24.png" width="24" height="24"> - Add an additional row for foreign key
-                        (for a composite foreign key).</p>
+                    <!--<p><img src="../../images/toolbar/addFK24.png" width="24" height="24"> - Add an additional row for foreign key-->
+                        <!--(for a composite foreign key).</p>-->
                     <p><img src="../../images/toolbar/delete18x24.png" width="18" height="24"> - Delete the row if there is
                         no reference to it.</p>
                     <p><img src="../../images/toolbar/navigate_up24.png" width="24" height="24"> - Move the row one step up
@@ -591,8 +611,13 @@
                     <p><img src="../../images/toolbar/navigate_down24.png" width="24" height="24"> - Move the row one step
                         down if there are no restrictions for it.</p>
                     <br>
+                    <p> Here is an example to create a database table node:</p>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbNewStart.gif" width="684" height="490"></p>
+                        <p><img src="../../images/gifs/dbNewStart.gif" width="853" height="512"></p>
+                    </div><br>
+                    <p> And here is an example to rearrange some rows in a database table node:</p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/dbRearrange.gif" width="800" height="582"></p>
                     </div><br><br>
                 </div>
 
@@ -605,7 +630,7 @@
                     <div >
                         <p><img src="../../images/guide/cardinality.png" width="180" height="169"></p>
                     </div>
-                    <p>In general, there are three types of cardinality relationships: <b>one-to-one</b>, <b>one-to-many</b>
+                    <p>There are three main types of cardinality relationships: <b>one-to-one</b>, <b>one-to-many</b>
                         (<b>many-to-one)</b> and <b>many-to-many</b>.
                     </p><br>
                     <p><b>One-to-one cardinality</b></p>
@@ -614,7 +639,7 @@
                         comprehensible way. Another example would be the <b>car</b> to <b>service ticket</b> relation in a car repair shop:
                     </p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/car2ticket.png" width="541" height="170"></p>
+                        <p><img src="../../images/guide/car2ticket.png" width="462" height="176"></p>
                     </div><br>
                     <p><b>One-to-many cardinality</b></p>
                     <p>This is when one instance of the first entity may be related to more than one instance of the other entity.
@@ -665,10 +690,64 @@
                 </div>
 
                 <div id="dbConstraintsTextId" class="contentText" style="margin-top: -20px;">
-                    <p></p>
+                    <p>Database constraints are used to specify rules for data in a table.  They can be column-level or
+                        table-level, and can refer to a single column or multiple columns. Constraints are used to limit
+                        the type of data that can be contained into a table. This ensures the accuracy and reliability of the data
+                        in the table. If there is any violation between a constraint and the action on data, the action
+                        is aborted. </p><p></p>
+                    <p>Here are some examples of database constraints:</p>
+                    <ul>
+                        <li><b>PRIMARY KEY</b> constraint: Uniquely identifies each row in a table requiring that the values in this
+                            column are a combination of a NOT NULL and UNIQUE</li>
+                        <li><b>FOREIGN KEY</b> constraint: Connects data across multiple tables based on a common column or columns.
+                            It is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table</li>
+                        <li><b>UNIQUE</b> constraint: Prevents duplicate values from being entered into a column, but allows null values</li>
+                        <li><b>NOT NULL</b> constraint: Ensures that a column will never contain an invalid value</li>
+                        <li><b>CHECK</b> constraint: Specifies a requirement that must be met by each row in a table, and can refer to a
+                            single or multiple columns</li>
+                        <li><b>DEFAULT</b> constraint: Allows a value to be defined that will be placed into a column when a new row
+                            is inserted</li>
+                    </ul>
+                    <p>There are some additional clauses that complement some of the constraints:</p>
+                    <ul>
+                        <li><b>REFERENCES</b>: complements FOREIGN KEY constraint</li>
+                        <li><b>AUTO_INCREMENT</b>: allows a unique number to be generated automatically when a new record is
+                            inserted into a table</li>
+                    </ul>
+
+                    <p> Here is an example to assign some constraints for a database table colums. You need to double-click at
+                        the table node row that corresponds to the database column:</p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/dbConstraints1.gif" width="751" height="580"></p>
+                    </div>
+
+                    <p> And here is an example how to assign a <b>REFERENCES</b> constraint. You need to double-click at a table
+                        node row that represents a <b>FOREIGN KEY</b>. You select an existing table and the column name from
+                        that table representing the <b>PRIMARY KEY</b> of that  table. When you confirm this assignment, a
+                        graphical link is created in the diagram. </p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/dbConstraints2.gif" width="752" height="626"></p>
+                    </div>
+
+                    <p> There is a two-way synchronization between such link and the
+                        <b>REFERENCES</b> constraint: creating a link will also automatically assign a <b>REFERENCES</b>
+                        constraint.</p><br>
+                    <div style="display:flex; justify-content: center; ">
+                                <p><img src="../../images/gifs/dbConstraints3.gif" width="688" height="435"></p>
+                    </div><br><br>
                 </div>
 
                 <div id="dbIndexesTextId" class="contentText" style="margin-top: -20px;">
+                    <p>Database indexes are internal data structures that help improve the speed of data retrieval from a
+                        database table. The benefits of having indexes grow when the database is geting larger. <br>An index
+                        is a pointer to a database table column or columns. In order to create an index, you need to
+                        double-click at the table node title bar.<br>You can set an index to be <b>UNIQUE</b> by selecting
+                        the appropriate checkbox. Unique indexes are indexes that help maintain data integrity by ensuring
+                        that no rows of data in a table can have identical key values.<br>Here is an example showing how
+                        to create an index:</p>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/dbIndexes.gif" width="906" height="498"></p>
+                    </div><br><br>
                 </div>
 
             <!-- LOG -->
