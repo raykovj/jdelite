@@ -58,10 +58,10 @@ body.waiting * {
 	
 	
 	
+	background-color: #B9E2FF;
 	
-	background-color: #E1F5FF;
 	text-align: center;
-	width: 56px;
+	width: 58px;
 	height: 24px;
 	margin-top: 2px;
 	padding: 4px 2px 2px 4px;
@@ -1299,6 +1299,17 @@ label {
 .startGoButton {
 	margin: 10px 0 0 8px;
 }
+.beginFlowImg {
+	grid-column: 1;
+	
+	border: 1px solid green;
+	width: 220px;
+	height: 156px;
+	background-image: url(../../images/splash/startFlowchart.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 20px 0 0 20px;
+}
 .startFlowImg {
 	grid-column: 1;
 	
@@ -1482,13 +1493,13 @@ label {
 	
 	
 	
-	
-	
-	
+	border: 1px solid #8aa2f1;
+	border-radius: 4px;
 	background-color: #E1F5FF;
+	
 	cursor: pointer;
 	height: 30px;
-	width: 28px;
+	width: 32px;
 	
 	background-repeat: no-repeat;
 	background-position: center;
@@ -2186,6 +2197,10 @@ table#dbTblAdtlConstrId td {
 }
 table#dbTblIndexColumnsId {
 	cursor: pointer;
+	font-family: Arial;
+	font-size: 12px;
+	margin-left: 2px;
+	font-weight: bold;
 }
 table#dbTblIndexColumnsId th {
 	padding: 1px;
@@ -2196,6 +2211,22 @@ table#dbTblIndexColumnsId tr {
 	
 }
 table#dbTblIndexColumnsId td {
+	text-align: center;
+	cursor: pointer;
+	padding: 1px;
+}
+table#dbTblCPKsColumnsId {
+	cursor: pointer;
+}
+table#dbTblCPKsColumnsId th {
+	padding: 1px;
+	color: #ffffff;
+	background-color: #72AAFA !important;
+}
+table#dbTblCPKsColumnsId tr {
+	
+}
+table#dbTblCPKsColumnsId td {
 	text-align: center;
 	cursor: pointer;
 	padding: 1px;
@@ -2397,6 +2428,18 @@ table#dbTableContentId td {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	text-indent: 2px;
+	
+}
+.cpkDBColumn {
+	max-height: 22px !important;
+	
+	color: navy;
+	background-color: white;
+	border: 1px solid #666;
+	padding: 3px 2px 2px 2px;
+	font-family: Arial;
+	font-size: 12px;
+	margin-left: 2px;
 }
 #inputKeyId {
 	-webkit-appearance: none;

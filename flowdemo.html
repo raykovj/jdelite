@@ -23,7 +23,7 @@
             <button id="menuId" class="toolbar-button button-menu" data-toggle="tooltip" title="Main Menu..."></button>
             <button id="newId" class="toolbar-button button-new" data-toggle="tooltip" title="Start Here..."></button>
             <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open Diagram..."></button>
-            <button id="importId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Open Template..."></button>
+            <button id="templateId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Open Template..."></button>
             <button id="inOutId" class="toolbar-button button-no-left button-inOut" data-toggle="tooltip" title="Import DB/Export DB..."></button>
             <button id="undoId" class="toolbar-button button-no-left button-undo" data-toggle="tooltip" title="Undo"></button>
             <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
@@ -43,7 +43,7 @@
             <span style="margin-left: 4px;"></span>
         </div>
         <div id="diagramNameId">
-            <div style="margin: 2px 0 0 4px;">
+            <div style="margin: 2px 6px 0 0;">
                 <div id="cnxOnId" class="cnx-button button-cnxOn" style="display: none;"
                      data-bind="visible: cnxInfo()" title="Connection On"></div>
                 <div id="cnxOffId" class="cnx-button button-cnxOff"
@@ -722,8 +722,11 @@
 
             <!-- FLOWCHART-->
             <div id="contentFlowId" class="startDiagramContent" data-bind="visible: flowTabVisible">
+                <!--<div >-->
+                    <!--<img class="beginFlowImg" data-bind="visible: isFirstCall"/>-->
+                <!--</div >-->
                 <div >
-                    <img class="startFlowImg " />
+                    <img class="startFlowImg" />
                 </div >
                 <ul>
                     <li>
@@ -779,7 +782,7 @@
                     </li>
                     <li>
                         <div class="startCallGroup3">
-                            <span class="startTextDetails" >Import / Export DB script</span>
+                            <span class="startTextDetails" >Import DB script</span>
                             <button id="btnInOutERDId" class="flow-button button-goRight startGoButton"
                                     title="Select"></button>
                         </div>
@@ -1228,7 +1231,7 @@
             <table id="dbTableColumnDefId" style="width: 100%; table-layout: fixed; ">
                 <thead><tr>
                     <th style="width: 10%;" title="Key">&nbsp;Key</th>
-                    <th style="width: 48%;" title="Field Name">&nbsp;Column</th>
+                    <th style="width: 48%;" title="Field Name">&nbsp;Column Name</th>
                     <th style="width: 30%;" title="Data Type">&nbsp;Data Type</th>
                     <th style="width: 12%;" title="Length">&nbsp;Lengt</th>
                     <!--<th style="width: 17%;" title="Autoincrement">AutoInc</th>-->
@@ -1337,6 +1340,66 @@
             </table>
         </div>
 
+        <!-- COMPOSITE PK -->
+        <div style="display: flex; margn-top: 28px;">
+            <div >
+                <button id="btnShowCPKsId" class="dgm-button btn-down-16 dgm-btn-outline"
+                        data-bind="visible: !showDBCompositePK()" title="Show Composite Primary Keys"></button>
+                <button id="btnHideCPKsId" class="dgm-button btn-up-16 dgm-btn-outline"
+                        data-bind="visible: showDBCompositePK()" title="Hide Composite Primary Keys"></button>
+            </div>
+            <span class="dbTableCaption">Composite Primary key</span>
+        </div>
+        <div id="dbTblCPKsId" style="display: block; margin: 0 0 0 0;" data-bind="visible: showDBCompositePK()">
+            <table id="dbTblCPKsColumnsId" style="width: 100%; table-layout: fixed; ">
+                <thead><tr>
+                    <th style="width: 18%;">&nbsp;Type</th>
+                    <th style="width: 22%;">&nbsp;Name</th>
+                    <th style="width: 20%;">&nbsp;Column1</th>
+                    <th style="width: 20%;">&nbsp;Column2</th>
+                    <th style="width: 20%;">&nbsp;Column3</th>
+                </tr></thead>
+                <tbody >
+                    <tr>
+                        <td><input id="dbCPKTypeId" type="text" class="cursor-pointer cpkDBColumn"
+                                   style="width: 74px;"
+                                   data-bind="textInput: dbCompositePKType,
+                                    attr: {title: dbCompositePKType}">
+                        </td>
+                        <td><input id="dbCPKNameId" type="text" class="cursor-pointer cpkDBColumn"
+                                   style="width: 91px;"
+                                   autocomplete="off" spellcheck="false"
+                                   onkeyup="validateCPKName(event)"
+                                   data-bind="textInput: fieldCPKValue,
+                                    css: {invalidInput: isCPKNameInvalid() },
+                                    attr: {title: fieldCPKValue}"/>
+                        </td>
+                        <td><select id="dbCPKCol1" class="cpkDBColumn cursor-pointer"
+                                    style="width: 89px;"
+                                    data-bind="options: compositePKColumns,
+                                        optionsText: 'label',
+                                        optionsValue: 'id'">
+                            </select>
+                        </td>
+                        <td><select id="dbCPKCol2" class="cpkDBColumn cursor-pointer"
+                                    style="width: 88px;"
+                                    data-bind="options: compositePKColumns,
+                                        optionsText: 'label',
+                                        optionsValue: 'id'">
+                            </select>
+                        </td>
+                        <td><select id="dbCPKCol3" class="cpkDBColumn cursor-pointer"
+                                    style="width: 88px;"
+                                    data-bind="options: compositePKColumns,
+                                        optionsText: 'label',
+                                        optionsValue: 'id'">
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
         <!-- INDEXES -->
         <div style="display: flex; margn-top: 28px;">
             <div >
@@ -1353,7 +1416,7 @@
                         data-toggle="tooltip" title="Remove Selected Row"></button>
             </div>
         </div>
-        <div id="dbTblIndexesId" style="display: block; margin: -6px 0 0 0;" data-bind="visible: showDBIndexes()">
+        <div id="dbTblIndexesId" style="display: block; margin: -6px 2px 0 0;" data-bind="visible: showDBIndexes()">
             <table id="dbTblIndexColumnsId" style="width: 100%; table-layout: fixed; ">
                 <thead><tr>
                     <th style="width: 50%;">&nbsp;Name</th>
@@ -1381,17 +1444,18 @@
         </div>
 
         <!-- BUTTONS & ERRORS -->
-        <div style="margin-top: 6px;"></div>
-        <div >
-            <button id="btnDBRowCancelId" class="prefs-button dbTableContentButtons">Cancel</button>
-            <button id="btnDBRowConfirmId" class="prefs-button dbTableContentButtons">Confirm</button>
-        </div>
-
         <div style="background: white; margin-left: 6px;">
             <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
                     data-bind="visible: isFieldInvalid()" disabled></button>
             <span class="invalid-message"
                     data-bind="visible: isFieldInvalid(), text: validateFieldMessage()"></span>
+        </div>
+
+        <div style="background: white; margin-left: 6px;">
+            <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
+                    data-bind="visible: isCPKNameInvalid()" disabled></button>
+            <span class="invalid-message"
+                    data-bind="visible: isCPKNameInvalid(), text: validateCPKMessage()"></span>
         </div>
 
         <div style="background: white; margin-left: 6px;">
@@ -1408,6 +1472,11 @@
                     data-bind="visible: isDuplicateType(), text: duplicateConstraintMessage()"></span>
         </div>
 
+        <div style="margin-top: 6px;"></div>
+        <div>
+            <button id="btnDBRowCancelId" class="prefs-button dbTableContentButtons">Cancel</button>
+            <button id="btnDBRowConfirmId" class="prefs-button dbTableContentButtons">Confirm</button>
+        </div>
     </div>
 
     <div id="dbTableCardinalityId" class="dbTableCardinality">
@@ -1604,7 +1673,7 @@
         <div id="importExportTabId">
             <div class="settings-controls settings-entry" style="display: block">
                 <!--<div class="settings-entry">Import Database Script to ER Diagram</div>-->
-                <div class="settings-entry" style="margin: 20px 0 6px 12px; ">Select Database:</div>
+                <div class="settings-entry" style="margin: 10px 0 6px 12px; ">Select Database:</div>
                 <div style="margin: 0 0 0 12px; ">
                     <select id="importExportId"
                             data-bind="options: dbsToImport,
@@ -1614,15 +1683,15 @@
                 </div>
 
                 <div style="margin: 20px 0 0 6px;">
-                    <input type="radio" id="btnLocalDBId" name="inOut" style="margin: 4px 4px 0 4px;">
+                    <input type="radio" id="btnLocalDBId" name="inOut" style="margin: 4px 4px 0 8px;">
                     <label for="btnLocalDBId" style="vertical-align:baseline; margin: 0 14px 0 0;" >ERD Design</label>
                 </div>
                 <div style="margin: 6px 0 0 6px;">
-                    <input type="radio" id="btnImportDBId" name="inOut" style="margin: 4px 4px 0 4px;">
+                    <input type="radio" id="btnImportDBId" name="inOut" style="margin: 4px 4px 0 8px;">
                     <label for="btnImportDBId" style="vertical-align:baseline; margin: 0 14px 0 0;" >Import Database Script</label>
                 </div>
                 <div style="margin: 6px 0 0 6px;">
-                    <input type="radio" id="btnExportDBId" name="inOut" style="margin: 4px 4px 0 4px;">
+                    <input type="radio" id="btnExportDBId" name="inOut" style="margin: 4px 4px 0 8px;">
                     <label for="btnExportDBId" style="vertical-align:baseline;  margin: 0 0 0 0;">Export Database Script</label>
                 </div>
 

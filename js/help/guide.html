@@ -27,7 +27,7 @@
                             <li><button id="actionsBtnId" class="textBtn second" onclick="selectText(event)">Diagram Actions</button></li>
                             <li><button id="settingsBtnId" class="textBtn second" onclick="selectText(event)">Settings Dialog</button></li>
                             <li><button id="browserBtnId" class="textBtn second" onclick="selectText(event)">File System Browser</button></li>
-                            <li><button id="paletteBtnId" class="textBtn second" onclick="selectText(event)">Nodes Palette</button></li>
+                            <!--<li><button id="paletteBtnId" class="textBtn second" onclick="selectText(event)">Nodes Palette</button></li>-->
                             <li><button id="layoutBtnId" class="textBtn second" onclick="selectText(event)">Canvas Layout</button></li>
                             <li><button id="selectionsBtnId" class="textBtn second" onclick="selectText(event)">Selections</button></li>
                             <li><button id="navigateBtnId" class="textBtn second" onclick="selectText(event)">Diagram Navigating</button></li>
@@ -53,9 +53,10 @@
                             <li><button id="dbKeysBtnId" class="textBtn second" onclick="selectText(event)">Primary and Foreign Keys</button></li>
                             <li><button id="dbStartBtnId" class="textBtn second" onclick="selectText(event)">Create a Table Node</button></li>
                             <li><button id="dbCardinalBtnId" class="textBtn second" onclick="selectText(event)">Notations and Cardinality</button></li>
-                            <!--<li><button id="dbCompositeBtnId" class="textBtn second" onclick="selectText(event)">Composite Keys</button></li>-->
+                            <li><button id="dbCompositeBtnId" class="textBtn second" onclick="selectText(event)">Composite Keys</button></li>
                             <li><button id="dbConstraintsBtnId" class="textBtn second" onclick="selectText(event)">Constraints</button></li>
                             <li><button id="dbIndexesBtnId" class="textBtn second" onclick="selectText(event)">Indexes</button></li>
+                            <li><button id="dbImportExportBtnId" class="textBtn second" onclick="selectText(event)">Import / Export</button></li>
                         </ul>
                     </li>
 
@@ -76,7 +77,7 @@
                 <div style="margin-top: 40px; "></div>
                 <div id="prefaceTextId" class="contentText">
                     <p><b>JDElite Flowchart Builder</b> offers design and modeling solutions for a wide variety of use cases.
-                        The sections in this guide demonstrate the features of JDElite Flowchart Builder with the help of
+                        The sections in this guide demonstrate the features of JDElite Flowchart Builder through
                         screenshots and  short video clips. The free demo version has all of the built-in features. The only
                         difference from the full version is that there is no access to the proprietary file browser and
                         respectively to the file system. You can
@@ -86,10 +87,10 @@
                     </p><br>
                     <p>
                         The start page shows the paths to the three supported diagram types.
-                        You can switch to one of these types any time by clicking at the <b>Start Here</b> button on the
-                        top toolbar. Most of the time it is pointed by a bubble. In the free demo version the buttons
-                        <b>Open... </b> are redirected to open corresponding
-                        templates rather than to the proprietary file browser in the full version.
+                        You can switch to one of these types any time by clicking the <b>Start Here</b> button on the
+                        top toolbar. Most of the time a bubble is pointing at it. In the free demo version the
+                        <b>Open</b> buttons open the corresponding
+                        templates rather than the proprietary file browser as in the full version.
                     </p><br>
                     <p><img src="../../images/splash/whereToStart.png" width="185" height="119"></p>
                     <div style="display:flex; justify-content: center; ">
@@ -99,10 +100,10 @@
                 </div>
 
                 <div id="basicsTextId" class="contentText">
-                    <p>This section covers most of the features common for all the three types of diagrams.
-                        Here most of the short video clips use flowcharts, but the features displayed in them apply equally to the
-                        remaining diagram types. One exception is the horizontal flow direction that is relevant only to flowcharts.
-                        The diagram type specific features are explained further down in the corresponding
+                    <p>This section covers most of the features common for all three types of diagrams.
+                        Most of the short video clips refer to flowcharts, but the features displayed in them apply equally to the
+                        remaining two diagram types. One exception is the horizontal flow direction that is relevant only to flowcharts.
+                        The diagram type specific features are explained below in the corresponding
                         sections.</p><br>
                     <div>
                         <p><img src="../../images/gifs/basics.gif" width="948" height="661"></p><br>
@@ -116,7 +117,7 @@
                         Most of these actions can also be invoked from the
                         hamburger <b>main drop-down menu</b> in the upper left corner:</p><br>
                     <p><img src="../../images/guide/toolbar1.png" width="670" height="32"></p><br>
-                    <p>The following actions are initiated as follows:</p>
+                    <p>Here is the list of actions:</p>
                     <p><img src="../../images/toolbar/menu24.png" width="24" height="24"> - Main drop-down menu</p>
                     <p><img src="../../images/toolbar/addFile24.png" width="24" height="24"> - Start Here: it brings the
                         start page allowing you to switch to a different diagram type</p>
@@ -165,9 +166,9 @@
                     <p>The <b>Settings</b> dialog applies to all supported diagram types. It can be invoked at any time
                         from the <b>Settings</b> icon on the toolbar: &nbsp;
                         <img src="../../images/toolbar/config24.png" width="24" height="24"></p><br>
-                    <p>The <b>General</b> tab of <b>Settings</b> dialog offers several different selection
-                        options. The <b>Horizontal</b> direction apply to flowcharts only. Some of the selections can be
-                        changed at any time during the diagram design without affecting the previous work:</p><br>
+                    <p>The <b>General</b> tab of <b>Settings</b> dialog offers several different
+                        options. The <b>Horizontal</b> direction applies to flowcharts only. Changes to most of the options will
+                        not affect the earlier design work.</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/general.png" width="550" height="504"></p>
                     </div>
@@ -176,28 +177,26 @@
                     <!--globally the sizes of groups of nodes:</p><br>-->
                     <!--<p><img src="../../images/guide/nodeSizes.png" width="550" height="350"></p>-->
                     <!--<br>-->
-                    <p>The <b>Colors</b> tab of <b>Settings</b> dialog allows to select the background
-                        and/or foreground colors, as well as borders, of all particular node types, as well as other
-                        common graphical elements. The selections usually affect the current diagram and are saved
-                        in its output JSON file, from where the values are read the next time the file is open.
-                        In addition any current set of color selections can be saved as a named color scheme from
-                        the next <b>Schemes</b> tab.</b></p><br>
+                    <p>The <b>Colors</b> tab allows to select the background
+                        and/or foreground colors, as well as the border colors, of the node types and the other
+                        common graphical elements. The selections usually affect the currently opened diagram and will be saved
+                        in its output JSON file. These values will be displayed in the diagram the next time the file is open.
+                        In addition, any current set of color selections can be saved as a named color scheme from
+                        the <b>Schemes</b> tab.</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/nodeColors.png" width="550" height="504"></p>
                     </div>
                     <br>
-                    <p>The <b>Node Icons</b> tab of <b>Settings</b> dialog allows to choose from a selection of images
-                        to be displayed as nodes icons by nodes categories. The image selections will be provided
-                        from icons configuration file(s):</p><br>
+                    <p>The <b>Node Icons</b> tab allows to choose the nodes icons from a list of images.
+                        Nodes are grouped by categories. </p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/nodeIcons.png" width="550" height="504"></p>
                     </div>
                     <br>
-                    <p>The <b>Schemes</b> tab of <b>Settings</b> dialog allows to save named color selections
-                        in local configuration files for further reuse. There are 3 built-in color schemes: <b>default</b>,
-                        <b>blueSplash</b> and  <b>greenSplash</b>. The selected scheme in the top left drop-down is used by
-                        all new diagrams. The particular color selections from <b>Colors</b> tab may overwrite the scheme colors
-                        for the current diagram.
+                    <p>The <b>Schemes</b> tab allows to save named color selections
+                        in a local configuration file for further reuse. There are 3 built-in color schemes: <b>default</b>,
+                        <b>blueSplash</b> and  <b>greenSplash</b>. The selected scheme will be applied when creating
+                        new diagrams. However, the specific color selections may be overwritten later on as desired.
                     </p></p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/schemes.png" width="550" height="504"></p>
@@ -206,39 +205,40 @@
                 </div>
 
                 <div id="browserTextId" class="contentText">
-                    <p>The editor has a proprietary <b>file system browser</b> that is accessible when a server
-                        connection is available. It has full access to the file system for easy navigation to open, save
-                        and delete files, and to display, create and delete folders. The created
-                        diagrams, in JSON format, can be saved in existing folders or in newly created ones. Currently
-                        it is implemented for <b>Windows</b>. The
-                        server connection uses <b>node.js</b>.</p>
-                    <p>Below is the browser when it is invoked to open a diagram:</p><br>
+                    <p>The editor has a proprietary <b>file system browser</b> that is accessible as long as a server
+                        connection is available. Its full access to the file system makes it possible to easily open, save
+                        and delete files, as well as to display, create and delete folders. The created
+                        diagrams, in JSON format, can be saved in the existing folders or in newly created ones. Currently
+                        the file browser works under <b>Windows</b>. The server connection uses <b>node.js</b>.</p><br>
+
+                    <p>A view of the browser in <b>OPEN</b> mode:</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/browser.png" width="453" height="443"></p><br>
                     </div><br>
-                    <p>The actions of the buttons on the top of the file browser are:
+                    <p>The actions prompted by the buttons on the top of the file browser are as follows:
                     <p><img src="../../images/toolbar/arrow_left24.png" width="24" height="24"> - Move one level up</p>
                     <p><img src="../../images/toolbar/arrow_right24.png" width="24" height="24"> - Move one level down</p>
                     <p><img src="../../images/toolbar/addFile24.png" width="24" height="24"> - Create new folder
                         at the current location</p>
                     <p><img src="../../images/toolbar/delete18x24.png"> &nbsp;- Delete the selected file of folder</p><br>
-                    <p>Below is the brouser when it is invoked to save a diagram:</p><br>
+
+                    <p>A view of the brouser in <b>SAVE</b> mode:</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/browserSave.png" width="451" height="487"></p>
                     </div>
                     <br><br>
                 </div>
-                <div id="paletteTextId" class="contentText">
-                    <p>The <b>Nodes Palette</b> is fixed on the right, leaving the central part of the screen for the
-                    diagram canvas. As it is demonstrated later, the nodes icons are dragged with the mouse over the canvas.
-                        <br> Only icons from the corresponding diagram types are accepted. The <b>Flowchart</b> diagrams
-                        have the largest number of associated icons/nodes, contained in
-                        <b>Basic Flowchart</b> and <b>Additional Symbols</b> tabs.</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/palettes.gif" width="212" height="501"></p>
-                    </div>
-                    <br><br>
-                </div>
+                <!--<div id="paletteTextId" class="contentText">-->
+                    <!--<p>The <b>Nodes Palette</b> shows on the right side of the screen, which leaves its central part for the-->
+                    <!--diagram canvas. As demonstrated later, the nodes icons are dragged with the mouse over the canvas.-->
+                        <!--<br> Only icons from the corresponding diagram types are accepted. The <b>Flowchart</b> diagrams-->
+                        <!--have the largest number of associated icons/nodes, listed in the-->
+                        <!--<b>Basic Flowchart</b> and the <b>Extended Flowchart</b> tabs.</p><br>-->
+                    <!--<div style="display:flex; justify-content: center; ">-->
+                        <!--<p><img src="../../images/gifs/palettes.gif" width="212" height="501"></p>-->
+                    <!--</div>-->
+                    <!--<br><br>-->
+                <!--</div>-->
 
                 <div id="layoutTextId" class="contentText">
                     <p>The layout structure of the <b>canvas</b> is the same for the three supported diagram types.
@@ -247,7 +247,7 @@
                         <b>lanes</b> along the flow direction. They are allocated in the cells at the
                         intersections. The connection links are traced along the <b>pipes</b> between the
                         layers and between the lanes. All these areas are highlighted when the mouse is moved over.
-                        The layers and the lanes take up considerably larger space than the tiny space taken from the pipes. <br>
+                        The layers and the lanes take up considerably larger space than the tiny space taken up by the pipes. <br>
                         When a node icon is dragged from the palette to the canvas, or when a node is dragged to a different
                         position, only the cells accepting the particular node are highlighted: </p><br>
                     <div style="display:flex; justify-content: center; ">
@@ -256,8 +256,8 @@
                     <p>Nodes are assigned names at node creation time. Names have to be unique across the
                         diagram. Node names are automatically generated. They can be changed inline any time later.
                         Duplicate names are rejected. Nodes are created either by dragging a node icon from the palette,
-                        or by selecting a node item from the right mouse context menu on the canvas when it is invoked
-                        on an empty cell. The available selection options are context sensitive:</p><br>
+                        or by selecting a node item from the context menu on the canvas.
+                         The available selection options are context sensitive:</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/addNodes.gif" width="846" height="505"></p>
                     </div><br>
@@ -271,32 +271,35 @@
 
                 <div id="selectionsTextId" class="contentText">
                     <p>Single mouse click on a node or on a link marks it as selected.
-                        You can make multiple selections in two ways:
-                        <li>with continuous pressing <b>Ctrl</b> and mouse clicks - select or toggle the selection</li>
-                        <li>pressing <b>Shift</b> and dragging the mouse - a selection rectangle is drawn</li>
-                    The <b>Copy</b> and <b>Paste</b> actions expect one or more selected nodes of the same <b>copy category</b>
+                        Multiple selections can be made in two ways:
+                        <li> select or toggle the selection by pressing <b>Ctrl</b> and clicking the mouse</li>
+                        <li> draw a selection rectangle by pressing <b>Shift</b> and dragging the mouse </li><br>
+
+                    The <b>Copy</b> and <b>Paste</b> actions require one or more selected nodes of the same <b>copy category</b>
                     (see below) and include only the links between them, if any.
                     <b>Paste</b> is activated only after a <b>Copy</b>. Any combination of the following works on selected nodes:
                         <li><b>Copy</b> and <b>Paste</b> buttons on the top toolbar</li>
                         <li><b>Copy</b> and <b>Paste</b> menu items from the top hamburger menu</li>
                         <li><b>Ctrl+C</b> and <b>Ctrl+V</b> from the keyboard</li>
+
                     The selections are kept in the clipboard until <b>Paste</b> or cleared by pressing <b>Escape</b>.<br>
-                    <br>The <b>copy categories</b> are grouping nodes that can be copied together.<br>
-                    For Flowcharts there are five categories:
+                    <br>The <b>copy categories</b> comprise nodes that can be copied together.<br>
+                    Flowcharts include five categories:
                         <li>all central nodes </li>
                         <li><b>Start</b> nodes </li>
                         <li><b>End</b> nodes </li>
                         <li><b>Left/Top</b> nodes </li>
                         <li><b>Right/Bottom</b> nodes </li>
-                    For Database ERD all nodes are in the same group.<br>
-                    For Logical ERD all nodes are in the same group.<br>
+                    Database ERD nodes are grouped in one category.<br>
+                    Logical ERD nodes are grouped in one (separate) category.<br>
                     Copying between different diagrams is not accepted.</p>
-                    <br><p>You can delete all of the selected graph elements using any combination of:
+
+                    <br><p>You can delete all of the selected graph elements using any of:
                         <li><b>Remove Selections</b> button on the top toolbar</li>
                         <li><b>Remove...</b> menu item from the context menu of the graph element</li>
                         <li><b>Remove Selections</b> menu item from the top hamburger menu</li>
-                        <li><b>Delete</b> key from the keyboard</li>
-                    Mouse click outside any graph element cancels all selections, except for pointing a paste location. </p><br>
+                        <li><b>Delete</b> key from the keyboard</li><br>
+                    Mouse click outside any graph element cancels all selections, except if pointing a paste location. </p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/selections.gif" width="548" height="491"></p>
                     </div><br><br>
@@ -320,18 +323,18 @@
 
                 <div id="navigateTextId" class="contentText">
                     <p>When a diagram is larger than the browser viewable area, the <b>Thumbnail View</b> dialog, invokable
-                        from the top right of the screen, helps to navigate the whole design:
+                        from the top right of the screen, helps to navigate the entire diagram:
                     <img src="../../images/toolbar/thumbnail24.png" width="24" height="24"></p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/thumbnail.gif" width="783" height="558"></p>
                     </div><br><br>
 
 
-                    <p>To search for a particular node in large diagrams, there is a <b>Search</b> dialog invoked from the
+                    <p>To search for a particular node or nodes in large diagrams, use the <b>Search</b> dialog accessed from the
                         top toolbar:
                         <img src="../../images/toolbar/find24.png" width="24" height="24"><br>
-                        It allows finding a single node or multiple nodes by
-                        full/partial name, or by matching text/pattern in the node content text.</p><br>
+                        It allows to find a single or multiple nodes by using a
+                        full or partial name, or by matching the appropriate text or pattern in the node content text.</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/search.gif" width="799" height="548"></p>
                     </div><br><br>
@@ -342,8 +345,8 @@
 
                 <div id="flowchartTextId" class="contentText">
                     <p><b>Flowcharts</b> represent the steps of algorithms, processes or workflows, vizualising the
-                        structure of the problems or tasks.<br>The template shown below represents the steps of
-                        a bank transaction.
+                        structure of the problems or tasks.<br>The template shown below represents
+                        a bank transaction process.
                     </p>
                     <br>
                     <p><img src="../../images/guide/openFlowTemplate.png" width="360" height="150"></p>
@@ -353,12 +356,12 @@
                 </div>
 
                 <div id="flowStartTextId" class="contentText">
-                    <p>You build a diagram by simply drag-and-drop nodes from the palette
+                    <p>Build a diagram by simply drag-and-drop nodes from the palette
                         and by dragging links between the nodes, connecting the popup handles with the mouse.<br>
-                        Please note that when you select(click) a popup handle, the handles that potentially allow
-                        a connection on all the nodes will show up lightly highlighted. The connection is accepted
-                        when the connection line dragged by the mouse reached one of them and the highlight color
-                        changes to darker blue.
+                        Note that when selecting(clicking) a popup handle, the handles that potentially allow
+                        a connection between certain nodes will become lightly highlighted. The connection is accepted
+                        when the connection line dragged by the mouse reaches one of these handles and the highlight color
+                        changes to a darker blue.
                     </p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/startNewFlow.gif" width="706" height="585"></p>
@@ -367,33 +370,33 @@
 
                 <div id="nodeEditTextId" class="contentText">
                     <p>When moving the mouse over the node, two editable areas are visualized under the cursor: the node name
-                        and the node text content. Double-clicking at any of them, the corresponding text field is open,
-                        accepting the keyboard input.<br>The name field has some restrictions displayed under the field when
-                        the rules are violated. The content area does not have any restrictions. The changes are accepted
-                        when the <b>Enter</b> key is pressed. When the content size is very large, from the right-click
-                        context menu on the node you can toggle to compress the text showing only two lines or expand it
-                        back in full:
+                        field and the node text content field. When double-clicking on any of them, the corresponding text field opens,
+                        accepting the keyboard input.<br>There are certain spelling rules regarding the node name. In case of
+                        spelling mistakes, an error message comes up below the field.
+                        Edits to these two fields are accepted by pressing the <b>Enter</b> key.
+                        If the text content size is too large, use the context menu on the node
+                        in order to compress the text to only two lines, or, if desired, to expand it back in full:
                     </p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/nodeEdit1crop.gif" width="785" height="547"></p>
                     </div><br>
 
-                    <p>The editing of these fields can be done also from the <b>Properties</b> dialog that is invoked from
-                        the context menu by right clicking on the node. Additional text can be attached to the node above
-                        and/or below:</p><br>
+                    <p>The editing of these fields can also be done within the <b>Properties</b> dialog that is invoked from
+                        the context menu on the node. Additional text can be attached to the node above
+                        and/or below its shape:</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/nodeEdit2crop.gif" width="785" height="547"></p>
                     </div><br>
 
-                    <p>From the <b>Properties</b> dialog you can also edit the node colors, add/remove an icon, and hide/unhide
-                        the node name:</p><br>
+                    <p>The <b>Properties</b> dialog also allows changes to the node colors, adding or removing an icon,
+                        as well as hiding or unhiding the node name:</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/nodeEdit3crop.gif" width="785" height="547"></p>
                     </div><br>
 
-                    <p>Resizing the nodes horizontally and vertically is easy by mouse dragging one of the sides or one
-                        of the corners. You can reset the extra sizes either individually by node's context menu or
-                        globally by the canvas context menu: </p><br>
+                    <p>Resizing the nodes horizontally and vertically is easily achieved by mouse dragging one of the sides or one
+                        of the corners. The larger sizes can be reset either individually from the node context menu or
+                        globally from the canvas context menu: </p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/nodeEdit4crop.gif" width="785" height="547"></p>
                     </div><br><br>
@@ -402,17 +405,20 @@
                 </div>
 
                 <div id="flowDirTextId" class="contentText">
-                    <p>The <b>data flow direction</b> for flowcharts can be either top to bottom or left
-                        to right, and can be changed or switched back and forth at any time by double clicking at
-                        the flipping arrow button in the block on the right of the screen above the palette.
+                    <p>The <b>data flow direction</b> in flowcharts is either top to bottom or left
+                        to right, and can be changed or switched back and forth at any time by double clicking
+                        the flipping arrow button in the box on the right of the screen above the palette.
                         The flow direction can be changed from the <b>Settings</b> dialog as well.</p><br>
                     <p><img src="../../images/toolbar/arrow_down24.png" width="24" height="24"> - <b>Vertical</b></p><br>
+                    <div style="display:flex; justify-content: center; ">
                     <p><img src="../../images/guide/vertical.png" width="464" height="272"></p><br>
-
+                    </div>
                     <p><img src="../../images/toolbar/arrow_right24.png" width="24" height="24"> - <b>Horizontal</b></p><br>
+                    <div style="display:flex; justify-content: center; ">
                     <p><img src="../../images/guide/horizontal.png" width="464" height="272"></p><br>
+                        </div><br>
 
-                    <p> The flowchart is rotated and flipped. This does not otherwise affect its content.
+                    <p> The flowchart will be rotated and flipped. This does not otherwise affect its content.
                         The flipping preserves the correlation between the flowchart internal directions and
                         the canvas coordinate system:</p><br>
                     <div style="display:flex; justify-content: center; ">
@@ -434,13 +440,14 @@
 
 
                 <div id="addingNodesTextId" class="contentText">
-                    <p> In the <b>Settings</b> dialog you can select whether to use the start & end lanes or not.
-                        You can also select whether to use the side swim lanes or not.
-                        For a vertical flow direction, the former appear at the top and at the bottom, and the latter
-                        on the left and on the right. For a horizontal flow direction, they appear vice versa.There are
-                        specific nodes for start, end, left/top and right/bottom.
-                        <br>You can add or remove central layers and/or lanes
-                        from the right-click context menus on the canvas.</p><br>
+                    <p> The <b>Settings</b> dialog offers the option to choose whether to use the start & end lanes or not,
+                        as well as whether to use the side swim lanes or not.<br><br>
+                        In the case of a vertical flow direction, the side swim lanes appear at the top and at the bottom
+                        of the diagram,
+                        while in the case of a horizontal direction they appear on the left and on the right.
+                        <br><br>There are specific start, end, left/top and right/bottom nodes.
+                        <br><br>The central layers and/or lanes can be added or removed
+                        from the context menus on the canvas.</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/moreNodes.gif" width="817" height="640"></p>
                     </div>
@@ -448,9 +455,9 @@
                 </div>
 
                 <div id="linkPropsTextId" class="contentText">
-                    <p>You can attach labels to the links or change their colors from the link <b>Properties</b>
-                        dialog that can be invoked from the link right-click context menu or by double clicking
-                        on the link.</p><br>
+                    <p>The link <b>Properties</b> dialog can be invoked from the link context menu or by double clicking
+                        the link itself. This dialog allows to attach labels to the link or to change its color.
+                    </p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/linkEdit.gif" width="784" height="606"></p>
                     </div>
@@ -458,10 +465,12 @@
                 </div>
 
                 <div id="chartEditTextId" class="contentText">
-                    <p>The nodes can be moved to different grid
-                        cells, as well as copied and pasted. The link ports, in order to reassign
-                        them, can be moved to different nodes by dragging the mouse between the connection
-                        ports. You can choose to enable the association links to show relations between nodes.</p><br>
+                    <p>The nodes can be moved, as well as copied and pasted, to different grid cells.
+                        <br><br>In order to reassign the link ports,
+                        they need to be moved to different nodes by dragging them with the mouse to the appropriate connection
+                        ports.
+                        <br><br>By selecting the 'Show association links' option in the <b>Settings</b> dialog, you can
+                        assign relations between certain nodes.</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/flowEdit.gif" width="835" height="619"></p>
                     </div>
@@ -469,11 +478,12 @@
                 </div>
 
                 <div id="decisionTextId" class="contentText">
-                    <p>The <b>Decision</b> nodes have two outputs: <b>YES</b> and <b>NO</b> and can accepts multiple inputs.
-                        The input(s) location is fixed on the top for vertical layout or on the left for horizontal layout.
-                        The configuration of the outputs can be chosen by double-clicking on the node. The popup box
-                        offers six different options for the YES/NO outputs that are selected by the arrow buttons in clockwise or
-                        anti-clockwise direction:  </p><br>
+                    <p>The <b>Decision</b> nodes have two outputs: <b>YES</b> and <b>NO</b>, and can accept multiple inputs.
+                        The input(s) location is fixed at the top of the shape in a vertical layout and on the left
+                        of the shape in a horizontal layout.
+                        <br><br>The configuration of the outputs can be chosen by double-clicking the node. The popup box
+                        offers six different options for the YES/NO outputs selectable by the arrow buttons in a clockwise or
+                        an anti-clockwise direction:  </p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/decision.gif" width="734" height="392"></p>
                     </div>
@@ -482,43 +492,35 @@
                 <!-- DB -->
 
                 <div id="databaseTextId" class="contentText" style="margin-top: -20px;">
-                    <p>The <b>Database ERDs</b> (entity-relationship diagrams) represent the <b>physical</b> structure of
-                        databases. In essence, an ER diagram contains two object types: entities and relationships.
-                        In physical databases the entities correspond to database tables.
-                        The diagram nodes correspond to the database tables and show the detailed table designs.
-                        The relationships between entities are represented as links between the diagram nodes.
-                        <br><br>
-                        <b>NOTE: </b> Currently the existing dadabase products, for many various reasons, do not exhibit
-                        full or partial interoperability. The standard correlation between the relational databases
-                        remains the SQL language. Here in the following explanations we focus on the common basic concepts.<br><br>
-
-                        There is an unified approach in the <b>JDElite Flowchart builder</b>'s UI to handle internally the
-                        differences between some of the most popular databases on the market. The common UI is tuned to
-                        the chosen database.
-                        The ERD you create in <b>JDElite Flowchart Builder</b> is saved as a file in JSON format.
-                        This file can be exported to a specific script for automated creation of a database. Vice
-                        versa a database script can be imported to a JSON file as an internal structure that can be
-                        visualized and further modified in the editor. This is the example of the support for
-                        <b>SQLite</b> and <b>MySQL</b> in the current version.
-
-                        <br><br>Each database table represents an <b>entity</b> and contains <b>rows</b> and <b>columns</b>.
-                        The rows are also called <b>records</b>. Each record is an instance of the entity. All records in a table
-                        have identical structure. For example, the records in the <b>CUSTOMER</b> table below are
-                        instances of the <b>customer</b> entity and each record corresponds to a particular customer.
-
-                        <br><br>The database table record is composed of fields (also called attributes). The same fields
-                        from all records constitute the table columns. For example, the record fields in the <b>CUSTOMER</b>
-                        table are <b>customer_id</b>, <b>first_name</b>, <b>middle_name</b> and <b>last_name</b>. These are also
-                        the database table column names:<br><br>
+                    <p>The <b>Database ERDs</b> (entity-relationship diagrams) represent the databases physical structure.
+                        In essence, an ER diagram contains two object types: <b>entities</b> and <b>relationships</b>.
+                        The entities correspond to database tables and in the <b>ERDs</b> they are modeled as diagram nodes.
+                        The detailed table designs are expressed visually in the diagram nodes. The relationships between the
+                        entities are modeled as links between the nodes.</p><br>
+                    <p>The current relational databases on the market use as a common language the <b>SQL</b>, however they
+                        all have certain proprietary implementation differences. In order to reconcile them for a unified
+                        ERD design, <b>JDElite Flowchart Builder</b> provides a <b>common UI</b> and handles the differences
+                        internally.</p><br>
+                    <p>An ERD created in <b>JDElite Flowchart Builder</b> is saved as a file in <b>JSON</b> format. This file can be
+                        exported to a specific script for automated creation of a database. Vice versa, a database script
+                        can be imported to a <b>JSON</b> diagram file, visualized and further modified in the editor.</p><br>
+                    <p>Database tables contain <b>records</b> (table <b>rows</b>) and <b>columns</b>. A table record is an instance of the
+                        represented entity. All records in a table have identical structure. For example, the records in
+                        the <b>CUSTOMER</b> table below are instances of the <b>customer</b> entity and each record corresponds to a
+                        particular customer.</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/dbTableExample.png" width="428" height="105"></p>
-                    </div>
-                        <br>Each database table field/column has a set of properties.
-                        Each diagram node in <b>JDElite Flowchart Builder</b> represents in its own table form the structure of
-                        an entity record of the database table. The rows in the diagram node table correspond to the database
-                        record fields/columns. The rows in the <b>CUSTOMER</b> diagram node below contain these
-                        field names in the second column.  The other columns show the properties values of the
-                        particular field/column.
+                    </div><br>
+                    <p>The database table record is composed of <b>fields</b>. The record fields in vertical direction constitute
+                        the table <b>columns</b>. Columns, respectively all fields in a column, have common <b>properties</b>: name,
+                        data type, data length, etc. The property values are specific for each column. In the above example,
+                        the record fields in the <b>CUSTOMER</b> table are <b>customer_id</b>, <b>first_name</b>,  <b>middle_name</b>
+                        and <b>last_name</b>. These are the database table column names.</p><br>
+                    <p>Each ERD node in <b>JDElite Flowchart Builder</b> represents the structure of a database table in its
+                        own table form. The rows in the diagram node table correspond to the database table columns,
+                        and at the same time the columns in the diagram node table correspond to the database column
+                        properties.</p><br>
+
                     </p><br>
                     <p><img src="../../images/guide/openDBTemplate.png" width="360" height="152"></p>
                     <div style="display:flex; justify-content: center; ">
@@ -530,47 +532,52 @@
                     <p>The structures of relational databases are determined by the <b>primary</b> and <b>foreign</b> keys.
                         A <b>primary</b> key is a column or a group of columns (composite primary key) that ensure unique
                         row identification in a database table.
-                        A <b>foreign</b> key is a column or a group of columns (composite foreign key) that togrther with
-                        a primary key allow to create a reference between two database tables.
-                        The foreign key in one table is a reference to a primary key in another table. There could be multiple
+                        A <b>foreign</b> key is a column or a group of columns that together with
+                        a primary key represent a reference between two database tables.
+                        The foreign key in one table has a reference to a primary key in another table. There could be multiple
                         foreign keys from different tables referencing the same primary key.
-                        <br><br>As it was mentioned before, the rows in the diagram table node correspond to the database table
-                        record fields. The columns in the diagram node show the properties values of each database record field.
-                        <br>The first record field in the <b>CUSTOMER</b> table, named <b>customer_id</b>, is represented
-                        in the first row of the <b>CUSTOMER</b> diagram node. This is the <b>primary</b> key of this database
+
+                        <br><br>As mentioned earlier, the rows in the diagram table node correspond to the database table
+                        columns. The columns in the diagram node show the property values of each database column.
+
+                        <br>In the picture below, the first record field in the <b>CUSTOMER</b> table, named <b>customer_id</b>, is
+                        the first row of the <b>CUSTOMER</b> diagram node. This is the <b>primary</b> key of this database
                         table. It is tagged with <b>PK</b> in the first column of the node.
-                        <br>The first record field in the <b>CONTACT</b> table, named <b>contact_id</b>, is represented
-                        in the first row of the <b>CONTACT</b> diagram node. This is the <b>primary</b> key of this database
+
+                        <br><br>The first record field in the <b>CONTACT</b> table, named <b>contact_id</b>, is
+                        the first row of the <b>CONTACT</b> diagram node. This is the <b>primary</b> key of this database
                         table. It is tagged with <b>PK</b> in the first column of the node.
-                        <br>The second record field in the <b>CONTACT</b> table, named <b>customer_id</b>, is represented
-                        in the second row of the <b>CONTACT</b> diagram node. This is a <b>foreign</b> key of this database
+                        <br>The second record field in the <b>CONTACT</b> table, named <b>customer_id</b>, is
+                        the second row of the <b>CONTACT</b> diagram node. This is the <b>foreign</b> key of this database
                         table. It is tagged with <b>FK</b> in the first column of the node.
-                        <br>The popup handles on a <b>PK</b> row of one node and a <b>FK</b> row on another node offer the
-                        choice to create a link between the two database tables diagram nodes. This link is an essential
-                        feature in relational databases. It establishes and ensures the <b>referential integrity</b> between the
-                        referencing columns and the referenced columns.
-                        <br><br>The primary keys and the foreign keys have different background color.
-                        <br><br>The small vertical bars at the both ends of the link below show the particular <b>cardinality</b>.
-                        It defines the possible number of occurrences of the primary entity <b>customer</b> that are associated
+
+                        <br><br>The popup handles on the <b>PK</b> row of one node and on the <b>FK</b> row of another node offer the
+                        choice to create a link between the two diagram nodes. This link is an essential
+                        feature of the relational databases. It establishes and ensures the <b>referential integrity</b> between the
+                        referencing column and the referenced column.
+
+                        <br><br>The small vertical bars at the both ends of the link below show the particular <b>cardinalities</b>.
+                        They define the possible number of occurrences of the primary entity <b>customer</b> associated
                         with the possible number of occurrences of the foreign entity <b>contact</b>. In the example below
                         each customer can have only one contact associated with him and each contact corresponds to only
-                        one specific customer. This is called one-to-one relationship. Other types of cardinalities are illustrated later.
+                        one specific customer. This is called <b>one-to-one</b> relationship. Other types of cardinalities
+                        are illustrated later.
                     </p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbKeys.gif" width="590" height="335"></p>
+                        <p><img src="../../images/gifs/dbKeys.gif" width="590" height="250"></p>
                     </div><br><br>
                 </div>
 
                 <div id="dbStartTextId" class="contentText" style="margin-top: -20px;">
                     <p>A <b>new DB table node</b> is created either by dragging an item from the palette on the right
-                    to an accepting cell on the canvas, or by selecting an item from the canvas context menu on an
-                    empty cell. In both cases there are three choices. This is more for convenience, because no matter
-                    which one is selected, the number of node columns can be chosen in the table node editor later.
-                    The minimal number of columns is two and is fixed.</p><br>
+                    to an accepting cell on the canvas, or by selecting an item from the canvas context menu displayed on an
+                    empty cell. In both cases there are three node choices, which differ only by the initial number of
+                        columns. The most convenient number of columns can be chosen later in the table node editor.
+                    The minimal number of columns cannot be less than two.</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/addDBNode.png" width="411" height="269"></p>
                     </div><br>
-                    <p>The node name can be edited by double-clicking at the name field.</p><br>
+                    <p>The node name can be edited by double-clicking the name field.</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/dbNodeExample.png" width="359" height="124"></p>
                     </div><br>
@@ -578,63 +585,64 @@
                         <p><img src="../../images/guide/dbNodeExample2.png" width="451" height="129"></p>
                     </div><br>
 
-                    <p>The <b>DB table node editor</b> is invoked by double-clicking at either the table title bar or at
-                        a table row. You can add, edit or remove a row, as well as rearrange the rows orders. You can also
-                        define database table indexes and database column constraints. The states of these actions
-                        depend on the position of the selected table row. The editor actions are demonstrated further below.</p><br>
+                    <p>The <b>DB table node editor</b> is invoked by double-clicking either the table title bar or
+                        a chosen table row. You can add, edit or remove a row, as well as rearrange the order of
+                        the rows, using the buttons at the top right. These buttons are enabled or disabled
+                        depending on which table row is selected. You can also
+                        define database table indexes and database column constraints. The editor actions are
+                        demonstrated below.</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/dbNodeEditor.png" width="713" height="280"></p>
                     </div><br>
 
-                    <p>The node columns <b>Key</b> and <b>Field Name</b> are preselected for the minimal size of the table
-                        node and cannot be unselected. The remaining two columns can be displayed or stay hidden. These selections
-                        do not affect the actual content of the node table row. The four designated node columns are common for the most
-                        existing databases. As it was mentioned before, they correspond to the fields properties of a database
-                        record (the database table columns). Currently they are as follows:</p><br>
-                    <p> <b>Key</b> - designates the field as either primary or foreign key, or none.</p>
-                    <p> <b>Field Name</b> - the database record field name.</p>
-                    <p> <b>Data Type</b> - data type of the record field content.</p>
-                    <!--<p> <b>Length</b> - the length of the data in the record field.</p>-->
+                    <p>The node columns <b>Key</b> and <b>Column Name</b> are preselected to show the minimal size of the table
+                        node and cannot be unchecked. The remaining two columns can be displayed as needed. These selections
+                        do not affect the actual content of the node table row. The four designated node columns are common for
+                        all existing relational databases. They are as follows:</p><br>
+                    <p> <b>Key</b> - designates the database column as either primary or foreign key, or none</p>
+                    <p> <b>Column Name</b> - the database column name</p>
+                    <p> <b>Data Type</b> - data type of the content of all fields in this column</p>
+                    <p> <b>Length</b> - the length of the data of all fields in this column</p>
                     <!--<p> <b>Auto Increment</b> - allows a unique number to be generated automatically when a new record is inserted-->
                         <!--into the database table.</p>-->
-                    <p> <b>Not Null</b> - ensures that the given column of the database table is never assigned the null value.</p>
+                    <!--<p> <b>Not Null</b> - ensures that the given column of the database table is never assigned the null value.</p>-->
                         <br>The buttons on the toolbar of the DB table editor are as follow:
-                    <p><img src="../../images/toolbar/add24.png" width="24" height="24"> - Add a new empty row.</p>
+                    <p><img src="../../images/toolbar/add24.png" width="24" height="24"> - Add a new empty row</p>
                     <p><img src="../../images/toolbar/addPK24.png" width="24" height="24"> - Add an additional row for primary key
-                        (for a composite primary key).</p>
+                        (for a composite primary key)</p>
                     <!--<p><img src="../../images/toolbar/addFK24.png" width="24" height="24"> - Add an additional row for foreign key-->
                         <!--(for a composite foreign key).</p>-->
-                    <p><img src="../../images/toolbar/delete18x24.png" width="18" height="24"> - Delete the row if there is
-                        no reference to it.</p>
-                    <p><img src="../../images/toolbar/navigate_up24.png" width="24" height="24"> - Move the row one step up
-                        if there are no restrictions for it.</p>
+                    <p><img src="../../images/toolbar/delete18x24.png" width="24" height="24">  -  Delete the row if there is
+                        no reference to it</p>
+                    <p><img src="../../images/toolbar/navigate_up24.png" width="24" height="24">  - Move the row one step up
+                        if the row has no primary key assigned</p>
                     <p><img src="../../images/toolbar/navigate_down24.png" width="24" height="24"> - Move the row one step
-                        down if there are no restrictions for it.</p>
+                        down if the row has no primary key assigned</p>
                     <br>
-                    <p> Here is an example to create a database table node:</p>
+                    <p> Here is an example how to create a database table node:</p>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/dbNewStart.gif" width="853" height="512"></p>
                     </div><br>
-                    <p> And here is an example to rearrange some rows in a database table node:</p><br>
+                    <p> And here is an example how to rearrange some rows in a database table node:</p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbRearrange.gif" width="800" height="582"></p>
+                        <p><img src="../../images/gifs/dbRearrange.gif" width="800" height="580"></p>
                     </div><br><br>
                 </div>
 
                 <div id="dbCardinalTextId" class="contentText" style="margin-top: -20px;">
-                    <p>Within database modelling, <b>cardinality</b> is the numerical relationship between rows of one database
-                        table and rows in another. It defines the number of occurrences of a primary entity that are associated
-                        with the number of occurrences of a foreign entity. The cardinality is represented graphically as the
+                    <p>Within database modelling, <b>cardinality</b> is the numerical relationship between rows in one database
+                        table and rows in another. It defines the number of occurrences of a primary entity associated
+                        with the number of occurrences of a foreign entity. The cardinality is represented graphically by the
                         so called <b>crow's foot</b> symbols at the ends of the connection. There are six commonly accepted
                         relationships symbols:</p>
                     <div >
                         <p><img src="../../images/guide/cardinality.png" width="180" height="169"></p>
-                    </div>
+                    </div><br>
                     <p>There are three main types of cardinality relationships: <b>one-to-one</b>, <b>one-to-many</b>
                         (<b>many-to-one)</b> and <b>many-to-many</b>.
                     </p><br>
                     <p><b>One-to-one cardinality</b></p>
-                    <p>One example was the <b>CUSTOMER</b> to <b>CONTACT</b> relation shown before under <b>Primary and Foreign Keys</b>
+                    <p>One example was the <b>CUSTOMER</b> to <b>CONTACT</b> relation shown before under the <b>Primary and Foreign Keys</b>
                         title. This is the case when one entity is split in two in order to present the information in a more
                         comprehensible way. Another example would be the <b>car</b> to <b>service ticket</b> relation in a car repair shop:
                     </p><br>
@@ -642,94 +650,90 @@
                         <p><img src="../../images/guide/car2ticket.png" width="462" height="176"></p>
                     </div><br>
                     <p><b>One-to-many cardinality</b></p>
-                    <p>This is when one instance of the first entity may be related to more than one instance of the other entity.
+                    <p>This is when one instance of the first entity may be related to more than one instances of the other entity.
                         An example would be when we keep an authors catalog and we need to show
-                        the relation between an <b>author</b> and its <b>books</b>:
+                        the relation between an <b>author</b> and her/his <b>books</b>:
                     </p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/author2book.png" width="491" height="152"></p>
                     </div><br>
                     <p><b>Many-to-many cardinality</b></p>
-                    <p>In a different scenario, in  a library, we need to establish the relations between the plurality of authors
-                    and the plurality of books. In this case we should preferably use an additional <b>join</b> table, also known as
-                    <b>junction</b> or <b>associative</b> table, with two one-to-many relations as follows:</p><br>
+                    <p>In a different scenario, in  a library, we need to establish the relations between the plurality
+                        of authors and the plurality of books. In this case we can preferably use an additional
+                        <b>join</b> table with two one-to-many relations as follows:</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/authors2books.png" width="573" height="146"></p>
                     </div><br>
-                    <p>The <b>AUTHORS_BOOKS</b> table contains two foreign keys pointing respectively to <b>AUTHORS</b> and
-                        <b>BOOKS</b> tables.
-                    These two foreign keys together act as a primary key for the <b>AUTHORS_BOOKS</b> table.</p>
+                    <p>The <b>AUTHORS_BOOKS</b> table contains two foreign keys pointing respectively to the <b>AUTHORS</b> and
+                        <b>BOOKS</b> tables. These two foreign keys together act as a composite primary key for the
+                        <b>AUTHORS_BOOKS</b> table. See more details about composite keys in the next topic.</p>
                     <br><br>
                 </div>
 
                 <div id="dbCompositeTextId" class="contentText" style="margin-top: -20px;">
-                    <p>As we saw in the <b>Reference Cardinality</b> title, some foreign keys may be grouped together and act as a
-                    <b>composite</b> key. Same applies for primary keys too.
-                        <br>To create a composite primary key, you need to open the DB table node editor pointing to an already existing
-                        primary key in order to make the association. Use the button
-                        <img src="../../images/toolbar/addPK24.png" width="24" height="24">
-                    to create the new row, then add the necessary data in the remaining fields.</p><br><br>
-                        <div style="display:flex; justify-content: center; ">
-                            <p><img src="../../images/gifs/accountsNew.gif" width="691" height="461"></p>
-                        </div>
-                        <br>Adding rows for primary keys using the button
-                        <img src="../../images/toolbar/addPK24.png" width="24" height="24">
-                        is useful when there are multiple database tables with foreign keys
-                        referencing the same primary key. In this case there is no need to fill in the
-                        fields in the additional primary key rows.
-                        <br><br>
-                        The following example illustrates the relations between a composite primary key and a composite
-                        foreign key. The composite foreign key of the <b>SUB_ACCOUNTS</b> table, <b>ref_id</b> and <b>ref_type</b>,
-                        references the composite primary key, <b>accnt_id</b> and <b>accnt_type</b>, in the <b>ACCOUNTS</b> table.<br>
-                        The referential constraint must have a one-to-one relationship between referencing and referenced columns.
-                        In other words, if the primary key is a set of columns, then the foreign key also must be
-                        a set of columns that correspond to the primary composite key.</p><br>
+                    <p>As it was pointed out in the <b>Notations and Cardinality</b> topic, some foreign keys may be grouped
+                        together and act as a <b>composite</b> primary key. In the scenario of the handling the plurality
+                        of authors and the plurality of books in a library, simply relating an author to a book
+                        turns out to be not sufficient. Most of the authors have more than one book, and some book titles
+                        are repeatedly used by different authors. In this case the pair <b>author-book</b> is an entity
+                        by itself. In order to identify it uniquely we need to introduce the <b>AUTHORS_BOOKS</b> table.
+                        This table has two foreign keys: <b>author_name</b> and <b>book_title</b>. They will represent
+                        a <b>composite primary key</b>, meaning that together they identify uniquely any <b>author-book</b>
+                        entity.</p><br>
+                    <p>Here is an example how to assign a composite primary key. You need to double-click the table node
+                        title bar to open the <b>DB table node editor</b>, then to click the <b>Composite primary Key</b> button.
+                        The preselected type is <b>PRIMARY KEY</b>. The dropdowns of the fields <b>Column1</b>,
+                        <b>Column2</b>, <b>Column3</b> contain the list of all foreign keys present in this table node. You
+                        have to select two or more different foreign keys. Optionally you can specify a name for this
+                        composite key.</p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/accountrefs.png" width="486" height="165"></p>
-                    </div><br><br>
+                        <p><img src="../../images/gifs/authors2books.gif" width="844" height="353"></p>
+                    </div><br>
                 </div>
 
                 <div id="dbConstraintsTextId" class="contentText" style="margin-top: -20px;">
-                    <p>Database constraints are used to specify rules for data in a table.  They can be column-level or
+                    <p><b>Database constraints</b> are used to specify rules for data in a table.  They can be column-level or
                         table-level, and can refer to a single column or multiple columns. Constraints are used to limit
-                        the type of data that can be contained into a table. This ensures the accuracy and reliability of the data
-                        in the table. If there is any violation between a constraint and the action on data, the action
-                        is aborted. </p><p></p>
+                        the type of data that can be included in a table. This ensures the accuracy and reliability of the data
+                        in the table. If there is any violation between a constraint and the action on the data, the action
+                        is aborted. </p><p></p><br>
                     <p>Here are some examples of database constraints:</p>
                     <ul>
-                        <li><b>PRIMARY KEY</b> constraint: Uniquely identifies each row in a table requiring that the values in this
-                            column are a combination of a NOT NULL and UNIQUE</li>
-                        <li><b>FOREIGN KEY</b> constraint: Connects data across multiple tables based on a common column or columns.
-                            It is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table</li>
-                        <li><b>UNIQUE</b> constraint: Prevents duplicate values from being entered into a column, but allows null values</li>
+                        <li><b>PRIMARY KEY</b> constraint: Uniquely identifies each row in a table, requiring that the
+                            values in this column be a combination of a NOT NULL and UNIQUE</li>
+                        <li><b>FOREIGN KEY</b> constraint: Connects data across multiple tables, based on a common column
+                            or columns. It is a field (or collection of fields) in one table, refering to the PRIMARY KEY
+                            in another table</li>
+                        <li><b>UNIQUE</b> constraint: Prevents duplicate values from being entered into a column, but
+                            allows null values</li>
                         <li><b>NOT NULL</b> constraint: Ensures that a column will never contain an invalid value</li>
-                        <li><b>CHECK</b> constraint: Specifies a requirement that must be met by each row in a table, and can refer to a
-                            single or multiple columns</li>
-                        <li><b>DEFAULT</b> constraint: Allows a value to be defined that will be placed into a column when a new row
+                        <li><b>CHECK</b> constraint: Specifies a requirement that must be met by each row in a table,
+                            and can refer to a single or multiple columns</li>
+                        <li><b>DEFAULT</b> constraint: Allows to define a value to be placed into a column when a new row
                             is inserted</li>
                     </ul>
                     <p>There are some additional clauses that complement some of the constraints:</p>
                     <ul>
-                        <li><b>REFERENCES</b>: complements FOREIGN KEY constraint</li>
-                        <li><b>AUTO_INCREMENT</b>: allows a unique number to be generated automatically when a new record is
+                        <li><b>REFERENCES</b>: Complements the FOREIGN KEY constraint</li>
+                        <li><b>AUTO_INCREMENT</b>: A unique number will be generated automatically when a new record is
                             inserted into a table</li>
                     </ul>
 
-                    <p> Here is an example to assign some constraints for a database table colums. You need to double-click at
+                    <p> Here is an example how to assign some constraints for a database table column. You need to double-click
                         the table node row that corresponds to the database column:</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/dbConstraints1.gif" width="751" height="580"></p>
                     </div>
 
-                    <p> And here is an example how to assign a <b>REFERENCES</b> constraint. You need to double-click at a table
-                        node row that represents a <b>FOREIGN KEY</b>. You select an existing table and the column name from
-                        that table representing the <b>PRIMARY KEY</b> of that  table. When you confirm this assignment, a
-                        graphical link is created in the diagram. </p><br>
+                    <p> And here is an example how to assign a <b>REFERENCES</b> constraint. You need to double-click a table
+                        node row representing a <b>FOREIGN KEY</b>. Using the dropdowns, select an existing table and the column name from
+                        that table representing the <b>PRIMARY KEY</b> of that table. By confirming this assignment, a
+                        graphical link will be created in the diagram. </p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/dbConstraints2.gif" width="752" height="626"></p>
                     </div>
 
-                    <p> There is a two-way synchronization between such link and the
+                    <p> There is a two-way synchronization between a created link and the
                         <b>REFERENCES</b> constraint: creating a link will also automatically assign a <b>REFERENCES</b>
                         constraint.</p><br>
                     <div style="display:flex; justify-content: center; ">
@@ -738,32 +742,34 @@
                 </div>
 
                 <div id="dbIndexesTextId" class="contentText" style="margin-top: -20px;">
-                    <p>Database indexes are internal data structures that help improve the speed of data retrieval from a
-                        database table. The benefits of having indexes grow when the database is geting larger. <br>An index
+                    <p>Database indexes are internal data structures that help to improve the speed of data retrieval from a
+                        database table. Indexes are particularly beneficial for larger databases.
+                        <br><br>An index
                         is a pointer to a database table column or columns. In order to create an index, you need to
-                        double-click at the table node title bar.<br>You can set an index to be <b>UNIQUE</b> by selecting
-                        the appropriate checkbox. Unique indexes are indexes that help maintain data integrity by ensuring
-                        that no rows of data in a table can have identical key values.<br>Here is an example showing how
-                        to create an index:</p>
+                        double-click the table node title bar.<br><br>You can set an index to be <b>UNIQUE</b> by selecting
+                        the appropriate checkbox. Unique indexes help maintain data integrity by ensuring
+                        that no rows of data in a table have identical key values.<br><br>Here is an example showing how
+                        to create an index:</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/dbIndexes.gif" width="906" height="498"></p>
                     </div><br><br>
                 </div>
 
-            <!-- LOG -->
+                <div id="dbImportExportTextId" class="contentText" style="margin-top: -20px;">
+
+
+                </div>
+
+
+                <!-- LOG -->
 
                 <div id="logicalTextId" class="contentText" style="margin-top: -20px;">
-                    <p><b>Logical ERDs</b> (entity-relationship diagrams) are used to design the conceptual or logical
-                        models of business objects that are parts of systems. Often they are useful as preliminary stages before
-                        the physical design, i.e. of a database. They are a convenient tool for business analysts or business
-                        users. A conceptual or logical model defines the global picture of the
-                        system and identifies the business objects as the building blocks of the system. More specifically, it
-                        defines the entities and their attributes, as well as the relationships between them.<br>
-                        <br>The logical models help to understand better the business domain, to clarify the terminology and
-                        relate the business concepts to database structures. At these stages it
-                        is important to determine if there are some inconsistencies or omissions in the overall system design.
-                        These models are intended to capture the overall system concepts, and for this reason they prove to be
-                        useful as basis for the physical design of databases.
+                    <p><b>Logical ERDs</b> (entity-relationship diagrams) are the conceptual or logical models of business
+                        objects as components of systems. They are a convenient tool for business analysts or database
+                        designers, and are useful at preliminary design stages for physical databases, presumably
+                        following a whiteboard design.
+                        A conceptual or logical model identifies the business objects as building blocks. It defines
+                        the entities and their attributes, as well as the relationships between them.
                         </p><br>
                     <p><img src="../../images/guide/openLOGTemplate.png" width="360" height="150"></p>
                     <div style="display:flex; justify-content: center; ">
@@ -775,28 +781,28 @@
                     <p>The graphical nodes representing the logical symbols, adopted here, consist of three basic types: <b>entity</b>,
                         <b>relationship</b> and <b>attribute</b>. There are some additional derived types as follows:
                     </p><br>
-                    <p><img src="../../images/dataflow/entityStr24.png"> - <b>Entity</b> (also <b>Strong Entity</b>) - an object
-                        of certain kind. It could be considered as a prototype of a database table. It is defined by its attributes.</p>
-                    <p><img src="../../images/dataflow/entityWeak24.png"> - <b>Weak Entity</b> - it depends on a strong entity.</p>
-                    <p><img src="../../images/dataflow/attrStrong24.png"> - <b>Attribute</b> - defines the property of an entity.</p>
+                    <p><img src="../../images/dataflow/entityStr24.png"> - <b>Entity</b> (also <b>Strong Entity</b>) -
+                        generic object. It is considered to be a prototype of a database table and is further defined by its attributes.</p>
+                    <p><img src="../../images/dataflow/entityWeak24.png"> - <b>Weak Entity</b> - entity that depends on a strong entity</p>
+                    <p><img src="../../images/dataflow/attrStrong24.png"> - <b>Attribute</b> - defines a property of an entity</p>
                     <p><img src="../../images/dataflow/attrDerived24.png"> - <b>Derived Attribute</b> - defines an attribute based on
-                        another attribute.</p>
+                        another attribute</p>
                     <p><img src="../../images/dataflow/attrMulti24.png"> - <b>Multivalued Attribute</b> - defines an attribute with
-                        multiple values.</p>
+                        multiple values</p>
                     <p><img src="../../images/dataflow/relStrong24.png"> - <b>Relationship</b> - defines the type of relation
                         between two entities. Usually it corresponds to a primary-foreign key reference.</p>
                     <p><img src="../../images/dataflow/relWeak24.png"> - <b>Weak Relationship</b> (also <b>Non-Identifying
-                        Relationship</b> - a reference that does not correspond to a primary-foreign key reference.</p>
+                        Relationship</b>) - a reference that does not correspond to a primary-foreign key reference</p>
 
                     <br>
                     <p>Similar to the database modelling, the <b>cardinality</b>  defines the number of occurrences of one entity
-                        that are associated with the number of occurrences of another entity. The cardinality is represented
-                        graphically the similar way with <b>crow's foot</b> symbols on the ends of the connections at the entities.
-                        Here are the six relationships symbols:</p>
+                        associated with the number of occurrences of another entity. The cardinality is represented
+                        graphically by <b>crow's foot</b> symbols at the ends of the connections between entities.<br><br>
+                        Here are the six <b>cardinality</b> symbols:</p>
                     <div >
                         <p><img src="../../images/guide/cardinality.png" width="180" height="169"></p>
-                    </div>
-                    <p>In general, as it was shown above, there are three cardinality relationships: <b>one-to-one</b>, <b>one-to-many</b>
+                    </div><br>
+                    <p>As in Database ERDs, there are three cardinality relationships: <b>one-to-one</b>, <b>one-to-many</b>
                         and <b>many-to-many</b>.
                     </p><br>
                     <div style="display:flex; justify-content: center; margin-right: 100px;">
@@ -805,38 +811,39 @@
                 </div>
 
                 <div id="logCreateTextId" class="contentText" style="margin-top: -20px;">
-                    <p>The <b>Logical ERDs</b> are intended to present logical structures where objects, constituted of
-                        <b>entity-attributes</b> groups, expose certain relations between themselves. The logical graphical nodes,
-                        described above, are much simpler compared to the database ERD symbols or even to the flowchart nodes.<br>
+                    <p>The <b>Logical ERDs</b> represent logical structures of objects, consisting of
+                        <b>entity-attributes</b> groups, and show the relations between them. Here are step-by-step
+                        examples how to create a logical ERD.<br>
                     </p><br>
-                    <p>A <b>new logical ERD node</b> is created either by dragging an item from the palette on the right
-                        to an accepting cell on the canvas, or by selecting an item from the canvas context menu on an
+                    <p>Create a <b>new logical ERD node</b> either by dragging an item from the palette
+                        to an accepting cell on the canvas, or by selecting an item from the canvas context menu displayed in an
                         empty cell:</p><br>
                         <div style="display:flex; justify-content: center; ">
                             <p><img src="../../images/guide/addLogNode.png" width="409" height="268"></p>
                         </div><br>
-                    <p>In order to show the relation between two entities, a <b>relation</b> node is placed between them:</p><br>
+                    <p>In order to show the relation between two entities, place a <b>relation</b> node between them:</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/logAdmin1.gif" width="748" height="416"></p>
                     </div><br><br>
-                    <p>The established cardinality relationship between one or more employees and their manager is
-                        <b>many-to-one</b>. Similar attribute groups can be copied and pasted.</p>
+                    <p>Continue adding attributes to the entities.
+                        Note that the cardinality relationship between one or more employees and their manager is
+                        <b>many-to-one</b>. </p>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/logAdmin3.gif" width="625" height="447"></p>
                     </div><br><br>
                 </div>
 
                 <div id="logRelationTextId" class="contentText" style="margin-top: -20px;">
-                    <p>The <b>Relationship</b> node has two modes - YES/NO decision mode and 1-to-3 ways mode. By double-clicking
-                        on the node, the popup box allows to choose which mode is more appropriate for the particular use.<br>
-                        The YES/NO decision mode is similar to the decision nodes in Flowcharts.<br>
+                    <p>The <b>Relationship</b> node has two modes - YES/NO decision mode and 1-to-3 ways mode. When double-clicking
+                        the node, a popup box allows to choose which mode is more appropriate for the particular case.<br>
+                        The YES/NO decision mode is similar to the decision mode in Flowcharts.<br>
                         The 1-to-3 ways mode has one input that can be positioned at any of the four directions, and 3 outputs
-                        positioned on the remaining 3 corners:</p><br>
+                        positioned at the remaining 3 corners:</p><br>
                     <div style="display:flex; justify-content: center; margin-right: 100px;">
                         <p><img src="../../images/gifs/logRelation.gif" width="348" height="210"></p>
                     </div><br><br>
-                    <p>It is convenient to change the positions of the ends of the <b>Relationship</b> node when you want to
-                        modify the layout of the diagram:</p><br>
+                    <p> When you want to modify the layout of the diagram, it is convenient to change the positions of
+                        the ends of the <b>Relationship</b> node:</p><br>
                     <div style="display:flex; justify-content: center; margin-right: 100px;">
                         <p><img src="../../images/gifs/logAdmin2.gif" width="471" height="320"></p>
                     </div><br><br>
@@ -865,8 +872,8 @@
             document.getElementById("settingsTextId").style.display = "block";
         } else if (id === "browserBtnId") {
             document.getElementById("browserTextId").style.display = "block";
-        } else if (id === "paletteBtnId") {
-            document.getElementById("paletteTextId").style.display = "block";
+//        } else if (id === "paletteBtnId") {
+//            document.getElementById("paletteTextId").style.display = "block";
         } else if (id === "layoutBtnId") {
             document.getElementById("layoutTextId").style.display = "block";
         } else if (id === "selectionsBtnId") {
@@ -905,12 +912,14 @@
             document.getElementById("dbStartTextId").style.display = "block";
         } else if (id === "dbCardinalBtnId") {
             document.getElementById("dbCardinalTextId").style.display = "block";
-//        } else if (id === "dbCompositeBtnId") {
-//            document.getElementById("dbCompositeTextId").style.display = "block";
+        } else if (id === "dbCompositeBtnId") {
+            document.getElementById("dbCompositeTextId").style.display = "block";
         } else if (id === "dbConstraintsBtnId") {
             document.getElementById("dbConstraintsTextId").style.display = "block";
         } else if (id === "dbIndexesBtnId") {
             document.getElementById("dbIndexesTextId").style.display = "block";
+        } else if (id === "dbImportExportBtnId") {
+            document.getElementById("dbImportExportTextId").style.display = "block";
 
 
         } else if (id === "logicalBtnId") {
@@ -931,7 +940,7 @@
         document.getElementById("actionsBtnId").classList.remove("boldText");
         document.getElementById("settingsBtnId").classList.remove("boldText");
         document.getElementById("browserBtnId").classList.remove("boldText");
-        document.getElementById("paletteBtnId").classList.remove("boldText");
+//        document.getElementById("paletteBtnId").classList.remove("boldText");
         document.getElementById("layoutBtnId").classList.remove("boldText");
         document.getElementById("selectionsBtnId").classList.remove("boldText");
         document.getElementById("navigateBtnId").classList.remove("boldText");
@@ -951,9 +960,10 @@
         document.getElementById("dbKeysBtnId").classList.remove("boldText");
         document.getElementById("dbStartBtnId").classList.remove("boldText");
         document.getElementById("dbCardinalBtnId").classList.remove("boldText");
-//        document.getElementById("dbCompositeBtnId").classList.remove("boldText");
+        document.getElementById("dbCompositeBtnId").classList.remove("boldText");
         document.getElementById("dbConstraintsBtnId").classList.remove("boldText");
         document.getElementById("dbIndexesBtnId").classList.remove("boldText");
+        document.getElementById("dbImportExportBtnId").classList.remove("boldText");
 
         document.getElementById("logicalBtnId").classList.remove("boldText");
         document.getElementById("logNotationBtnId").classList.remove("boldText");
@@ -976,7 +986,7 @@
         document.getElementById("actionsTextId").style.display = "none";
         document.getElementById("settingsTextId").style.display = "none";
         document.getElementById("browserTextId").style.display = "none";
-        document.getElementById("paletteTextId").style.display = "none";
+//        document.getElementById("paletteTextId").style.display = "none";
         document.getElementById("layoutTextId").style.display = "none";
         document.getElementById("selectionsTextId").style.display = "none";
         document.getElementById("navigateTextId").style.display = "none";
@@ -998,6 +1008,7 @@
         document.getElementById("dbCompositeTextId").style.display = "none";
         document.getElementById("dbConstraintsTextId").style.display = "none";
         document.getElementById("dbIndexesTextId").style.display = "none";
+        document.getElementById("dbImportExportTextId").style.display = "none";
 
         document.getElementById("logicalTextId").style.display = "none";
         document.getElementById("logNotationTextId").style.display = "none";
