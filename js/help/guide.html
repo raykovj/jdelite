@@ -51,12 +51,15 @@
                     <li><button id="databaseBtnId" class="caret textBtn first" onclick="selectText(event)">Database ERDs</button>
                         <ul class="nested">
                             <li><button id="dbKeysBtnId" class="textBtn second" onclick="selectText(event)">Primary and Foreign Keys</button></li>
-                            <li><button id="dbStartBtnId" class="textBtn second" onclick="selectText(event)">Create a Table Node</button></li>
+                            <li><button id="dbCreateBtnId" class="textBtn second" onclick="selectText(event)">Create a Table Node</button></li>
                             <li><button id="dbCardinalBtnId" class="textBtn second" onclick="selectText(event)">Notations and Cardinality</button></li>
                             <li><button id="dbCompositeBtnId" class="textBtn second" onclick="selectText(event)">Composite Keys</button></li>
                             <li><button id="dbConstraintsBtnId" class="textBtn second" onclick="selectText(event)">Constraints</button></li>
-                            <li><button id="dbIndexesBtnId" class="textBtn second" onclick="selectText(event)">Indexes</button></li>
-                            <li><button id="dbImportExportBtnId" class="textBtn second" onclick="selectText(event)">Import / Export</button></li>
+                            <li><button id="dbIndexesBtnId" class="textBtn second" onclick="selectText(event)">Keys and Indexes</button></li>
+                            <li><button id="dbImpExpSQLiteBtnId" class="textBtn second"
+                                        onclick="selectText(event)">Import / Export SQLite Scripts</button></li>
+                            <li><button id="dbImpExpMySQLBtnId" class="textBtn second"
+                                        onclick="selectText(event)">Import / Export MySQL Scripts</button></li>
                         </ul>
                     </li>
 
@@ -498,9 +501,13 @@
                         The detailed table designs are expressed visually in the diagram nodes. The relationships between the
                         entities are modeled as links between the nodes.</p><br>
                     <p>The current relational databases on the market use as a common language the <b>SQL</b>, however they
-                        all have certain proprietary implementation differences. In order to reconcile them for a unified
+                        all have certain implementation differences. In order to reconcile them for a unified
                         ERD design, <b>JDElite Flowchart Builder</b> provides a <b>common UI</b> and handles the differences
-                        internally.</p><br>
+                        internally. Here we introduce only the basic concepts of relational databases. However, they are not
+                        sufficient for the full understanding of all details. In order to make successful ERD designs, you
+                        should consult the corresponding database documentation. Combined with this knowledge,
+                        <b>JDElite Flowchart Builder</b> is one of the most user-oriented tools for the design of ERDs.
+                        It covers all intricacies of <b>MySQL</b> and <b>SQLite</b> databases.</p><br>
                     <p>An ERD created in <b>JDElite Flowchart Builder</b> is saved as a file in <b>JSON</b> format. This file can be
                         exported to a specific script for automated creation of a database. Vice versa, a database script
                         can be imported to a <b>JSON</b> diagram file, visualized and further modified in the editor.</p><br>
@@ -531,7 +538,10 @@
                 <div id="dbKeysTextId" class="contentText" style="margin-top: -20px;">
                     <p>The structures of relational databases are determined by the <b>primary</b> and <b>foreign</b> keys.
                         A <b>primary</b> key is a column or a group of columns (composite primary key) that ensure unique
-                        row identification in a database table.
+                        row identification in a relational database table. Primary keys aren’t allowed to have duplicates
+                        or null values. If a primary key contains multiple columns, the combination of values within these
+                        columns should be unique for it to be valid. A table can have only one primary key.<br><br>
+
                         A <b>foreign</b> key is a column or a group of columns that together with
                         a primary key represent a reference between two database tables.
                         The foreign key in one table has a reference to a primary key in another table. There could be multiple
@@ -568,7 +578,7 @@
                     </div><br><br>
                 </div>
 
-                <div id="dbStartTextId" class="contentText" style="margin-top: -20px;">
+                <div id="dbCreateTextId" class="contentText" style="margin-top: -20px;">
                     <p>A <b>new DB table node</b> is created either by dragging an item from the palette on the right
                     to an accepting cell on the canvas, or by selecting an item from the canvas context menu displayed on an
                     empty cell. In both cases there are three node choices, which differ only by the initial number of
@@ -608,11 +618,10 @@
                     <!--<p> <b>Not Null</b> - ensures that the given column of the database table is never assigned the null value.</p>-->
                         <br>The buttons on the toolbar of the DB table editor are as follow:
                     <p><img src="../../images/toolbar/add24.png" width="24" height="24"> - Add a new empty row</p>
-                    <p><img src="../../images/toolbar/addPK24.png" width="24" height="24"> - Add an additional row for primary key
-                        (for a composite primary key)</p>
+                    <p><img src="../../images/toolbar/addPK24.png" width="24" height="24"> - Add an additional row for primary key</p>
                     <!--<p><img src="../../images/toolbar/addFK24.png" width="24" height="24"> - Add an additional row for foreign key-->
                         <!--(for a composite foreign key).</p>-->
-                    <p><img src="../../images/toolbar/delete18x24.png" width="24" height="24">  -  Delete the row if there is
+                    <p><img src="../../images/toolbar/delete18x24.png" width="20" height="24">  -  Delete the row if there is
                         no reference to it</p>
                     <p><img src="../../images/toolbar/navigate_up24.png" width="24" height="24">  - Move the row one step up
                         if the row has no primary key assigned</p>
@@ -742,22 +751,73 @@
                 </div>
 
                 <div id="dbIndexesTextId" class="contentText" style="margin-top: -20px;">
-                    <p>Database indexes are internal data structures that help to improve the speed of data retrieval from a
-                        database table. Indexes are particularly beneficial for larger databases.
-                        <br><br>An index
-                        is a pointer to a database table column or columns. In order to create an index, you need to
-                        double-click the table node title bar.<br><br>You can set an index to be <b>UNIQUE</b> by selecting
-                        the appropriate checkbox. Unique indexes help maintain data integrity by ensuring
-                        that no rows of data in a table have identical key values.<br><br>Here is an example showing how
-                        to create an index:</p><br>
+                    <p><b>Database index</b> is an optional structure, associated with a column or columns on a table,
+                        that can speed up the access to the data. Indexes are structures stored in the database that users
+                        manage using SQL statements. They are used to support database performance.
+                        <br><b>Database key</b> is a column or set of columns that uniquely identify rows in a table. They
+                        are used to maintain data integrity. A key declaration is a constraint.
+                        Examples of keys are the primary keys, the foreign keys and the composite primary keys, all that
+                        were explained above.
+                        <br><br>The documentation for keys and indexes is specific for each database implementation.
+                        The corresponding user manuals provide the interpretations and detailed information for the usage.
+                        It is recommended that you consult the database documentation.
+                        Here we show how to specify the creation of these structures using <b>JDElite Flowchart Editor</b>.
+
+                        <br><br>In a <b>SQLite</b> database, in order to create an index, you need to double-click the
+                        table node title bar. You can define an index to be <b>UNIQUE</b> by selecting the appropriate checkbox.<br>
+                        Here is an example showing how to create an index for <b>SQLite</b> database:</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/dbIndexes.gif" width="906" height="498"></p>
                     </div><br><br>
+                        In a <b>MySQL</b> database, <b>JDElite Flowchart Editor</b> provides an uniform way to assign
+                        indexes and keys. They are all defined at table level. Key is normally a synonym for index.
+                        There are several key flavors, like:
+                    <li><b>UNIQUE</b>: all values in the index must be distinct</li>
+                    <li><b>FULLTEXT</b>:  used for full-text searches</li>
+                    <li><b>SPATIAL</b>: applied on spatial data types</li><br>
+                        The <b>PRIMARY</b> key can be defined either on table level or on a column level.<br>
+                        The <b>FOREIGN</b> key is defined at column level.<br>
+                    <p>Here is an example showing how to create an index for <b>MySQL</b> database:</p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/dbCreateKey.gif" width="696" height="472"></p>
+                    </div><br>
+
+                    <br><br>
                 </div>
 
-                <div id="dbImportExportTextId" class="contentText" style="margin-top: -20px;">
+                <div id="dbImpExpSQLiteTextId" class="contentText" style="margin-top: -20px;">
+                    <p>
+                    </p>
 
+                </div>
 
+                <div id="dbImpExpMySQLTextId" class="contentText" style="margin-top: -20px;">
+                    <p>
+                    <h3>Import from MySQL Scripts</h3>
+                    <b>JDElite Flowchart Builder</b> can import database schemas exported from <b>MySQL</b> dumps to disk.
+                    <b>MySQL</b> offers two options for exporting database schemas:
+                    <li>to a dump folder, where each table is exported as a separate file with <b>.sql</b> extension</li>
+                    <li>to a self-contained file with <b>.sql</b> extension</li>
+                    Both these options are accepted. In the first case JDElite reads all <b>.sql</b> files from the
+                    selected folder, merges the separate scripts and process them. In the second case the selected
+                    <b>.sql</b> is processed.
+                    <br>Here are the common steps to follow for each case:
+                    <li>From the editor start page, select <b>Import DB script</b> to open the <b>Import/Export</b> dialog</li>
+                    <li>In the <b>Import/Export</b> dialog, select <b>MySQL</b> in the drop-down and confirm</li>
+                    <li>In the <b>File Browser</b>, navigate to either the dump folder or to the self-contained file,
+                    select it and confirm the selection</li>
+                    The ERD of the schema will be displayed in the editor canvas as shown here:
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/dbImportMySQL.gif" width="852" height="624"></p>
+                    </div><br>
+
+                    </p>
+
+                    <p>
+                        <h3>Export to MySQL scripts</h3>
+                    </p>
+
+                    <br><br>
                 </div>
 
 
@@ -908,8 +968,8 @@
             document.getElementById("databaseTextId").style.display = "block";
         } else if (id === "dbKeysBtnId") {
             document.getElementById("dbKeysTextId").style.display = "block";
-        } else if (id === "dbStartBtnId") {
-            document.getElementById("dbStartTextId").style.display = "block";
+        } else if (id === "dbCreateBtnId") {
+            document.getElementById("dbCreateTextId").style.display = "block";
         } else if (id === "dbCardinalBtnId") {
             document.getElementById("dbCardinalTextId").style.display = "block";
         } else if (id === "dbCompositeBtnId") {
@@ -918,8 +978,10 @@
             document.getElementById("dbConstraintsTextId").style.display = "block";
         } else if (id === "dbIndexesBtnId") {
             document.getElementById("dbIndexesTextId").style.display = "block";
-        } else if (id === "dbImportExportBtnId") {
-            document.getElementById("dbImportExportTextId").style.display = "block";
+        } else if (id === "dbImpExpSQLiteBtnId") {
+            document.getElementById("dbImpExpSQLiteTextId").style.display = "block";
+        } else if (id === "dbImpExpMySQLBtnId") {
+            document.getElementById("dbImpExpMySQLTextId").style.display = "block";
 
 
         } else if (id === "logicalBtnId") {
@@ -958,12 +1020,13 @@
 
         document.getElementById("databaseBtnId").classList.remove("boldText");
         document.getElementById("dbKeysBtnId").classList.remove("boldText");
-        document.getElementById("dbStartBtnId").classList.remove("boldText");
+        document.getElementById("dbCreateBtnId").classList.remove("boldText");
         document.getElementById("dbCardinalBtnId").classList.remove("boldText");
         document.getElementById("dbCompositeBtnId").classList.remove("boldText");
         document.getElementById("dbConstraintsBtnId").classList.remove("boldText");
         document.getElementById("dbIndexesBtnId").classList.remove("boldText");
-        document.getElementById("dbImportExportBtnId").classList.remove("boldText");
+        document.getElementById("dbImpExpSQLiteBtnId").classList.remove("boldText");
+        document.getElementById("dbImpExpMySQLBtnId").classList.remove("boldText");
 
         document.getElementById("logicalBtnId").classList.remove("boldText");
         document.getElementById("logNotationBtnId").classList.remove("boldText");
@@ -1003,12 +1066,13 @@
 
         document.getElementById("databaseTextId").style.display = "none";
         document.getElementById("dbKeysTextId").style.display = "none";
-        document.getElementById("dbStartTextId").style.display = "none";
+        document.getElementById("dbCreateTextId").style.display = "none";
         document.getElementById("dbCardinalTextId").style.display = "none";
         document.getElementById("dbCompositeTextId").style.display = "none";
         document.getElementById("dbConstraintsTextId").style.display = "none";
         document.getElementById("dbIndexesTextId").style.display = "none";
-        document.getElementById("dbImportExportTextId").style.display = "none";
+        document.getElementById("dbImpExpSQLiteTextId").style.display = "none";
+        document.getElementById("dbImpExpMySQLTextId").style.display = "none";
 
         document.getElementById("logicalTextId").style.display = "none";
         document.getElementById("logNotationTextId").style.display = "none";

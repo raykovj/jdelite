@@ -1248,7 +1248,7 @@
                         <!--<td align="center"><input type="checkbox" id="chkAutoIncrId" ></td>-->
                         <!--<td align="center"><input type="checkbox" id="chkNotNullId" ></td>-->
                     </tr>
-                    <tr>
+                    <tr data-bind="visible: showDBTable()">
                         <td >
                             <select id="inputKeyId" class="dbTableListMenu"
                                         data-bind="options: dbColumnKeys,
