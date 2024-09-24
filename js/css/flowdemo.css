@@ -1352,7 +1352,11 @@ label {
 	margin: 20px 0 0 8px;
 }
 .importBkgnd {
-	background-color: #e0fbda;
+	background-color: #e1fbd4;
+	
+	width: 144px;
+	height: 28px;
+	border: 1px solid #a3ab93;
 }
 .toolbar-button {
 	

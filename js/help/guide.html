@@ -787,6 +787,35 @@
 
                 <div id="dbImpExpSQLiteTextId" class="contentText" style="margin-top: -20px;">
                     <p>
+                    <h3>Import from SQLite Scripts</h3>
+                    <b>JDElite Flowchart Builder</b> imports database schemas exported from <b>SQLite</b> to <b>.sql</b> files.
+                    <br>Here are the steps to follow:
+                    <li>From the editor start page, select <b>Database ERD</b>, then <b>Import DB script</b> to open the
+                        <b>Import/Export</b> dialog</li>
+                    <li>In the <b>Import/Export</b> dialog with preselected <b>Import ...</b> button, select <b>SQLite</b>
+                        in the drop-down and confirm it</li>
+                    <li>In the <b>File Browser</b>, navigate to the <b>.sql</b> file,
+                        select it and confirm the selection</li>
+                    The ERD of the schema will be displayed in the editor canvas as shown here:
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/dbImportSQLite.gif" width="918" height="610"></p>
+                    </div>
+
+                    </p>
+
+                    <p>
+                    <h3>Export to SQLite scripts</h3>
+                    <b>JDElite Flowchart Builder</b> exports <b>SQLite</b> schema diagrams to <b>.sql</b> files.
+                    <br>Here are the steps to follow (the diagram has to be previously saved):
+                    <li>Click at <b>Import DB/Export DB</b> button in the top toolbar</li>
+                    <li>Navigate in the <b>File Browser</b> to the desired location, enter the file name for
+                        the script to be exported and confirm it</li>
+                    The <b>.sql</b> script will be stored in the selected location.<br>
+                    Here are shown the steps to follow:
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/dbExportSQLite.gif" width="918" height="548"></p>
+                    </div><br><br>
+
                     </p>
 
                 </div>
@@ -794,32 +823,56 @@
                 <div id="dbImpExpMySQLTextId" class="contentText" style="margin-top: -20px;">
                     <p>
                     <h3>Import from MySQL Scripts</h3>
-                    <b>JDElite Flowchart Builder</b> can import database schemas exported from <b>MySQL</b> dumps to disk.
+                    <b>JDElite Flowchart Builder</b> imports database schemas exported from <b>MySQL</b> dumps to disk.
                     <b>MySQL</b> offers two options for exporting database schemas:
                     <li>to a dump folder, where each table is exported as a separate file with <b>.sql</b> extension</li>
                     <li>to a self-contained file with <b>.sql</b> extension</li>
                     Both these options are accepted. In the first case JDElite reads all <b>.sql</b> files from the
-                    selected folder, merges the separate scripts and process them. In the second case the selected
-                    <b>.sql</b> is processed.
+                    selected folder, merges the separate scripts and process them altogether. In the second case the selected
+                    <b>.sql</b> file is processed.
                     <br>Here are the common steps to follow for each case:
-                    <li>From the editor start page, select <b>Import DB script</b> to open the <b>Import/Export</b> dialog</li>
-                    <li>In the <b>Import/Export</b> dialog, select <b>MySQL</b> in the drop-down and confirm</li>
+                    <li>From the editor start page, select <b>Database ERD</b>, then <b>Import DB script</b> to open the
+                        <b>Import/Export</b> dialog</li>
+                    <li>In the <b>Import/Export</b> dialog with preselected <b>Import ...</b> button, select <b>MySQL</b>
+                        in the drop-down and confirm it</li>
                     <li>In the <b>File Browser</b>, navigate to either the dump folder or to the self-contained file,
                     select it and confirm the selection</li>
                     The ERD of the schema will be displayed in the editor canvas as shown here:
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/dbImportMySQL.gif" width="852" height="624"></p>
-                    </div><br>
+                    </div>
 
                     </p>
 
                     <p>
                         <h3>Export to MySQL scripts</h3>
+                    <b>JDElite Flowchart Builder</b> exports <b>MySQL</b> schema diagrams offering two options to select
+                    from, following the original options:
+                    <li>to a dump folder, where each table is exported as a separate file with <b>.sql</b> extension</li>
+                    <li>to a self-contained file with <b>.sql</b> extension</li>
+                    The scripts are wrapped in <b>MySQL</b> specific statements, enclosed in /*! .... */, following the
+                    formats used in <b>MySQL Workbench</b>.
+                    <br>Here are the steps to follow for the export (the diagram has to be previously saved):
+                    <li>Click at <b>Import DB/Export DB</b> button in the top toolbar</li>
+                    <li>Navigate in the <b>File Browser</b> to the desired location, enter the file or folder name for
+                        the script to be exported and confirm it</li>
+                    <li>In the <b>Import/Export</b> dialog with preselected <b>Import ...</b> button and <b>MySQL</b> in
+                        the drop-down, select the desired button for export to a single self-contained file of to a folder
+                        with separate table scripts and confirm the selection</li>
+                    The script/scripts will be stored in the selected location.<br>
+                    Here are shown the steps to follow:
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/dbExportMySQL.gif" width="918" height="548"></p>
+                    </div><br>
+                    The table scripts are in the selected folder:
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/dbExportMySQL2.gif" width="918" height="548"></p>
+                    </div><br><br>
+
                     </p>
 
                     <br><br>
                 </div>
-
 
                 <!-- LOG -->
 
