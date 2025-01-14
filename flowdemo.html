@@ -24,7 +24,7 @@
             <button id="newId" class="toolbar-button button-new" data-toggle="tooltip" title="Start Here..."></button>
             <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open Diagram..."></button>
             <button id="templateId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Open Template..."></button>
-            <button id="inOutId" class="toolbar-button button-no-left button-inOut" data-toggle="tooltip" title="Import DB/Export DB..."></button>
+            <button id="inOutId" class="toolbar-button button-no-left button-inOut" data-toggle="tooltip" title="Export DB..."></button>
             <button id="undoId" class="toolbar-button button-no-left button-undo" data-toggle="tooltip" title="Undo"></button>
             <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
             <button id="deleteId" class="toolbar-button button-no-left button-delete" data-toggle="tooltip" title="Remove Selections"></button>
@@ -45,9 +45,9 @@
         <div id="diagramNameId">
             <div style="margin: 2px 6px 0 0;">
                 <div id="cnxOnId" class="cnx-button button-cnxOn" style="display: none;"
-                     data-bind="visible: cnxInfo()" title="Connection On"></div>
+                     data-bind="visible: cnxInfo()" title="Server Connection On"></div>
                 <div id="cnxOffId" class="cnx-button button-cnxOff"
-                     data-bind="visible: !cnxInfo()" title="Connection Off"></div>
+                     data-bind="visible: !cnxInfo()" title="Server Connection Off"></div>
             </div>
             <div class="diagram-title">
                 <span class="selectionFont">Diagram:</span>
@@ -728,29 +728,19 @@
                 <div >
                     <img class="startFlowImg" />
                 </div >
-                <ul>
-                    <li>
-                        <div class="startCallGroup1">
-                            <span class="startTextDetails" >Start a new flowchart</span>
-                            <button id="btnCreateFlowId" class="flow-button button-goRight startGoButton"
-                                    title="Select"></button>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="startCallGroup2">
-                            <span class="startTextDetails" >Go to template</span>
-                            <button id="btnTemplateFlowId" class="flow-button button-goRight startGoButton"
-                                    title="Select"></button>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="startCallGroup3">
-                            <span class="startTextDetails" >Open a flowchart</span>
-                            <button id="btnOpenFlowId" class="flow-button button-goRight startGoButton"
-                                    title="Select"></button>
-                        </div>
-                    </li>
-                </ul>
+                <div style="margin-top: 6px;"></div>
+                <div>
+                    <button id="btnCreateFlowId" class="flowTextBtn button-goRight startGoButton"
+                            title="Select">Start a new flowchart</button>
+                </div>
+                <div>
+                    <button id="btnTemplateFlowId" class="flowTextBtn button-goRight startGoButton"
+                            title="Select">Go to template</button>
+                </div>
+                <div>
+                    <button id="btnOpenFlowId" class="flowTextBtn button-goRight startGoButton"
+                            title="Select">Open a flowchart</button>
+                </div>
             </div>
 
             <!-- ERD-->
@@ -758,36 +748,22 @@
                 <div>
                     <img class="startDBImg" />
                 </div>
-                <ul>
-                    <li>
-                        <div class="startCallGroup0">
-                            <span class="startTextDetails" >Start a new database ERD</span>
-                            <button id="btnCreateERDId" class="flow-button button-goRight startGoButton"
-                                    title="Select"></button>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="startCallGroup1">
-                            <span class="startTextDetails" >Go to template</span>
-                            <button id="btnTemplateERDId" class="flow-button button-goRight startGoButton"
-                                    title="Select"></button>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="startCallGroup2">
-                            <span class="startTextDetails" >Open a database ERD</span>
-                            <button id="btnOpenERDId" class="flow-button button-goRight startGoButton"
-                                    title="Select"></button>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="startCallGroup3">
-                            <span class="startTextDetails importBkgnd" >&nbsp;&nbsp;Import DB script&nbsp;&nbsp;</span>
-                            <button id="btnInOutERDId" class="flow-button button-goRight startGoButton"
-                                    title="Select"></button>
-                        </div>
-                    </li>
-                </ul>
+                <div>
+                    <button id="btnCreateERDId" class="flowTextBtn button-goRight startGoButton"
+                            title="Select">Start a new database ERD</button>
+                </div>
+                <div>
+                    <button id="btnTemplateERDId" class="flowTextBtn button-goRight startGoButton"
+                            title="Select">Go to template</button>
+                </div>
+                <div>
+                    <button id="btnOpenERDId" class="flowTextBtn button-goRight startGoButton"
+                            title="Select">Open a database ERD</button>
+                </div>
+                <div>
+                    <button id="btnInOutERDId" class="flowTextBtn button-goRight startGoButton"
+                            title="Select">Import DB script</button>
+                </div>
             </div>
 
             <!-- LOG-->
@@ -795,60 +771,50 @@
                 <div>
                     <img class="startLOGImg" />
                 </div>
-                <ul>
-                    <li>
-                        <div class="startCallGroup1">
-                            <span class="startTextDetails" >Start a new logical ERD</span>
-                            <button id="btnCreateLOGId" class="flow-button button-goRight startGoButton"
-                                    title="Select"></button>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="startCallGroup2">
-                            <span class="startTextDetails" >Go to template</span>
-                            <button id="btnTemplateLOGId" class="flow-button button-goRight startGoButton"
-                                    title="Select"></button>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="startCallGroup3">
-                            <span class="startTextDetails" >Open a logical ERD</span>
-                            <button id="btnOpenLOGId" class="flow-button button-goRight startGoButton"
-                                    title="Select"></button>
-                        </div>
-                    </li>
-                </ul>
+                <div style="margin-top: 6px;"></div>
+                <div>
+                    <button id="btnCreateLOGId" class="flowTextBtn button-goRight startGoButton"
+                            title="Select">Start a new logical ERD</button>
+                </div>
+                <div>
+                    <button id="btnTemplateLOGId" class="flowTextBtn button-goRight startGoButton"
+                            title="Select">Go to template</button>
+                </div>
+                <div>
+                    <button id="btnOpenLOGId" class="flowTextBtn button-goRight startGoButton"
+                            title="Select">Open a logical ERD</button>
+                </div>
             </div>
 
             <!-- PROC-->
-            <div id="contentPROCId" class="startDiagramContent" data-bind="visible: procTabVisible">
-                <div>
-                    <img class="startProcImg" />
-                </div>
-                <ul>
-                    <li>
-                        <div class="startCallGroup1">
-                            <span class="startTextDetails" >Start a new process flow</span>
-                            <button id="btnCreatePROCId" class="flow-button button-goRight startGoButton"
-                                    title="Select"></button>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="startCallGroup2">
-                            <span class="startTextDetails" >Go to template</span>
-                            <button id="btnTemplatePROCId" class="flow-button button-goRight startGoButton"
-                                    title="Select"></button>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="startCallGroup3">
-                            <span class="startTextDetails" >Open a process flow</span>
-                            <button id="btnOpenPROCId" class="flow-button button-goRight startGoButton"
-                                    title="Select"></button>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <!--<div id="contentPROCId" class="startDiagramContent" data-bind="visible: procTabVisible">-->
+                <!--<div>-->
+                    <!--<img class="startProcImg" />-->
+                <!--</div>-->
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--<div class="startCallGroup1">-->
+                            <!--<span class="startTextDetails" >Start a new process flow</span>-->
+                            <!--<button id="btnCreatePROCId" class="flow-button button-goRight startGoButton"-->
+                                    <!--title="Select"></button>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="startCallGroup2">-->
+                            <!--<span class="startTextDetails" >Go to template</span>-->
+                            <!--<button id="btnTemplatePROCId" class="flow-button button-goRight startGoButton"-->
+                                    <!--title="Select"></button>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="startCallGroup3">-->
+                            <!--<span class="startTextDetails" >Open a process flow</span>-->
+                            <!--<button id="btnOpenPROCId" class="flow-button button-goRight startGoButton"-->
+                                    <!--title="Select"></button>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
 
         </div>
     </div>
@@ -1199,6 +1165,15 @@
                spellcheck="false" class="noresizeTextArea"></textarea>
     </div>
 
+    <div id="editorTooltipId" class="editorTooltip">
+        <!--<input id="tooltipId" class="editorTooltipContent" autofocus type="text" readonly/>-->
+        <input id="tooltipId" class="editorTooltipContent" autofocus type="text" readonly/>
+    </div>
+
+    <!--<div class="tooltip">Hover over me-->
+        <!--<span class="tooltiptext">Tooltip text</span>-->
+    <!--</div>-->
+
     <div id="dbTableTooltipId" class="dbTableTooltip">
         <input id="dbTooltipId" class="dbTableTooltipContent" autofocus type="text" readonly/>
     </div>
@@ -1213,7 +1188,7 @@
                 <button id="btnAddNewRowId" class="toolbar-button button-add" data-toggle="tooltip"
                         title="Add New Row"></button>
                 <button id="btnAddPKRowId" class="toolbar-button button-addPK" data-toggle="tooltip"
-                        title="Expand Composite Primary Key"></button>
+                        title="Add Secondary Primary Key"></button>
                 <!--<button id="btnAddFKRowId" class="toolbar-button button-addFK" data-toggle="tooltip"-->
                         <!--title="Expand Composite Foreign Key"></button>-->
                 <button id="btnRemoveCurrRowId" class="toolbar-button button-delete button-no-left"
@@ -1264,7 +1239,7 @@
                         </td>
                         <td >
                             <select id="inputTypeId" class="dbTableListMenu"
-                                        data-bind="options: dbColumnTypes,
+                                        data-bind="options: dbDataColumnTypes,
                                 optionsText: 'label',
                                 optionsValue: 'id'">
                                 </select>
@@ -1288,7 +1263,7 @@
                         data-bind="visible: showDBConstraints()" title="Hide Constraints"></button>
             </div>
             <span class="dbTableCaption" style="margin: 2px 0 0px 0; padding-top: 4px; grid-column: 2;">
-                Constraints / Attributes</span>
+                Column Constraints / Attributes</span>
             <button id="btnAddConstraintId" class="toolbar-button button-add" data-toggle="tooltip"
                     title="Add New Row" style="margin: 2px 0 4px 0; grid-column: 3;"
                     data-bind="visible: showDBConstraints()"></button>
@@ -1355,7 +1330,7 @@
                         data-bind="visible: showDBCompositePK()" title="Hide Keys / Indexes"></button>
             </div>
             <span class="dbTableCaption" style="margin: 0 0 0 0; padding-top: 4px; grid-column: 2;"
-                  data-bind="visible: isSelectedMySQL()">Keys / Indexes&nbsp;&nbsp;</span>
+                  data-bind="visible: isSelectedMySQL()">Keys</span>
             <span class="dbTableCaption" style="margin: 0 0 0 0; padding-top: 4px; grid-column: 2;"
                   data-bind="visible: !isSelectedMySQL()">Composite Keys</span>
             <button id="btnAddKeyId" class="toolbar-button button-add"
@@ -1421,7 +1396,7 @@
 
         <!-- INDEXES -->
         <!--<div style="margin-top: 4px;"></div>-->
-        <div class="dbEditorTop" data-bind="visible: !isSelectedMySQL()">
+        <div class="dbEditorTop" data-bind="visible: true">
             <div style="margin: 2px 0 0 0; grid-column: 1;">
                 <button id="btnShowIdxsId" class="dgm-button btn-down-16 dgm-btn-outline"
                         data-bind="visible: !showDBIndexes()" title="Show Indexes"></button>
@@ -1438,7 +1413,7 @@
                     title="Remove Selected Row"></button>
         </div>
         <div id="dbTblIndexesId" style="display: block; margin: -6px 2px 0 0;"
-             data-bind="visible: showDBIndexes() && !isSelectedMySQL()">
+             data-bind="visible: showDBIndexes() && true">
             <table id="dbTblIndexColumnsId" style="width: 100%; table-layout: fixed; ">
                 <thead><tr>
                     <th style="width: 50%;">&nbsp;Name</th>
@@ -1720,16 +1695,16 @@
                 <div class="inOut-footer"></div>
             </div>
 
-            <div class="settings-controls settings-entry" style="display: block" data-bind="visible: isExportMySQL()">
-                <div style="margin: 4px 0 0 6px;">
-                    <input type="radio" id="btnSingleFileId" name="mysqlExp" style="margin: 4px 4px 0 8px;">
-                    <label for="btnSingleFileId" style="vertical-align:baseline; margin: 0 14px 0 0;" >Export to Single File</label>
-                </div>
-                <div style="margin: 6px 0 6px 6px;">
-                    <input type="radio" id="btnLocalFolderId" name="mysqlExp" style="margin: 4px 4px 0 8px;">
-                    <label for="btnLocalFolderId" style="vertical-align:baseline; margin: 0 14px 0 0;" >Export Files to Folder</label>
-                </div>
-            </div>
+            <!--<div class="settings-controls settings-entry" style="display: block" data-bind="visible: isExportMySQL()">-->
+                <!--<div style="margin: 4px 0 0 6px;">-->
+                    <!--<input type="radio" id="btnSingleFileId" name="mysqlExp" style="margin: 4px 4px 0 8px;">-->
+                    <!--<label for="btnSingleFileId" style="vertical-align:baseline; margin: 0 14px 0 0;" >Export to Single File</label>-->
+                <!--</div>-->
+                <!--<div style="margin: 6px 0 6px 6px;">-->
+                    <!--<input type="radio" id="btnLocalFolderId" name="mysqlExp" style="margin: 4px 4px 0 8px;">-->
+                    <!--<label for="btnLocalFolderId" style="vertical-align:baseline; margin: 0 14px 0 0;" >Export Files to Folder</label>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
     </div>
 

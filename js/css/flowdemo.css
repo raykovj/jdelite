@@ -1,8 +1,8 @@
 html,
 body {
 	margin: 0;
-  	
-	overflow-y: auto;
+  	height: 100vh;
+	
 	overflow-x: hidden;
 }
 body.waiting * {
@@ -20,6 +20,8 @@ body.waiting * {
 	top: 0;
 	left: 0;
 	width: 100%;
+	overflow-y: hidden;
+	
 	
 }
 	
@@ -112,7 +114,9 @@ body.waiting * {
 	
 	
 	
-	overflow: auto  !important;
+	overflow: auto;
+	overflow-x: hidden;
+	overscroll-behavior: contain;
 	margin: 4px 0 20px;
 	
 }
@@ -191,13 +195,13 @@ body.waiting * {
 	height: 52px;
 	top: 0;
 	left: 0;
-	background-color: rgba(140,180,255,0.6);
+	background-color: rgba(66, 150, 255, 0.6);
 	z-index: 2002;
 }
 .overlaySaveText {
 	position: absolute;
 	top: 45%;
-	left: 85%;
+	left: 50%;
 	font-family: Arial;
 	font-size: 18px;
 	color: #ffffff;
@@ -315,11 +319,11 @@ body.waiting * {
 .showDBSelect {
 	border: 1px solid  #3a72c1;
 	border-radius: 2px;
-	
 	color: white;
-	background-color: #72AAFA;
+	background-color: #3a72c1;
+	
 	width: 191px;
-	height: 24px;
+	height: 30px;
 	display: block;
 	margin: 0 0 2px 10px;
 }
@@ -1109,7 +1113,7 @@ label {
 	left: 4%;
 	height: 68px;
 	width: 100px;
-	background-image: url(../../images/splash/JDEliteGraphTM100.png);
+	background-image: url(../../images/splash/JDEliteGraphTM100A.png);
 	background-repeat: no-repeat;
 }
 .about-copyright {
@@ -1203,7 +1207,7 @@ label {
 	outline: 2px solid white;
 	height: 67px;
 	width: 100px;
-	background-image: url(../../images/splash/JDEliteGraphTM100.png);
+	background-image: url(../../images/splash/JDEliteGraphTM100A.png);
 	background-repeat: no-repeat;
 	background-position: top;
 	margin: 6px 0 0 6px;
@@ -1441,6 +1445,34 @@ label {
 	background-color: #82AAFA;
 }
 .flow-button:disabled {
+	background-color: #ffffff;
+	cursor: default;
+	opacity: 0.5;
+}
+.flowTextBtn {
+	border: none;
+	outline: none;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	height: 24px;
+	width: 210px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: left;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+	padding-left: 26px;
+	margin: 4px 10px 0 10px;
+	color: #0460ab;
+}
+.flowTextBtn:hover {
+	background-color: #a2cAFF;
+}
+.flowTextBtn:active {
+	background-color: #82AAFA;
+}
+.flowTextBtn:disabled {
 	background-color: #ffffff;
 	cursor: default;
 	opacity: 0.5;
@@ -1756,15 +1788,23 @@ label {
 	background-position: center;
 }
 .ui-dialog-title{
-	
 	font-size: 10pt !important;
 	color: #ffffff !important;
-	
 }
 .ui-dialog-titlebar {
 	background: #72AAFA !important;
-	
 	margin: -4px -5px 0 -5px !important;
+}
+.titleImportColor .ui-dialog-titlebar {
+	background: #95ffdd !important;
+	border: 1px solid #3a72c1;
+}
+.titleExportColor .ui-dialog-titlebar {
+	background: #95ffdd !important;
+	border: 1px solid #3a72c1;
+}
+.titleTextColor .ui-dialog-title {
+	color: #000 !important;
 }
 	
 .ui-dialog .ui-dialog-titlebar-close .ui-icon-closethick {
@@ -1998,6 +2038,28 @@ table#linkPropsTableId td {
 	border-radius: 0 !important;
 	box-shadow: none !important;
 	padding: 4px !important;
+}
+.editorTooltip {
+	position: absolute;
+	
+	visibility: hidden;
+	
+	width: 120px;
+	background-color: #9dd9ff;
+	color: #1355ff;
+	border: 1px solid #1355ff;
+	text-align: center;
+	padding: 5px 0;
+	z-index: 100;
+}
+.editorTooltipContent {
+	
+	font-family: Arial;
+	font-size: 12px;
+	margin-left: 2px;
+	
+	
+	
 }
 #sourcesWrapperId {
 	

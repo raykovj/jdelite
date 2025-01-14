@@ -86,7 +86,7 @@ p { margin: 0; }
     left: 0;
     z-index: 20;
 }
-ul, #myListId {
+ul, #myListId, #dbImpExpBtnId {
     list-style-image: none;
 }
 #myListId {
@@ -135,6 +135,9 @@ ul, #myListId {
     padding: 6px 20px;
 }
 .second {
+    padding: 6px 12px;
+}
+.third {
     padding: 6px 12px;
 }
 .contentText {

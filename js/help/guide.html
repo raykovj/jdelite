@@ -10,14 +10,14 @@
 
 <body>
 <!--<div class="master">-->
-    <div class="container">
+    <div id="masterId" class="container">
         <div class="topBar">
             <!--<img class="logo">-->
             <div class="contentTitle">
                 <span>JDElite Flowchart Builder User Guide</span>
             </div>
         </div>
-        <div class="splitter">
+        <div id="splitterId" class="splitter">
             <div id="leftId">
                 <div style="margin-top: 20px; "></div>
                 <button id="prefaceBtnId" class="textBtn first" onclick="selectText(event)">Preface</button>
@@ -56,10 +56,8 @@
                             <li><button id="dbCompositeBtnId" class="textBtn second" onclick="selectText(event)">Composite Keys</button></li>
                             <li><button id="dbConstraintsBtnId" class="textBtn second" onclick="selectText(event)">Constraints</button></li>
                             <li><button id="dbIndexesBtnId" class="textBtn second" onclick="selectText(event)">Keys and Indexes</button></li>
-                            <li><button id="dbImpExpSQLiteBtnId" class="textBtn second"
-                                        onclick="selectText(event)">Import / Export SQLite Scripts</button></li>
-                            <li><button id="dbImpExpMySQLBtnId" class="textBtn second"
-                                        onclick="selectText(event)">Import / Export MySQL Scripts</button></li>
+                            <li><button id="dbImpExpBtnId"  class="textBtn second"
+                                        onclick="selectText(event)">Import / Export DB Scripts</button></li>
                         </ul>
                     </li>
 
@@ -97,7 +95,7 @@
                     </p><br>
                     <p><img src="../../images/splash/whereToStart.png" width="185" height="119"></p>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/startNewBuilder.gif" width="524" height="335"></p><br>
+                        <p><img src="../../images/gifs/beginBuilder.gif" width="524" height="335"></p><br>
                     </div>
                     <br><br>
                 </div>
@@ -508,9 +506,10 @@
                         should consult the corresponding database documentation. Combined with this knowledge,
                         <b>JDElite Flowchart Builder</b> is one of the most user-oriented tools for the design of ERDs.
                         It covers all intricacies of <b>MySQL</b> and <b>SQLite</b> databases.</p><br>
-                    <p>An ERD created in <b>JDElite Flowchart Builder</b> is saved as a file in <b>JSON</b> format. This file can be
-                        exported to a specific script for automated creation of a database. Vice versa, a database script
-                        can be imported to a <b>JSON</b> diagram file, visualized and further modified in the editor.</p><br>
+                    <p>An ERD created in <b>JDElite Flowchart Builder</b> is saved as a file in <b>JSON</b> format. This diagram
+                        can be exported to a specific <b>SQL</b> script ready to be used to create the corresponding database schema.
+                        Vice versa, a database <b>SQL</b> script can be imported to a <b>JSON</b> diagram file, visualized and
+                        modified in the editor.</p><br>
                     <p>Database tables contain <b>records</b> (table <b>rows</b>) and <b>columns</b>. A table record is an instance of the
                         represented entity. All records in a table have identical structure. For example, the records in
                         the <b>CUSTOMER</b> table below are instances of the <b>customer</b> entity and each record corresponds to a
@@ -518,15 +517,15 @@
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/dbTableExample.png" width="428" height="105"></p>
                     </div><br>
-                    <p>The database table record is composed of <b>fields</b>. The record fields in vertical direction constitute
-                        the table <b>columns</b>. Columns, respectively all fields in a column, have common <b>properties</b>: name,
-                        data type, data length, etc. The property values are specific for each column. In the above example,
+                    <p>The database table record is composed of <b>fields</b> that contain the data values. All record fields in
+                        vertical direction constitute the table <b>columns</b>. Columns, respectively the fields in a column,
+                        depending on the particular content, have specific <b>properties</b>: name,
+                        data type, data length, etc. In the above example,
                         the record fields in the <b>CUSTOMER</b> table are <b>customer_id</b>, <b>first_name</b>,  <b>middle_name</b>
                         and <b>last_name</b>. These are the database table column names.</p><br>
                     <p>Each ERD node in <b>JDElite Flowchart Builder</b> represents the structure of a database table in its
                         own table form. The rows in the diagram node table correspond to the database table columns,
-                        and at the same time the columns in the diagram node table correspond to the database column
-                        properties.</p><br>
+                        and the columns in the diagram node table correspond to the database column properties.</p><br>
 
                     </p><br>
                     <p><img src="../../images/guide/openDBTemplate.png" width="360" height="152"></p>
@@ -538,13 +537,13 @@
                 <div id="dbKeysTextId" class="contentText" style="margin-top: -20px;">
                     <p>The structures of relational databases are determined by the <b>primary</b> and <b>foreign</b> keys.
                         A <b>primary</b> key is a column or a group of columns (composite primary key) that ensure unique
-                        row identification in a relational database table. Primary keys aren’t allowed to have duplicates
-                        or null values. If a primary key contains multiple columns, the combination of values within these
-                        columns should be unique for it to be valid. A table can have only one primary key.<br><br>
+                        row identification in the database table. The values of the primary keys for the different records
+                        cannot be duplicate or null. If a primary key contains multiple columns, the combination of values
+                        in each record should be unique for it to be valid. A table can have only one primary key.<br><br>
 
-                        A <b>foreign</b> key is a column or a group of columns that together with
-                        a primary key represent a reference between two database tables.
-                        The foreign key in one table has a reference to a primary key in another table. There could be multiple
+                        A <b>foreign</b> key is a column or a group of columns that together with a primary key of another
+                        table represent a reference between the two tables. In other words, the foreign key in one table
+                        is said to have a reference to a primary key in another table. There could be multiple
                         foreign keys from different tables referencing the same primary key.
 
                         <br><br>As mentioned earlier, the rows in the diagram table node correspond to the database table
@@ -574,7 +573,7 @@
                         are illustrated later.
                     </p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbKeys.gif" width="590" height="250"></p>
+                        <p><img src="../../images/gifs/dbKeys.gif" width="590" height="250" style="border: 2px solid blue"></p>
                     </div><br><br>
                 </div>
 
@@ -589,10 +588,7 @@
                     </div><br>
                     <p>The node name can be edited by double-clicking the name field.</p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/dbNodeExample.png" width="359" height="124"></p>
-                    </div><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/dbNodeExample2.png" width="451" height="129"></p>
+                        <p><img src="../../images/gifs/editTableName.gif" width="500" height="200" style="border: 2px solid blue"></p>
                     </div><br>
 
                     <p>The <b>DB table node editor</b> is invoked by double-clicking either the table title bar or
@@ -602,7 +598,7 @@
                         define database table indexes and database column constraints. The editor actions are
                         demonstrated below.</p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/dbNodeEditor.png" width="713" height="280"></p>
+                        <p><img src="../../images/guide/dbNodeEditor.png" width="713" height="280" style="border: 2px solid blue"></p>
                     </div><br>
 
                     <p>The node columns <b>Key</b> and <b>Column Name</b> are preselected to show the minimal size of the table
@@ -629,12 +625,13 @@
                         down if the row has no primary key assigned</p>
                     <br>
                     <p> Here is an example how to create a database table node:</p>
+                    <br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbNewStart.gif" width="853" height="512"></p>
+                        <p><img src="../../images/gifs/dbNewTable.gif" width="842" height="474" style="border: 2px solid blue"></p>
                     </div><br>
                     <p> And here is an example how to rearrange some rows in a database table node:</p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbRearrange.gif" width="800" height="580"></p>
+                        <p><img src="../../images/gifs/dbRearrange.gif" width="800" height="580" style="border: 2px solid blue"></p>
                     </div><br><br>
                 </div>
 
@@ -645,7 +642,7 @@
                         so called <b>crow's foot</b> symbols at the ends of the connection. There are six commonly accepted
                         relationships symbols:</p>
                     <div >
-                        <p><img src="../../images/guide/cardinality.png" width="180" height="169"></p>
+                        <p><img src="../../images/guide/cardinality.png" width="180" height="169" style="border: 2px solid blue"></p>
                     </div><br>
                     <p>There are three main types of cardinality relationships: <b>one-to-one</b>, <b>one-to-many</b>
                         (<b>many-to-one)</b> and <b>many-to-many</b>.
@@ -656,7 +653,7 @@
                         comprehensible way. Another example would be the <b>car</b> to <b>service ticket</b> relation in a car repair shop:
                     </p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/car2ticket.png" width="462" height="176"></p>
+                        <p><img src="../../images/guide/car2ticket.png" width="462" height="176" style="border: 2px solid blue"></p>
                     </div><br>
                     <p><b>One-to-many cardinality</b></p>
                     <p>This is when one instance of the first entity may be related to more than one instances of the other entity.
@@ -664,14 +661,14 @@
                         the relation between an <b>author</b> and her/his <b>books</b>:
                     </p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/author2book.png" width="491" height="152"></p>
+                        <p><img src="../../images/guide/author2book.png" width="491" height="152" style="border: 2px solid blue"></p>
                     </div><br>
                     <p><b>Many-to-many cardinality</b></p>
                     <p>In a different scenario, in  a library, we need to establish the relations between the plurality
                         of authors and the plurality of books. In this case we can preferably use an additional
                         <b>join</b> table with two one-to-many relations as follows:</p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/authors2books.png" width="573" height="146"></p>
+                        <p><img src="../../images/guide/authors2books.png" width="573" height="146" style="border: 2px solid blue"></p>
                     </div><br>
                     <p>The <b>AUTHORS_BOOKS</b> table contains two foreign keys pointing respectively to the <b>AUTHORS</b> and
                         <b>BOOKS</b> tables. These two foreign keys together act as a composite primary key for the
@@ -696,8 +693,8 @@
                         have to select two or more different foreign keys. Optionally you can specify a name for this
                         composite key.</p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/authors2books.gif" width="844" height="353"></p>
-                    </div><br>
+                        <p><img src="../../images/gifs/authors2books.gif" width="844" height="353" style="border: 2px solid blue"></p>
+                    </div><br><br>
                 </div>
 
                 <div id="dbConstraintsTextId" class="contentText" style="margin-top: -20px;">
@@ -731,22 +728,22 @@
                     <p> Here is an example how to assign some constraints for a database table column. You need to double-click
                         the table node row that corresponds to the database column:</p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbConstraints1.gif" width="751" height="580"></p>
-                    </div>
+                        <p><img src="../../images/gifs/dbConstraints1.gif" width="751" height="580" style="border: 2px solid blue"></p>
+                    </div><br>
 
                     <p> And here is an example how to assign a <b>REFERENCES</b> constraint. You need to double-click a table
                         node row representing a <b>FOREIGN KEY</b>. Using the dropdowns, select an existing table and the column name from
                         that table representing the <b>PRIMARY KEY</b> of that table. By confirming this assignment, a
                         graphical link will be created in the diagram. </p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbConstraints2.gif" width="752" height="626"></p>
-                    </div>
+                        <p><img src="../../images/gifs/dbConstraints2.gif" width="752" height="626" style="border: 2px solid blue"></p>
+                    </div><br>
 
                     <p> There is a two-way synchronization between a created link and the
                         <b>REFERENCES</b> constraint: creating a link will also automatically assign a <b>REFERENCES</b>
                         constraint.</p><br>
                     <div style="display:flex; justify-content: center; ">
-                                <p><img src="../../images/gifs/dbConstraints3.gif" width="688" height="435"></p>
+                                <p><img src="../../images/gifs/dbConstraints3.gif" width="688" height="435" style="border: 2px solid blue"></p>
                     </div><br><br>
                 </div>
 
@@ -759,7 +756,7 @@
                         Examples of keys are the primary keys, the foreign keys and the composite primary keys, all that
                         were explained above.
                         <br><br>The documentation for keys and indexes is specific for each database implementation.
-                        The corresponding user manuals provide the interpretations and detailed information for the usage.
+                        The corresponding database manuals provide the interpretations and detailed information for the usage.
                         It is recommended that you consult the database documentation.
                         Here we show how to specify the creation of these structures using <b>JDElite Flowchart Editor</b>.
 
@@ -767,7 +764,7 @@
                         table node title bar. You can define an index to be <b>UNIQUE</b> by selecting the appropriate checkbox.<br>
                         Here is an example showing how to create an index for <b>SQLite</b> database:</p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbIndexes.gif" width="906" height="498"></p>
+                        <p><img src="../../images/gifs/dbIndexes.gif" width="856" height="498" style="border: 2px solid blue"></p>
                     </div><br><br>
                         In a <b>MySQL</b> database, <b>JDElite Flowchart Editor</b> provides an uniform way to assign
                         indexes and keys. They are all defined at table level. Key is normally a synonym for index.
@@ -779,100 +776,49 @@
                         The <b>FOREIGN</b> key is defined at column level.<br>
                     <p>Here is an example showing how to create an index for <b>MySQL</b> database:</p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbCreateKey.gif" width="696" height="472"></p>
+                        <p><img src="../../images/gifs/dbCreateKey.gif" width="696" height="472" style="border: 2px solid blue"></p>
                     </div><br>
 
                     <br><br>
                 </div>
 
-                <div id="dbImpExpSQLiteTextId" class="contentText" style="margin-top: -20px;">
+                <div id="dbImpExpTextId" class="contentText" style="margin-top: -20px;">
                     <p>
-                    <h3>Import from SQLite Scripts</h3>
-                    <b>JDElite Flowchart Builder</b> imports database schemas exported from <b>SQLite</b> to <b>.sql</b> files.
-                    <br>Here are the steps to follow:
+                        JDElite Flowchart Builder supports the import of database schema scripts in <b>SQL</b> format
+                        of several databases: <b>MySQL</b>, <b>PostgreSQL</b>, <b>Oracle</b>, <b>DB2</b>, <b>SQLite</b>.
+                        The <b>ERDs</b> of these databases can be exported to schema scripts in <b>SQL</b> format as well.<br>
+                        There are built-in ERD templates for these databases. They are all based on the popular <b>Chinook</b>
+                        schema. You can make changes to a template, then save it using <b>Save As...</b> button.
+                        The original template will never change and can be used again.<br>
+                        <br>
+                    </p>
+                    <h3>Import from SQL schema</h3>
+
                     <li>From the editor start page, select <b>Database ERD</b>, then <b>Import DB script</b> to open the
-                        <b>Import/Export</b> dialog</li>
-                    <li>In the <b>Import/Export</b> dialog with preselected <b>Import ...</b> button, select <b>SQLite</b>
-                        in the drop-down and confirm it</li>
-                    <li>In the <b>File Browser</b>, navigate to the <b>.sql</b> file,
+                        <b>Import Database Script</b> dialog</li>
+                    <li>In the popup dialog, select the database type and confirm it</li>
+                    <li>In the <b>File Browser</b> that comes up, navigate to the <b>.sql</b> file,
                         select it and confirm the selection</li>
-                    The ERD of the schema will be displayed in the editor canvas as shown here:
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbImportSQLite.gif" width="918" height="610"></p>
-                    </div>
-
-                    </p>
-
-                    <p>
-                    <h3>Export to SQLite scripts</h3>
-                    <b>JDElite Flowchart Builder</b> exports <b>SQLite</b> schema diagrams to <b>.sql</b> files.
-                    <br>Here are the steps to follow (the diagram has to be previously saved):
-                    <li>Click at <b>Import DB/Export DB</b> button in the top toolbar</li>
-                    <li>Navigate in the <b>File Browser</b> to the desired location, enter the file name for
-                        the script to be exported and confirm it</li>
-                    The <b>.sql</b> script will be stored in the selected location.<br>
-                    Here are shown the steps to follow:
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbExportSQLite.gif" width="918" height="548"></p>
-                    </div><br><br>
-
-                    </p>
-
-                </div>
-
-                <div id="dbImpExpMySQLTextId" class="contentText" style="margin-top: -20px;">
-                    <p>
-                    <h3>Import from MySQL Scripts</h3>
-                    <b>JDElite Flowchart Builder</b> imports database schemas exported from <b>MySQL</b> dumps to disk.
-                    <b>MySQL</b> offers two options for exporting database schemas:
-                    <li>to a dump folder, where each table is exported as a separate file with <b>.sql</b> extension</li>
-                    <li>to a self-contained file with <b>.sql</b> extension</li>
-                    Both these options are accepted. In the first case JDElite reads all <b>.sql</b> files from the
-                    selected folder, merges the separate scripts and process them altogether. In the second case the selected
-                    <b>.sql</b> file is processed.
-                    <br>Here are the common steps to follow for each case:
-                    <li>From the editor start page, select <b>Database ERD</b>, then <b>Import DB script</b> to open the
-                        <b>Import/Export</b> dialog</li>
-                    <li>In the <b>Import/Export</b> dialog with preselected <b>Import ...</b> button, select <b>MySQL</b>
-                        in the drop-down and confirm it</li>
-                    <li>In the <b>File Browser</b>, navigate to either the dump folder or to the self-contained file,
-                    select it and confirm the selection</li>
-                    The ERD of the schema will be displayed in the editor canvas as shown here:
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbImportMySQL.gif" width="852" height="624"></p>
-                    </div>
-
-                    </p>
-
-                    <p>
-                        <h3>Export to MySQL scripts</h3>
-                    <b>JDElite Flowchart Builder</b> exports <b>MySQL</b> schema diagrams offering two options to select
-                    from, following the original options:
-                    <li>to a dump folder, where each table is exported as a separate file with <b>.sql</b> extension</li>
-                    <li>to a self-contained file with <b>.sql</b> extension</li>
-                    The scripts are wrapped in <b>MySQL</b> specific statements, enclosed in /*! .... */, following the
-                    formats used in <b>MySQL Workbench</b>.
-                    <br>Here are the steps to follow for the export (the diagram has to be previously saved):
-                    <li>Click at <b>Import DB/Export DB</b> button in the top toolbar</li>
-                    <li>Navigate in the <b>File Browser</b> to the desired location, enter the file or folder name for
-                        the script to be exported and confirm it</li>
-                    <li>In the <b>Import/Export</b> dialog with preselected <b>Import ...</b> button and <b>MySQL</b> in
-                        the drop-down, select the desired button for export to a single self-contained file of to a folder
-                        with separate table scripts and confirm the selection</li>
-                    The script/scripts will be stored in the selected location.<br>
-                    Here are shown the steps to follow:
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbExportMySQL.gif" width="918" height="548"></p>
-                    </div><br>
-                    The table scripts are in the selected folder:
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbExportMySQL2.gif" width="918" height="548"></p>
-                    </div><br><br>
-
-                    </p>
-
+                    The <b>ERD</b> of the schema will be generated and displayed in the editor canvas as shown here:
                     <br><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/startERD_DB.gif" width="800" height="340" style="border: 2px solid blue"></p>
+                    </div>
+                    <br>
+                    <h3>Export to SQL schema</h3>
+                    <li>Open the <b>ERD</b> of an already existing database diagram</li>
+                    <li>Click at <b>Export DB</b> button in the top toolbar</li>
+                    <li>Navigate in the <b>File Browser</b> to the desired location, enter the file name for
+                        the script to be exported and saved and confirm it</li>
+                    The <b>.sql</b> script will be stored in the selected location:<br><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/exportERD_DB.gif" width="800" height="480" style="border: 2px solid blue"></p>
+                    </div>
+                    <br>
+                    <br>
+
                 </div>
+
 
                 <!-- LOG -->
 
@@ -919,7 +865,7 @@
                         and <b>many-to-many</b>.
                     </p><br>
                     <div style="display:flex; justify-content: center; margin-right: 100px;">
-                        <p><img src="../../images/gifs/logAdmin4.gif" width="609" height="338"></p>
+                        <p><img src="../../images/gifs/logAdmin4.gif" width="609" height="338" style="border: 2px solid blue"></p>
                     </div><br><br>
                 </div>
 
@@ -936,13 +882,13 @@
                         </div><br>
                     <p>In order to show the relation between two entities, place a <b>relation</b> node between them:</p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/logAdmin1.gif" width="748" height="416"></p>
+                        <p><img src="../../images/gifs/logAdmin1.gif" width="748" height="416" style="border: 2px solid blue"></p>
                     </div><br><br>
                     <p>Continue adding attributes to the entities.
                         Note that the cardinality relationship between one or more employees and their manager is
                         <b>many-to-one</b>. </p>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/logAdmin3.gif" width="625" height="447"></p>
+                        <p><img src="../../images/gifs/logAdmin3.gif" width="625" height="447" style="border: 2px solid blue"></p>
                     </div><br><br>
                 </div>
 
@@ -953,12 +899,12 @@
                         The 1-to-3 ways mode has one input that can be positioned at any of the four directions, and 3 outputs
                         positioned at the remaining 3 corners:</p><br>
                     <div style="display:flex; justify-content: center; margin-right: 100px;">
-                        <p><img src="../../images/gifs/logRelation.gif" width="348" height="210"></p>
+                        <p><img src="../../images/gifs/logRelation.gif" width="348" height="210" style="border: 2px solid blue"></p>
                     </div><br><br>
                     <p> When you want to modify the layout of the diagram, it is convenient to change the positions of
                         the ends of the <b>Relationship</b> node:</p><br>
                     <div style="display:flex; justify-content: center; margin-right: 100px;">
-                        <p><img src="../../images/gifs/logAdmin2.gif" width="471" height="320"></p>
+                        <p><img src="../../images/gifs/logAdmin2.gif" width="471" height="320" style="border: 2px solid blue"></p>
                     </div><br><br>
                 </div>
              </div>
@@ -1019,6 +965,8 @@
 
         } else if (id === "databaseBtnId") {
             document.getElementById("databaseTextId").style.display = "block";
+        } else if (id === "dbImpExpBtnId") {
+            document.getElementById("dbImpExpTextId").style.display = "block";
         } else if (id === "dbKeysBtnId") {
             document.getElementById("dbKeysTextId").style.display = "block";
         } else if (id === "dbCreateBtnId") {
@@ -1031,11 +979,6 @@
             document.getElementById("dbConstraintsTextId").style.display = "block";
         } else if (id === "dbIndexesBtnId") {
             document.getElementById("dbIndexesTextId").style.display = "block";
-        } else if (id === "dbImpExpSQLiteBtnId") {
-            document.getElementById("dbImpExpSQLiteTextId").style.display = "block";
-        } else if (id === "dbImpExpMySQLBtnId") {
-            document.getElementById("dbImpExpMySQLTextId").style.display = "block";
-
 
         } else if (id === "logicalBtnId") {
             document.getElementById("logicalTextId").style.display = "block";
@@ -1072,14 +1015,13 @@
 //        document.getElementById("containersBtnId").classList.remove("boldText");
 
         document.getElementById("databaseBtnId").classList.remove("boldText");
+        document.getElementById("dbImpExpBtnId").classList.remove("boldText");
         document.getElementById("dbKeysBtnId").classList.remove("boldText");
         document.getElementById("dbCreateBtnId").classList.remove("boldText");
         document.getElementById("dbCardinalBtnId").classList.remove("boldText");
         document.getElementById("dbCompositeBtnId").classList.remove("boldText");
         document.getElementById("dbConstraintsBtnId").classList.remove("boldText");
         document.getElementById("dbIndexesBtnId").classList.remove("boldText");
-        document.getElementById("dbImpExpSQLiteBtnId").classList.remove("boldText");
-        document.getElementById("dbImpExpMySQLBtnId").classList.remove("boldText");
 
         document.getElementById("logicalBtnId").classList.remove("boldText");
         document.getElementById("logNotationBtnId").classList.remove("boldText");
@@ -1118,14 +1060,13 @@
         document.getElementById("decisionTextId").style.display = "none";
 
         document.getElementById("databaseTextId").style.display = "none";
+        document.getElementById("dbImpExpTextId").style.display = "none";
         document.getElementById("dbKeysTextId").style.display = "none";
         document.getElementById("dbCreateTextId").style.display = "none";
         document.getElementById("dbCardinalTextId").style.display = "none";
         document.getElementById("dbCompositeTextId").style.display = "none";
         document.getElementById("dbConstraintsTextId").style.display = "none";
         document.getElementById("dbIndexesTextId").style.display = "none";
-        document.getElementById("dbImpExpSQLiteTextId").style.display = "none";
-        document.getElementById("dbImpExpMySQLTextId").style.display = "none";
 
         document.getElementById("logicalTextId").style.display = "none";
         document.getElementById("logNotationTextId").style.display = "none";
