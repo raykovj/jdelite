@@ -1111,9 +1111,9 @@ label {
 	position: absolute;
 	top: 4%;
 	left: 4%;
-	height: 68px;
+	height: 75px;
 	width: 100px;
-	background-image: url(../../images/splash/JDEliteGraphTM100A.png);
+	background-image: url(../../images/splash/logo100.png);
 	background-repeat: no-repeat;
 }
 .about-copyright {
@@ -1188,7 +1188,7 @@ label {
 	color: #08105d;
 	display: grid;
 	grid-template-columns: 8px auto 80px;
-	grid-template-rows: 2px 80px 80px 340px 400px;
+	grid-template-rows: 2px 80px 80px 280px 400px;
 	
 	
 }
@@ -1203,14 +1203,16 @@ label {
 }
 .startLogoImg {
 	
-	border: 2px solid white;
-	outline: 2px solid white;
-	height: 67px;
+	
+	outline: hidden;
+	
+	
+	height: 75px;
 	width: 100px;
-	background-image: url(../../images/splash/JDEliteGraphTM100A.png);
+	background-image: url(../../images/splash/logo100.png);
 	background-repeat: no-repeat;
-	background-position: top;
-	margin: 6px 0 0 6px;
+	
+	
 }
 .startJDEtitle {
 	
@@ -1224,11 +1226,9 @@ label {
 .startDiagramTab {
 	border: 3px solid #ccccff;
 	border-radius: 10px;
-	
 	background-color: #bde5ee;
 	width: 200px;
 	height: 34px;
-	
 	text-align: center;
 	padding: 12px 0;
 }
@@ -1245,6 +1245,27 @@ label {
 	height: 298px;
 	margin-top: 20px;
 	
+}
+.startDiagramTextBlock {
+	grid-column: 2;
+	justify-self: center;
+	grid-row: 5;
+	border: 3px solid #8485CC;
+	border-radius: 10px;
+	background-color: #efffff;
+	width: 464px;
+	height: 238px;
+	margin-top: 20px;
+	padding: 20px 10px 20px 24px;
+	
+}
+.startDiagramText {
+	margin: 10px 16px 0 0;
+	font-family: "Arial";
+	font-size: 14px;
+	
+	line-height: 1.5;
+	color: #0460ab;
 }
 .startHereTip {
 	position: fixed;
@@ -1297,7 +1318,7 @@ label {
 	font-size: 14px;
 	font-weight: bold;
 	line-height: 2.0;
-	color: #08105d;
+	color: #1033ff;
 	margin: 10px 0 0 0;
 }
 .startGoButton {

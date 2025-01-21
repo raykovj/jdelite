@@ -817,6 +817,45 @@
             <!--</div>-->
 
         </div>
+
+        <div id="startDiagramTextId" class="startDiagramTextBlock">
+            <div>
+                <span class="startDiagramText" data-bind="visible: !isConnectionOK()">
+                    <b>Playground</b> mode.<br>You can explore all functionalities of <b>JDElite Flowchart Builder</b>.
+                    You can create your diagram either from scratch or you can
+                    start from a template. The only limitation is that you cannot access your file system to save
+                    your designs or to open or import external sources.
+                </span>
+                <span class="startDiagramText" data-bind="visible: isConnectionOK()">
+                    <b>Operational</b> mode.<br>You can create your diagram either from scratch or you can
+                    start from a template.
+                    You can access your file system to catalog your diagrams
+                    or to reopen them for editing at any time. Based on <b>node.js</b>, the access to the file system is through the built-in
+                    <b>File Browser</b> - you can save, reopen, delete or rename your designs.
+
+                </span>
+            </div>
+            <div style="margin-top: 12px;">
+                <span class="startDiagramText" data-bind="visible: flowTabVisible">
+                    To design your <b>flowcharts</b>, you drag-and-drop the symbol shapes from the component palette on the right
+                    of your screen and you connect them using the popup handles under the mouse. You can edit their labels,
+                    add some text inside them, choose their colors, move them to desired locations, and much more. Consult the
+                    <b>User Guide</b> for more information.
+                </span>
+                <span class="startDiagramText" data-bind="visible: erdTabVisible">
+                    <b>Database ERDs</b> (entity-relationship diagrams) represent the structure of database schemas. Here you can
+                    create, edit, or delete tables, columns, keys, indexes, relationships,
+                    and constraints of a database schema. You can export your <b>ERD</b> to a <b>SQL</b> database script.
+                    You can also import a <b>SQL</b> schema script to JDElite to visualize and to make modifications.
+                </span>
+                <span class="startDiagramText" data-bind="visible: logTabVisible">
+                    <b>Logical ERDs</b> (entity-relationship diagrams) are conceptual models of business objects and their relationships.
+                    They defines the objects as entities with their attributes, as well as the relations between them. You can
+                    drag-and-drop the corresponding symbol shapes and connect them to build your logical models. Consult the
+                    <b>User Guide</b> for more information.
+                </span>
+            </div>
+        </div>
     </div>
 
     <div id="infoDialogId" class="settingsFont" style="display: none; ">
