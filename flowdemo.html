@@ -45,9 +45,9 @@
         <div id="diagramNameId">
             <div style="margin: 2px 6px 0 0;">
                 <div id="cnxOnId" class="cnx-button button-cnxOn" style="display: none;"
-                     data-bind="visible: cnxInfo()" title="Server Connection On"></div>
+                     data-bind="visible: cnxInfo(), attr: {title: cnxOn()}"></div>
                 <div id="cnxOffId" class="cnx-button button-cnxOff"
-                     data-bind="visible: !cnxInfo()" title="Server Connection Off"></div>
+                     data-bind="visible: !cnxInfo(), attr: {title: cnxOff()}"></div>
             </div>
             <div class="diagram-title">
                 <span class="selectionFont">Diagram:</span>
@@ -714,20 +714,11 @@
                     <span class="startDiagramTitle"
                           data-bind="html: startLOGTitle()"></span>
                 </div>
-                <!--<div id="tabPROCId" class="startDiagramTab">-->
-                    <!--<span class="startDiagramTitle"-->
-                          <!--data-bind="html: startProcessTitle()"></span>-->
-                <!--</div>-->
             </div>
 
             <!-- FLOWCHART-->
             <div id="contentFlowId" class="startDiagramContent" data-bind="visible: flowTabVisible">
-                <!--<div >-->
-                    <!--<img class="beginFlowImg" data-bind="visible: isFirstCall"/>-->
-                <!--</div >-->
-                <div >
-                    <img class="startFlowImg" />
-                </div >
+                <div><img class="startFlowImg" /></div >
                 <div style="margin-top: 6px;"></div>
                 <div>
                     <button id="btnCreateFlowId" class="flowTextBtn button-goRight startGoButton"
@@ -745,9 +736,7 @@
 
             <!-- ERD-->
             <div id="contentERDId" class="startDiagramContent" data-bind="visible: erdTabVisible">
-                <div>
-                    <img class="startDBImg" />
-                </div>
+                <div><img class="startDBImg" /></div>
                 <div>
                     <button id="btnCreateERDId" class="flowTextBtn button-goRight startGoButton"
                             title="Select">Start a new database ERD</button>
@@ -768,9 +757,7 @@
 
             <!-- LOG-->
             <div id="contentLOGId" class="startDiagramContent" data-bind="visible: logTabVisible">
-                <div>
-                    <img class="startLOGImg" />
-                </div>
+                <div><img class="startLOGImg" /></div>
                 <div style="margin-top: 6px;"></div>
                 <div>
                     <button id="btnCreateLOGId" class="flowTextBtn button-goRight startGoButton"
@@ -786,76 +773,17 @@
                 </div>
             </div>
 
-            <!-- PROC-->
-            <!--<div id="contentPROCId" class="startDiagramContent" data-bind="visible: procTabVisible">-->
-                <!--<div>-->
-                    <!--<img class="startProcImg" />-->
-                <!--</div>-->
-                <!--<ul>-->
-                    <!--<li>-->
-                        <!--<div class="startCallGroup1">-->
-                            <!--<span class="startTextDetails" >Start a new process flow</span>-->
-                            <!--<button id="btnCreatePROCId" class="flow-button button-goRight startGoButton"-->
-                                    <!--title="Select"></button>-->
-                        <!--</div>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--<div class="startCallGroup2">-->
-                            <!--<span class="startTextDetails" >Go to template</span>-->
-                            <!--<button id="btnTemplatePROCId" class="flow-button button-goRight startGoButton"-->
-                                    <!--title="Select"></button>-->
-                        <!--</div>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--<div class="startCallGroup3">-->
-                            <!--<span class="startTextDetails" >Open a process flow</span>-->
-                            <!--<button id="btnOpenPROCId" class="flow-button button-goRight startGoButton"-->
-                                    <!--title="Select"></button>-->
-                        <!--</div>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            <!--</div>-->
-
         </div>
 
-        <div id="startDiagramTextId" class="startDiagramTextBlock">
-            <div>
-                <span class="startDiagramText" data-bind="visible: !isConnectionOK()">
-                    <b>Playground</b> mode.<br>You can explore all functionalities of <b>JDElite Flowchart Builder</b>.
-                    You can create your diagram either from scratch or you can
-                    start from a template. The only limitation is that you cannot access your file system to save
-                    your designs or to open or import external sources.
-                </span>
-                <span class="startDiagramText" data-bind="visible: isConnectionOK()">
-                    <b>Operational</b> mode.<br>You can create your diagram either from scratch or you can
-                    start from a template.
-                    You can access your file system to catalog your diagrams
-                    or to reopen them for editing at any time. Based on <b>node.js</b>, the access to the file system is through the built-in
-                    <b>File Browser</b> - you can save, reopen, delete or rename your designs.
+        <div class="startDiagramTextBlock">
+            <div data-bind="visible: isConnectionOK(), html: diagramTextOn()"></div>
+            <div data-bind="visible: !isConnectionOK(), html: diagramTextOff()"></div>
 
-                </span>
-            </div>
-            <div style="margin-top: 12px;">
-                <span class="startDiagramText" data-bind="visible: flowTabVisible">
-                    To design your <b>flowcharts</b>, you drag-and-drop the symbol shapes from the component palette on the right
-                    of your screen and you connect them using the popup handles under the mouse. You can edit their labels,
-                    add some text inside them, choose their colors, move them to desired locations, and much more. Consult the
-                    <b>User Guide</b> for more information.
-                </span>
-                <span class="startDiagramText" data-bind="visible: erdTabVisible">
-                    <b>Database ERDs</b> (entity-relationship diagrams) represent the structure of database schemas. Here you can
-                    create, edit, or delete tables, columns, keys, indexes, relationships,
-                    and constraints of a database schema. You can export your <b>ERD</b> to a <b>SQL</b> database script.
-                    You can also import a <b>SQL</b> schema script to JDElite to visualize and to make modifications.
-                </span>
-                <span class="startDiagramText" data-bind="visible: logTabVisible">
-                    <b>Logical ERDs</b> (entity-relationship diagrams) are conceptual models of business objects and their relationships.
-                    They defines the objects as entities with their attributes, as well as the relations between them. You can
-                    drag-and-drop the corresponding symbol shapes and connect them to build your logical models. Consult the
-                    <b>User Guide</b> for more information.
-                </span>
-            </div>
+            <div data-bind="visible: flowTabVisible, html: diagramTextFLOW()"></div>
+            <div data-bind="visible: erdTabVisible, html: diagramTextERD()"></div>
+            <div data-bind="visible: logTabVisible, html: diagramTextLOG()"></div>
         </div>
+
     </div>
 
     <div id="infoDialogId" class="settingsFont" style="display: none; ">
