@@ -1254,13 +1254,13 @@ label {
 	border-radius: 10px;
 	background-color: #efffff;
 	width: 464px;
-	height: 238px;
-	margin-top: 20px;
-	padding: 20px 10px 20px 24px;
+	height: 250px;
+	
+	padding: 10px 10px 20px 24px;
 	
 }
 .startDiagramText {
-	margin: 10px 16px 0 0;
+	margin: 2px 16px 0 0;
 	font-family: "Arial";
 	font-size: 14px;
 	
