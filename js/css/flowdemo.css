@@ -195,7 +195,7 @@ body.waiting * {
 	height: 52px;
 	top: 0;
 	left: 0;
-	background-color: rgba(66, 150, 255, 0.6);
+	background-color: rgba(57, 137, 255, 0.6);
 	z-index: 2002;
 }
 .overlaySaveText {
