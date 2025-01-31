@@ -663,8 +663,10 @@
 
     <!-- ABOUT -->
     <div id="aboutDialogId" class="about-dlg">
-        <img class="about-img"/>
-        <img class="about-logo"/>
+        <div style="display: flex;">
+            <img class="about-img"/>
+            <button id="aboutLogoBtnId" class="aboutLogoBtn"></button>
+        </div>
         <div class="about-title" data-bind="text: aboutTitle()"></div>
         <span class="aboutTitleFont vertical" style="padding: 12px 20px 2px; "
               data-bind="text: aboutTitle()"></span>
@@ -694,7 +696,7 @@
     <!-- ///////////////// -->
     <div id="startPageId" class="startPage">
         <div id="startPageTopId" class="startPageHeader">
-            <img class="startLogoImg" />
+            <button id="startLogoBtnId" class="startLogoBtn"></button>
             <div class="startJDEtitle" data-bind="text: startTitle()"></div>
         </div>
 
@@ -775,7 +777,7 @@
 
         </div>
 
-        <div class="startDiagramTextBlock">
+        <div id="startDiagramBlockId" class="startDiagramTextBlock">
             <div data-bind="visible: isConnectionOK(), html: diagramTextOn()"></div>
             <div data-bind="visible: !isConnectionOK(), html: diagramTextOff()"></div>
 
