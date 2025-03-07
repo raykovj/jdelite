@@ -1231,7 +1231,7 @@ label {
 	width: 200px;
 	height: 34px;
 	text-align: center;
-	padding: 12px 0;
+	padding: 10px 0 4px;
 }
 .startDiagramTab:hover {
 	
@@ -1245,7 +1245,6 @@ label {
 	width: 260px;
 	height: 298px;
 	margin-top: 20px;
-	
 }
 .startDiagramTextBlock {
 	grid-column: 2;
