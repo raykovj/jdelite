@@ -1195,9 +1195,8 @@ label {
 	
 }
 .startPageHeader {
-	
+	margin: 0 0 0 20px;
 	display: flex;
-	
 	grid-column:  2;
 	grid-row: 2;
 	justify-self: center;
@@ -1225,8 +1224,8 @@ label {
 	margin: 20px 0 0 30px;
 }
 .startDiagramTab {
-	border: 3px solid #ccccff;
-	border-radius: 10px;
+	border: 2px solid #ccccff;
+	border-radius: 2px;
 	background-color: #bde5ee;
 	width: 200px;
 	height: 34px;
@@ -1239,8 +1238,8 @@ label {
 	cursor: pointer;
 }
 .startDiagramContent {
-	border: 3px solid #8485CC;
-	border-radius: 10px;
+	border: 2px solid #8485CC;
+	border-radius: 2px;
 	background-color: #bde5ee;
 	width: 260px;
 	height: 298px;
@@ -1250,8 +1249,8 @@ label {
 	grid-column: 2;
 	justify-self: center;
 	grid-row: 5;
-	border: 3px solid #8485CC;
-	border-radius: 10px;
+	border: 2px solid #8485CC;
+	border-radius: 2px;
 	background-color: #efffff;
 	width: 464px;
 	
