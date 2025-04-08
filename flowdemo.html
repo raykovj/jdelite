@@ -19,29 +19,33 @@
 
 <div id="screenId" class="screenContainer">
     <div id="navbarId" class="top-toolbar">
-        <div id="toolbarId" class="actions-toolbar">
-            <button id="menuId" class="toolbar-button button-menu" data-toggle="tooltip" title="Main Menu..."></button>
-            <button id="newId" class="toolbar-button button-new" data-toggle="tooltip" title="Start Here..."></button>
-            <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open Diagram..."></button>
-            <button id="templateId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Open Template..."></button>
-            <button id="inOutId" class="toolbar-button button-no-left button-inOut" data-toggle="tooltip" title="Export DB..."></button>
-            <button id="undoId" class="toolbar-button button-no-left button-undo" data-toggle="tooltip" title="Undo"></button>
-            <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
-            <button id="deleteId" class="toolbar-button button-no-left button-delete" data-toggle="tooltip" title="Remove Selections"></button>
-            <button id="copyId" class="toolbar-button button-no-left button-copy" data-toggle="tooltip" title="Copy Selections"></button>
-            <button id="pasteId" class="toolbar-button button-no-left button-paste" data-toggle="tooltip" title="Paste Selections"></button>
-            <button id="saveId" class="toolbar-button button-no-left button-save" data-toggle="tooltip" title="Save"></button>
-            <button id="saveAsId" class="toolbar-button button-no-left button-saveAs" data-toggle="tooltip" title="Save As..."></button>
-            <button id="refreshId" class="toolbar-button button-no-left button-refresh" data-toggle="tooltip" title="Refresh Diagram & Reset Scaling"></button>
-            <button id="findId" class="toolbar-button button-no-left button-find" data-toggle="tooltip"
-                    title="Search Node... &nbsp;&nbsp;Ctrl+Shift+F"></button>
-            <button id="clearId" class="toolbar-button button-no-left button-clear" data-toggle="tooltip" title="Clear Diagram"></button>
-            <button id="leftId" class="toolbar-button button-no-left button-left" data-toggle="tooltip" title="Previous Diagram"></button>
-            <button id="rightId" class="toolbar-button button-no-left button-right" data-toggle="tooltip" title="Next Diagram"></button>
-            <button id="configId" class="toolbar-button button-config" data-toggle="tooltip" title="Settings..."></button>
-            <button id="helpId" class="toolbar-button button-no-left button-help" data-toggle="tooltip" title="Help..."></button>
-            <span style="margin-left: 4px;"></span>
+        <div id="toolbarId" style="display: inline-flex; ">
+            <div class="actions-toolbar">
+                <button id="menuId" class="toolbar-button button-menu" data-toggle="tooltip" title="Main Menu..."></button>
+                <button id="newId" class="toolbar-button button-no-left button-new" data-toggle="tooltip" title="Start Here..."></button>
+                <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open File Browser..."></button>
+                <button id="templateId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Open Template..."></button>
+                <button id="inOutId" class="toolbar-button button-no-left button-inOut" data-toggle="tooltip" title="Export DB..."></button>
+                <button id="undoId" class="toolbar-button button-no-left button-undo" data-toggle="tooltip" title="Undo"></button>
+                <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
+                <button id="deleteId" class="toolbar-button button-no-left button-delete" data-toggle="tooltip" title="Remove Selections"></button>
+                <button id="copyId" class="toolbar-button button-no-left button-copy" data-toggle="tooltip" title="Copy Selections"></button>
+                <button id="pasteId" class="toolbar-button button-no-left button-paste" data-toggle="tooltip" title="Paste Selections"></button>
+            </div>
+            <div class="actions-toolbar">
+                <button id="saveId" class="toolbar-button button-no-left button-save" data-toggle="tooltip" title="Save"></button>
+                <button id="saveAsId" class="toolbar-button button-no-left button-saveAs" data-toggle="tooltip" title="Save As..."></button>
+                <button id="refreshId" class="toolbar-button button-no-left button-refresh" data-toggle="tooltip" title="Refresh Diagram & Reset Scaling"></button>
+                <button id="findId" class="toolbar-button button-no-left button-find" data-toggle="tooltip"
+                        title="Search Node... &nbsp;&nbsp;Ctrl+Shift+F"></button>
+                <button id="clearId" class="toolbar-button button-no-left button-clear" data-toggle="tooltip" title="Clear Diagram"></button>
+                <button id="leftId" class="toolbar-button button-no-left button-left" data-toggle="tooltip" title="Previous Diagram"></button>
+                <button id="rightId" class="toolbar-button button-no-left button-right" data-toggle="tooltip" title="Next Diagram"></button>
+                <button id="configId" class="toolbar-button button-no-left button-config" data-toggle="tooltip" title="Settings..."></button>
+                <button id="helpId" class="toolbar-button button-no-left button-help" data-toggle="tooltip" title="Help..."></button>
+            </div>
         </div>
+        <span style="margin-left: 12px;"></span>
         <div id="diagramNameId">
             <div style="margin: 2px 6px 0 0;">
                 <div id="cnxOnId" class="cnx-button button-cnxOn" style="display: none;"
@@ -49,7 +53,7 @@
                 <div id="cnxOffId" class="cnx-button button-cnxOff"
                      data-bind="visible: !cnxInfo(), attr: {title: cnxOff()}"></div>
             </div>
-            <div class="diagram-title">
+            <div class="diagram-title" style="margin: 0 0 0 0px;">
                 <span class="selectionFont">Diagram:</span>
             </div>
             <div >
@@ -1643,7 +1647,7 @@
                 <!--<div class="settings-entry">Import Database Script to ER Diagram</div>-->
                 <div class="settings-entry" style="margin: 10px 0 6px 12px; ">Select Database:</div>
                 <div style="margin: 0 0 0 12px; ">
-                    <select id="importExportId"
+                    <select id="importExportId" onDblClick="alert(this.value)"
                             data-bind="options: dbsToImport,
                                 optionsText: 'label',
                                 optionsValue: 'id'">
