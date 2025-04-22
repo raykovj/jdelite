@@ -15,7 +15,7 @@ body.waiting * {
 }
 #screenId {
 	display: grid;
-	grid-template-columns: 2px auto;
+	grid-template-columns: 4px auto;
 	grid-template-rows: 40px 40px auto;
 	position: absolute;
 	top: 0;
@@ -28,17 +28,16 @@ body.waiting * {
 	grid-column: 2;
 	width: 100%;
 	height: 32px;
-	padding: 2px 6px;
+	padding: 2px 6px 6px 6px;
 	
 	visibility: visible !important;
 	background-color: #ffffff;
-	
 	display: inline-flex;
 	flex-flow: row wrap;
-	
 	top: 0;
 	left: 0;
 	z-index: 5;
+	
 }
 .actions-toolbar {
 	display: flex;
@@ -51,16 +50,17 @@ body.waiting * {
 #leftColumnId {
 	display: block;
 	grid-column: 1;
-	margin-top: -12px;
+	
+	margin: -12px 0;
 	z-index: 5;
 	
 }
-#tbVGapId {
+#tbVButtonId {
 	border: none;
 	outline: none;
 	
 	background-color: white;
-	width: 2px;
+	width: 0;
 	height: 1px;
 }
 #toolbarHId {
@@ -83,7 +83,7 @@ body.waiting * {
 	z-index: 5;
 }
 #cnxIndicatorId {
-	margin: 2px 6px 0 12px;
+	margin: 2px 6px 0 10px;
 	z-index: 10;
 }
 .diagram-title {
@@ -120,19 +120,20 @@ body.waiting * {
 	height: 26px;
 	padding: 4px 2px 0 6px;
 }
-.top-container {
+#topContainerId {
+	display: grid;
+	
+	grid-template-columns: fit-content(0) auto 214px;
+	grid-template-rows: auto auto 10px;
 	grid-row-start: 3;
 	grid-column: 2;
-	display: grid;
-	grid-template-columns: 32px auto 214px;
-	grid-template-rows: auto auto 10px;
 	column-gap: 0;
 	
-	padding: 2px 0 0 10px;
+	padding: 2px 0 0 4px;
 	height: 98%;
 	
 }
-.main-container {
+#containerId {
 	display: grid;
 	grid-template-columns: 8px auto 8px;
 	grid-template-rows: 2px auto 8px;
@@ -148,7 +149,7 @@ body.waiting * {
 	overflow: auto;
 	overflow-x: hidden;
 	overscroll-behavior: contain;
-	margin: 4px 0 20px;
+	margin: 4px 0 6px 0;
 	
 }
 .main-canvas {
