@@ -51,7 +51,7 @@ body.waiting * {
 	display: block;
 	grid-column: 1;
 	
-	margin: -12px 0;
+	margin: -24px 0;
 	z-index: 5;
 	
 }
@@ -77,7 +77,7 @@ body.waiting * {
 	
 	width: 100%;
 	height: 588px;
-	padding: 2px;
+	padding: 1px;
 	border: 1px solid blue;
 	background-color: white;
 	z-index: 5;
@@ -199,6 +199,17 @@ body.waiting * {
 	display: grid;
 	grid-template-rows: 22px 22px 22px;
 	align-self: start;
+}
+.typeButton {
+	border: none;
+	outline: none;
+	width: 150px;
+	height: 22px;
+	background-color: #E1F5FF;
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: left;
 }
 .palette-content {
 	grid-column: 3;
@@ -1222,7 +1233,7 @@ label {
 	color: #08105d;
 	display: grid;
 	grid-template-columns: 8px auto 80px;
-	grid-template-rows: 2px 60px 80px 280px 400px;
+	grid-template-rows: 2px 36px 74px 280px 238px 30px;
 	
 	
 }
@@ -1234,6 +1245,8 @@ label {
 	justify-self: center;
 }
 .startLogoBtn {
+	grid-column:  1;
+	grid-row: 2;
 	border: none;
 	outline: none;
 	height: 75px;
@@ -1241,10 +1254,26 @@ label {
 	background-image: url(../../images/splash/logo100.png);
 	background-repeat: no-repeat;
 	background-color: #fff;
+	margin-left: 22px;
 }
 .startLogoBtn:active {
 	border: none;
 	outline: none;
+}
+.startDiagramTypes {
+	margin: 10px 0 0 0;
+	display: flex;
+	flex-wrap: wrap;
+	grid-column: 1/span 2;
+	justify-self: center;
+	grid-row: 3;
+}
+.startDiagramTitle {
+	margin: 10px 0 0 8px;
+	font-family: Arial;
+	font-size: 22px;
+	font-weight: bold;
+	color: #574fa0;
 }
 .startJDEtitle {
 	
@@ -1258,21 +1287,25 @@ label {
 .startDiagramTab {
 	border: 2px solid #ccccff;
 	border-radius: 2px;
-	background-color: #bde5ee;
+	
+	background-color: #cfeeee;
 	width: 200px;
 	height: 34px;
-	text-align: center;
-	padding: 10px 0 4px;
+	text-align: left;
+	padding: 10px 0 4px 10px;
 }
 .startDiagramTab:hover {
-	
+	background-color: #afd9ee !important;
+	cursor: pointer;
+}
+.startDiagramTab:active {
 	background-color: #a4c8ee !important;
 	cursor: pointer;
 }
 .startDiagramContent {
 	border: 2px solid #8485CC;
 	border-radius: 2px;
-	background-color: #bde5ee;
+	background-color: #efffff;
 	width: 260px;
 	height: 298px;
 	margin-top: 20px;
@@ -1284,9 +1317,9 @@ label {
 	border: 2px solid #8485CC;
 	border-radius: 2px;
 	background-color: #efffff;
-	width: 464px;
-	
-	padding: 10px 10px 20px 24px;
+	width: 470px;
+	height: 208px;
+	padding: 10px 4px 20px 30px;
 }
 .startDiagramText {
 	margin: 2px 16px 0 0;
@@ -1295,7 +1328,31 @@ label {
 	
 	line-height: 1.5;
 	
-	color: #000;
+	color: #0400a0;
+}
+#btnHideBlockId {
+	grid-column: 2;
+	justify-self: center;
+	grid-row: 5;
+	margin: 6px 0 0 476px;
+	z-index: 5;
+}
+.hideTextBtn {
+	border: 1px solid blue;
+	outline: none;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	height: 20px;
+	width: 20px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: left;
+}
+.hideTextBtn:hover {
+	background-color: #a2cAFF;
+}
+.hideTextBtn:active {
+	background-color: #82AAFA;
 }
 .startHereHTip {
 	position: fixed;
@@ -1327,21 +1384,6 @@ label {
 	
 	
 	
-.startDiagramTypes {
-	margin: 10px 0 0 0;
-	display: flex;
-	flex-wrap: wrap;
-	grid-column: 1/span 2;
-	justify-self: center;
-	grid-row: 3;
-}
-.startDiagramTitle {
-	margin: 10px 0 0 8px;
-	font-family: Arial;
-	font-size: 22px;
-	font-weight: bold;
-	color: #08105d;
-}
 .startCallGroup0 {
 	display: flex; margin: -20px 0 0 0;
 }
@@ -1518,16 +1560,16 @@ label {
 	transition-duration: 0.2s;
 	cursor: pointer;
 	height: 24px;
-	width: 210px;
+	width: 234px;
 	background-color: transparent;
 	background-repeat: no-repeat;
 	background-position: left;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: bold;
 	text-align: left;
 	padding-left: 26px;
 	margin: 4px 10px 0 10px;
-	color: #0460ab;
+	color: #574fa0;
 }
 .flowTextBtn:hover {
 	background-color: #a2cAFF;
@@ -1640,6 +1682,9 @@ label {
 }
 .button-delete {
 	background-image: url(../../images/toolbar/delete18x24.png);
+}
+.button-close {
+	background-image: url(../../images/toolbar/delete18x24Blue.png);
 }
 .button-copy {
 	background-image: url(../../images/toolbar/copy24.png);

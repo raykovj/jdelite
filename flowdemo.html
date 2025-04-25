@@ -83,26 +83,9 @@
                 <div style="margin-top: 2px;"></div>
                 <div class="accordSelect" style="display: block;">
                     <div class="typeSelection">
-                        <div>
-                            <input id="btnFlowId" type="radio" name="accTypeMode" style="margin: 0 2px 0 8px;">
-                            <label id="btnFlowLabelId" for="btnFlowId" style="vertical-align: 20%; margin: 0 2px 0 2px;"
-                                   data-bind="text: diagramTypeFlow"></label>
-                        </div>
-                        <div>
-                            <input id="btnERDId" type="radio" name="accTypeMode" style="margin: 0 2px 0 8px;">
-                            <label id="btnERDLabelId" for="btnERDId" style="vertical-align: 20%;  margin: 0 2px 0 2px;"
-                                   data-bind="text: diagramTypeERD"></label>
-                        </div>
-                        <div>
-                            <input id="btnLOGId" type="radio" name="accTypeMode" style="margin: 0 2px 0 8px;">
-                            <label id="btnLOGLabelId" for="btnLOGId" style="vertical-align: 20%;  margin: 0 2px 0 2px;"
-                                   data-bind="text: diagramTypeLOG"></label>
-                        </div>
-                        <!--<div>-->
-                        <!--<input id="btnProcId" type="radio" name="accTypeMode" style="margin: 0 2px 0 8px;">-->
-                        <!--<label id="btnProcIdLabelId" for="btnProcId" style="vertical-align: 20%;  margin: 0 2px 0 2px;"-->
-                        <!--data-bind="text: diagramTypeProc"></label>-->
-                        <!--</div>-->
+                        <button id="btnFlowId" class="typeButton" data-bind="text: diagramTypeFlow"></button>
+                        <button id="btnERDId" class="typeButton" data-bind="text: diagramTypeERD"></button>
+                        <button id="btnLOGId" class="typeButton" data-bind="text: diagramTypeLOG"></button>
                     </div>
                 </div>
                 <div style="display: inline-block;">
@@ -689,8 +672,9 @@
     <!-- START PAGE -->
     <!-- ///////////////// -->
     <div id="startPageId" class="startPage">
+        <button id="startLogoBtnId" class="startLogoBtn"></button>
         <div id="startPageTopId" class="startPageHeader">
-            <button id="startLogoBtnId" class="startLogoBtn"></button>
+            <!--<button id="startLogoBtnId" class="startLogoBtn"></button>-->
             <div class="startJDEtitle" data-bind="text: startTitle()"></div>
         </div>
 
@@ -771,16 +755,20 @@
 
         </div>
 
-        <div id="startDiagramBlockId" class="startDiagramTextBlock">
-            <div data-bind="visible: isConnectionOK(), html: diagramTextOn()"></div>
-            <div data-bind="visible: !isConnectionOK(), html: diagramTextOff()"></div>
-
-            <div data-bind="visible: flowTabVisible, html: diagramTextFLOW()"></div>
-            <div data-bind="visible: erdTabVisible, html: diagramTextERD()"></div>
-            <div data-bind="visible: logTabVisible, html: diagramTextLOG()"></div>
-
-            <div data-bind="html: diagramEndText()"></div>
+        <div id="startDiagramBlockId" class="startDiagramTextBlock" data-bind="visible: !hideTextBlock()">
+            <!--<div data-bind="visible: isConnectionOK(), html: diagramTextOn()"></div>-->
+            <!--<div data-bind="visible: !isConnectionOK(), html: diagramTextOff()"></div>-->
+            <!--<div data-bind="visible: flowTabVisible, html: diagramTextFLOW()"></div>-->
+            <!--<div data-bind="visible: erdTabVisible, html: diagramTextERD()"></div>-->
+            <!--<div data-bind="visible: logTabVisible, html: diagramTextLOG()"></div>-->
+            <!--<div data-bind="html: diagramEndText()"></div>-->
+            <div data-bind="html: diagramAllText()"></div>
         </div>
+        <!--<div>-->
+            <button id="btnHideBlockId" class="hideTextBtn button-close"
+                    data-bind="visible: !hideTextBlock()"
+                    title="Do not show"></button>
+        <!--</div>-->
 
     </div>
 
