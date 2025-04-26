@@ -935,16 +935,6 @@ label {
 	font-weight: bold;
 	outline: none;
 }
-.folderText {
-	width: 100% ;
-	height: 24px;
-	padding-left: 4px;
-	margin-right: 4px;
-	border: 1px solid #808080;
-	background-color: #fafafa;
-	font-weight: bold;
-	outline: none;
-}
 #searchDirId {
 	margin: 0px 0 0 0;
 }
@@ -1318,7 +1308,7 @@ label {
 	border-radius: 2px;
 	background-color: #efffff;
 	width: 470px;
-	height: 208px;
+	height: 190px;
 	padding: 10px 4px 20px 30px;
 }
 .startDiagramText {
@@ -1360,7 +1350,7 @@ label {
 	outline: none;
 	top: 74px;
 	left: 40px;
-	height: 60px;
+	height: 62px;
 	width: 100px;
 	background-image: url(../../images/splash/startHereH.png);
 	background-repeat: no-repeat;
@@ -1370,7 +1360,7 @@ label {
 	position: fixed;
 	border: none;
 	outline: none;
-	top: 74px;
+	top: 60px;
 	left: 48px;
 	height: 60px;
 	width: 100px;
@@ -1672,10 +1662,7 @@ label {
 	background-image: url(../../images/toolbar/open24.png);
 }
 .button-import {
-	background-image: url(../../images/toolbar/import24.png);
-}
-.button-inOut {
-	background-image: url(../../images/toolbar/inOut24.png);
+	background-image: url(../../images/toolbar/template24.png);
 }
 .button-export {
 	background-image: url(../../images/toolbar/export24.png);
@@ -1777,11 +1764,9 @@ label {
 	background-image: url(../../images/toolbar/arrow_right24.png);
 }
 .button-newDir {
-	background-image: url(../../images/toolbar/open24.png);
+	background-image: url(../../images/toolbar/newFolder24.png);
 }
-.button-newSaveDir {
-	background-image: url(../../images/toolbar/open24.png);
-}
+	
 .button-deleteFS {
 	background-image: url(../../images/toolbar/delete18x24.png);
 }
