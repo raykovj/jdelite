@@ -56,7 +56,6 @@
             <button id="configId" class="toolbar-button button-no-left button-config" data-toggle="tooltip" title="Settings..."></button>
             <button id="helpId" class="toolbar-button button-no-left button-help" data-toggle="tooltip" title="Help..."></button>
         </div>
-        <!--<span style="margin-left: 2px;"></span>-->
     </div>
 
     <div id="topContainerId">
@@ -224,24 +223,6 @@
                         </tbody>
                     </table>
                 </div>
-                <!--/////////////  PROC LOG  /////////////-->
-                <!--<h3 id="accHdrPROCId"  data-bind="text: accHdrPROCTitle"></h3>-->
-                <!--<div id="accTablePROCId">-->
-                <!--<table id="accPROCTableId" class="accordion-items galleryFont" >-->
-                <!--<tbody data-bind="foreach: galleryProcNodes">-->
-                <!--<tr>-->
-                <!--<td data-bind="attr: {id}"-->
-                <!--ondragstart="onPaletteDragStart(event)"-->
-                <!--ondragend="onPaletteDragEnd(event)">-->
-                <!--<img role="presentation" draggable="true" class="componentItem"-->
-                <!--data-bind="attr: {id: id, src: url, title: title}" />-->
-                <!--<span style="user-select: none;" data-bind="text: label"></span>-->
-                <!--</td>-->
-                <!--</tr>-->
-                <!--</tbody>-->
-                <!--</table>-->
-                <!--</div>-->
-                <!--//-->
             </div>
         </div>
     </div>
@@ -764,11 +745,9 @@
             <!--<div data-bind="html: diagramEndText()"></div>-->
             <div data-bind="html: diagramAllText()"></div>
         </div>
-        <!--<div>-->
-            <button id="btnHideBlockId" class="hideTextBtn button-close"
-                    data-bind="visible: !hideTextBlock()"
-                    title="Do not show"></button>
-        <!--</div>-->
+        <button id="btnHideBlockId" class="hideTextBtn button-close"
+                data-bind="visible: !hideTextBlock()"
+                title="Do not show"></button>
 
     </div>
 
@@ -1052,9 +1031,9 @@
             <div style="margin-top: 10px;"></div>
             <div>
                 <div class="findBlockBgnd">
-                    <button id="findBtnPrevId" class="toolbar-button button-leftDir" data-toggle="tooltip"
+                    <button id="findBtnPrevId" class="toolbar-button button-left" data-toggle="tooltip"
                             title="Previous"></button>
-                    <button id="findBtnNextId" class="toolbar-button button-rightDir button-no-left"
+                    <button id="findBtnNextId" class="toolbar-button button-right button-no-left"
                             data-toggle="tooltip" title="Next"></button>
                     <button id="findBtnAllId" class="toolbar-button button-findAll button-no-left"
                             data-toggle="tooltip" title="Show All"></button>
