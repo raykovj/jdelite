@@ -737,15 +737,9 @@
         </div>
 
         <div id="startDiagramBlockId" class="startDiagramTextBlock" data-bind="visible: !hideTextBlock()">
-            <!--<div data-bind="visible: isConnectionOK(), html: diagramTextOn()"></div>-->
-            <!--<div data-bind="visible: !isConnectionOK(), html: diagramTextOff()"></div>-->
-            <!--<div data-bind="visible: flowTabVisible, html: diagramTextFLOW()"></div>-->
-            <!--<div data-bind="visible: erdTabVisible, html: diagramTextERD()"></div>-->
-            <!--<div data-bind="visible: logTabVisible, html: diagramTextLOG()"></div>-->
-            <!--<div data-bind="html: diagramEndText()"></div>-->
             <div data-bind="html: diagramAllText()"></div>
         </div>
-        <button id="btnHideBlockId" class="hideTextBtn button-close"
+        <button id="btnHideBlockId" class="hideTextBtn"
                 data-bind="visible: !hideTextBlock()"
                 title="Do not show"></button>
 
@@ -1197,10 +1191,10 @@
             <span class="dbTableCaption" style="margin: 2px 0 0px 0; padding-top: 4px; grid-column: 2;">
                 Column Constraints / Attributes</span>
             <button id="btnAddConstraintId" class="toolbar-button button-add" data-toggle="tooltip"
-                    title="Add New Row" style="margin: 2px 0 4px 0; grid-column: 3;"
+                    title="Add New Constraint" style="margin: 2px 0 4px 0; grid-column: 3;"
                     data-bind="visible: showDBConstraints()"></button>
             <button id="btnRemoveConstraintId" class="toolbar-button button-delete button-no-left"
-                    data-toggle="tooltip" title="Remove Selected Row" style="margin: 2px 0 4px 0; grid-column: 4;"
+                    data-toggle="tooltip" title="Remove Selected Constraint" style="margin: 2px 0 4px 0; grid-column: 4;"
                     data-bind="visible: showDBConstraints()"></button>
         </div>
         <div id="dbTblConstraintsId" style="display: block; margin: -6px 0 0 0;" data-bind="visible: showDBConstraints()">
@@ -1267,10 +1261,10 @@
                   data-bind="visible: !isSelectedMySQL()">Composite Keys</span>
             <button id="btnAddKeyId" class="toolbar-button button-add"
                     data-toggle="tooltip"  style="margin: 0 0 2px 0; grid-column: 3;"
-                    title="Add New Row" data-bind="visible: showDBCompositePK()"></button>
+                    title="Add New Key" data-bind="visible: showDBCompositePK()"></button>
             <button id="btnRemoveKeyId" class="toolbar-button button-delete button-no-left"
                     style="margin: 0 0 2px 0; grid-column: 4;"
-                    data-toggle="tooltip" title="Remove Selected Row" data-bind="visible: showDBCompositePK()"></button>
+                    data-toggle="tooltip" title="Remove Selected Key" data-bind="visible: showDBCompositePK()"></button>
         </div>
         <div id="dbTblCPKsId" style="display: block; margin: -4px 0 0 0;" data-bind="visible: showDBCompositePK()">
             <table id="dbTblCPKsColumnsId" style="width: 100%; table-layout: fixed; ">
@@ -1338,11 +1332,11 @@
             <span class="dbTableCaption" style="margin: 2px 0 0px 0; padding-top: 4px; grid-column: 2;">Indexes</span>
             <button id="btnAddIndexId" class="toolbar-button button-add" data-toggle="tooltip"
                     style="margin: 2px 0 4px 0; grid-column: 3;" data-bind="visible: showDBIndexes()"
-                    title="Add New Row"></button>
+                    title="Add New Index"></button>
             <button id="btnRemoveIndexId" class="toolbar-button button-delete button-no-left"
                     data-toggle="tooltip" data-bind="visible: showDBIndexes()"
                     style="margin: 2px 0 4px 0; grid-column: 4;"
-                    title="Remove Selected Row"></button>
+                    title="Remove Selected Index"></button>
         </div>
         <div id="dbTblIndexesId" style="display: block; margin: -6px 2px 0 0;"
              data-bind="visible: showDBIndexes() && true">
@@ -1601,7 +1595,6 @@
     <div id="importExportDialogId" class="settingsFont" style="display: none; overflow: hidden;">
         <div id="importExportTabId">
             <div class="settings-controls settings-entry" style="display: block">
-                <!--<div class="settings-entry">Import Database Script to ER Diagram</div>-->
                 <div class="settings-entry" style="margin: 10px 0 6px 12px; ">Select Database:</div>
                 <div style="margin: 0 0 0 12px; ">
                     <select id="importExportId" onDblClick="alert(this.value)"
@@ -1611,32 +1604,14 @@
                     </select>
                 </div>
 
-                <div style="margin: 10px 0 0 6px;">
-                    <input type="radio" id="btnLocalDBId" name="inOut" style="margin: 4px 4px 0 8px;">
-                    <label for="btnLocalDBId" style="vertical-align:baseline; margin: 0 14px 0 0;" >ERD Design</label>
-                </div>
-                <div style="margin: 6px 0 0 6px;">
-                    <input type="radio" id="btnImportDBId" name="inOut" style="margin: 4px 4px 0 8px;">
-                    <label for="btnImportDBId" style="vertical-align:baseline; margin: 0 14px 0 0;" >Import Database Script</label>
-                </div>
-                <div style="margin: 6px 0 0 6px;">
-                    <input type="radio" id="btnExportDBId" name="inOut" style="margin: 4px 4px 0 8px;">
-                    <label for="btnExportDBId" style="vertical-align:baseline;  margin: 0 0 0 0;">Export Database Script</label>
+                <div style="margin: 16px 0 0 6px;">
+                    <input type="checkbox" id="btnCardinalityId" style="margin: 4px 4px 0 8px;">
+                    <label for="btnCardinalityId"
+                           style="vertical-align:baseline; margin: 0 14px 0 0;">Generate Default Cardinalities</label>
                 </div>
 
                 <div class="inOut-footer"></div>
             </div>
-
-            <!--<div class="settings-controls settings-entry" style="display: block" data-bind="visible: isExportMySQL()">-->
-                <!--<div style="margin: 4px 0 0 6px;">-->
-                    <!--<input type="radio" id="btnSingleFileId" name="mysqlExp" style="margin: 4px 4px 0 8px;">-->
-                    <!--<label for="btnSingleFileId" style="vertical-align:baseline; margin: 0 14px 0 0;" >Export to Single File</label>-->
-                <!--</div>-->
-                <!--<div style="margin: 6px 0 6px 6px;">-->
-                    <!--<input type="radio" id="btnLocalFolderId" name="mysqlExp" style="margin: 4px 4px 0 8px;">-->
-                    <!--<label for="btnLocalFolderId" style="vertical-align:baseline; margin: 0 14px 0 0;" >Export Files to Folder</label>-->
-                <!--</div>-->
-            <!--</div>-->
         </div>
     </div>
 

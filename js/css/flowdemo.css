@@ -1328,12 +1328,14 @@ label {
 	z-index: 5;
 }
 .hideTextBtn {
-	border: 1px solid blue;
+	
+	border: none;
 	outline: none;
 	transition-duration: 0.2s;
 	cursor: pointer;
 	height: 20px;
 	width: 20px;
+	background-image: url(../../images/toolbar/delete18x24Tiny.png);
 	background-color: transparent;
 	background-repeat: no-repeat;
 	background-position: left;
@@ -1540,9 +1542,11 @@ label {
 	background-color: #82AAFA;
 }
 .flow-button:disabled {
-	background-color: #ffffff;
-	cursor: default;
-	opacity: 0.5;
+	background-color: transparent;
+	cursor: auto;
+	
+	
+	background-image: url(../../images/toolbar/arrow_down_dis24.png);
 }
 .flowTextBtn {
 	border: none;
@@ -2480,7 +2484,7 @@ table#dbTableContentId td {
 	padding: 3px 27px 7px 4px;
 }
 .inOut-footer {
-	margin: 14px 0 0 0;
+	margin: 20px 0 0 0;
 }
 .ui-selectmenu-open > ul{
 	max-height: 200px;
