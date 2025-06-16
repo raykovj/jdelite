@@ -1452,12 +1452,26 @@ label {
 	background-position: center;
 	margin: 20px 0 0 8px;
 }
-.importBkgnd {
-	background-color: #e1fbd4;
+.showExportTo {
+	font-family: Arial;
+	font-size: 14px;
+	margin: 4px 0 2px 4px;
+	font-weight: bold;
+	border: 1px solid blue;
+	outline: none;
+	width: 252px;
+	height: 20px;
+	background-color: #f3f6fc;
+}
+#dbsToImportId {
+	width: 252px;
+	height: 26px;
+	font-family: Arial;
+	font-size: 14px;
 	
-	width: 144px;
-	height: 28px;
-	border: 1px solid #a3ab93;
+}
+.inOut-footer {
+	margin: 20px 0 0 0;
 }
 .toolbar-button {
 	
@@ -2398,8 +2412,19 @@ table#dbTblCPKsColumnsId td {
 	cursor: pointer;
 	padding: 1px;
 }
+table#dbTblConstrHeadersId {
+	margin: -6px 0 0 0;
+	position: relative;
+	bottom: -2px;
+}
+table#dbTblConstrHeadersId th {
+	padding-left: 4px;
+	color: #ffffff;
+	background-color: #72AAFA !important;
+}
 table#dbTblConstrColumnsId {
 	cursor: pointer;
+	margin-top: -23px;
 }
 table#dbTblConstrColumnsId th {
 	padding: 1px;
@@ -2413,6 +2438,32 @@ table#dbTblConstrColumnsId td {
 	text-align: center;
 	cursor: pointer;
 	padding: 1px;
+}
+.tblConstrColsTH {
+	height: 20px;
+	padding: 1px 1px 1px 5px;
+	margin: 1px 0 0 1px;
+	color: #ffffff;
+	background-color: #72AAFA !important;
+}
+table#dbTblCPKsHeadersId {
+	margin: -6px 0 0 0;
+	position: relative;
+	bottom: -2px;
+}
+table#dbTblCPKsHeadersId th {
+	padding-left: 4px;
+	color: #ffffff;
+	background-color: #72AAFA !important;
+}
+table#dbTblCPKsColumnsId {
+	cursor: pointer;
+	margin-top: -23px;
+}
+table#dbTblCPKsColumnsId td {
+	text-align: center;
+	cursor: pointer;
+	padding: 1px  !important;
 }
 	
 	
@@ -2469,23 +2520,16 @@ table#dbTableContentId td {
 }
 	
 	
-#importFromId+.ui-selectmenu-button.ui-button {
-	max-height: 12px !important;
-	color: black;
-	background-color: white;
-	border: 1px solid navy;
-	padding: 3px 27px 7px 4px;
-}
-#exportToId+.ui-selectmenu-button.ui-button {
-	max-height: 12px !important;
-	color: black;
-	background-color: white;
-	border: 1px solid navy;
-	padding: 3px 27px 7px 4px;
-}
-.inOut-footer {
-	margin: 20px 0 0 0;
-}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 .ui-selectmenu-open > ul{
 	max-height: 200px;
 	overflow-y: scroll;

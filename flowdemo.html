@@ -1092,7 +1092,6 @@
     </div>
 
     <div id="editorTooltipId" class="editorTooltip">
-        <!--<input id="tooltipId" class="editorTooltipContent" autofocus type="text" readonly/>-->
         <input id="tooltipId" class="editorTooltipContent" autofocus type="text" readonly/>
     </div>
 
@@ -1131,7 +1130,7 @@
         </div>
         <div id="dbTableEditorId" style="display: block;">
             <table id="dbTableColumnDefId" style="width: 100%; table-layout: fixed; ">
-                <thead><tr>
+                <thead><tr style="height: 24px;">
                     <th style="width: 10%;" title="Key">&nbsp;Key</th>
                     <th style="width: 48%;" title="Field Name">&nbsp;Column Name</th>
                     <th style="width: 30%;" title="Data Type">&nbsp;Data Type</th>
@@ -1180,7 +1179,6 @@
 
         <div style="margin-top: 6px;"></div>
         <!-- CONSTRAINTS -->
-        <!--<div style="display: flex; ">-->
         <div class="dbEditorTop">
             <div style="margin: 2px 0 0px 0; grid-column: 1;">
                 <button id="btnShowCnstrId" class="dgm-button btn-down-16 dgm-btn-outline"
@@ -1189,7 +1187,7 @@
                         data-bind="visible: showDBConstraints()" title="Hide Constraints"></button>
             </div>
             <span class="dbTableCaption" style="margin: 2px 0 0px 0; padding-top: 4px; grid-column: 2;">
-                Column Constraints / Attributes</span>
+                Column Constraints / Properties</span>
             <button id="btnAddConstraintId" class="toolbar-button button-add" data-toggle="tooltip"
                     title="Add New Constraint" style="margin: 2px 0 4px 0; grid-column: 3;"
                     data-bind="visible: showDBConstraints()"></button>
@@ -1197,44 +1195,40 @@
                     data-toggle="tooltip" title="Remove Selected Constraint" style="margin: 2px 0 4px 0; grid-column: 4;"
                     data-bind="visible: showDBConstraints()"></button>
         </div>
-        <div id="dbTblConstraintsId" style="display: block; margin: -6px 0 0 0;" data-bind="visible: showDBConstraints()">
+        <div id="dbTblConstraintsId" style="display: block; " data-bind="visible: showDBConstraints()">
+            <table id="dbTblConstrHeadersId" style="width: 100%; table-layout: fixed; ">
+                <thead><tr style="height: 24px;"></tr></thead>
+            </table>
             <table id="dbTblConstrColumnsId" style="width: 100%; table-layout: fixed; ">
-                <thead><tr>
-                    <th style="width: 22%;">&nbsp;Type</th>
-                    <th style="width: 22%;">&nbsp;Definition</th>
-                    <th style="width: 16%;">&nbsp;Name</th>
-                    <th style="width: 20%;">&nbsp;Table</th>
-                    <th style="width: 20%;">&nbsp;Column</th>
-                </tr></thead>
                 <tbody data-bind="foreach: { data: dbTableConstraints, as: 'dbConstr' }">
                     <tr>
-                        <td>
+                        <td style="width: 22%;">
                             <select id="cnstrDBTypeId" class="cnstrDBType cnstrDBall cursor-pointer"
                                     data-bind="options: dbConstr.type,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
                             </select>
                         </td>
-                        <td >
+                        <td style="width: 22%;">
                             <select id="cnstrDBDef" class="cnstrDBDef cnstrDBall cursor-pointer"
                                     data-bind="options: dbConstr.def,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
                             </select>
                         </td>
-                        <td >
+                        <td style="width: 16%;">
                             <input id="cnstrDBNameId" class="cnstrDBName cnstrDBall cursor-pointer" type="text"
                                    data-bind="textInput: dbConstr.name,
                                     attr: {title: dbConstr.name}"/>
                         </td>
-                        <td >
+                        <td style="width: 20%;">
                             <select id="cnstrDBTableId" class="cnstrDBTable cnstrDBall cursor-pointer"
                                     data-bind="options: dbConstr.table,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
                             </select>
                         </td>
-                        <td >
+                        <td style="width: 20%;">
                             <select id="cnstrDBColumnId" class="cnstrDBColumn cnstrDBall cursor-pointer"
                                     data-bind="options: dbConstr.column,
                                         optionsText: 'label',
@@ -1246,8 +1240,7 @@
             </table>
         </div>
 
-        <!-- KEYS / INDEXES -->
-        <!--<div style="margin-top: 4px;"></div>-->
+        <!-- KEYS / CPKS -->
         <div class="dbEditorTop">
             <div style="margin: 0 0 0px 0; grid-column: 1;">
                 <button id="btnShowCPKsId" class="dgm-button btn-down-16 dgm-btn-outline"
@@ -1258,7 +1251,7 @@
             <span class="dbTableCaption" style="margin: 0 0 0 0; padding-top: 4px; grid-column: 2;"
                   data-bind="visible: isSelectedMySQL()">Keys</span>
             <span class="dbTableCaption" style="margin: 0 0 0 0; padding-top: 4px; grid-column: 2;"
-                  data-bind="visible: !isSelectedMySQL()">Composite Keys</span>
+                  data-bind="visible: !isSelectedMySQL()">Composite Keys / Table Constraints</span>
             <button id="btnAddKeyId" class="toolbar-button button-add"
                     data-toggle="tooltip"  style="margin: 0 0 2px 0; grid-column: 3;"
                     title="Add New Key" data-bind="visible: showDBCompositePK()"></button>
@@ -1267,17 +1260,13 @@
                     data-toggle="tooltip" title="Remove Selected Key" data-bind="visible: showDBCompositePK()"></button>
         </div>
         <div id="dbTblCPKsId" style="display: block; margin: -4px 0 0 0;" data-bind="visible: showDBCompositePK()">
+            <table id="dbTblCPKsHeadersId" style="width: 100%; table-layout: fixed; ">
+                <thead><tr style="height: 24px;"></tr></thead>
+            </table>
             <table id="dbTblCPKsColumnsId" style="width: 100%; table-layout: fixed; ">
-                <thead><tr>
-                    <th style="width: 18%;">&nbsp;Type</th>
-                    <th style="width: 22%;">&nbsp;Name</th>
-                    <th style="width: 20%;">&nbsp;Column1</th>
-                    <th style="width: 20%;">&nbsp;Column2</th>
-                    <th style="width: 20%;">&nbsp;Column3</th>
-                </tr></thead>
                 <tbody  data-bind="foreach: { data: dbCompositePKs, as: 'cPKs' }">
                     <tr>
-                        <td>
+                        <td style="width: 74px;">
                             <select id="dbCPKTypeId" class="cpkDBColumn cnstrDBall cursor-pointer"
                                     style="width: 80px;"
                                     data-bind="options: cPKs.type,
@@ -1285,13 +1274,13 @@
                                         optionsValue: 'id'">
                             </select>
                         </td>
-                        <td>
+                        <td style="width: 90px;">
                             <input id="dbCPKNameId" type="text" class="cursor-pointer cpkDBColumn"
                                    style="width: 92px;"
                                    data-bind="textInput: cPKs.name,
                                     attr: {title: cPKs.name}"/>
                         </td>
-                        <td>
+                        <td style="width: 82px;">
                             <select id="dbCPKCol1" class="cpkDBColumn cnstrDBall cursor-pointer"
                                     style="width: 89px; height: 22px; "
                                     data-bind="options: cPKs.column1,
@@ -1299,7 +1288,7 @@
                                         optionsValue: 'id'">
                             </select>
                         </td>
-                        <td>
+                        <td style="width: 82px;">
                             <select id="dbCPKCol2" class="cpkDBColumn cnstrDBall cursor-pointer"
                                     style="width: 88px;"
                                     data-bind="options: cPKs.column2,
@@ -1307,7 +1296,7 @@
                                         optionsValue: 'id'">
                             </select>
                         </td>
-                        <td>
+                        <td style="width: 82px;">
                             <select id="dbCPKCol3" class="cpkDBColumn cnstrDBall cursor-pointer"
                                     style="width: 88px;"
                                     data-bind="options: cPKs.column3,
@@ -1341,7 +1330,7 @@
         <div id="dbTblIndexesId" style="display: block; margin: -6px 2px 0 0;"
              data-bind="visible: showDBIndexes() && true">
             <table id="dbTblIndexColumnsId" style="width: 100%; table-layout: fixed; ">
-                <thead><tr>
+                <thead><tr style="height: 24px;">
                     <th style="width: 50%;">&nbsp;Name</th>
                     <th style="width: 35%;">&nbsp;Column</th>
                     <th style="width: 15%;">&nbsp;Unique</th>
@@ -1374,25 +1363,25 @@
                     data-bind="visible: isFieldInvalid(), text: validateFieldMessage()"></span>
         </div>
 
-        <div style="background: white; margin-left: 6px;">
+        <div style="display: inline-flex; background: white; margin-left: 6px;"
+             data-bind="visible: isCPKNameInvalid()">
             <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
                     data-bind="visible: isCPKNameInvalid()" disabled></button>
-            <span class="invalid-message"
-                    data-bind="visible: isCPKNameInvalid(), text: validateCPKMessage()"></span>
+            <span class="invalid-message">Duplicate entry</span>
         </div>
 
-        <div style="background: white; margin-left: 6px;">
+        <div style="display: inline-flex; background: white; margin-left: 6px;"
+             data-bind="visible: isKeyInvalid()">
             <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
                     data-bind="visible: isKeyInvalid()" disabled></button>
-            <span class="invalid-message"
-                    data-bind="visible: isKeyInvalid(), text: validateKeyMessage()"></span>
+            <span class="invalid-message">Duplicate entry</span>
         </div>
 
-        <div style="background: white; margin-left: 6px;">
+        <div style="display: inline-flex; background: white; margin-left: 6px;"
+             data-bind="visible: isDuplicateType()">
             <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
-                    data-bind="visible: isDuplicateType()" disabled></button>
-            <span class="invalid-message"
-                    data-bind="visible: isDuplicateType(), text: duplicateConstraintMessage()"></span>
+                    data-bind="visible: isDuplicateType" disabled></button>
+            <span class="invalid-message">Duplicate entry</span>
         </div>
 
         <div style="margin-top: 6px;"></div>
@@ -1594,10 +1583,11 @@
 
     <div id="importExportDialogId" class="settingsFont" style="display: none; overflow: hidden;">
         <div id="importExportTabId">
-            <div class="settings-controls settings-entry" style="display: block">
+            <div class="settings-controls settings-entry" style="display: block"
+                    data-bind="visible: isImportDBMode() || showTemplatesOnly()">
                 <div class="settings-entry" style="margin: 10px 0 6px 12px; ">Select Database:</div>
                 <div style="margin: 0 0 0 12px; ">
-                    <select id="importExportId" onDblClick="alert(this.value)"
+                    <select id="dbsToImportId" onDblClick="alert(this.value)"
                             data-bind="options: dbsToImport,
                                 optionsText: 'label',
                                 optionsValue: 'id'">
@@ -1612,6 +1602,25 @@
 
                 <div class="inOut-footer"></div>
             </div>
+
+            <div class="settings-controls settings-entry" style="display: block"
+                    data-bind="visible: isExportDBMode()">
+                <div class="settings-entry" style="margin: 10px 0 6px 12px; ">Selected Database:</div>
+                <div style="margin: 0 0 0 10px; ">
+                    <input id="showExportToId" class="showExportTo" type="text" readonly
+                           data-bind="textInput: selectedDBName(),
+                           attr: {title: selectedDBName()}"/>
+                </div>
+
+                <div class="settings-entry" style="margin: 10px 0 6px 12px; ">Enter Database Schema Name:</div>
+                <div style="margin: 0 0 0 10px;">
+                    <input id="schemaNameToId" class="showExportTo" type="text" autofocus
+                           autocomplete="off" spellcheck="false"/>
+                </div>
+
+                <div class="inOut-footer"></div>
+            </div>
+
         </div>
     </div>
 
