@@ -1249,9 +1249,9 @@
                         data-bind="visible: showDBCompositePK()" title="Hide Keys / Indexes"></button>
             </div>
             <span class="dbTableCaption" style="margin: 0 0 0 0; padding-top: 4px; grid-column: 2;"
-                  data-bind="visible: isSelectedMySQL()">Keys</span>
+                  data-bind="visible: isSelectedMySQL()">Table Constraints / Keys</span>
             <span class="dbTableCaption" style="margin: 0 0 0 0; padding-top: 4px; grid-column: 2;"
-                  data-bind="visible: !isSelectedMySQL()">Composite Keys / Table Constraints</span>
+                  data-bind="visible: !isSelectedMySQL()">Table Constraints / Keys</span>
             <button id="btnAddKeyId" class="toolbar-button button-add"
                     data-toggle="tooltip"  style="margin: 0 0 2px 0; grid-column: 3;"
                     title="Add New Key" data-bind="visible: showDBCompositePK()"></button>
@@ -1587,7 +1587,7 @@
                     data-bind="visible: isImportDBMode() || showTemplatesOnly()">
                 <div class="settings-entry" style="margin: 10px 0 6px 12px; ">Select Database:</div>
                 <div style="margin: 0 0 0 12px; ">
-                    <select id="dbsToImportId" onDblClick="alert(this.value)"
+                    <select id="dbsToImportId"
                             data-bind="options: dbsToImport,
                                 optionsText: 'label',
                                 optionsValue: 'id'">
