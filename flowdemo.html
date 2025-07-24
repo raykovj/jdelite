@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.14.1/jquery-ui.theme.css" type="text/css" />
+    <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.14.1/jquery-ui.css" type="text/css" />
     <link rel="stylesheet" href="js/css/flowdemo.css" type="text/css" />
-    <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.13.2/jquery-ui.theme.css" type="text/css" />
-    <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.13.2/jquery-ui.css" type="text/css" />
 
     <script data-main="js/flowdemo" src="libs/require/require.js"></script>
     <link rel="stylesheet" href="libs/spectrum/spectrum.css"  type="text/css"/>
@@ -84,7 +84,7 @@
                     <div class="typeSelection">
                         <button id="btnFlowId" class="typeButton" data-bind="text: diagramTypeFlow"></button>
                         <button id="btnERDId" class="typeButton" data-bind="text: diagramTypeERD"></button>
-                        <button id="btnLOGId" class="typeButton" data-bind="text: diagramTypeLOG"></button>
+                        <!--<button id="btnLOGId" class="typeButton" data-bind="text: diagramTypeLOG"></button>-->
                     </div>
                 </div>
                 <div style="display: inline-block;">
@@ -99,7 +99,7 @@
                 <div style="margin-top: -2px;" data-bind="visible: isDgmFlow()" >
                     <input type="range" min="65" max="200" value="100" id="scaleId" class="scaleSlider">
                 </div>
-                <div class="main-props diagram-text galleryFont" data-bind="visible:isDgmFlow()">
+                <div class="main-props diagram-text galleryFont" data-bind="visible: isDgmFlow()">
                     <div class="main-props-row">
                         <div class="main-props-cell1">
                             <span style="font-weight: bold;">Canvas Scale:</span>
@@ -207,22 +207,22 @@
                     </table>
                 </div>
                 <!--/////////////  ERD LOG  /////////////-->
-                <h3 id="accHdrLOGId"  data-bind="text: accHdrLOGTitle"></h3>
-                <div id="accTableLOGId">
-                    <table id="accLOGTableId" class="accordion-items galleryFont" >
-                        <tbody data-bind="foreach: galleryLOGNodes">
-                        <tr>
-                            <td data-bind="attr: {id}"
-                                ondragstart="onPaletteDragStart(event)"
-                                ondragend="onPaletteDragEnd(event)">
-                                <img role="presentation" draggable="true" class="componentItem"
-                                     data-bind="attr: {id: id, src: url, title: title}" />
-                                <span style="user-select: none;" data-bind="text: label"></span>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <!--<h3 id="accHdrLOGId"  data-bind="text: accHdrLOGTitle"></h3>-->
+                <!--<div id="accTableLOGId">-->
+                    <!--<table id="accLOGTableId" class="accordion-items galleryFont" >-->
+                        <!--<tbody data-bind="foreach: galleryLOGNodes">-->
+                        <!--<tr>-->
+                            <!--<td data-bind="attr: {id}"-->
+                                <!--ondragstart="onPaletteDragStart(event)"-->
+                                <!--ondragend="onPaletteDragEnd(event)">-->
+                                <!--<img role="presentation" draggable="true" class="componentItem"-->
+                                     <!--data-bind="attr: {id: id, src: url, title: title}" />-->
+                                <!--<span style="user-select: none;" data-bind="text: label"></span>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--</tbody>-->
+                    <!--</table>-->
+                <!--</div>-->
             </div>
         </div>
     </div>
@@ -319,13 +319,15 @@
                     <div class="settings-entry" style="margin: 4px 0 0 4px; grid-column: 5/span 4;">Grid Spacing:</div>
                 </div>
                 <div class="settings-controls settingsSpaceGrid">
-                    <input type="text" id="spinnerLevelsId" class="spinnerStyle" readonly>
-                    <label for="spinnerLevelsId" class="spinner-label" style="padding-top: 6px; margin-left: 2px;" >Layers <b>*</b></label>
-                    <input type="text" id="spinnerLanesId" class="spinnerStyle" readonly>
-                    <label for="spinnerLanesId" class="spinner-label" style="padding-top: 6px; margin-left: 2px;">Lanes <b>*</b></label>
+                    <input type="number" id="spinnerLevelsId" min="1" max="20" value="5" step="1" class="spinnerStyle">
+                    <label for="spinnerLevelsId" class="spinner-label" style="padding-top: 6px;" >Layers <b>*</b></label>
 
-                    <input type="text" id="spinnerSpaceId" class="spinnerStyle" readonly>
-                    <label for="spinnerSpaceId" class="spinner-label" style="padding-top: 6px; margin-left: 2px;" >pixels</label>
+                    <input type="number" id="spinnerLanesId" min="1" max="20" value="5" step="1" class="spinnerStyle">
+                    <label for="spinnerLanesId" class="spinner-label" style="padding-top: 6px;">Lanes <b>*</b></label>
+
+                    <!--<input type="text" id="spinnerSpaceId" class="spinnerStyle" readonly>-->
+                    <input type="number" id="spinnerSpaceId" min="6" max="30" value="10" step="1" class="spinnerStyle">
+                    <label for="spinnerSpaceId" class="spinner-label" style="padding-top: 6px;" >pixels</label>
                 </div>
 
                 <div class="settings-entry" style="margin: 4px 0 0 4px;">Link ports presentation:</div>
@@ -441,10 +443,10 @@
                     <div id="ioBgnDisplayId" class="typeColorShape"></div>
                     <div id="ioFgnDisplayId" class="typeColorShape"></div>
 
-                    <input type="radio" id="btnEntTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
-                    <label for="btnEntTypeId" style="vertical-align:baseline; margin: 4px 4px 0 6px;" >Entity</label>
-                    <div id="entBgnDisplayId" class="typeColorShape"></div>
-                    <div id="entFgnDisplayId" class="typeColorShape"></div>
+                    <!--<input type="radio" id="btnEntTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">-->
+                    <!--<label for="btnEntTypeId" style="vertical-align:baseline; margin: 4px 4px 0 6px;" >Entity</label>-->
+                    <!--<div id="entBgnDisplayId" class="typeColorShape"></div>-->
+                    <!--<div id="entFgnDisplayId" class="typeColorShape"></div>-->
 
                     <input type="radio" id="btnDocsTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
                     <label for="btnDocsTypeId" style="vertical-align:baseline; margin: 4px 6px 0 6px;" >Documents</label>
@@ -453,14 +455,14 @@
 
                     <!--////-->
                     <input type="radio" id="btnSideTypeId" name="typeColors" style="margin: 4px 0 0 4px; width: 18px; height: 18px;">
-                    <label for="btnSideTypeId" style="vertical-align:baseline; margin: 4px 4px 0 4px;" >Side Lanes</label>
+                    <label for="btnSideTypeId" style="vertical-align:baseline; margin: 4px 4px 0 4px;" >Side Lane</label>
                     <div id="sideBgnDisplayId" class="typeColorShape"></div>
                     <div id="sideFgnDisplayId" class="typeColorShape"></div>
 
-                    <input type="radio" id="btnRelTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
-                    <label for="btnRelTypeId" style="vertical-align:baseline; margin: 4px 6px 0 6px;" >Relation</label>
-                    <div id="relBgnDisplayId" class="typeColorShape"></div>
-                    <div id="relFgnDisplayId" class="typeColorShape"></div>
+                    <!--<input type="radio" id="btnRelTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">-->
+                    <!--<label for="btnRelTypeId" style="vertical-align:baseline; margin: 4px 6px 0 6px;" >Relation</label>-->
+                    <!--<div id="relBgnDisplayId" class="typeColorShape"></div>-->
+                    <!--<div id="relFgnDisplayId" class="typeColorShape"></div>-->
 
                     <input type="radio" id="btnTermTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
                     <label for="btnTermTypeId" style="vertical-align:baseline; margin:4px 4px 4px 6px;" >Endpoint</label>
@@ -473,10 +475,10 @@
                     <div id="decBgnDisplayId" class="typeColorShape"></div>
                     <div id="decFgnDisplayId" class="typeColorShape"></div>
 
-                    <input type="radio" id="btnAttrTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
-                    <label for="btnAttrTypeId" style="vertical-align:baseline; margin:4px 4px 4px 6px;" >Attribute</label>
-                    <div id="attrBgnDisplayId" class="typeColorShape"></div>
-                    <div id="attrFgnDisplayId" class="typeColorShape"></div>
+                    <!--<input type="radio" id="btnAttrTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">-->
+                    <!--<label for="btnAttrTypeId" style="vertical-align:baseline; margin:4px 4px 4px 6px;" >Attribute</label>-->
+                    <!--<div id="attrBgnDisplayId" class="typeColorShape"></div>-->
+                    <!--<div id="attrFgnDisplayId" class="typeColorShape"></div>-->
 
 
                 </div>
@@ -671,15 +673,15 @@
                     <span class="startDiagramTitle"
                           data-bind="html: startERDTitle()"></span>
                 </div>
-                <div id="tabLOGId" class="startDiagramTab">
-                    <span class="startDiagramTitle"
-                          data-bind="html: startLOGTitle()"></span>
-                </div>
+                <!--<div id="tabLOGId" class="startDiagramTab">-->
+                    <!--<span class="startDiagramTitle"-->
+                          <!--data-bind="html: startLOGTitle()"></span>-->
+                <!--</div>-->
             </div>
 
             <!-- FLOWCHART-->
             <div id="contentFlowId" class="startDiagramContent" data-bind="visible: flowTabVisible">
-                <div><img class="startFlowImg" /></div >
+                <!--<div><img class="startFlowImg" /></div >-->
                 <div style="margin-top: 6px;"></div>
                 <div>
                     <button id="btnCreateFlowId" class="flowTextBtn button-goRight startGoButton"
@@ -697,7 +699,7 @@
 
             <!-- ERD-->
             <div id="contentERDId" class="startDiagramContent" data-bind="visible: erdTabVisible">
-                <div><img class="startDBImg" /></div>
+                <!--<div><img class="startDBImg" /></div>-->
                 <div>
                     <button id="btnCreateERDId" class="flowTextBtn button-goRight startGoButton"
                             title="Select">Start a new database ERD</button>
@@ -717,22 +719,22 @@
             </div>
 
             <!-- LOG-->
-            <div id="contentLOGId" class="startDiagramContent" data-bind="visible: logTabVisible">
-                <div><img class="startLOGImg" /></div>
-                <div style="margin-top: 6px;"></div>
-                <div>
-                    <button id="btnCreateLOGId" class="flowTextBtn button-goRight startGoButton"
-                            title="Select">Start a new logical ERD</button>
-                </div>
-                <div>
-                    <button id="btnTemplateLOGId" class="flowTextBtn button-goRight startGoButton"
-                            title="Select">Go to template</button>
-                </div>
-                <div>
-                    <button id="btnOpenLOGId" class="flowTextBtn button-goRight startGoButton"
-                            title="Select">Open a logical ERD</button>
-                </div>
-            </div>
+            <!--<div id="contentLOGId" class="startDiagramContent" data-bind="visible: logTabVisible">-->
+                <!--<div><img class="startLOGImg" /></div>-->
+                <!--<div style="margin-top: 6px;"></div>-->
+                <!--<div>-->
+                    <!--<button id="btnCreateLOGId" class="flowTextBtn button-goRight startGoButton"-->
+                            <!--title="Select">Start a new logical ERD</button>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<button id="btnTemplateLOGId" class="flowTextBtn button-goRight startGoButton"-->
+                            <!--title="Select">Go to template</button>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<button id="btnOpenLOGId" class="flowTextBtn button-goRight startGoButton"-->
+                            <!--title="Select">Open a logical ERD</button>-->
+                <!--</div>-->
+            <!--</div>-->
 
         </div>
 
@@ -761,13 +763,17 @@
         </div>
     </div>
 
+    <div id="confirmDialog2Id" class="settingsFont" style="display: none; ">
+        <div style="font-weight: bold; margin: 4px; ">
+            <textarea id="confirmText2Id" rows="3" cols="50" wrap="hard" class="selectionFont noresizeTextArea"
+                       spellcheck="false" readonly
+                       data-bind="text: confirmMessage2"></textarea>
+        </div>
+    </div>
+
     <div id="openFlowDialogId" class="settingsFont" style="display: none; overflow-y: hidden">
         <div class="selectDirView"
              data-bind="visible: isConnectionOK() && !showTemplatesOnly()">
-            <!--<span style="margin: 8px 6px 0 0;">Partition:</span>-->
-            <!--<select id="selectPartitionId" class="settingsDiskMenu"-->
-                    <!--data-bind="options: partitionsList, value: selectedPartition ">-->
-            <!--</select>-->
             <button id="dirsBtnUpId" class="toolbar-button button-left" data-toggle="tooltip" title="Go back"></button>
             <button id="dirsBtnDownId" class="toolbar-button button-no-left button-right" data-toggle="tooltip" title="Choose new location..."></button>
             <span style="margin-left: 10px;"></span>
@@ -812,7 +818,7 @@
         </div>
 
         <div style="margin: 8px 0 0 0; font-weight: bold;"
-             data-bind="visible: isConnectionOK() && (isOpenMode() || isImportDBMode()) && !showTemplatesOnly()">
+             data-bind="visible: isConnectionOK() && (isOpenMode() || isImportDBMode())&& !isExportDBMode() && !showTemplatesOnly()">
             <span style="margin: 16px 0 6px 0 ; ">Files Type:</span>
             <select id="selectFileTypeId" onchange="onFileTypeChange(event)"
                     data-bind="options: filesTypes, value: selectedFileType ">
@@ -851,8 +857,8 @@
                        autocomplete="off" spellcheck="false"
                        onkeyup="validateSaveAsFileName(event)"
                        data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
-                <span style="margin: 4px 4px 8px 4px; font-weight: bold;"
-                      data-bind="visible: !isExportDBMode()" >.json</span>
+                <!--<span style="margin: 4px 4px 8px 4px; font-weight: bold;"-->
+                      <!--data-bind="visible: !isExportDBMode()" >.json</span>-->
                 <div style="background: white">
                     <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
                             data-bind="visible: isEditNameInvalid()" disabled></button>
@@ -884,7 +890,7 @@
                    autocomplete="off" spellcheck="false"
                    onkeyup="validateNewFlowName(event)"
                    data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
-            <span style="margin: 4px 4px 8px 4px; font-weight: bold;">.json</span>
+            <!--<span style="margin: 4px 4px 8px 4px; font-weight: bold;">.json</span>-->
             <div style="background: white">
                 <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
                         data-bind="visible: isEditNameInvalid()" disabled></button>
@@ -1266,39 +1272,43 @@
             <table id="dbTblCPKsColumnsId" style="width: 100%; table-layout: fixed; ">
                 <tbody  data-bind="foreach: { data: dbCompositePKs, as: 'cPKs' }">
                     <tr>
-                        <td style="width: 74px;">
+                        <td style="width: 18%;">
                             <select id="dbCPKTypeId" class="cpkDBColumn cnstrDBall cursor-pointer"
-                                    style="width: 80px;"
                                     data-bind="options: cPKs.type,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
                             </select>
                         </td>
-                        <td style="width: 90px;">
-                            <input id="dbCPKNameId" type="text" class="cursor-pointer cpkDBColumn"
-                                   style="width: 92px;"
+
+                        <td style="width: 17%;">
+                            <select id="dbCPKDefId" class="cpkDBColumn cnstrDBall cursor-pointer"
+                                    data-bind="options: cPKs.def,
+                                        optionsText: 'label',
+                                        optionsValue: 'id'">
+                            </select>
+                        </td>
+
+                        <td style="width: 17%;">
+                            <input id="dbCPKNameId" type="text" class="cpkDBColumn cnstrDBall cursor-pointer"
                                    data-bind="textInput: cPKs.name,
                                     attr: {title: cPKs.name}"/>
                         </td>
-                        <td style="width: 82px;">
+                        <td style="width: 16%;">
                             <select id="dbCPKCol1" class="cpkDBColumn cnstrDBall cursor-pointer"
-                                    style="width: 89px; height: 22px; "
                                     data-bind="options: cPKs.column1,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
                             </select>
                         </td>
-                        <td style="width: 82px;">
+                        <td style="width: 16%;">
                             <select id="dbCPKCol2" class="cpkDBColumn cnstrDBall cursor-pointer"
-                                    style="width: 88px;"
                                     data-bind="options: cPKs.column2,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
                             </select>
                         </td>
-                        <td style="width: 82px;">
+                        <td style="width: 16%;">
                             <select id="dbCPKCol3" class="cpkDBColumn cnstrDBall cursor-pointer"
-                                    style="width: 88px;"
                                     data-bind="options: cPKs.column3,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
@@ -1584,7 +1594,7 @@
     <div id="importExportDialogId" class="settingsFont" style="display: none; overflow: hidden;">
         <div id="importExportTabId">
             <div class="settings-controls settings-entry" style="display: block"
-                    data-bind="visible: isImportDBMode() || showTemplatesOnly()">
+                    data-bind="visible: isStartDBMode() || isImportDBMode() || showTemplatesOnly()">
                 <div class="settings-entry" style="margin: 10px 0 6px 12px; ">Select Database:</div>
                 <div style="margin: 0 0 0 12px; ">
                     <select id="dbsToImportId"
@@ -1605,22 +1615,28 @@
 
             <div class="settings-controls settings-entry" style="display: block"
                     data-bind="visible: isExportDBMode()">
-                <div class="settings-entry" style="margin: 10px 0 6px 12px; ">Selected Database:</div>
+                <div class="settings-entry" style="margin: 10px 0 4px 12px; ">Selected Database:</div>
                 <div style="margin: 0 0 0 10px; ">
                     <input id="showExportToId" class="showExportTo" type="text" readonly
                            data-bind="textInput: selectedDBName(),
                            attr: {title: selectedDBName()}"/>
                 </div>
 
-                <div class="settings-entry" style="margin: 10px 0 6px 12px; ">Enter Database Schema Name:</div>
+                <div class="settings-entry" style="margin: 10px 0 4px 12px; ">Enter Database Schema Name:</div>
                 <div style="margin: 0 0 0 10px;">
                     <input id="schemaNameToId" class="showExportTo" type="text" autofocus
                            autocomplete="off" spellcheck="false"/>
                 </div>
 
-                <div class="inOut-footer"></div>
-            </div>
+                <div style="margin: 10px 0 0 6px;">
+                    <input type="checkbox" id="schemaNamePrefixId" style="margin: 4px 4px 0 8px;">
+                    <label for="schemaNamePrefixId"
+                           style="vertical-align:baseline; margin: 0 14px 0 0;">Use schema name as prefix</label>
+                </div>
 
+                <div class="inOut-footer"></div>
+
+            </div>
         </div>
     </div>
 
@@ -1784,7 +1800,7 @@
         <div id="bottomTextId" class="bottomText" data-bind="text: bottomMessageText()"></div>
     </div>
 
-    <div id="startHereId" class="startHereHTip" data-bind="visible: startHereVisible()"></div>
+    <!--<div id="startHereId" class="startHereHTip" data-bind="visible: startHereVisible()"></div>-->
 
 
 </body>

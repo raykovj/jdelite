@@ -197,7 +197,7 @@ body.waiting * {
 }
 .typeSelection {
 	display: grid;
-	grid-template-rows: 22px 22px 22px;
+	grid-template-rows: 22px 22px;
 	align-self: start;
 }
 .typeButton {
@@ -567,26 +567,20 @@ label {
 	row-gap: 8px;
 }
 .settings-footer-1 {
-	margin: 118px 0 0 0;
+	margin: 84px 0 0 0;
 }
-.settings-footer-2 {
-	margin: 220px 0 0 0;
-}
+	
 .settings-footer-3 {
 	margin: 24px 0 0 0;
 }
 .settings-footer-4 {
-	margin: 251px 0 0 0;
+	margin: 221px 0 0 0;
 }
 .settings-footer-5 {
-	margin: 288px 0 0 0;
+	margin: 256px 0 0 0;
 }
-.settings-footer-6 {
-	margin: 6px 0 0 0;
-}
-.settings-footer-6a {
-	margin: 126px 0 0 0;
-}
+	
+	
 .nodePropsFooter {
 	margin: 40px 0 0 0;
 }
@@ -1193,26 +1187,6 @@ label {
 	
 	foreground-color: #195aee;
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 .startPage {
 	position: absolute;
 	top: 0;
@@ -1223,7 +1197,7 @@ label {
 	color: #08105d;
 	display: grid;
 	grid-template-columns: 8px auto 80px;
-	grid-template-rows: 2px 36px 74px 280px 238px 30px;
+	grid-template-rows: 2px 42px 74px 140px 238px 30px;
 	
 	
 }
@@ -1257,6 +1231,7 @@ label {
 	grid-column: 1/span 2;
 	justify-self: center;
 	grid-row: 3;
+	
 }
 .startDiagramTitle {
 	margin: 10px 0 0 8px;
@@ -1276,6 +1251,7 @@ label {
 }
 .startDiagramTab {
 	border: 2px solid #ccccff;
+	
 	border-radius: 2px;
 	
 	background-color: #cfeeee;
@@ -1297,7 +1273,8 @@ label {
 	border-radius: 2px;
 	background-color: #efffff;
 	width: 260px;
-	height: 298px;
+	
+	height: 118px;
 	margin-top: 20px;
 }
 .startDiagramTextBlock {
@@ -1308,12 +1285,12 @@ label {
 	border-radius: 2px;
 	background-color: #efffff;
 	width: 470px;
-	height: 190px;
+	height: 168px;
 	padding: 10px 4px 20px 30px;
 }
 .startDiagramText {
 	margin: 2px 16px 0 0;
-	font-family: "Arial";
+	font-family: Arial;
 	font-size: 16px;
 	
 	line-height: 1.5;
@@ -1454,21 +1431,26 @@ label {
 }
 .showExportTo {
 	font-family: Arial;
-	font-size: 14px;
+	font-size: 16px;
 	margin: 4px 0 2px 4px;
-	font-weight: bold;
+	
 	border: 1px solid blue;
 	outline: none;
 	width: 252px;
 	height: 20px;
-	background-color: #f3f6fc;
+	color: #1942c1;
+}
+.optionsText {
+	font-family: Arial;
+	font-size: 14px;
+	color: #1942c1;
 }
 #dbsToImportId {
 	width: 252px;
 	height: 26px;
 	font-family: Arial;
-	font-size: 14px;
-	
+	font-size: 16px;
+	color: #1942c1;
 }
 .inOut-footer {
 	margin: 20px 0 0 0;
@@ -1572,6 +1554,7 @@ label {
 	background-color: transparent;
 	background-repeat: no-repeat;
 	background-position: left;
+	font-family: Arial;
 	font-size: 16px;
 	font-weight: bold;
 	text-align: left;
@@ -1839,13 +1822,13 @@ label {
 	
 }
 .spinnerStyle {
-	width: 24px;
-	margin: 4px 4px 4px 4px;
+	width: 34px;
+	height: 20px;
+	font-size: 16px;
+	margin: 2px 2px 2px 2px;
 }
-.spinnerStyleNode {
-	width: 24px;
-	margin: 4px 2px 4px 4px;
-}
+	
+	
 .spinner-label {
 	vertical-align: baseline;
 	
