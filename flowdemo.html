@@ -25,6 +25,8 @@
             <div id="cnxOffId" class="cnx-button button-cnxOff"
                  data-bind="visible: !cnxInfo(), attr: {title: cnxOff()}"></div>
         </div>
+        <button id="shutdownId" class="toolbar-button shutdown-button" data-toggle="tooltip"
+                title="Shutdown Server and Exit"></button>
         <div class="diagram-title" style="margin: 0 0 0 0px;">
             <span class="selectionFont">Diagram:</span>
         </div>
@@ -757,7 +759,7 @@
 
     <div id="confirmDialogId" class="settingsFont" style="display: none; ">
         <div style="font-weight: bold; margin: 4px; ">
-            <textarea id="confirmTextId" rows="3" cols="50" wrap="hard" class="selectionFont noresizeTextArea"
+            <textarea id="confirmTextId" rows="3" cols="50" wrap="hard" class="selectionFont noresizeTextArea confirmTextArea"
                        spellcheck="false" readonly
                        data-bind="text: confirmMessage"></textarea>
         </div>
@@ -765,9 +767,17 @@
 
     <div id="confirmDialog2Id" class="settingsFont" style="display: none; ">
         <div style="font-weight: bold; margin: 4px; ">
-            <textarea id="confirmText2Id" rows="3" cols="50" wrap="hard" class="selectionFont noresizeTextArea"
+            <textarea id="confirmText2Id" rows="3" cols="50" wrap="hard" class="selectionFont noresizeTextArea confirmTextArea"
                        spellcheck="false" readonly
                        data-bind="text: confirmMessage2"></textarea>
+        </div>
+    </div>
+
+    <div id="confirmSrvDialogId" class="settingsFont" style="display: none; ">
+        <div style="font-weight: bold; margin: 4px; ">
+            <textarea rows="3" cols="50" wrap="hard" class="selectionFont noresizeTextArea confirmTextArea"
+                       spellcheck="false" readonly
+                       data-bind="text: confirmSrvMessage"></textarea>
         </div>
     </div>
 

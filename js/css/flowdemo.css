@@ -88,14 +88,14 @@ body.waiting * {
 }
 .diagram-title {
 	display: inline;
-	border: 2px solid blue;
+	border: 1px solid blue;
 	border-radius: 2px;
 	background-color: #E1F5FF;
 	text-align: center;
 	width: 58px;
-	height: 20px;
+	height: 22px;
 	margin: 4px 0 0 -2px;
-	padding: 2px 2px 2px 0;
+	padding: 4px 2px 0px 0;
 	z-index: 10;
 }
 .diagram-text {
@@ -118,7 +118,7 @@ body.waiting * {
 .diagram-name {
 	flex: 1 0 auto;
 	height: 26px;
-	padding: 4px 2px 0 6px;
+	padding: 3px 2px 2px 6px;
 }
 #topContainerId {
 	display: grid;
@@ -1625,14 +1625,25 @@ label {
 	cursor: pointer;
 }
 .cnx-button {
-	border: 2px solid blue;
+	border: 1px solid blue;
 	border-radius: 2px;
 	background-color: #E1F5FF;
-	height: 24px;
-	width: 42px;
+	height: 26px;
+	width: 32px;
 	background-repeat: no-repeat;
 	background-position: center;
 	margin: -2px 0 0 0;
+}
+.shutdown-button {
+	border: 1px solid blue;
+	border-radius: 2px;
+	background-color: #E1F5FF;
+	height: 28px;
+	width: 28px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(../../images/toolbar/shutdown24.png);
+	margin: 0px 6px 0px  0;
 }
 .componentItem {
 	vertical-align: middle;
@@ -1980,7 +1991,7 @@ label {
 	marker: none;
 	resize: none;
 }
-#confirmTextId {
+.confirmTextArea {
 	margin: 5px;
 	border-style: none;
 	outline: none;
