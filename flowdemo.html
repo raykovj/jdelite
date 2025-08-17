@@ -84,8 +84,8 @@
                 <div style="margin-top: 2px;"></div>
                 <div class="accordSelect" style="display: block;">
                     <div class="typeSelection">
-                        <button id="btnFlowId" class="typeButton" data-bind="text: diagramTypeFlow"></button>
                         <button id="btnERDId" class="typeButton" data-bind="text: diagramTypeERD"></button>
+                        <button id="btnFlowId" class="typeButton" data-bind="text: diagramTypeFlow"></button>
                         <!--<button id="btnLOGId" class="typeButton" data-bind="text: diagramTypeLOG"></button>-->
                     </div>
                 </div>
@@ -157,40 +157,6 @@
             <div style="margin-top: 2px;"></div>
 
             <div id="paletteAccordionId" class="accordion-props-pages">
-                <!--/////////////  BASE  /////////////-->
-                <h3 id="accHdrFlowId" data-bind="text: accHdrFlowTitle"></h3>
-                <div id="accTableFlowId">
-                    <table id="accFlowTableId" class="accordion-items galleryFont" >
-                        <tbody data-bind="foreach: galleryFlowNodes">
-                        <tr>
-                            <td data-bind="attr: {id}"
-                                ondragstart="onPaletteDragStart(event)"
-                                ondragend="onPaletteDragEnd(event)">
-                                <img role="presentation" draggable="true" class="componentItem"
-                                     data-bind="attr: {id: id, src: url, title: title}" />
-                                <span style="user-select: none;" data-bind="text: label"></span>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <!--/////////////  MISC  /////////////-->
-                <h3 id="accHdrMiscId"  data-bind="text: accHdrMiscTitle"></h3>
-                <div id="accTableMiscsId">
-                    <table id="accMiscTableId" class="accordion-items galleryFont" >
-                        <tbody data-bind="foreach: galleryMiscNodes">
-                        <tr>
-                            <td data-bind="attr: {id}"
-                                ondragstart="onPaletteDragStart(event)"
-                                ondragend="onPaletteDragEnd(event)">
-                                <img role="presentation" draggable="true" class="componentItem"
-                                     data-bind="attr: {id: id, src: url, title: title}" />
-                                <span style="user-select: none;" data-bind="text: label"></span>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
                 <!--/////////////  ERD DB  /////////////-->
                 <h3 id="accHdrERDId"  data-bind="text: accHdrERDTitle"></h3>
                 <div id="accTableERDId">
@@ -208,6 +174,57 @@
                         </tbody>
                     </table>
                 </div>
+                <!--/////////////  BASE Flow /////////////-->
+                <h3 id="accHdrFlowId" data-bind="text: accHdrFlowTitle"></h3>
+                <div id="accTableFlowId">
+                    <table id="accFlowTableId" class="accordion-items galleryFont" >
+                        <tbody data-bind="foreach: galleryFlowNodes">
+                        <tr>
+                            <td data-bind="attr: {id}"
+                                ondragstart="onPaletteDragStart(event)"
+                                ondragend="onPaletteDragEnd(event)">
+                                <img role="presentation" draggable="true" class="componentItem"
+                                     data-bind="attr: {id: id, src: url, title: title}" />
+                                <span style="user-select: none;" data-bind="text: label"></span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--/////////////  MISC FLOW /////////////-->
+                <h3 id="accHdrMiscId"  data-bind="text: accHdrMiscTitle"></h3>
+                <div id="accTableMiscsId">
+                    <table id="accMiscTableId" class="accordion-items galleryFont" >
+                        <tbody data-bind="foreach: galleryMiscNodes">
+                        <tr>
+                            <td data-bind="attr: {id}"
+                                ondragstart="onPaletteDragStart(event)"
+                                ondragend="onPaletteDragEnd(event)">
+                                <img role="presentation" draggable="true" class="componentItem"
+                                     data-bind="attr: {id: id, src: url, title: title}" />
+                                <span style="user-select: none;" data-bind="text: label"></span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--&lt;!&ndash;/////////////  ERD DB  /////////////&ndash;&gt;-->
+                <!--<h3 id="accHdrERDId"  data-bind="text: accHdrERDTitle"></h3>-->
+                <!--<div id="accTableERDId">-->
+                    <!--<table id="accERDTableId" class="accordion-items galleryFont" >-->
+                        <!--<tbody data-bind="foreach: galleryERDNodes">-->
+                        <!--<tr>-->
+                            <!--<td data-bind="attr: {id}"-->
+                                <!--ondragstart="onPaletteDragStart(event)"-->
+                                <!--ondragend="onPaletteDragEnd(event)">-->
+                                <!--<img role="presentation" draggable="true" class="componentItem"-->
+                                     <!--data-bind="attr: {id: id, src: url, title: title}" />-->
+                                <!--<span style="user-select: none;" data-bind="text: label"></span>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--</tbody>-->
+                    <!--</table>-->
+                <!--</div>-->
                 <!--/////////////  ERD LOG  /////////////-->
                 <!--<h3 id="accHdrLOGId"  data-bind="text: accHdrLOGTitle"></h3>-->
                 <!--<div id="accTableLOGId">-->
@@ -643,16 +660,6 @@
         <button class="close-button"></button>
     </div>
 
-    <!-- WELCOME -->
-    <div id="welcomeDialogId" class="welcome-dlg">
-        <img class="about-img"/>
-        <div class="about-title" data-bind="text: welcomeTitle()"></div>
-        <div class="welcome-title"
-             data-bind="text: welcomeGreeting()"></div>
-        <span class="welcome-text vertical" style="padding: 20px; "
-             data-bind="html: welcomeTip()"></span>
-    </div>
-
     <!-- ///////////////// -->
     <!-- START PAGE -->
     <!-- ///////////////// -->
@@ -667,41 +674,26 @@
 
             <!-- TABS-->
             <div style="margin: 20px 20px;">
-                <div id="tabFlowId" class="startDiagramTab">
-                    <span class="startDiagramTitle"
-                        data-bind="html: startFlowTitle()"></span>
-                </div>
                 <div id="tabERDId" class="startDiagramTab">
                     <span class="startDiagramTitle"
                           data-bind="html: startERDTitle()"></span>
                 </div>
+                <div id="tabFlowId" class="startDiagramTab">
+                    <span class="startDiagramTitle"
+                        data-bind="html: startFlowTitle()"></span>
+                </div>
+                <!--<div id="tabERDId" class="startDiagramTab">-->
+                    <!--<span class="startDiagramTitle"-->
+                          <!--data-bind="html: startERDTitle()"></span>-->
+                <!--</div>-->
                 <!--<div id="tabLOGId" class="startDiagramTab">-->
                     <!--<span class="startDiagramTitle"-->
                           <!--data-bind="html: startLOGTitle()"></span>-->
                 <!--</div>-->
             </div>
 
-            <!-- FLOWCHART-->
-            <div id="contentFlowId" class="startDiagramContent" data-bind="visible: flowTabVisible">
-                <!--<div><img class="startFlowImg" /></div >-->
-                <div style="margin-top: 6px;"></div>
-                <div>
-                    <button id="btnCreateFlowId" class="flowTextBtn button-goRight startGoButton"
-                            title="Select">Start a new flowchart</button>
-                </div>
-                <div>
-                    <button id="btnTemplateFlowId" class="flowTextBtn button-goRight startGoButton"
-                            title="Select">Go to template</button>
-                </div>
-                <div>
-                    <button id="btnOpenFlowId" class="flowTextBtn button-goRight startGoButton"
-                            title="Select">Open a flowchart</button>
-                </div>
-            </div>
-
             <!-- ERD-->
             <div id="contentERDId" class="startDiagramContent" data-bind="visible: erdTabVisible">
-                <!--<div><img class="startDBImg" /></div>-->
                 <div>
                     <button id="btnCreateERDId" class="flowTextBtn button-goRight startGoButton"
                             title="Select">Start a new database ERD</button>
@@ -719,6 +711,44 @@
                             title="Select">Import DB script</button>
                 </div>
             </div>
+
+            <!-- FLOWCHART-->
+            <div id="contentFlowId" class="startDiagramContent" data-bind="visible: flowTabVisible">
+                <div style="margin-top: 6px;"></div>
+                <div>
+                    <button id="btnCreateFlowId" class="flowTextBtn button-goRight startGoButton"
+                            title="Select">Start a new flowchart</button>
+                </div>
+                <div>
+                    <button id="btnTemplateFlowId" class="flowTextBtn button-goRight startGoButton"
+                            title="Select">Go to template</button>
+                </div>
+                <div>
+                    <button id="btnOpenFlowId" class="flowTextBtn button-goRight startGoButton"
+                            title="Select">Open a flowchart</button>
+                </div>
+            </div>
+
+            <!--&lt;!&ndash; ERD&ndash;&gt;-->
+            <!--<div id="contentERDId" class="startDiagramContent" data-bind="visible: erdTabVisible">-->
+                <!--&lt;!&ndash;<div><img class="startDBImg" /></div>&ndash;&gt;-->
+                <!--<div>-->
+                    <!--<button id="btnCreateERDId" class="flowTextBtn button-goRight startGoButton"-->
+                            <!--title="Select">Start a new database ERD</button>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<button id="btnTemplateERDId" class="flowTextBtn button-goRight startGoButton"-->
+                            <!--title="Select">Go to template</button>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<button id="btnOpenERDId" class="flowTextBtn button-goRight startGoButton"-->
+                            <!--title="Select">Open a database ERD</button>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<button id="btnInOutERDId" class="flowTextBtn button-goRight startGoButton"-->
+                            <!--title="Select">Import DB script</button>-->
+                <!--</div>-->
+            <!--</div>-->
 
             <!-- LOG-->
             <!--<div id="contentLOGId" class="startDiagramContent" data-bind="visible: logTabVisible">-->

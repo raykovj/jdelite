@@ -211,8 +211,11 @@
                         connection is available. Its full access to the file system makes it possible to easily open, save
                         and delete files, as well as to display, create and delete folders. The created
                         diagrams, in JSON format, can be saved in the existing folders or in newly created ones. Currently
-                        the file browser works under <b>Windows</b>. The server connection uses <b>node.js</b>.</p><br>
-
+                        the file browser works under <b>Windows</b>. The server connection uses <b>node.js</b>.</p>
+                    <p><b>NOTE</b>: Due to some current limitations of <b>node.js</b> libraries, the file browser can
+                        access only the file structure or the disk partition where the JDElite Flowchart Builder is installed
+                        and launched from. Files and folders with names containing spaces are excluded. </p>
+                    <br>
                     <p>A view of the browser in <b>OPEN</b> mode:</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/browser.png" width="453" height="443"></p><br>
@@ -495,6 +498,8 @@
                 <!-- DB -->
 
                 <div id="databaseTextId" class="contentText" style="margin-top: -20px;">
+                    <p><b>IMPORTANT</b>: <b>JDElite Flowchart Builder</b> is self-contained and does not require any database server.
+                        It processes data from files and stores the results in files.</p><br>
                     <p>The <b>Database ERDs</b> (entity-relationship diagrams) represent the databases physical structure.
                         In essence, an ER diagram contains two object types: <b>entities</b> and <b>relationships</b>.
                         The entities correspond to database tables and in the <b>ERDs</b> they are modeled as diagram nodes.
